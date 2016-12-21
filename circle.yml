@@ -35,7 +35,7 @@ deployment:
     - mv org.nasdanika.ledger.repository/target/repository $CIRCLE_ARTIFACTS    
     - mv org.nasdanika.ledger.repository/target/org.nasdanika.ledger.repository-*.zip $CIRCLE_ARTIFACTS    
     - mkdir $CIRCLE_ARTIFACTS/apidocs    
-    - mv org.nasdanika.ledger.doc/apidocs $CIRCLE_ARTIFACTS/apidocs      
+    - cp org.nasdanika.ledger.doc/apidocs $CIRCLE_ARTIFACTS      
   
     - wget http://nasdanika.org/commons-net-1.4.1.jar
     - wget http://nasdanika.org/jakarta-oro-2.0.8.jar        
