@@ -17,7 +17,7 @@
 				<version>2.10.4</version>
 				<configuration>
 				    
-	  	        	<reportOutputDirectory>${project.build.directory}/org.nasdanika.ledger.doc/apidocs</reportOutputDirectory>
+	  	        	<reportOutputDirectory>${basedir}/org.nasdanika.ledger.doc/apidocs</reportOutputDirectory>
 	  	            
 					<linksource>true</linksource>
 					<failOnError>false</failOnError>
