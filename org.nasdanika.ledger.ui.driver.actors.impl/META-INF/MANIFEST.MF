@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.nasdanika.ledger.ui.driver.actors.impl
+Bundle-SymbolicName: org.nasdanika.ledger.ui.driver.actors.impl; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.nasdanika.ledger.ui.driver.actors;visibility:=reexport,
+ org.eclipse.osgi.services
+Service-Component: OSGI-INF/ledger-actor-factory.xml
+Export-Package: org.nasdanika.ledger.ui.driver.actors.impl
+Bundle-ActivationPolicy: lazy

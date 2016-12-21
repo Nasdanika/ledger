@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.nasdanika.ledger.app
+Bundle-SymbolicName: org.nasdanika.ledger.app; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.emf.ecore,
+ org.nasdanika.cdo.h2,
+ org.apache.commons.lang3;bundle-version="3.3.2",
+ org.eclipse.emf.cdo,
+ org.nasdanika.cdo.web,
+ org.nasdanika.cdo.web.doc,
+ org.nasdanika.cdo,
+ org.eclipse.equinox.http.registry,
+ org.nasdanika.ledger
+Service-Component: OSGI-INF/ledger-session-initializer.xml,
+ OSGI-INF/ledger-repository.xml,
+ OSGI-INF/ledger-server.xml,
+ OSGI-INF/ledger-cdo-transaction-context-provider.xml,
+ OSGI-INF/ledger-doc-route.xml
+Bundle-ActivationPolicy: lazy

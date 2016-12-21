@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.nasdanika.ledger.tests.results
+Bundle-SymbolicName: org.nasdanika.ledger.tests.results; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.nasdanika.webtest.model

@@ -1,0 +1,9 @@
+<plugin>
+   <extension
+         point="org.nasdanika.webtest.model.results">
+      <result
+            model="model/LedgerTests.xml">
+      </result>
+   </extension>
+
+</plugin>

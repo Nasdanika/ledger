@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+	
+	   <feature url="features/org.nasdanika.ledger.product.feature_1.0.0.qualifier.jar" id="org.nasdanika.ledger.product.feature" version="1.0.0.qualifier">
+	      <category name="org.nasdanika.ledger.product.category"/>
+	   </feature>
+   <category-def name="org.nasdanika.ledger.product.category" label="Ledger Product">
+      <description>
+         org.nasdanika.ledger Product.
+      </description>
+   </category-def>
+</site>

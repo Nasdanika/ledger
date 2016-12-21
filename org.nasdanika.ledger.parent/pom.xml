@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.nasdanika.ledger</groupId>
+	<artifactId>org.nasdanika.ledger.parent</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<!-- tycho requires maven >= 3.0 -->
+	<prerequisites>
+		<maven>3.0</maven>
+	</prerequisites>
+	
+	<properties>
+		<tycho-version>0.26.0</tycho-version>
+	</properties>
+
+	<repositories>
+		
+			<repository>
+				<id>neon</id>
+				<url>http://download.eclipse.org/releases/neon</url>
+				<layout>p2</layout>
+			</repository>		
+		
+			<repository>
+				<id>orbit</id>
+				<url>http://download.eclipse.org/tools/orbit/downloads/drops/R20160520211859/repository</url>
+				<layout>p2</layout>
+			</repository>		
+		
+			<repository>
+				<id>nasdanika-server</id>
+				<url>http://www.nasdanika.org/server/repository</url>
+				<layout>p2</layout>
+			</repository>		
+		
+			<repository>
+				<id>jetty</id>
+				<url>http://download.eclipse.org/jetty/updates/jetty-bundles-9.x/9.3.9.v20160517</url>
+				<layout>p2</layout>
+			</repository>		
+		
+			<repository>
+				<id>maven-osgi</id>
+				<url>http://www.nasdanika.org/maven-osgi</url>
+				<layout>p2</layout>
+			</repository>		
+		
+	</repositories>
+ 	
+ 	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.10.4</version>
+				<configuration>
+				    
+	  	        		<reportOutputDirectory>${project.build.directory}/../org.nasdanika.ledger.doc/apidocs</reportOutputDirectory>
+	  	            
+					<linksource>true</linksource>
+					<failOnError>false</failOnError>
+					
+			        <doclet>ch.raffael.doclets.pegdown.PegdownDoclet</doclet>
+			        <docletArtifact>
+			          <groupId>ch.raffael.pegdown-doclet</groupId>
+			          <artifactId>pegdown-doclet</artifactId>
+			          <version>1.1</version>
+			        </docletArtifact>
+			        <useStandardDocletOptions>true</useStandardDocletOptions>
+			        
+		            <links>
+						<link>http://www.nasdanika.org/server/apidocs/org.nasdanika.cdo.boxing/apidocs</link>						
+						<link>http://www.nasdanika.org/server/apidocs/org.nasdanika.cdo.function/apidocs</link>						
+						<link>http://www.nasdanika.org/server/apidocs/org.nasdanika.cdo.h2/apidocs</link>						
+						<link>http://www.nasdanika.org/server/apidocs/org.nasdanika.cdo.promise/apidocs</link>						
+						<link>http://www.nasdanika.org/server/apidocs/org.nasdanika.cdo.sca/apidocs</link>						
+						<link>http://www.nasdanika.org/server/apidocs/org.nasdanika.cdo.sca.edit/apidocs</link>						
+						<link>http://www.nasdanika.org/server/apidocs/org.nasdanika.cdo.scheduler/apidocs</link>						
+						<link>http://www.nasdanika.org/server/apidocs/org.nasdanika.cdo.security/apidocs</link>						
+						<link>http://www.nasdanika.org/server/apidocs/org.nasdanika.cdo.security.edit/apidocs</link>						
+						<link>http://www.nasdanika.org/server/apidocs/org.nasdanika.cdo.security.editor/apidocs</link>						
+						<link>http://www.nasdanika.org/server/apidocs/org.nasdanika.cdo.web/apidocs</link>						
+						<link>http://www.nasdanika.org/server/apidocs/org.nasdanika.cdo.web.doc/apidocs</link>						
+						<link>http://www.nasdanika.org/server/apidocs/org.nasdanika.cdo/apidocs</link>						
+						<link>http://www.nasdanika.org/server/apidocs/org.nasdanika.core/apidocs</link>						
+						<link>http://www.nasdanika.org/server/apidocs/org.nasdanika.function.cdo/apidocs</link>						
+						<link>http://www.nasdanika.org/server/apidocs/org.nasdanika.function/apidocs</link>						
+						<link>http://www.nasdanika.org/server/apidocs/org.nasdanika.html/apidocs</link>						
+						<link>http://www.nasdanika.org/server/apidocs/org.nasdanika.sca.design/apidocs</link>						
+						<link>http://www.nasdanika.org/server/apidocs/org.nasdanika.sca.edit/apidocs</link>						
+						<link>http://www.nasdanika.org/server/apidocs/org.nasdanika.sca.editor/apidocs</link>						
+						<link>http://www.nasdanika.org/server/apidocs/org.nasdanika.sca/apidocs</link>						
+						<link>http://www.nasdanika.org/server/apidocs/org.nasdanika.tools.design/apidocs</link>						
+						<link>http://www.nasdanika.org/server/apidocs/org.nasdanika.web/apidocs</link>						
+						<link>http://www.nasdanika.org/server/apidocs/org.nasdanika.webtest.performance/apidocs</link>						
+						<link>http://www.nasdanika.org/server/apidocs/org.nasdanika.webtest/apidocs</link>						
+						<link>http://www.nasdanika.org/server/apidocs/org.nasdanika.workspace.wizard/apidocs</link>
+						<link>http://www.nasdanika.org/server/apidocs/org.nasdanika.codegen/apidocs</link>
+						<link>http://www.nasdanika.org/server/apidocs/org.nasdanika.codegen.edit/apidocs</link>
+						<link>http://www.nasdanika.org/server/apidocs/org.nasdanika.codegen.editor/apidocs</link>
+						<link>http://www.nasdanika.org/server/apidocs/org.nasdanika.provisioning/apidocs</link>						
+						<link>http://download.eclipse.org/modeling/emf/emf/javadoc/2.11</link>
+						<link>http://help.eclipse.org/neon/topic/org.eclipse.emf.cdo.doc/javadoc</link>		
+						<link>http://stleary.github.io/JSON-java</link>			
+						<link>https://osgi.org/javadoc/r4v42/</link>
+						<link>http://seleniumhq.github.io/selenium/docs/api/java/</link>
+						<!--						
+						<link>http://docs.oracle.com/javase/8/docs/api</link>						
+						-->
+		            
+		            </links>
+					<detectLinks>true</detectLinks>					
+				</configuration>
+			</plugin>
+			<plugin>
+				<!-- enable tycho build extension -->
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<executionEnvironment>JavaSE-1.8</executionEnvironment>
+					<!--
+					<target>
+						<artifact>
+							<groupId>org.nasdanika.ledger</groupId>
+							<artifactId>org.nasdanika.ledger.target</artifactId>
+							<version>1.0.0-SNAPSHOT</version>
+						</artifact>
+					</target>
+					-->
+					<pomDependencies>consider</pomDependencies>
+					<!-- configure the p2 target environments for multi-platform build -->
+					<environments>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+				</configuration>
+			</plugin>
+			<!-- enable source bundle generation -->
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-source-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<executions>
+					<execution>
+						<id>plugin-source</id>
+						<goals>
+							<goal>plugin-source</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	<modules>
+	
+		<module>../org.nasdanika.ledger.feature</module>
+	
+		<module>../org.nasdanika.ledger.repository</module>
+	
+		<module>../org.nasdanika.ledger</module>
+	
+		<module>../org.nasdanika.ledger.ui.driver.actors</module>
+	
+		<module>../org.nasdanika.ledger.ui.driver.pages</module>
+	
+		<module>../org.nasdanika.ledger.ui.driver.actors.impl</module>
+	
+		<module>../org.nasdanika.ledger.ui.driver.pages.impl</module>
+	
+		<module>../org.nasdanika.ledger.app</module>
+	
+		<module>../org.nasdanika.ledger.tests</module>
+	
+		<module>../org.nasdanika.ledger.tests.feature</module>
+	
+	</modules>
+</project>

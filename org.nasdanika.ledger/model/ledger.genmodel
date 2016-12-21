@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.nasdanika.ledger/src" modelPluginID="org.nasdanika.ledger"
+    modelName="ledger" rootExtendsInterface="org.eclipse.emf.cdo.CDOObject" rootExtendsClass="org.eclipse.emf.internal.cdo.CDOObjectImpl"
+    reflectiveDelegation="true" importerID="org.eclipse.emf.importer.cdo" featureDelegation="Reflective"
+    complianceLevel="8.0" suppressGenModelAnnotations="false" copyrightFields="false"
+    providerRootExtendsClass="org.eclipse.emf.cdo.edit.CDOItemProviderAdapter" operationReflection="true"
+    importOrganizing="true">
+  <foreignModel>ledger.ecore</foreignModel>
+  <modelPluginVariables>CDO=org.eclipse.emf.cdo</modelPluginVariables>
+  <genPackages prefix="Ledger" basePackage="org.nasdanika" disposableProviderFactory="true"
+      ecorePackage="ledger.ecore#/">
+    <genClasses ecoreClass="ledger.ecore#//Ledger"/>
+  </genPackages>
+</genmodel:GenModel>
