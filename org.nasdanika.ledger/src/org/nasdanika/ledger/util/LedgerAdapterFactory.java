@@ -72,6 +72,14 @@ public class LedgerAdapterFactory extends AdapterFactoryImpl {
 				return createLedgerAdapter();
 			}
 			@Override
+			public Adapter caseУчётныйЦентр(УчётныйЦентр object) {
+				return createУчётныйЦентрAdapter();
+			}
+			@Override
+			public Adapter caseЭлементМодели(ЭлементМодели object) {
+				return createЭлементМоделиAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -102,6 +110,34 @@ public class LedgerAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createLedgerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.ledger.УчётныйЦентр <em>Учётный Центр</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.ledger.УчётныйЦентр
+	 * @generated
+	 */
+	public Adapter createУчётныйЦентрAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.ledger.ЭлементМодели <em>Элемент Модели</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.ledger.ЭлементМодели
+	 * @generated
+	 */
+	public Adapter createЭлементМоделиAdapter() {
 		return null;
 	}
 

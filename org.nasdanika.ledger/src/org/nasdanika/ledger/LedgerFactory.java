@@ -31,6 +31,15 @@ public interface LedgerFactory extends EFactory {
 	Ledger createLedger();
 
 	/**
+	 * Returns a new object of class '<em>Учётный Центр</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Учётный Центр</em>'.
+	 * @generated
+	 */
+	УчётныйЦентр createУчётныйЦентр();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

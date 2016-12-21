@@ -72,6 +72,19 @@ public class LedgerSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case LedgerPackage.УЧЁТНЫЙ_ЦЕНТР: {
+				УчётныйЦентр учётныйЦентр = (УчётныйЦентр)theEObject;
+				T result = caseУчётныйЦентр(учётныйЦентр);
+				if (result == null) result = caseЭлементМодели(учётныйЦентр);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case LedgerPackage.ЭЛЕМЕНТ_МОДЕЛИ: {
+				ЭлементМодели элементМодели = (ЭлементМодели)theEObject;
+				T result = caseЭлементМодели(элементМодели);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -88,6 +101,36 @@ public class LedgerSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseLedger(Ledger object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Учётный Центр</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Учётный Центр</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseУчётныйЦентр(УчётныйЦентр object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Элемент Модели</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Элемент Модели</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseЭлементМодели(ЭлементМодели object) {
 		return null;
 	}
 

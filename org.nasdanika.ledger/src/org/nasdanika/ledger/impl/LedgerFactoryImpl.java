@@ -57,6 +57,7 @@ public class LedgerFactoryImpl extends EFactoryImpl implements LedgerFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case LedgerPackage.LEDGER: return (EObject)createLedger();
+			case LedgerPackage.УЧЁТНЫЙ_ЦЕНТР: return (EObject)createУчётныйЦентр();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -70,6 +71,16 @@ public class LedgerFactoryImpl extends EFactoryImpl implements LedgerFactory {
 	public Ledger createLedger() {
 		LedgerImpl ledger = new LedgerImpl();
 		return ledger;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public УчётныйЦентр createУчётныйЦентр() {
+		УчётныйЦентрImpl учётныйЦентр = new УчётныйЦентрImpl();
+		return учётныйЦентр;
 	}
 
 	/**

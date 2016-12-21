@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
-    modelDirectory="/org.nasdanika.ledger/src" modelPluginID="org.nasdanika.ledger"
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.nasdanika.ledger/src" modelPluginID="org.nasdanika.ledger"
     modelName="ledger" rootExtendsInterface="org.eclipse.emf.cdo.CDOObject" rootExtendsClass="org.eclipse.emf.internal.cdo.CDOObjectImpl"
     reflectiveDelegation="true" importerID="org.eclipse.emf.importer.cdo" featureDelegation="Reflective"
     complianceLevel="8.0" suppressGenModelAnnotations="false" copyrightFields="false"
@@ -11,5 +11,10 @@
   <genPackages prefix="Ledger" basePackage="org.nasdanika" disposableProviderFactory="true"
       ecorePackage="ledger.ecore#/">
     <genClasses ecoreClass="ledger.ecore#//Ledger"/>
+    <genClasses ecoreClass="ledger.ecore#//УчётныйЦентр"/>
+    <genClasses ecoreClass="ledger.ecore#//ЭлементМодели">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//ЭлементМодели/наименование"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//ЭлементМодели/описание"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

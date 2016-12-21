@@ -5,4 +5,9 @@
     <details key="documentation" value="Тест русской документации в модели."/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Ledger"/>
+  <eClassifiers xsi:type="ecore:EClass" name="УчётныйЦентр" eSuperTypes="#//ЭлементМодели"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ЭлементМодели" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="наименование" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="описание" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
 </ecore:EPackage>

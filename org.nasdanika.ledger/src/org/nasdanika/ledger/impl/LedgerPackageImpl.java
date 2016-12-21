@@ -2,6 +2,7 @@
  */
 package org.nasdanika.ledger.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -10,6 +11,8 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.nasdanika.ledger.Ledger;
 import org.nasdanika.ledger.LedgerFactory;
 import org.nasdanika.ledger.LedgerPackage;
+import org.nasdanika.ledger.УчётныйЦентр;
+import org.nasdanika.ledger.ЭлементМодели;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,6 +27,19 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * @generated
 	 */
 	private EClass ledgerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass учётныйЦентрEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass элементМоделиEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -100,6 +116,42 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getУчётныйЦентр() {
+		return учётныйЦентрEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getЭлементМодели() {
+		return элементМоделиEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getЭлементМодели_Наименование() {
+		return (EAttribute)элементМоделиEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getЭлементМодели_Описание() {
+		return (EAttribute)элементМоделиEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public LedgerFactory getLedgerFactory() {
 		return (LedgerFactory)getEFactoryInstance();
 	}
@@ -124,6 +176,12 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 
 		// Create classes and their features
 		ledgerEClass = createEClass(LEDGER);
+
+		учётныйЦентрEClass = createEClass(УЧЁТНЫЙ_ЦЕНТР);
+
+		элементМоделиEClass = createEClass(ЭЛЕМЕНТ_МОДЕЛИ);
+		createEAttribute(элементМоделиEClass, ЭЛЕМЕНТ_МОДЕЛИ__НАИМЕНОВАНИЕ);
+		createEAttribute(элементМоделиEClass, ЭЛЕМЕНТ_МОДЕЛИ__ОПИСАНИЕ);
 	}
 
 	/**
@@ -154,9 +212,16 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		учётныйЦентрEClass.getESuperTypes().add(this.getЭлементМодели());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(ledgerEClass, Ledger.class, "Ledger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(учётныйЦентрEClass, УчётныйЦентр.class, "УчётныйЦентр", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(элементМоделиEClass, ЭлементМодели.class, "ЭлементМодели", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getЭлементМодели_Наименование(), ecorePackage.getEString(), "наименование", null, 0, 1, ЭлементМодели.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getЭлементМодели_Описание(), ecorePackage.getEString(), "описание", null, 0, 1, ЭлементМодели.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
