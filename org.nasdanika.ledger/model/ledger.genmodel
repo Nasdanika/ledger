@@ -11,10 +11,19 @@
   <genPackages prefix="Ledger" basePackage="org.nasdanika" disposableProviderFactory="true"
       ecorePackage="ledger.ecore#/">
     <genClasses ecoreClass="ledger.ecore#//Ledger"/>
-    <genClasses ecoreClass="ledger.ecore#//УчётныйЦентр"/>
-    <genClasses ecoreClass="ledger.ecore#//ЭлементМодели">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//ЭлементМодели/наименование"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//ЭлементМодели/описание"/>
+    <genClasses ecoreClass="ledger.ecore#//Hub"/>
+    <genClasses ecoreClass="ledger.ecore#//ModelElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//ModelElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//ModelElement/description"/>
     </genClasses>
+    <genClasses ecoreClass="ledger.ecore#//User"/>
+    <genClasses ecoreClass="ledger.ecore#//Organization"/>
+    <genClasses ecoreClass="ledger.ecore#//LegderContainer"/>
+    <genClasses ecoreClass="ledger.ecore#//Счёт"/>
+    <genClasses ecoreClass="ledger.ecore#//Asset"/>
+    <genClasses ecoreClass="ledger.ecore#//Operation"/>
+    <genClasses ecoreClass="ledger.ecore#//Item"/>
+    <genClasses ecoreClass="ledger.ecore#//Rate"/>
+    <genClasses ecoreClass="ledger.ecore#//Party"/>
   </genPackages>
 </genmodel:GenModel>

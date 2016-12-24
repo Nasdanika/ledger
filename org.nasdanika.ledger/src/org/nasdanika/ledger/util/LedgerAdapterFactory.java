@@ -72,12 +72,48 @@ public class LedgerAdapterFactory extends AdapterFactoryImpl {
 				return createLedgerAdapter();
 			}
 			@Override
-			public Adapter caseУчётныйЦентр(УчётныйЦентр object) {
-				return createУчётныйЦентрAdapter();
+			public Adapter caseHub(Hub object) {
+				return createHubAdapter();
 			}
 			@Override
-			public Adapter caseЭлементМодели(ЭлементМодели object) {
-				return createЭлементМоделиAdapter();
+			public Adapter caseModelElement(ModelElement object) {
+				return createModelElementAdapter();
+			}
+			@Override
+			public Adapter caseUser(User object) {
+				return createUserAdapter();
+			}
+			@Override
+			public Adapter caseOrganization(Organization object) {
+				return createOrganizationAdapter();
+			}
+			@Override
+			public Adapter caseLegderContainer(LegderContainer object) {
+				return createLegderContainerAdapter();
+			}
+			@Override
+			public Adapter caseСчёт(Счёт object) {
+				return createСчётAdapter();
+			}
+			@Override
+			public Adapter caseAsset(Asset object) {
+				return createAssetAdapter();
+			}
+			@Override
+			public Adapter caseOperation(Operation object) {
+				return createOperationAdapter();
+			}
+			@Override
+			public Adapter caseItem(Item object) {
+				return createItemAdapter();
+			}
+			@Override
+			public Adapter caseRate(Rate object) {
+				return createRateAdapter();
+			}
+			@Override
+			public Adapter caseParty(Party object) {
+				return createPartyAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -114,30 +150,156 @@ public class LedgerAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.ledger.УчётныйЦентр <em>Учётный Центр</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.ledger.Hub <em>Hub</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.nasdanika.ledger.УчётныйЦентр
+	 * @see org.nasdanika.ledger.Hub
 	 * @generated
 	 */
-	public Adapter createУчётныйЦентрAdapter() {
+	public Adapter createHubAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.ledger.ЭлементМодели <em>Элемент Модели</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.ledger.ModelElement <em>Model Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.nasdanika.ledger.ЭлементМодели
+	 * @see org.nasdanika.ledger.ModelElement
 	 * @generated
 	 */
-	public Adapter createЭлементМоделиAdapter() {
+	public Adapter createModelElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.ledger.User <em>User</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.ledger.User
+	 * @generated
+	 */
+	public Adapter createUserAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.ledger.Organization <em>Organization</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.ledger.Organization
+	 * @generated
+	 */
+	public Adapter createOrganizationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.ledger.LegderContainer <em>Legder Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.ledger.LegderContainer
+	 * @generated
+	 */
+	public Adapter createLegderContainerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.ledger.Счёт <em>Счёт</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.ledger.Счёт
+	 * @generated
+	 */
+	public Adapter createСчётAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.ledger.Asset <em>Asset</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.ledger.Asset
+	 * @generated
+	 */
+	public Adapter createAssetAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.ledger.Operation <em>Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.ledger.Operation
+	 * @generated
+	 */
+	public Adapter createOperationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.ledger.Item <em>Item</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.ledger.Item
+	 * @generated
+	 */
+	public Adapter createItemAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.ledger.Rate <em>Rate</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.ledger.Rate
+	 * @generated
+	 */
+	public Adapter createRateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.ledger.Party <em>Party</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.ledger.Party
+	 * @generated
+	 */
+	public Adapter createPartyAdapter() {
 		return null;
 	}
 

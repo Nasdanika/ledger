@@ -31,13 +31,85 @@ public interface LedgerFactory extends EFactory {
 	Ledger createLedger();
 
 	/**
-	 * Returns a new object of class '<em>Учётный Центр</em>'.
+	 * Returns a new object of class '<em>Hub</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Учётный Центр</em>'.
+	 * @return a new object of class '<em>Hub</em>'.
 	 * @generated
 	 */
-	УчётныйЦентр createУчётныйЦентр();
+	Hub createHub();
+
+	/**
+	 * Returns a new object of class '<em>User</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>User</em>'.
+	 * @generated
+	 */
+	User createUser();
+
+	/**
+	 * Returns a new object of class '<em>Organization</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Organization</em>'.
+	 * @generated
+	 */
+	Organization createOrganization();
+
+	/**
+	 * Returns a new object of class '<em>Счёт</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Счёт</em>'.
+	 * @generated
+	 */
+	Счёт createСчёт();
+
+	/**
+	 * Returns a new object of class '<em>Asset</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Asset</em>'.
+	 * @generated
+	 */
+	Asset createAsset();
+
+	/**
+	 * Returns a new object of class '<em>Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Operation</em>'.
+	 * @generated
+	 */
+	Operation createOperation();
+
+	/**
+	 * Returns a new object of class '<em>Item</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Item</em>'.
+	 * @generated
+	 */
+	Item createItem();
+
+	/**
+	 * Returns a new object of class '<em>Rate</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Rate</em>'.
+	 * @generated
+	 */
+	Rate createRate();
+
+	/**
+	 * Returns a new object of class '<em>Party</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Party</em>'.
+	 * @generated
+	 */
+	Party createParty();
 
 	/**
 	 * Returns the package supported by this factory.

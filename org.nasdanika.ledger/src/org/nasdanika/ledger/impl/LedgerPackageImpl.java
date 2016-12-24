@@ -7,12 +7,20 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
+import org.nasdanika.ledger.Asset;
+import org.nasdanika.ledger.Hub;
+import org.nasdanika.ledger.Item;
 import org.nasdanika.ledger.Ledger;
 import org.nasdanika.ledger.LedgerFactory;
 import org.nasdanika.ledger.LedgerPackage;
-import org.nasdanika.ledger.УчётныйЦентр;
-import org.nasdanika.ledger.ЭлементМодели;
+import org.nasdanika.ledger.LegderContainer;
+import org.nasdanika.ledger.ModelElement;
+import org.nasdanika.ledger.Operation;
+import org.nasdanika.ledger.Organization;
+import org.nasdanika.ledger.Party;
+import org.nasdanika.ledger.Rate;
+import org.nasdanika.ledger.User;
+import org.nasdanika.ledger.Счёт;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,13 +41,77 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass учётныйЦентрEClass = null;
+	private EClass hubEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass элементМоделиEClass = null;
+	private EClass modelElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass userEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass organizationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass legderContainerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass счётEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass assetEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass operationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass itemEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass rateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass partyEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -116,8 +188,8 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getУчётныйЦентр() {
-		return учётныйЦентрEClass;
+	public EClass getHub() {
+		return hubEClass;
 	}
 
 	/**
@@ -125,8 +197,8 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getЭлементМодели() {
-		return элементМоделиEClass;
+	public EClass getModelElement() {
+		return modelElementEClass;
 	}
 
 	/**
@@ -134,8 +206,8 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getЭлементМодели_Наименование() {
-		return (EAttribute)элементМоделиEClass.getEStructuralFeatures().get(0);
+	public EAttribute getModelElement_Name() {
+		return (EAttribute)modelElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -143,8 +215,89 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getЭлементМодели_Описание() {
-		return (EAttribute)элементМоделиEClass.getEStructuralFeatures().get(1);
+	public EAttribute getModelElement_Description() {
+		return (EAttribute)modelElementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getUser() {
+		return userEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getOrganization() {
+		return organizationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLegderContainer() {
+		return legderContainerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getСчёт() {
+		return счётEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAsset() {
+		return assetEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getOperation() {
+		return operationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getItem() {
+		return itemEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRate() {
+		return rateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getParty() {
+		return partyEClass;
 	}
 
 	/**
@@ -177,11 +330,29 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		// Create classes and their features
 		ledgerEClass = createEClass(LEDGER);
 
-		учётныйЦентрEClass = createEClass(УЧЁТНЫЙ_ЦЕНТР);
+		hubEClass = createEClass(HUB);
 
-		элементМоделиEClass = createEClass(ЭЛЕМЕНТ_МОДЕЛИ);
-		createEAttribute(элементМоделиEClass, ЭЛЕМЕНТ_МОДЕЛИ__НАИМЕНОВАНИЕ);
-		createEAttribute(элементМоделиEClass, ЭЛЕМЕНТ_МОДЕЛИ__ОПИСАНИЕ);
+		modelElementEClass = createEClass(MODEL_ELEMENT);
+		createEAttribute(modelElementEClass, MODEL_ELEMENT__NAME);
+		createEAttribute(modelElementEClass, MODEL_ELEMENT__DESCRIPTION);
+
+		userEClass = createEClass(USER);
+
+		organizationEClass = createEClass(ORGANIZATION);
+
+		legderContainerEClass = createEClass(LEGDER_CONTAINER);
+
+		счётEClass = createEClass(СЧЁТ);
+
+		assetEClass = createEClass(ASSET);
+
+		operationEClass = createEClass(OPERATION);
+
+		itemEClass = createEClass(ITEM);
+
+		rateEClass = createEClass(RATE);
+
+		partyEClass = createEClass(PARTY);
 	}
 
 	/**
@@ -212,16 +383,34 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		учётныйЦентрEClass.getESuperTypes().add(this.getЭлементМодели());
+		hubEClass.getESuperTypes().add(this.getModelElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(ledgerEClass, Ledger.class, "Ledger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(учётныйЦентрEClass, УчётныйЦентр.class, "УчётныйЦентр", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(hubEClass, Hub.class, "Hub", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(элементМоделиEClass, ЭлементМодели.class, "ЭлементМодели", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getЭлементМодели_Наименование(), ecorePackage.getEString(), "наименование", null, 0, 1, ЭлементМодели.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getЭлементМодели_Описание(), ecorePackage.getEString(), "описание", null, 0, 1, ЭлементМодели.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(modelElementEClass, ModelElement.class, "ModelElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getModelElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, ModelElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getModelElement_Description(), ecorePackage.getEString(), "description", null, 0, 1, ModelElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(userEClass, User.class, "User", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(organizationEClass, Organization.class, "Organization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(legderContainerEClass, LegderContainer.class, "LegderContainer", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(счётEClass, Счёт.class, "Счёт", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(assetEClass, Asset.class, "Asset", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(operationEClass, Operation.class, "Operation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(itemEClass, Item.class, "Item", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(rateEClass, Rate.class, "Rate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(partyEClass, Party.class, "Party", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

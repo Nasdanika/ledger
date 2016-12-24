@@ -57,7 +57,15 @@ public class LedgerFactoryImpl extends EFactoryImpl implements LedgerFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case LedgerPackage.LEDGER: return (EObject)createLedger();
-			case LedgerPackage.УЧЁТНЫЙ_ЦЕНТР: return (EObject)createУчётныйЦентр();
+			case LedgerPackage.HUB: return (EObject)createHub();
+			case LedgerPackage.USER: return (EObject)createUser();
+			case LedgerPackage.ORGANIZATION: return (EObject)createOrganization();
+			case LedgerPackage.СЧЁТ: return (EObject)createСчёт();
+			case LedgerPackage.ASSET: return (EObject)createAsset();
+			case LedgerPackage.OPERATION: return (EObject)createOperation();
+			case LedgerPackage.ITEM: return (EObject)createItem();
+			case LedgerPackage.RATE: return (EObject)createRate();
+			case LedgerPackage.PARTY: return (EObject)createParty();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -78,9 +86,89 @@ public class LedgerFactoryImpl extends EFactoryImpl implements LedgerFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public УчётныйЦентр createУчётныйЦентр() {
-		УчётныйЦентрImpl учётныйЦентр = new УчётныйЦентрImpl();
-		return учётныйЦентр;
+	public Hub createHub() {
+		HubImpl hub = new HubImpl();
+		return hub;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public User createUser() {
+		UserImpl user = new UserImpl();
+		return user;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Organization createOrganization() {
+		OrganizationImpl organization = new OrganizationImpl();
+		return organization;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Счёт createСчёт() {
+		СчётImpl счёт = new СчётImpl();
+		return счёт;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Asset createAsset() {
+		AssetImpl asset = new AssetImpl();
+		return asset;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Operation createOperation() {
+		OperationImpl operation = new OperationImpl();
+		return operation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Item createItem() {
+		ItemImpl item = new ItemImpl();
+		return item;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Rate createRate() {
+		RateImpl rate = new RateImpl();
+		return rate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Party createParty() {
+		PartyImpl party = new PartyImpl();
+		return party;
 	}
 
 	/**

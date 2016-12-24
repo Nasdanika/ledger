@@ -1,5 +1,8 @@
 package org.nasdanika.ledger.app;
 
+import java.nio.charset.Charset;
+import java.util.Locale;
+
 import org.eclipse.emf.cdo.common.model.CDOPackageRegistry;
 import org.eclipse.emf.cdo.eresource.CDOResource;
 import org.eclipse.emf.cdo.session.CDOSession;
