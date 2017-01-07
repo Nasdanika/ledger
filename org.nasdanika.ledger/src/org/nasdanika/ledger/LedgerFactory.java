@@ -22,40 +22,58 @@ public interface LedgerFactory extends EFactory {
 	LedgerFactory eINSTANCE = org.nasdanika.ledger.impl.LedgerFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Ledger</em>'.
+	 * Returns a new object of class '<em>Журнал Операций</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Ledger</em>'.
+	 * @return a new object of class '<em>Журнал Операций</em>'.
 	 * @generated
 	 */
-	Ledger createLedger();
+	ЖурналОпераций createЖурналОпераций();
 
 	/**
-	 * Returns a new object of class '<em>Hub</em>'.
+	 * Returns a new object of class '<em>Учётный Центр</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Hub</em>'.
+	 * @return a new object of class '<em>Учётный Центр</em>'.
 	 * @generated
 	 */
-	Hub createHub();
+	УчётныйЦентр createУчётныйЦентр();
 
 	/**
-	 * Returns a new object of class '<em>User</em>'.
+	 * Returns a new object of class '<em>Пользователь</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>User</em>'.
+	 * @return a new object of class '<em>Пользователь</em>'.
 	 * @generated
 	 */
-	User createUser();
+	Пользователь createПользователь();
 
 	/**
-	 * Returns a new object of class '<em>Organization</em>'.
+	 * Returns a new object of class '<em>Гость</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Organization</em>'.
+	 * @return a new object of class '<em>Гость</em>'.
 	 * @generated
 	 */
-	Organization createOrganization();
+	Гость createГость();
+
+	/**
+	 * Returns a new object of class '<em>Право</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Право</em>'.
+	 * @generated
+	 */
+	Право createПраво();
+
+	/**
+	 * Returns a new object of class '<em>Организация</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Организация</em>'.
+	 * @generated
+	 */
+	Организация createОрганизация();
 
 	/**
 	 * Returns a new object of class '<em>Счёт</em>'.
@@ -67,49 +85,103 @@ public interface LedgerFactory extends EFactory {
 	Счёт createСчёт();
 
 	/**
-	 * Returns a new object of class '<em>Asset</em>'.
+	 * Returns a new object of class '<em>Актив</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Asset</em>'.
+	 * @return a new object of class '<em>Актив</em>'.
 	 * @generated
 	 */
-	Asset createAsset();
+	Актив createАктив();
 
 	/**
-	 * Returns a new object of class '<em>Operation</em>'.
+	 * Returns a new object of class '<em>Свойство Актива</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Operation</em>'.
+	 * @return a new object of class '<em>Свойство Актива</em>'.
 	 * @generated
 	 */
-	Operation createOperation();
+	СвойствоАктива createСвойствоАктива();
 
 	/**
-	 * Returns a new object of class '<em>Item</em>'.
+	 * Returns a new object of class '<em>Значение Свойства Актива</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Item</em>'.
+	 * @return a new object of class '<em>Значение Свойства Актива</em>'.
 	 * @generated
 	 */
-	Item createItem();
+	ЗначениеСвойстваАктива createЗначениеСвойстваАктива();
 
 	/**
-	 * Returns a new object of class '<em>Rate</em>'.
+	 * Returns a new object of class '<em>Фиксированный Курс</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Rate</em>'.
+	 * @return a new object of class '<em>Фиксированный Курс</em>'.
 	 * @generated
 	 */
-	Rate createRate();
+	ФиксированныйКурс createФиксированныйКурс();
 
 	/**
-	 * Returns a new object of class '<em>Party</em>'.
+	 * Returns a new object of class '<em>Вычислитель Курса</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Party</em>'.
+	 * @return a new object of class '<em>Вычислитель Курса</em>'.
 	 * @generated
 	 */
-	Party createParty();
+	ВычислительКурса createВычислительКурса();
+
+	/**
+	 * Returns a new object of class '<em>Операция</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Операция</em>'.
+	 * @generated
+	 */
+	Операция createОперация();
+
+	/**
+	 * Returns a new object of class '<em>Проводка</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Проводка</em>'.
+	 * @generated
+	 */
+	Проводка createПроводка();
+
+	/**
+	 * Returns a new object of class '<em>Субъект</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Субъект</em>'.
+	 * @generated
+	 */
+	Субъект createСубъект();
+
+	/**
+	 * Returns a new object of class '<em>Комментарий</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Комментарий</em>'.
+	 * @generated
+	 */
+	Комментарий createКомментарий();
+
+	/**
+	 * Returns a new object of class '<em>Ссылка На Изображение</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Ссылка На Изображение</em>'.
+	 * @generated
+	 */
+	СсылкаНаИзображение createСсылкаНаИзображение();
+
+	/**
+	 * Returns a new object of class '<em>Встроенное Изображение</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Встроенное Изображение</em>'.
+	 * @generated
+	 */
+	ВстроенноеИзображение createВстроенноеИзображение();
 
 	/**
 	 * Returns the package supported by this factory.

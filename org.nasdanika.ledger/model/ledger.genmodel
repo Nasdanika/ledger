@@ -4,26 +4,109 @@
     modelName="ledger" rootExtendsInterface="org.eclipse.emf.cdo.CDOObject" rootExtendsClass="org.eclipse.emf.internal.cdo.CDOObjectImpl"
     reflectiveDelegation="true" importerID="org.eclipse.emf.importer.cdo" featureDelegation="Reflective"
     complianceLevel="8.0" suppressGenModelAnnotations="false" copyrightFields="false"
-    providerRootExtendsClass="org.eclipse.emf.cdo.edit.CDOItemProviderAdapter" operationReflection="true"
-    importOrganizing="true">
+    providerRootExtendsClass="org.eclipse.emf.cdo.edit.CDOItemProviderAdapter" usedGenPackages="../../org.nasdanika.cdo.security/model/security.genmodel#//security"
+    operationReflection="true" importOrganizing="true">
   <foreignModel>ledger.ecore</foreignModel>
   <modelPluginVariables>CDO=org.eclipse.emf.cdo</modelPluginVariables>
   <genPackages prefix="Ledger" basePackage="org.nasdanika" disposableProviderFactory="true"
       ecorePackage="ledger.ecore#/">
-    <genClasses ecoreClass="ledger.ecore#//Ledger"/>
-    <genClasses ecoreClass="ledger.ecore#//УчётныйЦентр"/>
+    <genDataTypes ecoreDataType="ledger.ecore#//КурсАктива"/>
     <genClasses ecoreClass="ledger.ecore#//ЭлементМодели">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//ЭлементМодели/наименование"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//ЭлементМодели/описание"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ledger.ecore#//ЭлементМодели/комментарии"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ledger.ecore#//ЭлементМодели/изображение"/>
     </genClasses>
-    <genClasses ecoreClass="ledger.ecore#//User"/>
-    <genClasses ecoreClass="ledger.ecore#//Organization"/>
-    <genClasses ecoreClass="ledger.ecore#//LegderContainer"/>
-    <genClasses ecoreClass="ledger.ecore#//Счёт"/>
-    <genClasses ecoreClass="ledger.ecore#//Asset"/>
-    <genClasses ecoreClass="ledger.ecore#//Operation"/>
-    <genClasses ecoreClass="ledger.ecore#//Item"/>
-    <genClasses ecoreClass="ledger.ecore#//Rate"/>
+    <genClasses ecoreClass="ledger.ecore#//Комментарий">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ledger.ecore#//Комментарий/автор"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//Комментарий/содержание"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//Комментарий/дата"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ledger.ecore#//Изображение"/>
+    <genClasses ecoreClass="ledger.ecore#//СсылкаНаИзображение">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//СсылкаНаИзображение/ссылка"/>
+    </genClasses>
+    <genClasses ecoreClass="ledger.ecore#//ВстроенноеИзображение">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//ВстроенноеИзображение/содержание"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//ВстроенноеИзображение/тип"/>
+    </genClasses>
+    <genClasses ecoreClass="ledger.ecore#//УчётныйЦентр">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ledger.ecore#//УчётныйЦентр/хранителиЖурналовОпераций"/>
+    </genClasses>
+    <genClasses ecoreClass="ledger.ecore#//ХранительЖурналовОпераций">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ledger.ecore#//ХранительЖурналовОпераций/журналыОпераций"/>
+    </genClasses>
+    <genClasses ecoreClass="ledger.ecore#//Пользователь">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ledger.ecore#//Пользователь/права"/>
+    </genClasses>
+    <genClasses ecoreClass="ledger.ecore#//Гость"/>
+    <genClasses ecoreClass="ledger.ecore#//Право">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ledger.ecore#//Право/элементМодели"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//Право/действия"/>
+    </genClasses>
+    <genClasses ecoreClass="ledger.ecore#//Организация"/>
+    <genClasses ecoreClass="ledger.ecore#//ЖурналОпераций">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ledger.ecore#//ЖурналОпераций/операции"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ledger.ecore#//ЖурналОпераций/счёта"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ledger.ecore#//ЖурналОпераций/активы"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ledger.ecore#//ЖурналОпераций/субъекты"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ledger.ecore#//ЖурналОпераций/отчётныеАктивы"/>
+    </genClasses>
+    <genClasses ecoreClass="ledger.ecore#//Счёт">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ledger.ecore#//Счёт/субСчета"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ledger.ecore#//Счёт/активы"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//Счёт/группа"/>
+    </genClasses>
+    <genClasses ecoreClass="ledger.ecore#//Актив">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ledger.ecore#//Актив/источникиКурсов"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ledger.ecore#//Актив/субАктивы"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//Актив/точность"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ledger.ecore#//Актив/свойства"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//Актив/единицаИзмерения"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//Актив/группа"/>
+    </genClasses>
+    <genClasses ecoreClass="ledger.ecore#//СвойствоАктива">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//СвойствоАктива/наименование"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//СвойствоАктива/описание"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//СвойствоАктива/тип"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//СвойствоАктива/нижняяГраница"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//СвойствоАктива/верхняяГраница"/>
+    </genClasses>
+    <genClasses ecoreClass="ledger.ecore#//ЗначениеСвойстваАктива">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ledger.ecore#//ЗначениеСвойстваАктива/свойство"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//ЗначениеСвойстваАктива/значения"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ledger.ecore#//ИсточникКурсаАктива">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//ИсточникКурсаАктива/началоПериодаДействия"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//ИсточникКурсаАктива/конецПериодаДействия"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ledger.ecore#//ИсточникКурсаАктива/базовыйАктив"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//ИсточникКурсаАктива/комментарий"/>
+      <genOperations ecoreOperation="ledger.ecore#//ИсточникКурсаАктива/получитьКурс">
+        <genParameters ecoreParameter="ledger.ecore#//ИсточникКурсаАктива/получитьКурс/дата"/>
+        <genParameters ecoreParameter="ledger.ecore#//ИсточникКурсаАктива/получитьКурс/количество"/>
+        <genParameters ecoreParameter="ledger.ecore#//ИсточникКурсаАктива/получитьКурс/значенияСвойств"/>
+        <genParameters ecoreParameter="ledger.ecore#//ИсточникКурсаАктива/получитьКурс/базовыйКурс"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="ledger.ecore#//ФиксированныйКурс">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//ФиксированныйКурс/курс"/>
+    </genClasses>
+    <genClasses ecoreClass="ledger.ecore#//ВычислительКурса">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//ВычислительКурса/код"/>
+    </genClasses>
+    <genClasses ecoreClass="ledger.ecore#//Операция">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ledger.ecore#//Операция/проводки"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ledger.ecore#//Операция/создатель"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//Операция/первичныйВвод"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ledger.ecore#//Операция/субъекты"/>
+    </genClasses>
+    <genClasses ecoreClass="ledger.ecore#//Проводка">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//Проводка/сверено"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ledger.ecore#//Проводка/счёт"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ledger.ecore#//Проводка/актив"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//Проводка/количество"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ledger.ecore#//Проводка/значенияСвойствАктива"/>
+    </genClasses>
     <genClasses ecoreClass="ledger.ecore#//Субъект"/>
   </genPackages>
 </genmodel:GenModel>

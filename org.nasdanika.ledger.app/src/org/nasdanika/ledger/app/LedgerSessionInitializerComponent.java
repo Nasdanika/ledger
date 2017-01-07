@@ -1,18 +1,12 @@
 package org.nasdanika.ledger.app;
 
-import java.nio.charset.Charset;
-import java.util.Locale;
-
 import org.eclipse.emf.cdo.common.model.CDOPackageRegistry;
 import org.eclipse.emf.cdo.eresource.CDOResource;
 import org.eclipse.emf.cdo.session.CDOSession;
 import org.eclipse.emf.cdo.transaction.CDOTransaction;
 import org.eclipse.emf.cdo.util.CommitException;
 import org.nasdanika.cdo.CDOSessionInitializer;
-
-import org.nasdanika.ledger.LedgerFactory;
 import org.nasdanika.ledger.LedgerPackage;
-import org.nasdanika.ledger.Ledger;
 
 public class LedgerSessionInitializerComponent implements CDOSessionInitializer {
 	

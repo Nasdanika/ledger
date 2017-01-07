@@ -3,26 +3,23 @@
 package org.nasdanika.ledger.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.internal.cdo.CDOObjectImpl;
-
 import org.nasdanika.ledger.LedgerPackage;
-import org.nasdanika.ledger.Rate;
+import org.nasdanika.ledger.Субъект;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Rate</b></em>'.
+ * An implementation of the model object '<em><b>Субъект</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class RateImpl extends CDOObjectImpl implements Rate {
+public class СубъектImpl extends ЭлементМоделиImpl implements Субъект {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RateImpl() {
+	protected СубъектImpl() {
 		super();
 	}
 
@@ -33,17 +30,7 @@ public class RateImpl extends CDOObjectImpl implements Rate {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return LedgerPackage.Literals.RATE;
+		return LedgerPackage.Literals.СУБЪЕКТ;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected int eStaticFeatureCount() {
-		return 0;
-	}
-
-} //RateImpl
+} //СубъектImpl

@@ -38,6 +38,12 @@
 			</repository>		
 		
 			<repository>
+				<id>webtest</id>
+				<url>http://www.nasdanika.org/products/webtest/repository</url>
+				<layout>p2</layout>
+			</repository>		
+		
+			<repository>
 				<id>jetty</id>
 				<url>http://download.eclipse.org/jetty/updates/jetty-bundles-9.x/9.3.9.v20160517</url>
 				<layout>p2</layout>

@@ -6,23 +6,23 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.internal.cdo.CDOObjectImpl;
 
-import org.nasdanika.ledger.Asset;
 import org.nasdanika.ledger.LedgerPackage;
+import org.nasdanika.ledger.Изображение;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Asset</b></em>'.
+ * An implementation of the model object '<em><b>Изображение</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class AssetImpl extends CDOObjectImpl implements Asset {
+public abstract class ИзображениеImpl extends CDOObjectImpl implements Изображение {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AssetImpl() {
+	protected ИзображениеImpl() {
 		super();
 	}
 
@@ -33,7 +33,7 @@ public class AssetImpl extends CDOObjectImpl implements Asset {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return LedgerPackage.Literals.ASSET;
+		return LedgerPackage.Literals.ИЗОБРАЖЕНИЕ;
 	}
 
 	/**
@@ -46,4 +46,4 @@ public class AssetImpl extends CDOObjectImpl implements Asset {
 		return 0;
 	}
 
-} //AssetImpl
+} //ИзображениеImpl

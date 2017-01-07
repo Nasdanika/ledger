@@ -3,26 +3,23 @@
 package org.nasdanika.ledger.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.internal.cdo.CDOObjectImpl;
-
-import org.nasdanika.ledger.Item;
 import org.nasdanika.ledger.LedgerPackage;
+import org.nasdanika.ledger.Организация;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Item</b></em>'.
+ * An implementation of the model object '<em><b>Организация</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class ItemImpl extends CDOObjectImpl implements Item {
+public class ОрганизацияImpl extends ХранительЖурналовОперацийImpl implements Организация {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ItemImpl() {
+	protected ОрганизацияImpl() {
 		super();
 	}
 
@@ -33,17 +30,7 @@ public class ItemImpl extends CDOObjectImpl implements Item {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return LedgerPackage.Literals.ITEM;
+		return LedgerPackage.Literals.ОРГАНИЗАЦИЯ;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected int eStaticFeatureCount() {
-		return 0;
-	}
-
-} //ItemImpl
+} //ОрганизацияImpl

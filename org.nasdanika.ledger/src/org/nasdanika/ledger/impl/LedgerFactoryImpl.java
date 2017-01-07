@@ -3,6 +3,7 @@
 package org.nasdanika.ledger.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -56,16 +57,24 @@ public class LedgerFactoryImpl extends EFactoryImpl implements LedgerFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case LedgerPackage.LEDGER: return (EObject)createLedger();
-			case LedgerPackage.HUB: return (EObject)createHub();
-			case LedgerPackage.USER: return (EObject)createUser();
-			case LedgerPackage.ORGANIZATION: return (EObject)createOrganization();
+			case LedgerPackage.КОММЕНТАРИЙ: return (EObject)createКомментарий();
+			case LedgerPackage.ССЫЛКА_НА_ИЗОБРАЖЕНИЕ: return (EObject)createСсылкаНаИзображение();
+			case LedgerPackage.ВСТРОЕННОЕ_ИЗОБРАЖЕНИЕ: return (EObject)createВстроенноеИзображение();
+			case LedgerPackage.УЧЁТНЫЙ_ЦЕНТР: return (EObject)createУчётныйЦентр();
+			case LedgerPackage.ПОЛЬЗОВАТЕЛЬ: return (EObject)createПользователь();
+			case LedgerPackage.ГОСТЬ: return (EObject)createГость();
+			case LedgerPackage.ПРАВО: return (EObject)createПраво();
+			case LedgerPackage.ОРГАНИЗАЦИЯ: return (EObject)createОрганизация();
+			case LedgerPackage.ЖУРНАЛ_ОПЕРАЦИЙ: return (EObject)createЖурналОпераций();
 			case LedgerPackage.СЧЁТ: return (EObject)createСчёт();
-			case LedgerPackage.ASSET: return (EObject)createAsset();
-			case LedgerPackage.OPERATION: return (EObject)createOperation();
-			case LedgerPackage.ITEM: return (EObject)createItem();
-			case LedgerPackage.RATE: return (EObject)createRate();
-			case LedgerPackage.PARTY: return (EObject)createParty();
+			case LedgerPackage.АКТИВ: return (EObject)createАктив();
+			case LedgerPackage.СВОЙСТВО_АКТИВА: return (EObject)createСвойствоАктива();
+			case LedgerPackage.ЗНАЧЕНИЕ_СВОЙСТВА_АКТИВА: return (EObject)createЗначениеСвойстваАктива();
+			case LedgerPackage.ФИКСИРОВАННЫЙ_КУРС: return (EObject)createФиксированныйКурс();
+			case LedgerPackage.ВЫЧИСЛИТЕЛЬ_КУРСА: return (EObject)createВычислительКурса();
+			case LedgerPackage.ОПЕРАЦИЯ: return (EObject)createОперация();
+			case LedgerPackage.ПРОВОДКА: return (EObject)createПроводка();
+			case LedgerPackage.СУБЪЕКТ: return (EObject)createСубъект();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -76,9 +85,14 @@ public class LedgerFactoryImpl extends EFactoryImpl implements LedgerFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Ledger createLedger() {
-		LedgerImpl ledger = new LedgerImpl();
-		return ledger;
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case LedgerPackage.КУРС_АКТИВА:
+				return createКурсАктиваFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
 	}
 
 	/**
@@ -86,9 +100,14 @@ public class LedgerFactoryImpl extends EFactoryImpl implements LedgerFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Hub createHub() {
-		HubImpl hub = new HubImpl();
-		return hub;
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case LedgerPackage.КУРС_АКТИВА:
+				return convertКурсАктиваToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
 	}
 
 	/**
@@ -96,9 +115,9 @@ public class LedgerFactoryImpl extends EFactoryImpl implements LedgerFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public User createUser() {
-		UserImpl user = new UserImpl();
-		return user;
+	public ЖурналОпераций createЖурналОпераций() {
+		ЖурналОперацийImpl журналОпераций = new ЖурналОперацийImpl();
+		return журналОпераций;
 	}
 
 	/**
@@ -106,9 +125,49 @@ public class LedgerFactoryImpl extends EFactoryImpl implements LedgerFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Organization createOrganization() {
-		OrganizationImpl organization = new OrganizationImpl();
-		return organization;
+	public УчётныйЦентр createУчётныйЦентр() {
+		УчётныйЦентрImpl учётныйЦентр = new УчётныйЦентрImpl();
+		return учётныйЦентр;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Пользователь createПользователь() {
+		ПользовательImpl пользователь = new ПользовательImpl();
+		return пользователь;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Гость createГость() {
+		ГостьImpl гость = new ГостьImpl();
+		return гость;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Право createПраво() {
+		ПравоImpl право = new ПравоImpl();
+		return право;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Организация createОрганизация() {
+		ОрганизацияImpl организация = new ОрганизацияImpl();
+		return организация;
 	}
 
 	/**
@@ -126,9 +185,9 @@ public class LedgerFactoryImpl extends EFactoryImpl implements LedgerFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Asset createAsset() {
-		AssetImpl asset = new AssetImpl();
-		return asset;
+	public Актив createАктив() {
+		АктивImpl актив = new АктивImpl();
+		return актив;
 	}
 
 	/**
@@ -136,9 +195,9 @@ public class LedgerFactoryImpl extends EFactoryImpl implements LedgerFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Operation createOperation() {
-		OperationImpl operation = new OperationImpl();
-		return operation;
+	public СвойствоАктива createСвойствоАктива() {
+		СвойствоАктиваImpl свойствоАктива = new СвойствоАктиваImpl();
+		return свойствоАктива;
 	}
 
 	/**
@@ -146,9 +205,9 @@ public class LedgerFactoryImpl extends EFactoryImpl implements LedgerFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Item createItem() {
-		ItemImpl item = new ItemImpl();
-		return item;
+	public ЗначениеСвойстваАктива createЗначениеСвойстваАктива() {
+		ЗначениеСвойстваАктиваImpl значениеСвойстваАктива = new ЗначениеСвойстваАктиваImpl();
+		return значениеСвойстваАктива;
 	}
 
 	/**
@@ -156,9 +215,9 @@ public class LedgerFactoryImpl extends EFactoryImpl implements LedgerFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Rate createRate() {
-		RateImpl rate = new RateImpl();
-		return rate;
+	public ФиксированныйКурс createФиксированныйКурс() {
+		ФиксированныйКурсImpl фиксированныйКурс = new ФиксированныйКурсImpl();
+		return фиксированныйКурс;
 	}
 
 	/**
@@ -166,9 +225,87 @@ public class LedgerFactoryImpl extends EFactoryImpl implements LedgerFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Party createParty() {
-		PartyImpl party = new PartyImpl();
-		return party;
+	public ВычислительКурса createВычислительКурса() {
+		ВычислительКурсаImpl вычислительКурса = new ВычислительКурсаImpl();
+		return вычислительКурса;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Операция createОперация() {
+		ОперацияImpl операция = new ОперацияImpl();
+		return операция;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Проводка createПроводка() {
+		ПроводкаImpl проводка = new ПроводкаImpl();
+		return проводка;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Субъект createСубъект() {
+		СубъектImpl субъект = new СубъектImpl();
+		return субъект;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public КурсАктива createКурсАктиваFromString(EDataType eDataType, String initialValue) {
+		return (КурсАктива)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertКурсАктиваToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Комментарий createКомментарий() {
+		КомментарийImpl комментарий = new КомментарийImpl();
+		return комментарий;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public СсылкаНаИзображение createСсылкаНаИзображение() {
+		СсылкаНаИзображениеImpl ссылкаНаИзображение = new СсылкаНаИзображениеImpl();
+		return ссылкаНаИзображение;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ВстроенноеИзображение createВстроенноеИзображение() {
+		ВстроенноеИзображениеImpl встроенноеИзображение = new ВстроенноеИзображениеImpl();
+		return встроенноеИзображение;
 	}
 
 	/**

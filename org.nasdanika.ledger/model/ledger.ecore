@@ -2,21 +2,132 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ledger" nsURI="urn:org.nasdanika.ledger" nsPrefix="org.nasdanika.ledger">
   <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-    <details key="documentation" value="Тест русской документации в модели."/>
+    <details key="documentation" value="Пакет (package) Ledger содержит доменные модельные классы для учёта хозяйственных операций.&#xD;&#xA;[[classifier>УчётныйЦентр|Учётный Центр]] является корневым элементом модели и содержит [[classifier>ХранительЖурналовОпераций|хранителей журналов операций]] - &#xD;&#xA;[[classifier>Пользователь|пользователей]] и [[classifier>Организация|организации]].&#xD;&#xA;&#xD;&#xA;Хранитель журналов операций является абстрактным базовым классом для пользователей и организаций. Хранитель журналов операций содержит [[classifier>ЖурналОпераций|журналы операций]]. &#xD;&#xA;Пользователь это хранитель журналов операций с логином и паролем. Организации позволяют хранить журналы операций над которыми могут работать несколько пользователей. &#xD;&#xA;Пользователи могут давать доступ другим пользователям к своим журналам операций. Организации позволяют хранить журналы независимые от конкретного пользователя. Концепция пользователь-организация заимствована у GitHub и DockerHub.&#xD;&#xA;&#xD;&#xA;[[classifier>ЖурналОпераций|Журнал операций]] содержит [[classifier>Операция|операции]] с [[classifier>Проводка|проводками]] и ссылочные данные - [[classifier>Счёт|счета]], [[classifier>Актив|активы]] и [[classifier>Субъект|субъекты]].&#xD;&#xA;&#xD;&#xA;Каждая операция может содержать несколько проводок и ссылаться на нескольких субъектов. Проводка описывает движения актива по счёту как часть операции. &#xD;&#xA;Сумма движений активов по счетам в операции пересчитанная на базовый актив (например рубли) по курсу на дату совершения операции должна равнятся нулю (быть сбалансирована). &#xD;&#xA;Операция является расширением концепции двойной записи бухгалтерского учёта - в операций может принимать участие более чем два счёта и счета могут содержать разные активы (рубли, доллары, товар).&#xD;&#xA;&#xD;&#xA;Документация элементов модели содержит подробное описание элементов и их атрибутов, связей и операций. [[todo|Модель пользовательских историй]] описывает функционирование программы учёта в терминах элементов доменной модели.&#xD;&#xA;&#xD;&#xA;## Метафора&#xD;&#xA;&#xD;&#xA;Учётный центр это здание с квартирами (пользователи) и офисами (организации). И в квартирах и в офисах хранятся журналы операций. &#xD;&#xA;Журнал операций это тетрадь в которой записываются операции. &#xD;&#xA;Счёт это некий контейнер в котором можно держать определённые активы. Например в кошельке можно держать деньги, а в коробке товар. &#xD;&#xA;&#xD;&#xA;На заметку: Метафоры могут служить большим подспорьем в описании какой-либо концепции. Главное не забывать что метафоры не стоит принимать слишком буквально.&#xD;&#xA;&#xD;&#xA;## Пример&#xD;&#xA;&#xD;&#xA;Марья Ивановна торгует на рынке молоком, помидорами и огурцами. Овощи она выращивает сама, молоко покупает у соседки. &#xD;&#xA;У Марьи Ивановны есть постоянные покупатели - Клавдия Петровна и Фёдор Семёнович -  которым она порой продаёт в кредит и берёт деньги вперёд (пред-заказ). &#xD;&#xA;Марья Ивановна хранит деньги в Сбербанке в рублях и долларах.&#xD;&#xA;&#xD;&#xA;### Субъекты&#xD;&#xA;&#xD;&#xA;* Сбербанк&#xD;&#xA;* Клавдия Петровна&#xD;&#xA;* Фёдор Семёнович&#xD;&#xA;&#xD;&#xA;### Активы&#xD;&#xA;&#xD;&#xA;* Деньги - группа активов, точность 2 (знака после запятой) - копейки или центы. Активы в группе наследуют точность.&#xD;&#xA;    * Рубли &#xD;&#xA;    * Доллары&#xD;&#xA;* Товары&#xD;&#xA;    * Молоко - единица измерения литры, точность 3 (миллилитры)&#xD;&#xA;    * Овощи - группа активов, единица измерения килограммы, точность 3 (грамы). Активы в группе наследуют единицу измерения равно как и точность.&#xD;&#xA;        * Помидоры &#xD;&#xA;        * Огурцы&#xD;&#xA;&#xD;&#xA;### Счета&#xD;&#xA;&#xD;&#xA;* Денежные &#xD;&#xA;    * Кошелёк - в кошельке можно хранить деньги (рубли и доллары), но нельзя хранить молко, помидоры и огурцы.&#xD;&#xA;    * Банковские&#xD;&#xA;        * Рублёвый счёт&#xD;&#xA;        * Долларовый счёт&#xD;&#xA;* Товарные&#xD;&#xA;    * Бидон - в бидоне можно держать молоко. Если там уже есть молко то лучше туда не класть помидоры или огурцы.&#xD;&#xA;    * Корзинка - в корзинке можно хранить и помидоры и огурцы одновременно. В принципе в корзинке можно держать и деньги - спрятать под овощи от хулиганов.&#xD;&#xA;* Клиентские - на клиентских счетах могут &quot;храниться&quot; деньги в случае продажи в кредит или товар - деньги взяты вперёд под определённый товар.&#xD;&#xA;    * Клавдия Петровна&#xD;&#xA;    * Фёдор Семёнович&#xD;&#xA;* Прибыли и убытки в пересчёте на рубли.&#xD;&#xA;&#xD;&#xA;### Операции&#xD;&#xA;&#xD;&#xA;#### Покупка молока у соседки&#xD;&#xA;&#xD;&#xA;* Деньги из кошелька.&#xD;&#xA;* Молоко в бидон.&#xD;&#xA;* &quot;Курс&quot; молока устанавливается по себестоимости.&#xD;&#xA;&#xD;&#xA;#### Овощи с огорода&#xD;&#xA;&#xD;&#xA;* &quot;Курс&quot; овощей устанавливается по магически расчитанной &quot;себестоимости&quot;. &#xD;&#xA;* Овощи в корзинку.&#xD;&#xA;* Тут нужен счёт чтобы учитывать труд, удобрения и т.д. Для простоты пусть это будет счёт &quot;Прибыли и убытки&quot;. Себестоимость овощей списывается с прибылей и убытков.&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;#### Поездка в город на рынок&#xD;&#xA;&#xD;&#xA;* Деньги из кошелька на билет на электричку, трамвай, и на оплату места на рынке.&#xD;&#xA;* Стоимость вышеперечисленных затрат в прибыли и убытки.&#xD;&#xA;&#xD;&#xA;#### Продажа случайному покупателю&#xD;&#xA;&#xD;&#xA;Продажа килограмма огурцов и литра молока (хе-хе) со скидкой за &quot;опт&quot;:&#xD;&#xA;&#xD;&#xA;* Деньги в кошелёк&#xD;&#xA;* Молоко из бидона&#xD;&#xA;* Огурцы из корзинки&#xD;&#xA;* Огурцы и молоко пересчитываются в рубли по &quot;курсу&quot;. В случае товара это себестоимость. Разница между себестоимостью и выручкой записывается в прибыли/убытки чтобы операция была сбалансирована.&#xD;&#xA;&#xD;&#xA;#### Продажа Клавдии Петровне&#xD;&#xA;&#xD;&#xA;То-же самое как и случайному покупателю, но Клавдия Петровна указана как субъект операции.&#xD;&#xA;&#xD;&#xA;#### Продажа в кредит Фёдору Семёновичу&#xD;&#xA;&#xD;&#xA;Продажа килограмма огурцов и литра молока (хе-хе) со скидкой за &quot;опт&quot;:&#xD;&#xA;&#xD;&#xA;* Деньги в кошелёк&#xD;&#xA;* Молоко из бидона&#xD;&#xA;* Огурцы из корзинки&#xD;&#xA;* Огурцы и молоко пересчитываются в рубли по &quot;курсу&quot;. В случае товара это себестоимость. Разница между себестоимостью и выручкой записывается в прибыли/убытки чтобы операция была сбалансирована.&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="Ledger"/>
-  <eClassifiers xsi:type="ecore:EClass" name="УчётныйЦентр" eSuperTypes="#//ЭлементМодели"/>
   <eClassifiers xsi:type="ecore:EClass" name="ЭлементМодели" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="наименование" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="описание" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="комментарии" upperBound="-1"
+        eType="#//Комментарий" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="изображение" eType="#//Изображение"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="User"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Organization"/>
-  <eClassifiers xsi:type="ecore:EClass" name="LegderContainer" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Счёт"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Asset"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Operation"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Item"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Rate"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Субъект"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Комментарий">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="автор" lowerBound="1" eType="#//Пользователь"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="содержание" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="дата" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Изображение" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="СсылкаНаИзображение" eSuperTypes="#//Изображение">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ссылка" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ВстроенноеИзображение" eSuperTypes="#//Изображение">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="содержание" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByteArray"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="тип" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="УчётныйЦентр" eSuperTypes="../../org.nasdanika.cdo.security/model/security.ecore#//LoginPasswordProtectionDomain #//ЭлементМодели">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="хранителиЖурналовОпераций"
+        upperBound="-1" eType="#//ХранительЖурналовОпераций" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ХранительЖурналовОпераций" abstract="true"
+      eSuperTypes="#//ЭлементМодели">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="журналыОпераций" upperBound="-1"
+        eType="#//ЖурналОпераций" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Пользователь" eSuperTypes="../../org.nasdanika.cdo.security/model/security.ecore#//LoginPasswordHashUser #//ХранительЖурналовОпераций">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="права" upperBound="-1"
+        eType="#//Право" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Гость" eSuperTypes="../../org.nasdanika.cdo.security/model/security.ecore#//User"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Право">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="элементМодели" eType="#//ЭлементМодели"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="действия" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Организация" eSuperTypes="#//ХранительЖурналовОпераций"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ЖурналОпераций" eSuperTypes="#//ЭлементМодели">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="операции" upperBound="-1"
+        eType="#//Операция" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="счёта" upperBound="-1"
+        eType="#//Счёт" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="активы" upperBound="-1"
+        eType="#//Актив" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="субъекты" upperBound="-1"
+        eType="#//Субъект" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="отчётныеАктивы" upperBound="-1"
+        eType="#//Актив"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Счёт" eSuperTypes="#//ЭлементМодели">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="субСчета" upperBound="-1"
+        eType="#//Счёт" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="активы" lowerBound="1"
+        upperBound="-1" eType="#//Актив"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="группа" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Актив" eSuperTypes="#//ЭлементМодели">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="источникиКурсов" upperBound="-1"
+        eType="#//ИсточникКурсаАктива" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="субАктивы" upperBound="-1"
+        eType="#//Актив" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="точность" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="свойства" upperBound="-1"
+        eType="#//СвойствоАктива" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="единицаИзмерения" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="группа" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="СвойствоАктива">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="наименование" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="описание" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="тип" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="нижняяГраница" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="верхняяГраница" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ЗначениеСвойстваАктива">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="свойство" lowerBound="1"
+        eType="#//СвойствоАктива"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="значения" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ИсточникКурсаАктива" abstract="true">
+    <eOperations name="получитьКурс" eType="#//КурсАктива">
+      <eParameters name="дата" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+      <eParameters name="количество" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+      <eParameters name="значенияСвойств" upperBound="-1" eType="#//ЗначениеСвойстваАктива"/>
+      <eParameters name="базовыйКурс" eType="#//КурсАктива"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="началоПериодаДействия"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="конецПериодаДействия" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="базовыйАктив" eType="#//Актив"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="комментарий" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ФиксированныйКурс" eSuperTypes="#//ИсточникКурсаАктива">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="курс" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ВычислительКурса" eSuperTypes="#//ИсточникКурсаАктива">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="код" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Операция" eSuperTypes="#//ЭлементМодели">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="проводки" upperBound="-1"
+        eType="#//Проводка" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="создатель" lowerBound="1"
+        eType="#//Пользователь"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="первичныйВвод" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="субъекты" eType="#//Субъект"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Проводка" eSuperTypes="#//ЭлементМодели">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="сверено" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="счёт" lowerBound="1" eType="#//Счёт"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="актив" lowerBound="1" eType="#//Актив"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="количество" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="значенияСвойствАктива"
+        eType="#//ЗначениеСвойстваАктива"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Субъект" eSuperTypes="#//ЭлементМодели"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="КурсАктива" instanceClassName="org.nasdanika.ledger.КурсАктива"/>
 </ecore:EPackage>
