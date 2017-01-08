@@ -2,7 +2,11 @@
 <org.nasdanika.story:Catalog xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.nasdanika.story="urn:org.nasdanika.story" name="Журнал операций">
   <elements xsi:type="org.nasdanika.story:User" name="Пользователь">
     <stories xsi:type="org.nasdanika.story:Epic" name="Ввод операций">
-      <stories xsi:type="org.nasdanika.story:Story" name="Первичный ввод"/>
+      <stories xsi:type="org.nasdanika.story:Story" name="Первичный ввод" goal="Записать хозяйственную операцию в систему без разнесения по счетам или&#xD;&#xA;с частичным разнесением по счетам." benefit="Существует запись об осуществлённой хозяйственной операции &#xD;&#xA;в системе на основании которой могут быть созданы проводки по счетам."/>
+      <stories xsi:type="org.nasdanika.story:Story" name="Разнесение по счетам" description="Эта история включает истории управления справочными данными, например создания счёта и/или актива." depends="//@elements.0/@stories.0/@stories.0" goal="Создать проводки по счетам и активам" benefit="Остатки и обороты по счетам в системе соответствуют реальному состоянию на момент совершения операции.&#xD;&#xA;Например остаток по счёту &quot;Кошелёк&quot; соответствует реальному количеству денег в кошельке."/>
     </stories>
+    <stories xsi:type="org.nasdanika.story:Epic" name="Управление справочными данными" description="Эта эпика должна содержать пользовательские истории для [[wp>Create,_read,_update_and_delete|CRUD]] (Create Read Update Delete - Создать Запросить Обновить Удалить) &#xD;&#xA;операций для справочных данных модели - [[classifier>Счёт@urn:org.nasdanika.ledger|счетов]], &#xD;&#xA;[[classifier>Актив@urn:org.nasdanika.ledger|активов]], [[classifier>Субъект@urn:org.nasdanika.ledger|субъектов]], [[classifier>ИсточникКурсаАктива@urn:org.nasdanika.ledger|курсов]]. &#xD;&#xA;&#xD;&#xA;Индивидуальные пользовательские истории будут внесены в модель позже, скорее всего будут сгенерированы из доменной модели."/>
+    <stories xsi:type="org.nasdanika.story:Epic" name="Управление данными" description="Импорт, экспорт, автоматическое создание резервных копий модели."/>
+    <stories xsi:type="org.nasdanika.story:Epic" name="Создание отчётов" description="&#xD;&#xA;* Операции за период&#xD;&#xA;* Остатки/обороты/проводки по счетам&#xD;&#xA;* Остатки/обороты/проводки по активам&#xD;&#xA;* Качество данных - например проводки в первичном вводе старше чем две недели.&#xD;&#xA;* ..."/>
   </elements>
 </org.nasdanika.story:Catalog>
