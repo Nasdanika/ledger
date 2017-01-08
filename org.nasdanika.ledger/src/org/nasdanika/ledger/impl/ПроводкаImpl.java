@@ -23,6 +23,7 @@ import org.nasdanika.ledger.Счёт;
  *   <li>{@link org.nasdanika.ledger.impl.ПроводкаImpl#getАктив <em>Актив</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ПроводкаImpl#getКоличество <em>Количество</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ПроводкаImpl#getЗначенияСвойствАктива <em>Значения Свойств Актива</em>}</li>
+ *   <li>{@link org.nasdanika.ledger.impl.ПроводкаImpl#isБалансирующаяПроводка <em>Балансирующая Проводка</em>}</li>
  * </ul>
  *
  * @generated
@@ -135,6 +136,24 @@ public class ПроводкаImpl extends ЭлементМоделиImpl impleme
 	 */
 	public void setЗначенияСвойствАктива(ЗначениеСвойстваАктива newЗначенияСвойствАктива) {
 		eSet(LedgerPackage.Literals.ПРОВОДКА__ЗНАЧЕНИЯ_СВОЙСТВ_АКТИВА, newЗначенияСвойствАктива);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isБалансирующаяПроводка() {
+		return (Boolean)eGet(LedgerPackage.Literals.ПРОВОДКА__БАЛАНСИРУЮЩАЯ_ПРОВОДКА, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setБалансирующаяПроводка(boolean newБалансирующаяПроводка) {
+		eSet(LedgerPackage.Literals.ПРОВОДКА__БАЛАНСИРУЮЩАЯ_ПРОВОДКА, newБалансирующаяПроводка);
 	}
 
 } //ПроводкаImpl

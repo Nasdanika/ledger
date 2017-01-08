@@ -12,7 +12,7 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * 
+ * Значения (величины) свойства. Например для актива ``Рак`` и свойства ``Размер`` значение свойства может быть ``Большой``.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -38,7 +38,7 @@ public interface ЗначениеСвойстваАктива extends CDOObject 
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * Ссылка на свойство.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Свойство</em>' reference.
 	 * @see #setСвойство(СвойствоАктива)
@@ -68,7 +68,7 @@ public interface ЗначениеСвойстваАктива extends CDOObject 
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * Значение в текстовом представлении.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Значения</em>' attribute list.
 	 * @see org.nasdanika.ledger.LedgerPackage#getЗначениеСвойстваАктива_Значения()

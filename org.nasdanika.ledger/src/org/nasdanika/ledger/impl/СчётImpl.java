@@ -6,6 +6,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.nasdanika.ledger.LedgerPackage;
 import org.nasdanika.ledger.Актив;
+import org.nasdanika.ledger.Проводка;
 import org.nasdanika.ledger.Счёт;
 
 /**
@@ -16,9 +17,10 @@ import org.nasdanika.ledger.Счёт;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.nasdanika.ledger.impl.СчётImpl#isГруппа <em>Группа</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.СчётImpl#getСубСчета <em>Суб Счета</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.СчётImpl#getАктивы <em>Активы</em>}</li>
- *   <li>{@link org.nasdanika.ledger.impl.СчётImpl#isГруппа <em>Группа</em>}</li>
+ *   <li>{@link org.nasdanika.ledger.impl.СчётImpl#getПроводки <em>Проводки</em>}</li>
  * </ul>
  *
  * @generated
@@ -61,6 +63,16 @@ public class СчётImpl extends ЭлементМоделиImpl implements Сч
 	@SuppressWarnings("unchecked")
 	public EList<Актив> getАктивы() {
 		return (EList<Актив>)eGet(LedgerPackage.Literals.СЧЁТ__АКТИВЫ, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public EList<Проводка> getПроводки() {
+		return (EList<Проводка>)eGet(LedgerPackage.Literals.СЧЁТ__ПРОВОДКИ, true);
 	}
 
 	/**

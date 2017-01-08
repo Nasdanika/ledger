@@ -12,7 +12,8 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * 
+ * Право пользователя на выполнение каких-либо действий в системе, 
+ * например создание счёта или добавление проводки в операции.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -38,7 +39,7 @@ public interface Право extends CDOObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * Элемент модели к которому относятся действия разрешённые данным правом.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Элемент Модели</em>' reference.
 	 * @see #setЭлементМодели(ЭлементМодели)
@@ -68,7 +69,11 @@ public interface Право extends CDOObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * Разрешённые действия. Пустой список обозначает любое действие, равно 
+	 * как и специальное действие ``*``.
 	 * 
+	 * Формат действий и порядок их назначения будет определён позже. 
+	 * Рекомендуется использовать пользовательские истории как единицу назначения прав.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Действия</em>' attribute list.
 	 * @see org.nasdanika.ledger.LedgerPackage#getПраво_Действия()

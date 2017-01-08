@@ -16,7 +16,7 @@ import org.nasdanika.ledger.ВстроенноеИзображение;
  * </p>
  * <ul>
  *   <li>{@link org.nasdanika.ledger.impl.ВстроенноеИзображениеImpl#getСодержание <em>Содержание</em>}</li>
- *   <li>{@link org.nasdanika.ledger.impl.ВстроенноеИзображениеImpl#getТип <em>Тип</em>}</li>
+ *   <li>{@link org.nasdanika.ledger.impl.ВстроенноеИзображениеImpl#getФормат <em>Формат</em>}</li>
  * </ul>
  *
  * @generated
@@ -64,8 +64,8 @@ public class ВстроенноеИзображениеImpl extends Изобра
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getТип() {
-		return (String)eGet(LedgerPackage.Literals.ВСТРОЕННОЕ_ИЗОБРАЖЕНИЕ__ТИП, true);
+	public String getФормат() {
+		return (String)eGet(LedgerPackage.Literals.ВСТРОЕННОЕ_ИЗОБРАЖЕНИЕ__ФОРМАТ, true);
 	}
 
 	/**
@@ -73,8 +73,8 @@ public class ВстроенноеИзображениеImpl extends Изобра
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setТип(String newТип) {
-		eSet(LedgerPackage.Literals.ВСТРОЕННОЕ_ИЗОБРАЖЕНИЕ__ТИП, newТип);
+	public void setФормат(String newФормат) {
+		eSet(LedgerPackage.Literals.ВСТРОЕННОЕ_ИЗОБРАЖЕНИЕ__ФОРМАТ, newФормат);
 	}
 
 } //ВстроенноеИзображениеImpl

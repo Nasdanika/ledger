@@ -9,7 +9,7 @@ package org.nasdanika.ledger;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * 
+ * Изображение хранящееся в модели. Например фотография товара загруженная пользователем.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -17,7 +17,7 @@ package org.nasdanika.ledger;
  * </p>
  * <ul>
  *   <li>{@link org.nasdanika.ledger.ВстроенноеИзображение#getСодержание <em>Содержание</em>}</li>
- *   <li>{@link org.nasdanika.ledger.ВстроенноеИзображение#getТип <em>Тип</em>}</li>
+ *   <li>{@link org.nasdanika.ledger.ВстроенноеИзображение#getФормат <em>Формат</em>}</li>
  * </ul>
  *
  * @see org.nasdanika.ledger.LedgerPackage#getВстроенноеИзображение()
@@ -34,7 +34,7 @@ public interface ВстроенноеИзображение extends Изобра
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * Байты изображения.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Содержание</em>' attribute.
 	 * @see #setСодержание(byte[])
@@ -55,32 +55,28 @@ public interface ВстроенноеИзображение extends Изобра
 	void setСодержание(byte[] value);
 
 	/**
-	 * Returns the value of the '<em><b>Тип</b></em>' attribute.
+	 * Returns the value of the '<em><b>Формат</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Тип</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * формат изображения - jpg, png, bmp, ...
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Тип</em>' attribute.
-	 * @see #setТип(String)
-	 * @see org.nasdanika.ledger.LedgerPackage#getВстроенноеИзображение_Тип()
+	 * @return the value of the '<em>Формат</em>' attribute.
+	 * @see #setФормат(String)
+	 * @see org.nasdanika.ledger.LedgerPackage#getВстроенноеИзображение_Формат()
 	 * @model
 	 * @generated
 	 */
-	String getТип();
+	String getФормат();
 
 	/**
-	 * Sets the value of the '{@link org.nasdanika.ledger.ВстроенноеИзображение#getТип <em>Тип</em>}' attribute.
+	 * Sets the value of the '{@link org.nasdanika.ledger.ВстроенноеИзображение#getФормат <em>Формат</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Тип</em>' attribute.
-	 * @see #getТип()
+	 * @param value the new value of the '<em>Формат</em>' attribute.
+	 * @see #getФормат()
 	 * @generated
 	 */
-	void setТип(String value);
+	void setФормат(String value);
 
 } // ВстроенноеИзображение

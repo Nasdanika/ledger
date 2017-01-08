@@ -11,7 +11,7 @@ import org.eclipse.emf.cdo.CDOObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * 
+ * Комментарий к элементу модели, например к операции.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -38,7 +38,7 @@ public interface Комментарий extends CDOObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * Автор комментария
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Автор</em>' reference.
 	 * @see #setАвтор(Пользователь)
@@ -67,7 +67,7 @@ public interface Комментарий extends CDOObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * Текст комментария в формате HTML
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Содержание</em>' attribute.
 	 * @see #setСодержание(String)
@@ -96,7 +96,7 @@ public interface Комментарий extends CDOObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * Дата создания комментария.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Дата</em>' attribute.
 	 * @see #setДата(Date)

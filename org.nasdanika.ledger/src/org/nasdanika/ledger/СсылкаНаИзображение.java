@@ -9,7 +9,11 @@ package org.nasdanika.ledger;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
+ * Ссылка на изображение, например http://www.myserver.com/myimage.png. Приложение должно распозновать следующие специальные протоколы:
  * 
+ * * ``bundle`` - изображение находится в OSGi bundle. Например: ``bundle://org.nasdanika.icons/fatcow-hosting-icons/FatCow_Icons16x16/3d_glasses.png``
+ * * ``font-awesome`` - [FontAwesome](http://fontawesome.io/icons/) иконка. Например: ``font-awesome://address-book``
+ * * ``bootstrap-glyphicon`` - [Bootstrap](http://getbootstrap.com/components/) глиф. Например: ``bootstrap-glyphicon://search``
  * <!-- end-model-doc -->
  *
  * <p>
@@ -33,7 +37,7 @@ public interface СсылкаНаИзображение extends Изображе
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * Значение ссылки.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Ссылка</em>' attribute.
 	 * @see #setСсылка(String)

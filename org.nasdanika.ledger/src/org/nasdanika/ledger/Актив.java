@@ -10,7 +10,17 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
+ * Актив это нечто имеющее ценность - деньги, товар, услуги (труд).
  * 
+ * Хозяйственная деятельность заключается в движении активов между счетами и преобразовании активов. 
+ * Учёт хозяйственной деятельности заключается в аккуратном фиксировании хозяйственных операций с целью составления отчётности которая может
+ * быть использована для анализа и корректирования деятельности.
+ * 
+ * Примеры:
+ * 
+ * * Прочитана лекция за наличные: Оказанные услуги -> Кошелёк.
+ * * Продан товар: Склад -товар-> Покупатель -деньги-> Кошелёк.
+ * * Деньги положены в банк: Кошелёк -> Банковский счёт.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -18,11 +28,11 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link org.nasdanika.ledger.Актив#getИсточникиКурсов <em>Источники Курсов</em>}</li>
+ *   <li>{@link org.nasdanika.ledger.Актив#isГруппа <em>Группа</em>}</li>
  *   <li>{@link org.nasdanika.ledger.Актив#getСубАктивы <em>Суб Активы</em>}</li>
+ *   <li>{@link org.nasdanika.ledger.Актив#getЕдиницаИзмерения <em>Единица Измерения</em>}</li>
  *   <li>{@link org.nasdanika.ledger.Актив#getТочность <em>Точность</em>}</li>
  *   <li>{@link org.nasdanika.ledger.Актив#getСвойства <em>Свойства</em>}</li>
- *   <li>{@link org.nasdanika.ledger.Актив#getЕдиницаИзмерения <em>Единица Измерения</em>}</li>
- *   <li>{@link org.nasdanika.ledger.Актив#isГруппа <em>Группа</em>}</li>
  * </ul>
  *
  * @see org.nasdanika.ledger.LedgerPackage#getАктив()
@@ -41,7 +51,8 @@ public interface Актив extends ЭлементМодели {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * Источники курса данного актива используются чтобы получить текущий или наиболее аккуратный курс актива при балансировании операций
+	 * и составлении отчётности.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Источники Курсов</em>' containment reference list.
 	 * @see org.nasdanika.ledger.LedgerPackage#getАктив_ИсточникиКурсов()
@@ -60,6 +71,17 @@ public interface Актив extends ЭлементМодели {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * Активы могут быть организованы в иерархию. Например:
+	 * 
+	 * * Деньги
+	 *     * Рубли
+	 *     * Доллары
+	 *     * Евро
+	 * * Товары
+	 *     * Овощи
+	 *         * Помидоры
+	 *         * Огурцы
+	 * 
 	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Суб Активы</em>' containment reference list.
@@ -78,7 +100,12 @@ public interface Актив extends ЭлементМодели {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * Количество десятичных знаков после запятой используемых при
+	 * учёте количества актива. Например:
 	 * 
+	 * * 2 для долларов и рублей - копейки и центы.
+	 * * 3 для килограммов если измерятся с точность до граммов.
+	 * * 0 для неделимых штучных товаров, например лампочек.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Точность</em>' attribute.
 	 * @see #setТочность(Integer)
@@ -108,7 +135,8 @@ public interface Актив extends ЭлементМодели {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * Определения свойств актива.
+	 * Значения свойств вводятся в проводке.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Свойства</em>' containment reference list.
 	 * @see org.nasdanika.ledger.LedgerPackage#getАктив_Свойства()
@@ -126,7 +154,8 @@ public interface Актив extends ЭлементМодели {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * Единица измерения актива. 
+	 * Например литры, штуки, килограммы.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Единица Измерения</em>' attribute.
 	 * @see #setЕдиницаИзмерения(String)
@@ -155,7 +184,9 @@ public interface Актив extends ЭлементМодели {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * Если этот атрибут установлен в true, значит актив является группой.
+	 * Группа активов может содержать суб-активы, но не может использоваться
+	 * в проводках. 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Группа</em>' attribute.
 	 * @see #setГруппа(boolean)

@@ -362,93 +362,93 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ФиксированныйКурс" eSuperTypes="#//ИсточникКурсаАктива">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value=""/>
+      <details key="documentation" value="Фиксированный курс вводится вручную или импортируется из внешнего&#xD;&#xA;источника."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="курс" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="Величина курса. Например ``60.66`` для доллара к рублю."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ВычислительКурса" eSuperTypes="#//ИсточникКурсаАктива">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value=""/>
+      <details key="documentation" value="Вычислитель курса исполняет Ява код чтобы вычислить значение курса.&#xD;&#xA;&#xD;&#xA;Примеры:&#xD;&#xA;&#xD;&#xA;* Курс может запрашиваться через интернет с http://www.cbr-xml-daily.ru/&#xD;&#xA;* Курс может вычисляться из базового курса (например фиксированного курса/цены товара) и свойств товара (например даты истечения срока годности)."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="код" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="Ява код вычисляющий значение курса."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Операция" eSuperTypes="#//ЭлементМодели">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value=""/>
+      <details key="documentation" value="Запись хозяйственной операции."/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="первичныйВвод" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Первичный ввод означает что описание операции введено, но проводки&#xD;&#xA;по счетам либо не сделаны, либо сделаны не полностью."/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="проводки" upperBound="-1"
         eType="#//Проводка" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="Проводки по счетам. Активы проводок могут быть разными, но сумма проводок в пересчёте на актив балансирования должна быть&#xD;&#xA;равна нулю. Соответственно, операция должна содержать более одной проводки.&#xD;&#xA;&#xD;&#xA;Пример - продажа компьютера за рубли:&#xD;&#xA;&#xD;&#xA;* Компьютер списан со склада.&#xD;&#xA;* Рубли зачислены в кассу.&#xD;&#xA;&#xD;&#xA;Компьютер был приобретён за доллары и фиксированный курс компьютера установлен в стоимость компьютера на дату покупки по отношению к долларам.&#xD;&#xA;Система определяет &quot;путь пересчёта курса&quot; компьютер -> доллары -> рубли и вычисляет стоимость компьютера в рублях на дату совершения операции. &#xD;&#xA;Разница между покупной и продажной стоимостью записывается в прибыли и убытки."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="создатель" lowerBound="1"
         eType="#//Пользователь">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="первичныйВвод" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="Пользователь создавший операцию."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="субъекты" eType="#//Субъект">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="Субъекты принимающие участие в операции. Например покупатель."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Проводка" eSuperTypes="#//ЭлементМодели">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value=""/>
+      <details key="documentation" value="Проводка это часть операции описывающая движение актива по счёту."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="сверено" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="Индикатор указывающий на то что проводка сверена с выписками корреспондента,например банка."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="счёт" lowerBound="1" eType="#//Счёт"
         eOpposite="#//Счёт/проводки">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="Счёт проводки."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="актив" lowerBound="1" eType="#//Актив">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="Актив проводки. Должен поддерживаться счётом."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="количество" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="Количество актива."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="значенияСвойствАктива"
         eType="#//ЗначениеСвойстваАктива">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="Значения свойств актива. Например дата истечения срока годности товара."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="балансирующаяПроводка"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
+        <details key="documentation" value="Индикатор балансирующей проводки. Балансирующая проводка приводит&#xD;&#xA;баланс операции в ноль по курсу на момент совершения операции.&#xD;&#xA;&#xD;&#xA;При изменении курсов, например при коррекции ошибочного ввода, &#xD;&#xA;система автоматически пересчитывает атрибут &quot;количество&quot; балансирующих проводок."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Субъект" eSuperTypes="#//ЭлементМодели">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value=""/>
+      <details key="documentation" value="Физическое или юридическое лицо принимающее участие в хозяйственных операциях. &#xD;&#xA;Например банк или постоянный покупатель."/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="КурсАктива" instanceClassName="org.nasdanika.ledger.КурсАктива">

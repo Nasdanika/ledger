@@ -10,7 +10,7 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * 
+ * Абстактный базовый класс для элементов модели содержащих журналы операций - пользователей и организаций.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -36,7 +36,7 @@ public interface ХранительЖурналовОпераций extends Эл
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * Журналы операций принадлежащие хранителю.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Журналы Операций</em>' containment reference list.
 	 * @see org.nasdanika.ledger.LedgerPackage#getХранительЖурналовОпераций_ЖурналыОпераций()

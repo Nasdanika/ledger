@@ -18,11 +18,11 @@ import org.nasdanika.ledger.СвойствоАктива;
  * </p>
  * <ul>
  *   <li>{@link org.nasdanika.ledger.impl.АктивImpl#getИсточникиКурсов <em>Источники Курсов</em>}</li>
+ *   <li>{@link org.nasdanika.ledger.impl.АктивImpl#isГруппа <em>Группа</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.АктивImpl#getСубАктивы <em>Суб Активы</em>}</li>
+ *   <li>{@link org.nasdanika.ledger.impl.АктивImpl#getЕдиницаИзмерения <em>Единица Измерения</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.АктивImpl#getТочность <em>Точность</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.АктивImpl#getСвойства <em>Свойства</em>}</li>
- *   <li>{@link org.nasdanika.ledger.impl.АктивImpl#getЕдиницаИзмерения <em>Единица Измерения</em>}</li>
- *   <li>{@link org.nasdanika.ledger.impl.АктивImpl#isГруппа <em>Группа</em>}</li>
  * </ul>
  *
  * @generated

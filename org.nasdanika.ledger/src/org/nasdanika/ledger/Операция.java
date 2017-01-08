@@ -10,16 +10,16 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * 
+ * Запись хозяйственной операции.
  * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.nasdanika.ledger.Операция#isПервичныйВвод <em>Первичный Ввод</em>}</li>
  *   <li>{@link org.nasdanika.ledger.Операция#getПроводки <em>Проводки</em>}</li>
  *   <li>{@link org.nasdanika.ledger.Операция#getСоздатель <em>Создатель</em>}</li>
- *   <li>{@link org.nasdanika.ledger.Операция#isПервичныйВвод <em>Первичный Ввод</em>}</li>
  *   <li>{@link org.nasdanika.ledger.Операция#getСубъекты <em>Субъекты</em>}</li>
  * </ul>
  *
@@ -39,7 +39,17 @@ public interface Операция extends ЭлементМодели {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
+	 * Проводки по счетам. Активы проводок могут быть разными, но сумма проводок в пересчёте на актив балансирования должна быть
+	 * равна нулю. Соответственно, операция должна содержать более одной проводки.
 	 * 
+	 * Пример - продажа компьютера за рубли:
+	 * 
+	 * * Компьютер списан со склада.
+	 * * Рубли зачислены в кассу.
+	 * 
+	 * Компьютер был приобретён за доллары и фиксированный курс компьютера установлен в стоимость компьютера на дату покупки по отношению к долларам.
+	 * Система определяет "путь пересчёта курса" компьютер -> доллары -> рубли и вычисляет стоимость компьютера в рублях на дату совершения операции. 
+	 * Разница между покупной и продажной стоимостью записывается в прибыли и убытки.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Проводки</em>' containment reference list.
 	 * @see org.nasdanika.ledger.LedgerPackage#getОперация_Проводки()
@@ -57,7 +67,7 @@ public interface Операция extends ЭлементМодели {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * Пользователь создавший операцию.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Создатель</em>' reference.
 	 * @see #setСоздатель(Пользователь)
@@ -86,7 +96,8 @@ public interface Операция extends ЭлементМодели {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * Первичный ввод означает что описание операции введено, но проводки
+	 * по счетам либо не сделаны, либо сделаны не полностью.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Первичный Ввод</em>' attribute.
 	 * @see #setПервичныйВвод(boolean)
@@ -115,7 +126,7 @@ public interface Операция extends ЭлементМодели {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * Субъекты принимающие участие в операции. Например покупатель.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Субъекты</em>' reference.
 	 * @see #setСубъекты(Субъект)

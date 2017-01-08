@@ -24,6 +24,7 @@ import org.nasdanika.ledger.Счёт;
  *   <li>{@link org.nasdanika.ledger.impl.ЖурналОперацийImpl#getАктивы <em>Активы</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ЖурналОперацийImpl#getСубъекты <em>Субъекты</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ЖурналОперацийImpl#getОтчётныеАктивы <em>Отчётные Активы</em>}</li>
+ *   <li>{@link org.nasdanika.ledger.impl.ЖурналОперацийImpl#getСчётПоУмолчаниюДляБалансировкиОпераций <em>Счёт По Умолчанию Для Балансировки Операций</em>}</li>
  * </ul>
  *
  * @generated
@@ -96,6 +97,24 @@ public class ЖурналОперацийImpl extends ЭлементМодели
 	@SuppressWarnings("unchecked")
 	public EList<Актив> getОтчётныеАктивы() {
 		return (EList<Актив>)eGet(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__ОТЧЁТНЫЕ_АКТИВЫ, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Счёт getСчётПоУмолчаниюДляБалансировкиОпераций() {
+		return (Счёт)eGet(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__СЧЁТ_ПО_УМОЛЧАНИЮ_ДЛЯ_БАЛАНСИРОВКИ_ОПЕРАЦИЙ, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setСчётПоУмолчаниюДляБалансировкиОпераций(Счёт newСчётПоУмолчаниюДляБалансировкиОпераций) {
+		eSet(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__СЧЁТ_ПО_УМОЛЧАНИЮ_ДЛЯ_БАЛАНСИРОВКИ_ОПЕРАЦИЙ, newСчётПоУмолчаниюДляБалансировкиОпераций);
 	}
 
 } //ЖурналОперацийImpl

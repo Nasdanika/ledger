@@ -10,7 +10,8 @@ import java.math.BigDecimal;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * 
+ * Фиксированный курс вводится вручную или импортируется из внешнего
+ * источника.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -34,7 +35,7 @@ public interface ФиксированныйКурс extends ИсточникКу
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * Величина курса. Например ``60.66`` для доллара к рублю.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Курс</em>' attribute.
 	 * @see #setКурс(BigDecimal)

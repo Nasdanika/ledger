@@ -10,7 +10,7 @@ import org.eclipse.emf.cdo.CDOObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * 
+ * Базовый абстрактный класс изображения.
  * <!-- end-model-doc -->
  *
  *

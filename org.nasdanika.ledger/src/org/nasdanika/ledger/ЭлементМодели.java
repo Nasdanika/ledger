@@ -11,7 +11,8 @@ import org.eclipse.emf.common.util.EList;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * 
+ * Абстрактный базовый класс для ряда элементов модели содержащий общие атрибуты и ссылки. 
+ * Подклассы могут использовать только некоторые ссылки и аттрибуты определённые в суперклассе.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -40,7 +41,7 @@ public interface ЭлементМодели extends CDOObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * Наименование элемента.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Наименование</em>' attribute.
 	 * @see #setНаименование(String)
@@ -69,7 +70,7 @@ public interface ЭлементМодели extends CDOObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * Описание элемента в формате HTML.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Описание</em>' attribute.
 	 * @see #setОписание(String)
@@ -99,7 +100,7 @@ public interface ЭлементМодели extends CDOObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * Комментарии к элементу. 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Комментарии</em>' containment reference list.
 	 * @see org.nasdanika.ledger.LedgerPackage#getЭлементМодели_Комментарии()
@@ -117,7 +118,7 @@ public interface ЭлементМодели extends CDOObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * Изображение элемента. Например, фотография пользователя или товара, или иконка для счёта - кошелёк для наличных, здание для банка, корабль или машина для товаров в пути.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Изображение</em>' containment reference.
 	 * @see #setИзображение(Изображение)
@@ -142,7 +143,7 @@ public interface ЭлементМодели extends CDOObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * Идентификатор элемента, например номер банковского счёта
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Идентификатор</em>' attribute.
 	 * @see #setИдентификатор(String)

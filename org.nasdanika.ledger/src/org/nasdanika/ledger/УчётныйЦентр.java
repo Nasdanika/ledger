@@ -12,7 +12,7 @@ import org.nasdanika.cdo.security.LoginPasswordProtectionDomain;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * 
+ * Корневой элемент модели.
  * <!-- end-model-doc -->
  *
  * <p>
@@ -38,7 +38,7 @@ public interface УчётныйЦентр extends LoginPasswordProtectionDomain,
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * 
+	 * Учётный центр содержит хранителей журналов операций - пользователей и организации.
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Хранители Журналов Операций</em>' containment reference list.
 	 * @see org.nasdanika.ledger.LedgerPackage#getУчётныйЦентр_ХранителиЖурналовОпераций()

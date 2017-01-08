@@ -18,9 +18,9 @@ import org.nasdanika.ledger.Субъект;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.nasdanika.ledger.impl.ОперацияImpl#isПервичныйВвод <em>Первичный Ввод</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ОперацияImpl#getПроводки <em>Проводки</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ОперацияImpl#getСоздатель <em>Создатель</em>}</li>
- *   <li>{@link org.nasdanika.ledger.impl.ОперацияImpl#isПервичныйВвод <em>Первичный Ввод</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ОперацияImpl#getСубъекты <em>Субъекты</em>}</li>
  * </ul>
  *
