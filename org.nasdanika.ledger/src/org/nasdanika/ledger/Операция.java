@@ -119,6 +119,7 @@ public interface Операция extends ЭлементМодели {
 
 	/**
 	 * Returns the value of the '<em><b>Субъекты</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link org.nasdanika.ledger.Субъект#getОперации <em>Операции</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Субъекты</em>' reference isn't clear,
@@ -131,7 +132,8 @@ public interface Операция extends ЭлементМодели {
 	 * @return the value of the '<em>Субъекты</em>' reference.
 	 * @see #setСубъекты(Субъект)
 	 * @see org.nasdanika.ledger.LedgerPackage#getОперация_Субъекты()
-	 * @model
+	 * @see org.nasdanika.ledger.Субъект#getОперации
+	 * @model opposite="операции"
 	 * @generated
 	 */
 	Субъект getСубъекты();

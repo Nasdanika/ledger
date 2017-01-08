@@ -1490,13 +1490,31 @@ public interface LedgerPackage extends EPackage {
 	int АКТИВ__СВОЙСТВА = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Счета</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int АКТИВ__СЧЕТА = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Проводки</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int АКТИВ__ПРОВОДКИ = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>Актив</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int АКТИВ_FEATURE_COUNT = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 6;
+	int АКТИВ_FEATURE_COUNT = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Актив</em>' class.
@@ -2075,13 +2093,22 @@ public interface LedgerPackage extends EPackage {
 	int СУБЪЕКТ__ИДЕНТИФИКАТОР = ЭЛЕМЕНТ_МОДЕЛИ__ИДЕНТИФИКАТОР;
 
 	/**
+	 * The feature id for the '<em><b>Операции</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int СУБЪЕКТ__ОПЕРАЦИИ = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Субъект</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int СУБЪЕКТ_FEATURE_COUNT = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 0;
+	int СУБЪЕКТ_FEATURE_COUNT = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Субъект</em>' class.
@@ -2458,6 +2485,28 @@ public interface LedgerPackage extends EPackage {
 	EReference getАктив_Свойства();
 
 	/**
+	 * Returns the meta object for the reference list '{@link org.nasdanika.ledger.Актив#getСчета <em>Счета</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Счета</em>'.
+	 * @see org.nasdanika.ledger.Актив#getСчета()
+	 * @see #getАктив()
+	 * @generated
+	 */
+	EReference getАктив_Счета();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.nasdanika.ledger.Актив#getПроводки <em>Проводки</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Проводки</em>'.
+	 * @see org.nasdanika.ledger.Актив#getПроводки()
+	 * @see #getАктив()
+	 * @generated
+	 */
+	EReference getАктив_Проводки();
+
+	/**
 	 * Returns the meta object for the attribute '{@link org.nasdanika.ledger.Актив#getЕдиницаИзмерения <em>Единица Измерения</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2821,6 +2870,17 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getСубъект();
+
+	/**
+	 * Returns the meta object for the reference list '{@link org.nasdanika.ledger.Субъект#getОперации <em>Операции</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Операции</em>'.
+	 * @see org.nasdanika.ledger.Субъект#getОперации()
+	 * @see #getСубъект()
+	 * @generated
+	 */
+	EReference getСубъект_Операции();
 
 	/**
 	 * Returns the meta object for data type '{@link org.nasdanika.ledger.КурсАктива <em>Курс Актива</em>}'.
@@ -3255,6 +3315,22 @@ public interface LedgerPackage extends EPackage {
 		EReference АКТИВ__СВОЙСТВА = eINSTANCE.getАктив_Свойства();
 
 		/**
+		 * The meta object literal for the '<em><b>Счета</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference АКТИВ__СЧЕТА = eINSTANCE.getАктив_Счета();
+
+		/**
+		 * The meta object literal for the '<em><b>Проводки</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference АКТИВ__ПРОВОДКИ = eINSTANCE.getАктив_Проводки();
+
+		/**
 		 * The meta object literal for the '<em><b>Единица Измерения</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3541,6 +3617,14 @@ public interface LedgerPackage extends EPackage {
 		 * @generated
 		 */
 		EClass СУБЪЕКТ = eINSTANCE.getСубъект();
+
+		/**
+		 * The meta object literal for the '<em><b>Операции</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference СУБЪЕКТ__ОПЕРАЦИИ = eINSTANCE.getСубъект_Операции();
 
 		/**
 		 * The meta object literal for the '<em>Курс Актива</em>' data type.

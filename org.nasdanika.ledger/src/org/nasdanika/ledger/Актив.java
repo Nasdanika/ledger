@@ -33,6 +33,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.nasdanika.ledger.Актив#getЕдиницаИзмерения <em>Единица Измерения</em>}</li>
  *   <li>{@link org.nasdanika.ledger.Актив#getТочность <em>Точность</em>}</li>
  *   <li>{@link org.nasdanika.ledger.Актив#getСвойства <em>Свойства</em>}</li>
+ *   <li>{@link org.nasdanika.ledger.Актив#getСчета <em>Счета</em>}</li>
+ *   <li>{@link org.nasdanika.ledger.Актив#getПроводки <em>Проводки</em>}</li>
  * </ul>
  *
  * @see org.nasdanika.ledger.LedgerPackage#getАктив()
@@ -144,6 +146,40 @@ public interface Актив extends ЭлементМодели {
 	 * @generated
 	 */
 	EList<СвойствоАктива> getСвойства();
+
+	/**
+	 * Returns the value of the '<em><b>Счета</b></em>' reference list.
+	 * The list contents are of type {@link org.nasdanika.ledger.Счёт}.
+	 * It is bidirectional and its opposite is '{@link org.nasdanika.ledger.Счёт#getАктивы <em>Активы</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Счета поддерживающие данный актив.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Счета</em>' reference list.
+	 * @see org.nasdanika.ledger.LedgerPackage#getАктив_Счета()
+	 * @see org.nasdanika.ledger.Счёт#getАктивы
+	 * @model opposite="активы"
+	 * @generated
+	 */
+	EList<Счёт> getСчета();
+
+	/**
+	 * Returns the value of the '<em><b>Проводки</b></em>' reference list.
+	 * The list contents are of type {@link org.nasdanika.ledger.Проводка}.
+	 * It is bidirectional and its opposite is '{@link org.nasdanika.ledger.Проводка#getАктив <em>Актив</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Проводки описывающие движение данного актива между счетами.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Проводки</em>' reference list.
+	 * @see org.nasdanika.ledger.LedgerPackage#getАктив_Проводки()
+	 * @see org.nasdanika.ledger.Проводка#getАктив
+	 * @model opposite="актив"
+	 * @generated
+	 */
+	EList<Проводка> getПроводки();
 
 	/**
 	 * Returns the value of the '<em><b>Единица Измерения</b></em>' attribute.

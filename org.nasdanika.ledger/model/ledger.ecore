@@ -204,7 +204,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="активы" lowerBound="1"
-        upperBound="-1" eType="#//Актив">
+        upperBound="-1" eType="#//Актив" eOpposite="#//Актив/счета">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Активы поддерживаемые счётом. Проводки по счёту могут осуществляться с активами поддерживаемыми счётом. &#xD;&#xA;Если актив является группой, то это означает что счёт поддерживает, рекурсивно, любой под-актив группового актива&#xD;&#xA;если этот актив не является группой.&#xD;&#xA;&#xD;&#xA;Примеры:&#xD;&#xA;&#xD;&#xA;* Активы - рубли и доллары. Проводки по счёту могут производиться в рублях и долларах.&#xD;&#xA;* Актив - деньги. Деньги это группа активов содержащая рубли, доллары и евро. Проводки по счёту могут поизводиться в рублях, долларах и евро.&#xD;&#xA;"/>
       </eAnnotations>
@@ -251,6 +251,18 @@
         eType="#//СвойствоАктива" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Определения свойств актива.&#xD;&#xA;Значения свойств вводятся в проводке."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="счета" upperBound="-1"
+        eType="#//Счёт" eOpposite="#//Счёт/активы">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Счета поддерживающие данный актив."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="проводки" upperBound="-1"
+        eType="#//Проводка" eOpposite="#//Проводка/актив">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Проводки описывающие движение данного актива между счетами."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
@@ -401,7 +413,8 @@
         <details key="documentation" value="Пользователь создавший операцию."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="субъекты" eType="#//Субъект">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="субъекты" eType="#//Субъект"
+        eOpposite="#//Субъект/операции">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Субъекты принимающие участие в операции. Например покупатель."/>
       </eAnnotations>
@@ -422,7 +435,8 @@
         <details key="documentation" value="Счёт проводки."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="актив" lowerBound="1" eType="#//Актив">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="актив" lowerBound="1" eType="#//Актив"
+        eOpposite="#//Актив/проводки">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Актив проводки. Должен поддерживаться счётом."/>
       </eAnnotations>
@@ -450,6 +464,12 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Физическое или юридическое лицо принимающее участие в хозяйственных операциях. &#xD;&#xA;Например банк или постоянный покупатель."/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="операции" upperBound="-1"
+        eType="#//Операция" eOpposite="#//Операция/субъекты">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Операции в которых субъект принимал участие. &#xD;&#xA;Например, покупки произведённые постоянным покупателем."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="КурсАктива" instanceClassName="org.nasdanika.ledger.КурсАктива">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

@@ -67,6 +67,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//Актив/единицаИзмерения"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//Актив/точность"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ledger.ecore#//Актив/свойства"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ledger.ecore#//Актив/счета"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ledger.ecore#//Актив/проводки"/>
     </genClasses>
     <genClasses ecoreClass="ledger.ecore#//СвойствоАктива">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//СвойствоАктива/наименование"/>
@@ -112,6 +114,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ledger.ecore#//Проводка/значенияСвойствАктива"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//Проводка/балансирующаяПроводка"/>
     </genClasses>
-    <genClasses ecoreClass="ledger.ecore#//Субъект"/>
+    <genClasses ecoreClass="ledger.ecore#//Субъект">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ledger.ecore#//Субъект/операции"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

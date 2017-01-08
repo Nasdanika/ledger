@@ -58,6 +58,7 @@ public interface Счёт extends ЭлементМодели {
 	/**
 	 * Returns the value of the '<em><b>Активы</b></em>' reference list.
 	 * The list contents are of type {@link org.nasdanika.ledger.Актив}.
+	 * It is bidirectional and its opposite is '{@link org.nasdanika.ledger.Актив#getСчета <em>Счета</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Активы</em>' reference list isn't clear,
@@ -77,7 +78,8 @@ public interface Счёт extends ЭлементМодели {
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Активы</em>' reference list.
 	 * @see org.nasdanika.ledger.LedgerPackage#getСчёт_Активы()
-	 * @model required="true"
+	 * @see org.nasdanika.ledger.Актив#getСчета
+	 * @model opposite="счета" required="true"
 	 * @generated
 	 */
 	EList<Актив> getАктивы();

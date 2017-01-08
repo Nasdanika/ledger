@@ -93,6 +93,7 @@ public interface Проводка extends ЭлементМодели {
 
 	/**
 	 * Returns the value of the '<em><b>Актив</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link org.nasdanika.ledger.Актив#getПроводки <em>Проводки</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Актив</em>' reference isn't clear,
@@ -105,7 +106,8 @@ public interface Проводка extends ЭлементМодели {
 	 * @return the value of the '<em>Актив</em>' reference.
 	 * @see #setАктив(Актив)
 	 * @see org.nasdanika.ledger.LedgerPackage#getПроводка_Актив()
-	 * @model required="true"
+	 * @see org.nasdanika.ledger.Актив#getПроводки
+	 * @model opposite="проводки" required="true"
 	 * @generated
 	 */
 	Актив getАктив();

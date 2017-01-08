@@ -581,6 +581,24 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getАктив_Счета() {
+		return (EReference)активEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getАктив_Проводки() {
+		return (EReference)активEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EAttribute getАктив_ЕдиницаИзмерения() {
 		return (EAttribute)активEClass.getEStructuralFeatures().get(3);
 	}
@@ -887,6 +905,15 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getСубъект_Операции() {
+		return (EReference)субъектEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getКурсАктива() {
 		return курсАктиваEDataType;
 	}
@@ -1068,6 +1095,8 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		createEAttribute(активEClass, АКТИВ__ЕДИНИЦА_ИЗМЕРЕНИЯ);
 		createEAttribute(активEClass, АКТИВ__ТОЧНОСТЬ);
 		createEReference(активEClass, АКТИВ__СВОЙСТВА);
+		createEReference(активEClass, АКТИВ__СЧЕТА);
+		createEReference(активEClass, АКТИВ__ПРОВОДКИ);
 
 		свойствоАктиваEClass = createEClass(СВОЙСТВО_АКТИВА);
 		createEAttribute(свойствоАктиваEClass, СВОЙСТВО_АКТИВА__НАИМЕНОВАНИЕ);
@@ -1108,6 +1137,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		createEAttribute(проводкаEClass, ПРОВОДКА__БАЛАНСИРУЮЩАЯ_ПРОВОДКА);
 
 		субъектEClass = createEClass(СУБЪЕКТ);
+		createEReference(субъектEClass, СУБЪЕКТ__ОПЕРАЦИИ);
 
 		// Create data types
 		курсАктиваEDataType = createEDataType(КУРС_АКТИВА);
@@ -1212,7 +1242,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		initEClass(счётEClass, Счёт.class, "Счёт", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getСчёт_Группа(), ecorePackage.getEBoolean(), "группа", null, 0, 1, Счёт.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getСчёт_СубСчета(), this.getСчёт(), null, "субСчета", null, 0, -1, Счёт.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getСчёт_Активы(), this.getАктив(), null, "активы", null, 1, -1, Счёт.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getСчёт_Активы(), this.getАктив(), this.getАктив_Счета(), "активы", null, 1, -1, Счёт.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getСчёт_Проводки(), this.getПроводка(), this.getПроводка_Счёт(), "проводки", null, 0, -1, Счёт.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(активEClass, Актив.class, "Актив", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1222,6 +1252,8 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		initEAttribute(getАктив_ЕдиницаИзмерения(), ecorePackage.getEString(), "единицаИзмерения", null, 0, 1, Актив.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getАктив_Точность(), ecorePackage.getEIntegerObject(), "точность", null, 0, 1, Актив.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getАктив_Свойства(), this.getСвойствоАктива(), null, "свойства", null, 0, -1, Актив.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getАктив_Счета(), this.getСчёт(), this.getСчёт_Активы(), "счета", null, 0, -1, Актив.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getАктив_Проводки(), this.getПроводка(), this.getПроводка_Актив(), "проводки", null, 0, -1, Актив.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(свойствоАктиваEClass, СвойствоАктива.class, "СвойствоАктива", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getСвойствоАктива_Наименование(), ecorePackage.getEString(), "наименование", null, 1, 1, СвойствоАктива.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1257,17 +1289,18 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		initEAttribute(getОперация_ПервичныйВвод(), ecorePackage.getEBoolean(), "первичныйВвод", null, 0, 1, Операция.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getОперация_Проводки(), this.getПроводка(), null, "проводки", null, 0, -1, Операция.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getОперация_Создатель(), this.getПользователь(), null, "создатель", null, 1, 1, Операция.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getОперация_Субъекты(), this.getСубъект(), null, "субъекты", null, 0, 1, Операция.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getОперация_Субъекты(), this.getСубъект(), this.getСубъект_Операции(), "субъекты", null, 0, 1, Операция.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(проводкаEClass, Проводка.class, "Проводка", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getПроводка_Сверено(), ecorePackage.getEBoolean(), "сверено", null, 0, 1, Проводка.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getПроводка_Счёт(), this.getСчёт(), this.getСчёт_Проводки(), "счёт", null, 1, 1, Проводка.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getПроводка_Актив(), this.getАктив(), null, "актив", null, 1, 1, Проводка.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getПроводка_Актив(), this.getАктив(), this.getАктив_Проводки(), "актив", null, 1, 1, Проводка.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getПроводка_Количество(), ecorePackage.getEBigDecimal(), "количество", null, 1, 1, Проводка.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getПроводка_ЗначенияСвойствАктива(), this.getЗначениеСвойстваАктива(), null, "значенияСвойствАктива", null, 0, 1, Проводка.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getПроводка_БалансирующаяПроводка(), ecorePackage.getEBoolean(), "балансирующаяПроводка", null, 0, 1, Проводка.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(субъектEClass, Субъект.class, "Субъект", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getСубъект_Операции(), this.getОперация(), this.getОперация_Субъекты(), "операции", null, 0, -1, Субъект.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize data types
 		initEDataType(курсАктиваEDataType, КурсАктива.class, "КурсАктива", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
@@ -1571,6 +1604,18 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 "documentation", "\u041e\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u044f \u0441\u0432\u043e\u0439\u0441\u0442\u0432 \u0430\u043a\u0442\u0438\u0432\u0430.\r\n\u0417\u043d\u0430\u0447\u0435\u043d\u0438\u044f \u0441\u0432\u043e\u0439\u0441\u0442\u0432 \u0432\u0432\u043e\u0434\u044f\u0442\u0441\u044f \u0432 \u043f\u0440\u043e\u0432\u043e\u0434\u043a\u0435."
 		   });	
 		addAnnotation
+		  (getАктив_Счета(), 
+		   source, 
+		   new String[] {
+			 "documentation", "\u0421\u0447\u0435\u0442\u0430 \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u044e\u0449\u0438\u0435 \u0434\u0430\u043d\u043d\u044b\u0439 \u0430\u043a\u0442\u0438\u0432."
+		   });	
+		addAnnotation
+		  (getАктив_Проводки(), 
+		   source, 
+		   new String[] {
+			 "documentation", "\u041f\u0440\u043e\u0432\u043e\u0434\u043a\u0438 \u043e\u043f\u0438\u0441\u044b\u0432\u0430\u044e\u0449\u0438\u0435 \u0434\u0432\u0438\u0436\u0435\u043d\u0438\u0435 \u0434\u0430\u043d\u043d\u043e\u0433\u043e \u0430\u043a\u0442\u0438\u0432\u0430 \u043c\u0435\u0436\u0434\u0443 \u0441\u0447\u0435\u0442\u0430\u043c\u0438."
+		   });	
+		addAnnotation
 		  (свойствоАктиваEClass, 
 		   source, 
 		   new String[] {
@@ -1791,6 +1836,12 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		   source, 
 		   new String[] {
 			 "documentation", "\u0424\u0438\u0437\u0438\u0447\u0435\u0441\u043a\u043e\u0435 \u0438\u043b\u0438 \u044e\u0440\u0438\u0434\u0438\u0447\u0435\u0441\u043a\u043e\u0435 \u043b\u0438\u0446\u043e \u043f\u0440\u0438\u043d\u0438\u043c\u0430\u044e\u0449\u0435\u0435 \u0443\u0447\u0430\u0441\u0442\u0438\u0435 \u0432 \u0445\u043e\u0437\u044f\u0439\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0445 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u044f\u0445. \r\n\u041d\u0430\u043f\u0440\u0438\u043c\u0435\u0440 \u0431\u0430\u043d\u043a \u0438\u043b\u0438 \u043f\u043e\u0441\u0442\u043e\u044f\u043d\u043d\u044b\u0439 \u043f\u043e\u043a\u0443\u043f\u0430\u0442\u0435\u043b\u044c."
+		   });	
+		addAnnotation
+		  (getСубъект_Операции(), 
+		   source, 
+		   new String[] {
+			 "documentation", "\u041e\u043f\u0435\u0440\u0430\u0446\u0438\u0438 \u0432 \u043a\u043e\u0442\u043e\u0440\u044b\u0445 \u0441\u0443\u0431\u044a\u0435\u043a\u0442 \u043f\u0440\u0438\u043d\u0438\u043c\u0430\u043b \u0443\u0447\u0430\u0441\u0442\u0438\u0435. \r\n\u041d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u043f\u043e\u043a\u0443\u043f\u043a\u0438 \u043f\u0440\u043e\u0438\u0437\u0432\u0435\u0434\u0451\u043d\u043d\u044b\u0435 \u043f\u043e\u0441\u0442\u043e\u044f\u043d\u043d\u044b\u043c \u043f\u043e\u043a\u0443\u043f\u0430\u0442\u0435\u043b\u0435\u043c."
 		   });	
 		addAnnotation
 		  (курсАктиваEDataType, 

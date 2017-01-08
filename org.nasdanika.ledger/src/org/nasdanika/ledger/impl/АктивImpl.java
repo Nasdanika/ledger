@@ -7,7 +7,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.nasdanika.ledger.LedgerPackage;
 import org.nasdanika.ledger.Актив;
 import org.nasdanika.ledger.ИсточникКурсаАктива;
+import org.nasdanika.ledger.Проводка;
 import org.nasdanika.ledger.СвойствоАктива;
+import org.nasdanika.ledger.Счёт;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,6 +25,8 @@ import org.nasdanika.ledger.СвойствоАктива;
  *   <li>{@link org.nasdanika.ledger.impl.АктивImpl#getЕдиницаИзмерения <em>Единица Измерения</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.АктивImpl#getТочность <em>Точность</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.АктивImpl#getСвойства <em>Свойства</em>}</li>
+ *   <li>{@link org.nasdanika.ledger.impl.АктивImpl#getСчета <em>Счета</em>}</li>
+ *   <li>{@link org.nasdanika.ledger.impl.АктивImpl#getПроводки <em>Проводки</em>}</li>
  * </ul>
  *
  * @generated
@@ -93,6 +97,26 @@ public class АктивImpl extends ЭлементМоделиImpl implements А
 	@SuppressWarnings("unchecked")
 	public EList<СвойствоАктива> getСвойства() {
 		return (EList<СвойствоАктива>)eGet(LedgerPackage.Literals.АКТИВ__СВОЙСТВА, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public EList<Счёт> getСчета() {
+		return (EList<Счёт>)eGet(LedgerPackage.Literals.АКТИВ__СЧЕТА, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public EList<Проводка> getПроводки() {
+		return (EList<Проводка>)eGet(LedgerPackage.Literals.АКТИВ__ПРОВОДКИ, true);
 	}
 
 	/**
