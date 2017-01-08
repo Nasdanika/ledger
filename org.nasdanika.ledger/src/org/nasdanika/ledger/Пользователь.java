@@ -10,6 +10,10 @@ import org.nasdanika.cdo.security.LoginPasswordHashUser;
  * A representation of the model object '<em><b>Пользователь</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * 
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -32,6 +36,9 @@ public interface Пользователь extends LoginPasswordHashUser, Хра�
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Права</em>' containment reference list.
 	 * @see org.nasdanika.ledger.LedgerPackage#getПользователь_Права()
 	 * @model containment="true"

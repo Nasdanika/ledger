@@ -19,6 +19,7 @@ import org.nasdanika.ledger.Актив;
 import org.nasdanika.ledger.ЗначениеСвойстваАктива;
 import org.nasdanika.ledger.ИсточникКурсаАктива;
 import org.nasdanika.ledger.КурсАктива;
+import org.nasdanika.ledger.Субъект;
 
 /**
  * <!-- begin-user-doc -->
@@ -143,7 +144,7 @@ public abstract class ИсточникКурсаАктиваImpl extends CDOObje
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public КурсАктива получитьКурс(Date дата, BigDecimal количество, EList<ЗначениеСвойстваАктива> значенияСвойств, КурсАктива базовыйКурс) {
+	public КурсАктива получитьКурс(Date дата, BigDecimal количество, EList<ЗначениеСвойстваАктива> значенияСвойств, КурсАктива базовыйКурс, EList<Субъект> субъект) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -158,8 +159,8 @@ public abstract class ИсточникКурсаАктиваImpl extends CDOObje
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case LedgerPackage.ИСТОЧНИК_КУРСА_АКТИВА___ПОЛУЧИТЬ_КУРС__DATE_BIGDECIMAL_ELIST_КУРСАКТИВА:
-				return получитьКурс((Date)arguments.get(0), (BigDecimal)arguments.get(1), (EList<ЗначениеСвойстваАктива>)arguments.get(2), (КурсАктива)arguments.get(3));
+			case LedgerPackage.ИСТОЧНИК_КУРСА_АКТИВА___ПОЛУЧИТЬ_КУРС__DATE_BIGDECIMAL_ELIST_КУРСАКТИВА_ELIST:
+				return получитьКурс((Date)arguments.get(0), (BigDecimal)arguments.get(1), (EList<ЗначениеСвойстваАктива>)arguments.get(2), (КурсАктива)arguments.get(3), (EList<Субъект>)arguments.get(4));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

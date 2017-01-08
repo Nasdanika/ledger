@@ -8,6 +8,10 @@ package org.nasdanika.ledger;
  * A representation of the model object '<em><b>Встроенное Изображение</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * 
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -29,6 +33,9 @@ public interface ВстроенноеИзображение extends Изобра
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Содержание</em>' attribute.
 	 * @see #setСодержание(byte[])
 	 * @see org.nasdanika.ledger.LedgerPackage#getВстроенноеИзображение_Содержание()
@@ -55,6 +62,9 @@ public interface ВстроенноеИзображение extends Изобра
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Тип</em>' attribute.
 	 * @see #setТип(String)
 	 * @see org.nasdanika.ledger.LedgerPackage#getВстроенноеИзображение_Тип()

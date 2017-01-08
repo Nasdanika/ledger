@@ -9,6 +9,10 @@ import org.eclipse.emf.common.util.EList;
  * A representation of the model object '<em><b>Журнал Операций</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * 
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -35,6 +39,9 @@ public interface ЖурналОпераций extends ЭлементМодели
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Операции</em>' containment reference list.
 	 * @see org.nasdanika.ledger.LedgerPackage#getЖурналОпераций_Операции()
 	 * @model containment="true"
@@ -51,6 +58,9 @@ public interface ЖурналОпераций extends ЭлементМодели
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Счёта</em>' containment reference list.
 	 * @see org.nasdanika.ledger.LedgerPackage#getЖурналОпераций_Счёта()
 	 * @model containment="true"
@@ -67,6 +77,9 @@ public interface ЖурналОпераций extends ЭлементМодели
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Активы</em>' containment reference list.
 	 * @see org.nasdanika.ledger.LedgerPackage#getЖурналОпераций_Активы()
 	 * @model containment="true"
@@ -83,6 +96,9 @@ public interface ЖурналОпераций extends ЭлементМодели
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Субъекты</em>' containment reference list.
 	 * @see org.nasdanika.ledger.LedgerPackage#getЖурналОпераций_Субъекты()
 	 * @model containment="true"
@@ -99,6 +115,9 @@ public interface ЖурналОпераций extends ЭлементМодели
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Отчётные Активы</em>' reference list.
 	 * @see org.nasdanika.ledger.LedgerPackage#getЖурналОпераций_ОтчётныеАктивы()
 	 * @model

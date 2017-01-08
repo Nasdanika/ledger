@@ -9,6 +9,10 @@ import org.eclipse.emf.common.util.EList;
  * A representation of the model object '<em><b>Счёт</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * 
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -33,6 +37,9 @@ public interface Счёт extends ЭлементМодели {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Суб Счета</em>' containment reference list.
 	 * @see org.nasdanika.ledger.LedgerPackage#getСчёт_СубСчета()
 	 * @model containment="true"
@@ -49,6 +56,9 @@ public interface Счёт extends ЭлементМодели {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Активы</em>' reference list.
 	 * @see org.nasdanika.ledger.LedgerPackage#getСчёт_Активы()
 	 * @model required="true"
@@ -64,6 +74,9 @@ public interface Счёт extends ЭлементМодели {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Группа</em>' attribute.
 	 * @see #setГруппа(boolean)
 	 * @see org.nasdanika.ledger.LedgerPackage#getСчёт_Группа()

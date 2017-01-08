@@ -11,6 +11,10 @@ import org.eclipse.emf.common.util.EList;
  * A representation of the model object '<em><b>Право</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * 
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -33,6 +37,9 @@ public interface Право extends CDOObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Элемент Модели</em>' reference.
 	 * @see #setЭлементМодели(ЭлементМодели)
 	 * @see org.nasdanika.ledger.LedgerPackage#getПраво_ЭлементМодели()
@@ -60,6 +67,9 @@ public interface Право extends CDOObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Действия</em>' attribute list.
 	 * @see org.nasdanika.ledger.LedgerPackage#getПраво_Действия()
 	 * @model

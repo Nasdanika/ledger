@@ -28,6 +28,7 @@ import org.nasdanika.ledger.ЭлементМодели;
  *   <li>{@link org.nasdanika.ledger.impl.ПользовательImpl#getОписание <em>Описание</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ПользовательImpl#getКомментарии <em>Комментарии</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ПользовательImpl#getИзображение <em>Изображение</em>}</li>
+ *   <li>{@link org.nasdanika.ledger.impl.ПользовательImpl#getИдентификатор <em>Идентификатор</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ПользовательImpl#getЖурналыОпераций <em>Журналы Операций</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ПользовательImpl#getПрава <em>Права</em>}</li>
  * </ul>
@@ -141,6 +142,24 @@ public class ПользовательImpl extends LoginUserImpl implements По�
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getИдентификатор() {
+		return (String)eGet(LedgerPackage.Literals.ЭЛЕМЕНТ_МОДЕЛИ__ИДЕНТИФИКАТОР, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setИдентификатор(String newИдентификатор) {
+		eSet(LedgerPackage.Literals.ЭЛЕМЕНТ_МОДЕЛИ__ИДЕНТИФИКАТОР, newИдентификатор);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	public EList<ЖурналОпераций> getЖурналыОпераций() {
 		return (EList<ЖурналОпераций>)eGet(LedgerPackage.Literals.ХРАНИТЕЛЬ_ЖУРНАЛОВ_ОПЕРАЦИЙ__ЖУРНАЛЫ_ОПЕРАЦИЙ, true);
@@ -169,6 +188,7 @@ public class ПользовательImpl extends LoginUserImpl implements По�
 				case LedgerPackage.ПОЛЬЗОВАТЕЛЬ__ОПИСАНИЕ: return LedgerPackage.ЭЛЕМЕНТ_МОДЕЛИ__ОПИСАНИЕ;
 				case LedgerPackage.ПОЛЬЗОВАТЕЛЬ__КОММЕНТАРИИ: return LedgerPackage.ЭЛЕМЕНТ_МОДЕЛИ__КОММЕНТАРИИ;
 				case LedgerPackage.ПОЛЬЗОВАТЕЛЬ__ИЗОБРАЖЕНИЕ: return LedgerPackage.ЭЛЕМЕНТ_МОДЕЛИ__ИЗОБРАЖЕНИЕ;
+				case LedgerPackage.ПОЛЬЗОВАТЕЛЬ__ИДЕНТИФИКАТОР: return LedgerPackage.ЭЛЕМЕНТ_МОДЕЛИ__ИДЕНТИФИКАТОР;
 				default: return -1;
 			}
 		}
@@ -194,6 +214,7 @@ public class ПользовательImpl extends LoginUserImpl implements По�
 				case LedgerPackage.ЭЛЕМЕНТ_МОДЕЛИ__ОПИСАНИЕ: return LedgerPackage.ПОЛЬЗОВАТЕЛЬ__ОПИСАНИЕ;
 				case LedgerPackage.ЭЛЕМЕНТ_МОДЕЛИ__КОММЕНТАРИИ: return LedgerPackage.ПОЛЬЗОВАТЕЛЬ__КОММЕНТАРИИ;
 				case LedgerPackage.ЭЛЕМЕНТ_МОДЕЛИ__ИЗОБРАЖЕНИЕ: return LedgerPackage.ПОЛЬЗОВАТЕЛЬ__ИЗОБРАЖЕНИЕ;
+				case LedgerPackage.ЭЛЕМЕНТ_МОДЕЛИ__ИДЕНТИФИКАТОР: return LedgerPackage.ПОЛЬЗОВАТЕЛЬ__ИДЕНТИФИКАТОР;
 				default: return -1;
 			}
 		}

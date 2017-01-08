@@ -9,6 +9,10 @@ import java.math.BigDecimal;
  * A representation of the model object '<em><b>Проводка</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * 
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -34,6 +38,9 @@ public interface Проводка extends ЭлементМодели {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Сверено</em>' attribute.
 	 * @see #setСверено(boolean)
 	 * @see org.nasdanika.ledger.LedgerPackage#getПроводка_Сверено()
@@ -60,6 +67,9 @@ public interface Проводка extends ЭлементМодели {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Счёт</em>' reference.
 	 * @see #setСчёт(Счёт)
 	 * @see org.nasdanika.ledger.LedgerPackage#getПроводка_Счёт()
@@ -86,6 +96,9 @@ public interface Проводка extends ЭлементМодели {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Актив</em>' reference.
 	 * @see #setАктив(Актив)
 	 * @see org.nasdanika.ledger.LedgerPackage#getПроводка_Актив()
@@ -112,6 +125,9 @@ public interface Проводка extends ЭлементМодели {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Количество</em>' attribute.
 	 * @see #setКоличество(BigDecimal)
 	 * @see org.nasdanika.ledger.LedgerPackage#getПроводка_Количество()
@@ -138,6 +154,9 @@ public interface Проводка extends ЭлементМодели {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Значения Свойств Актива</em>' reference.
 	 * @see #setЗначенияСвойствАктива(ЗначениеСвойстваАктива)
 	 * @see org.nasdanika.ledger.LedgerPackage#getПроводка_ЗначенияСвойствАктива()

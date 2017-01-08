@@ -9,6 +9,10 @@ import org.eclipse.emf.common.util.EList;
  * A representation of the model object '<em><b>Хранитель Журналов Операций</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * 
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -31,6 +35,9 @@ public interface ХранительЖурналовОпераций extends Эл
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Журналы Операций</em>' containment reference list.
 	 * @see org.nasdanika.ledger.LedgerPackage#getХранительЖурналовОпераций_ЖурналыОпераций()
 	 * @model containment="true"

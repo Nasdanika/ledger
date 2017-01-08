@@ -8,6 +8,10 @@ package org.nasdanika.ledger;
  * A representation of the model object '<em><b>Ссылка На Изображение</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * 
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -28,6 +32,9 @@ public interface СсылкаНаИзображение extends Изображе
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Ссылка</em>' attribute.
 	 * @see #setСсылка(String)
 	 * @see org.nasdanika.ledger.LedgerPackage#getСсылкаНаИзображение_Ссылка()

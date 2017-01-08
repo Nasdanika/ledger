@@ -93,6 +93,10 @@
               <styles xmi:type="notation:FontStyle" xmi:id="_22x8IcfKEea1bau_jrD4OQ" fontColor="2697711" fontName="Segoe UI" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_22x8IsfKEea1bau_jrD4OQ"/>
             </children>
+            <children xmi:type="notation:Node" xmi:id="_LQQcYNUhEeaxUeUC5fX6yA" type="3010" element="_LQKVwNUhEeaxUeUC5fX6yA">
+              <styles xmi:type="notation:FontStyle" xmi:id="_LQQcYdUhEeaxUeUC5fX6yA" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_LQQcYtUhEeaxUeUC5fX6yA"/>
+            </children>
             <children xmi:type="notation:Node" xmi:id="_ieBysNShEeaxUeUC5fX6yA" type="3010" element="_idu3wNShEeaxUeUC5fX6yA">
               <styles xmi:type="notation:FontStyle" xmi:id="_ieBysdShEeaxUeUC5fX6yA" fontName="Segoe UI" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_ieBystShEeaxUeUC5fX6yA"/>
@@ -755,6 +759,14 @@
         <target xmi:type="ecore:EAttribute" href="model/ledger.ecore#//ЭлементМодели/описание"/>
         <semanticElements xmi:type="ecore:EAttribute" href="model/ledger.ecore#//ЭлементМодели/описание"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_31N6UMfKEea1bau_jrD4OQ" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_LQKVwNUhEeaxUeUC5fX6yA" name="идентификатор : EString" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="model/ledger.ecore#//ЭлементМодели/идентификатор"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="model/ledger.ecore#//ЭлементМодели/идентификатор"/>
+        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_LQKVwdUhEeaxUeUC5fX6yA" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>

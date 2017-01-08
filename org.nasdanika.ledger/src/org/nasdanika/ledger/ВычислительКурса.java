@@ -8,6 +8,10 @@ package org.nasdanika.ledger;
  * A representation of the model object '<em><b>Вычислитель Курса</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * 
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -28,6 +32,9 @@ public interface ВычислительКурса extends ИсточникКур
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Код</em>' attribute.
 	 * @see #setКод(String)
 	 * @see org.nasdanika.ledger.LedgerPackage#getВычислительКурса_Код()

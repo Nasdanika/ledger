@@ -24,6 +24,7 @@ import org.nasdanika.cdo.security.SecurityPackage;
  * <!-- end-user-doc -->
  * <!-- begin-model-doc -->
  * Пакет (package) Ledger содержит доменные модельные классы для учёта хозяйственных операций.
+ * 
  * [[classifier>УчётныйЦентр|Учётный Центр]] является корневым элементом модели и содержит [[classifier>ХранительЖурналовОпераций|хранителей журналов операций]] - 
  * [[classifier>Пользователь|пользователей]] и [[classifier>Организация|организации]].
  * 
@@ -45,33 +46,135 @@ import org.nasdanika.cdo.security.SecurityPackage;
  * Журнал операций это тетрадь в которой записываются операции. 
  * Счёт это некий контейнер в котором можно держать определённые активы. Например в кошельке можно держать деньги, а в коробке товар. 
  * 
- * На заметку: Метафоры могут служить большим подспорьем в описании какой-либо концепции. Главное не забывать что метафоры не стоит принимать буквально.
+ * На заметку: Метафоры могут служить большим подспорьем в описании какой-либо концепции. Главное не забывать что метафоры не стоит принимать слишком буквально.
  * 
  * ## Пример
  * 
- * Марья Ивановна торгует на рынке молоком, помидорами и огурцами. У неё есть постоянные покупатели - Клавдия Петровна и Фёдор Семёнович -  которым она порой продаёт в кредит и берёт деньги вперёд (пред-заказ). Марья Ивановна хранит деньги в Сбербанке в рублях и долларах.
+ * Марья Ивановна торгует на рынке молоком, помидорами и огурцами. Овощи она выращивает сама, молоко покупает у соседки. 
+ * У Марьи Ивановны есть постоянные покупатели - Клавдия Петровна и Фёдор Семёнович -  которым она порой продаёт в кредит и берёт деньги вперёд (предоплата). 
+ * Марья Ивановна хранит деньги в Сбербанке в рублях и долларах.
+ * 
+ * ### Субъекты
+ * 
+ * * Сбербанк
+ * * Клавдия Петровна
+ * * Фёдор Семёнович
  * 
  * ### Активы
  * 
  * * Деньги - группа активов, точность 2 (знака после запятой) - копейки или центы. Активы в группе наследуют точность.
- *   * Рубли 
- *   * Доллары
+ *     * Рубли 
+ *     * Доллары
  * * Товары
- *   * Молоко - единица измерения литры, точность 3 (миллилитры)
- *   * Овощи - группа активов, единица измерения килограммы, точность 3 (грамы). Активы в группе наследуют единицу измерения равно как и точность.
- *     * Помидоры 
- *     * Огурцы
+ *     * Молоко - единица измерения литры, точность 3 (миллилитры)
+ *     * Овощи - группа активов, единица измерения килограммы, точность 3 (грамы). Активы в группе наследуют единицу измерения равно как и точность.
+ *         * Помидоры 
+ *         * Огурцы
  * 
  * ### Счета
  * 
  * * Денежные 
- *   * Кошелёк - в кошельке можно хранить деньги (рубли и доллары), но нельзя хранить молко, помидоры и огурцы.
- *   * Банковские
- *     * Рублёвый счёт
- *     * Долларовый счёт
+ *     * Кошелёк - в кошельке можно хранить деньги (рубли и доллары), но нельзя хранить молко, помидоры и огурцы.
+ *     * Банковские
+ *         * Рублёвый счёт
+ *         * Долларовый счёт
  * * Товарные
- *   * Бидон - в бидоне можно держать молоко. Если там уже есть молко то лучше туда не класть помидоры или огурцы.
- *   * Корзинка - в корзинке можно хранить и помидоры и огурцы одновременно. В принципе в корзинке можно держать и деньги - спрятать под овощи от хулиганов.
+ *     * Бидон - в бидоне можно держать молоко. Если там уже есть молко то лучше туда не класть помидоры или огурцы.
+ *     * Корзинка - в корзинке можно хранить и помидоры и огурцы одновременно. В принципе в корзинке можно держать и деньги - спрятать под овощи от хулиганов.
+ * * Клиентские - на клиентских счетах могут "храниться" деньги в случае продажи в кредит или товар - деньги взяты вперёд под определённый товар.
+ *     * Клавдия Петровна
+ *     * Фёдор Семёнович
+ * * Прибыли и убытки в пересчёте на рубли.
+ * 
+ * ### Операции
+ * 
+ * #### Покупка молока у соседки
+ * 
+ * * Деньги из кошелька.
+ * * Молоко в бидон.
+ * * "Курс" молока устанавливается по себестоимости.
+ * 
+ * #### Овощи с огорода
+ * 
+ * * "Курс" овощей устанавливается по магически расчитанной "себестоимости". 
+ * * Овощи в корзинку.
+ * * Тут нужен счёт чтобы учитывать труд, удобрения и т.д. Для простоты пусть это будет счёт "Прибыли и убытки". Себестоимость овощей списывается с прибылей и убытков.
+ * 
+ * 
+ * #### Поездка в город на рынок
+ * 
+ * * Деньги из кошелька на билет на электричку, трамвай, и на оплату места на рынке.
+ * * Стоимость вышеперечисленных затрат в прибыли и убытки.
+ * 
+ * #### Продажа случайному покупателю
+ * 
+ * Продажа килограмма огурцов и литра молока (хе-хе) со скидкой за "опт":
+ * 
+ * * Деньги в кошелёк
+ * * Молоко из бидона
+ * * Огурцы из корзинки
+ * * Огурцы и молоко пересчитываются в рубли по "курсу". В случае товара это себестоимость. Разница между себестоимостью и выручкой записывается в прибыли/убытки чтобы операция была сбалансирована.
+ * 
+ * #### Продажа Клавдии Петровне
+ * 
+ * То-же самое как и случайному покупателю, но Клавдия Петровна указана как субъект операции.
+ * 
+ * #### Продажа овощей в кредит Фёдору Семёновичу
+ * 
+ * У Фёдора Семёновича не хватило наличных в кошельке чтобы расплатиться за все овощи.
+ * 
+ * * Деньги в кошелёк
+ * * Деньги на счёт Фёдора Петровича (должен)
+ * * Овощи из корзинки
+ * * Разница между себестоимостью и выручкой в прибыли/убытки.
+ * 
+ * #### Фёдору Семёнович расплатился
+ * 
+ * * Деньги в кошелёк
+ * * Деньги со счёта Фёдора Петровича (больше не должен)
+ * 
+ * #### Предоплата
+ * 
+ * Клавдия Петровна отдала деньги вперёд за кило помидоров.
+ * 
+ * * Деньги в кошелёк
+ * * Овощи со счёта Клавдии Петровны (Марья Ивановна должна Клавдии Петровне кило помидор)
+ * * Разница между себестоимостью и выручкой в прибыли/убытки.
+ * 
+ * #### Овощи Клавдии Петровне
+ * 
+ * * Овощи на счёт Клавдии Петровны (больше не должна)
+ * * Овощи из корзинки
+ * 
+ * #### Покупка валюты
+ * 
+ * * Текущий курс в таблицу курсон
+ * * Рубли из кошелька
+ * * Доллары в кошелёк
+ * 
+ * #### Деньги в банк
+ * 
+ * * Деньги из кошелька
+ * * Деньги на счёт
+ * * Субъект операции - Сбербанк
+ * 
+ * ### Сверка проводок
+ * 
+ * Получив выписки и банка Клавдия Петровна сверяет проводки и остатки и отмечает проводки как "Сверено".
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
  * 
  * <!-- end-model-doc -->
  * @see org.nasdanika.ledger.LedgerFactory
@@ -178,13 +281,22 @@ public interface LedgerPackage extends EPackage {
 	int ЭЛЕМЕНТ_МОДЕЛИ__ИЗОБРАЖЕНИЕ = 3;
 
 	/**
+	 * The feature id for the '<em><b>Идентификатор</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЭЛЕМЕНТ_МОДЕЛИ__ИДЕНТИФИКАТОР = 4;
+
+	/**
 	 * The number of structural features of the '<em>Элемент Модели</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT = 4;
+	int ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Элемент Модели</em>' class.
@@ -586,13 +698,22 @@ public interface LedgerPackage extends EPackage {
 	int УЧЁТНЫЙ_ЦЕНТР__ИЗОБРАЖЕНИЕ = SecurityPackage.LOGIN_PASSWORD_PROTECTION_DOMAIN_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Идентификатор</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int УЧЁТНЫЙ_ЦЕНТР__ИДЕНТИФИКАТОР = SecurityPackage.LOGIN_PASSWORD_PROTECTION_DOMAIN_FEATURE_COUNT + 4;
+
+	/**
 	 * The feature id for the '<em><b>Хранители Журналов Операций</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int УЧЁТНЫЙ_ЦЕНТР__ХРАНИТЕЛИ_ЖУРНАЛОВ_ОПЕРАЦИЙ = SecurityPackage.LOGIN_PASSWORD_PROTECTION_DOMAIN_FEATURE_COUNT + 4;
+	int УЧЁТНЫЙ_ЦЕНТР__ХРАНИТЕЛИ_ЖУРНАЛОВ_ОПЕРАЦИЙ = SecurityPackage.LOGIN_PASSWORD_PROTECTION_DOMAIN_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Учётный Центр</em>' class.
@@ -601,7 +722,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int УЧЁТНЫЙ_ЦЕНТР_FEATURE_COUNT = SecurityPackage.LOGIN_PASSWORD_PROTECTION_DOMAIN_FEATURE_COUNT + 5;
+	int УЧЁТНЫЙ_ЦЕНТР_FEATURE_COUNT = SecurityPackage.LOGIN_PASSWORD_PROTECTION_DOMAIN_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Authenticate</em>' operation.
@@ -692,6 +813,15 @@ public interface LedgerPackage extends EPackage {
 	 * @ordered
 	 */
 	int ХРАНИТЕЛЬ_ЖУРНАЛОВ_ОПЕРАЦИЙ__ИЗОБРАЖЕНИЕ = ЭЛЕМЕНТ_МОДЕЛИ__ИЗОБРАЖЕНИЕ;
+
+	/**
+	 * The feature id for the '<em><b>Идентификатор</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ХРАНИТЕЛЬ_ЖУРНАЛОВ_ОПЕРАЦИЙ__ИДЕНТИФИКАТОР = ЭЛЕМЕНТ_МОДЕЛИ__ИДЕНТИФИКАТОР;
 
 	/**
 	 * The feature id for the '<em><b>Журналы Операций</b></em>' containment reference list.
@@ -811,13 +941,22 @@ public interface LedgerPackage extends EPackage {
 	int ПОЛЬЗОВАТЕЛЬ__ИЗОБРАЖЕНИЕ = SecurityPackage.LOGIN_PASSWORD_HASH_USER_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Идентификатор</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ПОЛЬЗОВАТЕЛЬ__ИДЕНТИФИКАТОР = SecurityPackage.LOGIN_PASSWORD_HASH_USER_FEATURE_COUNT + 4;
+
+	/**
 	 * The feature id for the '<em><b>Журналы Операций</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ПОЛЬЗОВАТЕЛЬ__ЖУРНАЛЫ_ОПЕРАЦИЙ = SecurityPackage.LOGIN_PASSWORD_HASH_USER_FEATURE_COUNT + 4;
+	int ПОЛЬЗОВАТЕЛЬ__ЖУРНАЛЫ_ОПЕРАЦИЙ = SecurityPackage.LOGIN_PASSWORD_HASH_USER_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Права</b></em>' containment reference list.
@@ -826,7 +965,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ПОЛЬЗОВАТЕЛЬ__ПРАВА = SecurityPackage.LOGIN_PASSWORD_HASH_USER_FEATURE_COUNT + 5;
+	int ПОЛЬЗОВАТЕЛЬ__ПРАВА = SecurityPackage.LOGIN_PASSWORD_HASH_USER_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Пользователь</em>' class.
@@ -835,7 +974,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ПОЛЬЗОВАТЕЛЬ_FEATURE_COUNT = SecurityPackage.LOGIN_PASSWORD_HASH_USER_FEATURE_COUNT + 6;
+	int ПОЛЬЗОВАТЕЛЬ_FEATURE_COUNT = SecurityPackage.LOGIN_PASSWORD_HASH_USER_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Authorize</em>' operation.
@@ -1000,6 +1139,15 @@ public interface LedgerPackage extends EPackage {
 	int ОРГАНИЗАЦИЯ__ИЗОБРАЖЕНИЕ = ХРАНИТЕЛЬ_ЖУРНАЛОВ_ОПЕРАЦИЙ__ИЗОБРАЖЕНИЕ;
 
 	/**
+	 * The feature id for the '<em><b>Идентификатор</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ОРГАНИЗАЦИЯ__ИДЕНТИФИКАТОР = ХРАНИТЕЛЬ_ЖУРНАЛОВ_ОПЕРАЦИЙ__ИДЕНТИФИКАТОР;
+
+	/**
 	 * The feature id for the '<em><b>Журналы Операций</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1061,6 +1209,15 @@ public interface LedgerPackage extends EPackage {
 	 * @ordered
 	 */
 	int ЖУРНАЛ_ОПЕРАЦИЙ__ИЗОБРАЖЕНИЕ = ЭЛЕМЕНТ_МОДЕЛИ__ИЗОБРАЖЕНИЕ;
+
+	/**
+	 * The feature id for the '<em><b>Идентификатор</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЖУРНАЛ_ОПЕРАЦИЙ__ИДЕНТИФИКАТОР = ЭЛЕМЕНТ_МОДЕЛИ__ИДЕНТИФИКАТОР;
 
 	/**
 	 * The feature id for the '<em><b>Операции</b></em>' containment reference list.
@@ -1162,6 +1319,15 @@ public interface LedgerPackage extends EPackage {
 	int СЧЁТ__ИЗОБРАЖЕНИЕ = ЭЛЕМЕНТ_МОДЕЛИ__ИЗОБРАЖЕНИЕ;
 
 	/**
+	 * The feature id for the '<em><b>Идентификатор</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int СЧЁТ__ИДЕНТИФИКАТОР = ЭЛЕМЕНТ_МОДЕЛИ__ИДЕНТИФИКАТОР;
+
+	/**
 	 * The feature id for the '<em><b>Суб Счета</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1241,6 +1407,15 @@ public interface LedgerPackage extends EPackage {
 	 * @ordered
 	 */
 	int АКТИВ__ИЗОБРАЖЕНИЕ = ЭЛЕМЕНТ_МОДЕЛИ__ИЗОБРАЖЕНИЕ;
+
+	/**
+	 * The feature id for the '<em><b>Идентификатор</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int АКТИВ__ИДЕНТИФИКАТОР = ЭЛЕМЕНТ_МОДЕЛИ__ИДЕНТИФИКАТОР;
 
 	/**
 	 * The feature id for the '<em><b>Источники Курсов</b></em>' containment reference list.
@@ -1465,7 +1640,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ИСТОЧНИК_КУРСА_АКТИВА___ПОЛУЧИТЬ_КУРС__DATE_BIGDECIMAL_ELIST_КУРСАКТИВА = 0;
+	int ИСТОЧНИК_КУРСА_АКТИВА___ПОЛУЧИТЬ_КУРС__DATE_BIGDECIMAL_ELIST_КУРСАКТИВА_ELIST = 0;
 
 	/**
 	 * The number of operations of the '<em>Источник Курса Актива</em>' class.
@@ -1537,7 +1712,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ФИКСИРОВАННЫЙ_КУРС___ПОЛУЧИТЬ_КУРС__DATE_BIGDECIMAL_ELIST_КУРСАКТИВА = ИСТОЧНИК_КУРСА_АКТИВА___ПОЛУЧИТЬ_КУРС__DATE_BIGDECIMAL_ELIST_КУРСАКТИВА;
+	int ФИКСИРОВАННЫЙ_КУРС___ПОЛУЧИТЬ_КУРС__DATE_BIGDECIMAL_ELIST_КУРСАКТИВА_ELIST = ИСТОЧНИК_КУРСА_АКТИВА___ПОЛУЧИТЬ_КУРС__DATE_BIGDECIMAL_ELIST_КУРСАКТИВА_ELIST;
 
 	/**
 	 * The number of operations of the '<em>Фиксированный Курс</em>' class.
@@ -1609,7 +1784,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ВЫЧИСЛИТЕЛЬ_КУРСА___ПОЛУЧИТЬ_КУРС__DATE_BIGDECIMAL_ELIST_КУРСАКТИВА = ИСТОЧНИК_КУРСА_АКТИВА___ПОЛУЧИТЬ_КУРС__DATE_BIGDECIMAL_ELIST_КУРСАКТИВА;
+	int ВЫЧИСЛИТЕЛЬ_КУРСА___ПОЛУЧИТЬ_КУРС__DATE_BIGDECIMAL_ELIST_КУРСАКТИВА_ELIST = ИСТОЧНИК_КУРСА_АКТИВА___ПОЛУЧИТЬ_КУРС__DATE_BIGDECIMAL_ELIST_КУРСАКТИВА_ELIST;
 
 	/**
 	 * The number of operations of the '<em>Вычислитель Курса</em>' class.
@@ -1655,6 +1830,15 @@ public interface LedgerPackage extends EPackage {
 	 * @ordered
 	 */
 	int ОПЕРАЦИЯ__ИЗОБРАЖЕНИЕ = ЭЛЕМЕНТ_МОДЕЛИ__ИЗОБРАЖЕНИЕ;
+
+	/**
+	 * The feature id for the '<em><b>Идентификатор</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ОПЕРАЦИЯ__ИДЕНТИФИКАТОР = ЭЛЕМЕНТ_МОДЕЛИ__ИДЕНТИФИКАТОР;
 
 	/**
 	 * The feature id for the '<em><b>Проводки</b></em>' containment reference list.
@@ -1745,6 +1929,15 @@ public interface LedgerPackage extends EPackage {
 	 * @ordered
 	 */
 	int ПРОВОДКА__ИЗОБРАЖЕНИЕ = ЭЛЕМЕНТ_МОДЕЛИ__ИЗОБРАЖЕНИЕ;
+
+	/**
+	 * The feature id for the '<em><b>Идентификатор</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ПРОВОДКА__ИДЕНТИФИКАТОР = ЭЛЕМЕНТ_МОДЕЛИ__ИДЕНТИФИКАТОР;
 
 	/**
 	 * The feature id for the '<em><b>Сверено</b></em>' attribute.
@@ -1844,6 +2037,15 @@ public interface LedgerPackage extends EPackage {
 	 * @ordered
 	 */
 	int СУБЪЕКТ__ИЗОБРАЖЕНИЕ = ЭЛЕМЕНТ_МОДЕЛИ__ИЗОБРАЖЕНИЕ;
+
+	/**
+	 * The feature id for the '<em><b>Идентификатор</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int СУБЪЕКТ__ИДЕНТИФИКАТОР = ЭЛЕМЕНТ_МОДЕЛИ__ИДЕНТИФИКАТОР;
 
 	/**
 	 * The number of structural features of the '<em>Субъект</em>' class.
@@ -2003,6 +2205,17 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getЭлементМодели_Изображение();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.ledger.ЭлементМодели#getИдентификатор <em>Идентификатор</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Идентификатор</em>'.
+	 * @see org.nasdanika.ledger.ЭлементМодели#getИдентификатор()
+	 * @see #getЭлементМодели()
+	 * @generated
+	 */
+	EAttribute getЭлементМодели_Идентификатор();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.ledger.Пользователь <em>Пользователь</em>}'.
@@ -2369,14 +2582,14 @@ public interface LedgerPackage extends EPackage {
 	EAttribute getИсточникКурсаАктива_Комментарий();
 
 	/**
-	 * Returns the meta object for the '{@link org.nasdanika.ledger.ИсточникКурсаАктива#получитьКурс(java.util.Date, java.math.BigDecimal, org.eclipse.emf.common.util.EList, org.nasdanika.ledger.КурсАктива) <em>Получить Курс</em>}' operation.
+	 * Returns the meta object for the '{@link org.nasdanika.ledger.ИсточникКурсаАктива#получитьКурс(java.util.Date, java.math.BigDecimal, org.eclipse.emf.common.util.EList, org.nasdanika.ledger.КурсАктива, org.eclipse.emf.common.util.EList) <em>Получить Курс</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Получить Курс</em>' operation.
-	 * @see org.nasdanika.ledger.ИсточникКурсаАктива#получитьКурс(java.util.Date, java.math.BigDecimal, org.eclipse.emf.common.util.EList, org.nasdanika.ledger.КурсАктива)
+	 * @see org.nasdanika.ledger.ИсточникКурсаАктива#получитьКурс(java.util.Date, java.math.BigDecimal, org.eclipse.emf.common.util.EList, org.nasdanika.ledger.КурсАктива, org.eclipse.emf.common.util.EList)
 	 * @generated
 	 */
-	EOperation getИсточникКурсаАктива__ПолучитьКурс__Date_BigDecimal_EList_КурсАктива();
+	EOperation getИсточникКурсаАктива__ПолучитьКурс__Date_BigDecimal_EList_КурсАктива_EList();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.ledger.ФиксированныйКурс <em>Фиксированный Курс</em>}'.
@@ -2800,6 +3013,14 @@ public interface LedgerPackage extends EPackage {
 		EReference ЭЛЕМЕНТ_МОДЕЛИ__ИЗОБРАЖЕНИЕ = eINSTANCE.getЭлементМодели_Изображение();
 
 		/**
+		 * The meta object literal for the '<em><b>Идентификатор</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ЭЛЕМЕНТ_МОДЕЛИ__ИДЕНТИФИКАТОР = eINSTANCE.getЭлементМодели_Идентификатор();
+
+		/**
 		 * The meta object literal for the '{@link org.nasdanika.ledger.impl.ПользовательImpl <em>Пользователь</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3097,7 +3318,7 @@ public interface LedgerPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ИСТОЧНИК_КУРСА_АКТИВА___ПОЛУЧИТЬ_КУРС__DATE_BIGDECIMAL_ELIST_КУРСАКТИВА = eINSTANCE.getИсточникКурсаАктива__ПолучитьКурс__Date_BigDecimal_EList_КурсАктива();
+		EOperation ИСТОЧНИК_КУРСА_АКТИВА___ПОЛУЧИТЬ_КУРС__DATE_BIGDECIMAL_ELIST_КУРСАКТИВА_ELIST = eINSTANCE.getИсточникКурсаАктива__ПолучитьКурс__Date_BigDecimal_EList_КурсАктива_EList();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.ledger.impl.ФиксированныйКурсImpl <em>Фиксированный Курс</em>}' class.

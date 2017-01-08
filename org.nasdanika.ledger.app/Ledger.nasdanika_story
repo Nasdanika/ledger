@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.nasdanika.story:Catalog xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.nasdanika.story="urn:org.nasdanika.story" name="Журнал операций">
+  <elements xsi:type="org.nasdanika.story:User" name="Пользователь">
+    <stories xsi:type="org.nasdanika.story:Epic" name="Ввод операций">
+      <stories xsi:type="org.nasdanika.story:Story" name="Первичный ввод"/>
+    </stories>
+  </elements>
+</org.nasdanika.story:Catalog>

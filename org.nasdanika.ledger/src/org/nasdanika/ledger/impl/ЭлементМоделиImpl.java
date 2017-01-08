@@ -24,6 +24,7 @@ import org.nasdanika.ledger.ЭлементМодели;
  *   <li>{@link org.nasdanika.ledger.impl.ЭлементМоделиImpl#getОписание <em>Описание</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ЭлементМоделиImpl#getКомментарии <em>Комментарии</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ЭлементМоделиImpl#getИзображение <em>Изображение</em>}</li>
+ *   <li>{@link org.nasdanika.ledger.impl.ЭлементМоделиImpl#getИдентификатор <em>Идентификатор</em>}</li>
  * </ul>
  *
  * @generated
@@ -120,6 +121,24 @@ public abstract class ЭлементМоделиImpl extends CDOObjectImpl imple
 	 */
 	public void setИзображение(Изображение newИзображение) {
 		eSet(LedgerPackage.Literals.ЭЛЕМЕНТ_МОДЕЛИ__ИЗОБРАЖЕНИЕ, newИзображение);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getИдентификатор() {
+		return (String)eGet(LedgerPackage.Literals.ЭЛЕМЕНТ_МОДЕЛИ__ИДЕНТИФИКАТОР, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setИдентификатор(String newИдентификатор) {
+		eSet(LedgerPackage.Literals.ЭЛЕМЕНТ_МОДЕЛИ__ИДЕНТИФИКАТОР, newИдентификатор);
 	}
 
 } //ЭлементМоделиImpl

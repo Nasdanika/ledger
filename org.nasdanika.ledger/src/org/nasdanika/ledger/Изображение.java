@@ -9,6 +9,10 @@ import org.eclipse.emf.cdo.CDOObject;
  * A representation of the model object '<em><b>Изображение</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * 
+ * <!-- end-model-doc -->
+ *
  *
  * @see org.nasdanika.ledger.LedgerPackage#getИзображение()
  * @model abstract="true"

@@ -15,6 +15,10 @@ import org.eclipse.emf.common.util.EList;
  * A representation of the model object '<em><b>Источник Курса Актива</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * 
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -39,6 +43,9 @@ public interface ИсточникКурсаАктива extends CDOObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Начало Периода Действия</em>' attribute.
 	 * @see #setНачалоПериодаДействия(Date)
 	 * @see org.nasdanika.ledger.LedgerPackage#getИсточникКурсаАктива_НачалоПериодаДействия()
@@ -65,6 +72,9 @@ public interface ИсточникКурсаАктива extends CDOObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Конец Периода Действия</em>' attribute.
 	 * @see #setКонецПериодаДействия(Date)
 	 * @see org.nasdanika.ledger.LedgerPackage#getИсточникКурсаАктива_КонецПериодаДействия()
@@ -91,6 +101,9 @@ public interface ИсточникКурсаАктива extends CDOObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Базовый Актив</em>' reference.
 	 * @see #setБазовыйАктив(Актив)
 	 * @see org.nasdanika.ledger.LedgerPackage#getИсточникКурсаАктива_БазовыйАктив()
@@ -117,6 +130,9 @@ public interface ИсточникКурсаАктива extends CDOObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Комментарий</em>' attribute.
 	 * @see #setКомментарий(String)
 	 * @see org.nasdanika.ledger.LedgerPackage#getИсточникКурсаАктива_Комментарий()
@@ -138,9 +154,17 @@ public interface ИсточникКурсаАктива extends CDOObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="org.nasdanika.ledger.КурсАктива" датаRequired="true" значенияСвойствMany="true" базовыйКурсDataType="org.nasdanika.ledger.КурсАктива"
+	 * <!-- begin-model-doc -->
+	 * 
+	 * @param дата 
+	 * @param количество 
+	 * @param значенияСвойств 
+	 * @param базовыйКурс 
+	 * @param субъект 
+	 * <!-- end-model-doc -->
+	 * @model dataType="org.nasdanika.ledger.КурсАктива" датаRequired="true" значенияСвойствMany="true" базовыйКурсDataType="org.nasdanika.ledger.КурсАктива" субъектMany="true"
 	 * @generated
 	 */
-	КурсАктива получитьКурс(Date дата, BigDecimal количество, EList<ЗначениеСвойстваАктива> значенияСвойств, КурсАктива базовыйКурс);
+	КурсАктива получитьКурс(Date дата, BigDecimal количество, EList<ЗначениеСвойстваАктива> значенияСвойств, КурсАктива базовыйКурс, EList<Субъект> субъект);
 
 } // ИсточникКурсаАктива

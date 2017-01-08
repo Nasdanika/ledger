@@ -9,6 +9,10 @@ import org.eclipse.emf.common.util.EList;
  * A representation of the model object '<em><b>Операция</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * 
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -34,6 +38,9 @@ public interface Операция extends ЭлементМодели {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Проводки</em>' containment reference list.
 	 * @see org.nasdanika.ledger.LedgerPackage#getОперация_Проводки()
 	 * @model containment="true"
@@ -49,6 +56,9 @@ public interface Операция extends ЭлементМодели {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Создатель</em>' reference.
 	 * @see #setСоздатель(Пользователь)
 	 * @see org.nasdanika.ledger.LedgerPackage#getОперация_Создатель()
@@ -75,6 +85,9 @@ public interface Операция extends ЭлементМодели {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Первичный Ввод</em>' attribute.
 	 * @see #setПервичныйВвод(boolean)
 	 * @see org.nasdanika.ledger.LedgerPackage#getОперация_ПервичныйВвод()
@@ -101,6 +114,9 @@ public interface Операция extends ЭлементМодели {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Субъекты</em>' reference.
 	 * @see #setСубъекты(Субъект)
 	 * @see org.nasdanika.ledger.LedgerPackage#getОперация_Субъекты()

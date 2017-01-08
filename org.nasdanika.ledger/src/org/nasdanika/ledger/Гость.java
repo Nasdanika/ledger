@@ -9,6 +9,10 @@ import org.nasdanika.cdo.security.User;
  * A representation of the model object '<em><b>Гость</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * 
+ * <!-- end-model-doc -->
+ *
  *
  * @see org.nasdanika.ledger.LedgerPackage#getГость()
  * @model

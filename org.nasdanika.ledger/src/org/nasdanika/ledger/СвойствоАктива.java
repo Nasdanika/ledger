@@ -9,6 +9,10 @@ import org.eclipse.emf.cdo.CDOObject;
  * A representation of the model object '<em><b>Свойство Актива</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * 
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -34,6 +38,9 @@ public interface СвойствоАктива extends CDOObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Наименование</em>' attribute.
 	 * @see #setНаименование(String)
 	 * @see org.nasdanika.ledger.LedgerPackage#getСвойствоАктива_Наименование()
@@ -60,6 +67,9 @@ public interface СвойствоАктива extends CDOObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Описание</em>' attribute.
 	 * @see #setОписание(String)
 	 * @see org.nasdanika.ledger.LedgerPackage#getСвойствоАктива_Описание()
@@ -86,6 +96,9 @@ public interface СвойствоАктива extends CDOObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Тип</em>' attribute.
 	 * @see #setТип(String)
 	 * @see org.nasdanika.ledger.LedgerPackage#getСвойствоАктива_Тип()
@@ -113,6 +126,9 @@ public interface СвойствоАктива extends CDOObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Нижняя Граница</em>' attribute.
 	 * @see #setНижняяГраница(int)
 	 * @see org.nasdanika.ledger.LedgerPackage#getСвойствоАктива_НижняяГраница()
@@ -140,6 +156,9 @@ public interface СвойствоАктива extends CDOObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Верхняя Граница</em>' attribute.
 	 * @see #setВерхняяГраница(int)
 	 * @see org.nasdanika.ledger.LedgerPackage#getСвойствоАктива_ВерхняяГраница()

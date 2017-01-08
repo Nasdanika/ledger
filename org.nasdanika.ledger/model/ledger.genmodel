@@ -16,6 +16,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//ЭлементМодели/описание"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ledger.ecore#//ЭлементМодели/комментарии"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ledger.ecore#//ЭлементМодели/изображение"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//ЭлементМодели/идентификатор"/>
     </genClasses>
     <genClasses ecoreClass="ledger.ecore#//Комментарий">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ledger.ecore#//Комментарий/автор"/>
@@ -86,6 +87,7 @@
         <genParameters ecoreParameter="ledger.ecore#//ИсточникКурсаАктива/получитьКурс/количество"/>
         <genParameters ecoreParameter="ledger.ecore#//ИсточникКурсаАктива/получитьКурс/значенияСвойств"/>
         <genParameters ecoreParameter="ledger.ecore#//ИсточникКурсаАктива/получитьКурс/базовыйКурс"/>
+        <genParameters ecoreParameter="ledger.ecore#//ИсточникКурсаАктива/получитьКурс/субъект"/>
       </genOperations>
     </genClasses>
     <genClasses ecoreClass="ledger.ecore#//ФиксированныйКурс">

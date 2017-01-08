@@ -27,6 +27,7 @@ import org.nasdanika.ledger.ЭлементМодели;
  *   <li>{@link org.nasdanika.ledger.impl.УчётныйЦентрImpl#getОписание <em>Описание</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.УчётныйЦентрImpl#getКомментарии <em>Комментарии</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.УчётныйЦентрImpl#getИзображение <em>Изображение</em>}</li>
+ *   <li>{@link org.nasdanika.ledger.impl.УчётныйЦентрImpl#getИдентификатор <em>Идентификатор</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.УчётныйЦентрImpl#getХранителиЖурналовОпераций <em>Хранители Журналов Операций</em>}</li>
  * </ul>
  *
@@ -121,6 +122,24 @@ public class УчётныйЦентрImpl extends LoginPasswordProtectionDomainI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getИдентификатор() {
+		return (String)eGet(LedgerPackage.Literals.ЭЛЕМЕНТ_МОДЕЛИ__ИДЕНТИФИКАТОР, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setИдентификатор(String newИдентификатор) {
+		eSet(LedgerPackage.Literals.ЭЛЕМЕНТ_МОДЕЛИ__ИДЕНТИФИКАТОР, newИдентификатор);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	public EList<ХранительЖурналовОпераций> getХранителиЖурналовОпераций() {
 		return (EList<ХранительЖурналовОпераций>)eGet(LedgerPackage.Literals.УЧЁТНЫЙ_ЦЕНТР__ХРАНИТЕЛИ_ЖУРНАЛОВ_ОПЕРАЦИЙ, true);
@@ -139,6 +158,7 @@ public class УчётныйЦентрImpl extends LoginPasswordProtectionDomainI
 				case LedgerPackage.УЧЁТНЫЙ_ЦЕНТР__ОПИСАНИЕ: return LedgerPackage.ЭЛЕМЕНТ_МОДЕЛИ__ОПИСАНИЕ;
 				case LedgerPackage.УЧЁТНЫЙ_ЦЕНТР__КОММЕНТАРИИ: return LedgerPackage.ЭЛЕМЕНТ_МОДЕЛИ__КОММЕНТАРИИ;
 				case LedgerPackage.УЧЁТНЫЙ_ЦЕНТР__ИЗОБРАЖЕНИЕ: return LedgerPackage.ЭЛЕМЕНТ_МОДЕЛИ__ИЗОБРАЖЕНИЕ;
+				case LedgerPackage.УЧЁТНЫЙ_ЦЕНТР__ИДЕНТИФИКАТОР: return LedgerPackage.ЭЛЕМЕНТ_МОДЕЛИ__ИДЕНТИФИКАТОР;
 				default: return -1;
 			}
 		}
@@ -158,6 +178,7 @@ public class УчётныйЦентрImpl extends LoginPasswordProtectionDomainI
 				case LedgerPackage.ЭЛЕМЕНТ_МОДЕЛИ__ОПИСАНИЕ: return LedgerPackage.УЧЁТНЫЙ_ЦЕНТР__ОПИСАНИЕ;
 				case LedgerPackage.ЭЛЕМЕНТ_МОДЕЛИ__КОММЕНТАРИИ: return LedgerPackage.УЧЁТНЫЙ_ЦЕНТР__КОММЕНТАРИИ;
 				case LedgerPackage.ЭЛЕМЕНТ_МОДЕЛИ__ИЗОБРАЖЕНИЕ: return LedgerPackage.УЧЁТНЫЙ_ЦЕНТР__ИЗОБРАЖЕНИЕ;
+				case LedgerPackage.ЭЛЕМЕНТ_МОДЕЛИ__ИДЕНТИФИКАТОР: return LedgerPackage.УЧЁТНЫЙ_ЦЕНТР__ИДЕНТИФИКАТОР;
 				default: return -1;
 			}
 		}

@@ -10,6 +10,10 @@ import org.eclipse.emf.cdo.CDOObject;
  * A representation of the model object '<em><b>Комментарий</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * 
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -33,6 +37,9 @@ public interface Комментарий extends CDOObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Автор</em>' reference.
 	 * @see #setАвтор(Пользователь)
 	 * @see org.nasdanika.ledger.LedgerPackage#getКомментарий_Автор()
@@ -59,6 +66,9 @@ public interface Комментарий extends CDOObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Содержание</em>' attribute.
 	 * @see #setСодержание(String)
 	 * @see org.nasdanika.ledger.LedgerPackage#getКомментарий_Содержание()
@@ -85,6 +95,9 @@ public interface Комментарий extends CDOObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Дата</em>' attribute.
 	 * @see #setДата(Date)
 	 * @see org.nasdanika.ledger.LedgerPackage#getКомментарий_Дата()

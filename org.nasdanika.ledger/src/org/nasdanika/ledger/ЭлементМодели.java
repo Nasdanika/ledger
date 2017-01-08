@@ -10,6 +10,10 @@ import org.eclipse.emf.common.util.EList;
  * A representation of the model object '<em><b>Элемент Модели</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * 
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -18,6 +22,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.nasdanika.ledger.ЭлементМодели#getОписание <em>Описание</em>}</li>
  *   <li>{@link org.nasdanika.ledger.ЭлементМодели#getКомментарии <em>Комментарии</em>}</li>
  *   <li>{@link org.nasdanika.ledger.ЭлементМодели#getИзображение <em>Изображение</em>}</li>
+ *   <li>{@link org.nasdanika.ledger.ЭлементМодели#getИдентификатор <em>Идентификатор</em>}</li>
  * </ul>
  *
  * @see org.nasdanika.ledger.LedgerPackage#getЭлементМодели()
@@ -34,6 +39,9 @@ public interface ЭлементМодели extends CDOObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Наименование</em>' attribute.
 	 * @see #setНаименование(String)
 	 * @see org.nasdanika.ledger.LedgerPackage#getЭлементМодели_Наименование()
@@ -60,6 +68,9 @@ public interface ЭлементМодели extends CDOObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Описание</em>' attribute.
 	 * @see #setОписание(String)
 	 * @see org.nasdanika.ledger.LedgerPackage#getЭлементМодели_Описание()
@@ -87,6 +98,9 @@ public interface ЭлементМодели extends CDOObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Комментарии</em>' containment reference list.
 	 * @see org.nasdanika.ledger.LedgerPackage#getЭлементМодели_Комментарии()
 	 * @model containment="true"
@@ -102,6 +116,9 @@ public interface ЭлементМодели extends CDOObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Изображение</em>' containment reference.
 	 * @see #setИзображение(Изображение)
 	 * @see org.nasdanika.ledger.LedgerPackage#getЭлементМодели_Изображение()
@@ -119,5 +136,30 @@ public interface ЭлементМодели extends CDOObject {
 	 * @generated
 	 */
 	void setИзображение(Изображение value);
+
+	/**
+	 * Returns the value of the '<em><b>Идентификатор</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Идентификатор</em>' attribute.
+	 * @see #setИдентификатор(String)
+	 * @see org.nasdanika.ledger.LedgerPackage#getЭлементМодели_Идентификатор()
+	 * @model
+	 * @generated
+	 */
+	String getИдентификатор();
+
+	/**
+	 * Sets the value of the '{@link org.nasdanika.ledger.ЭлементМодели#getИдентификатор <em>Идентификатор</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Идентификатор</em>' attribute.
+	 * @see #getИдентификатор()
+	 * @generated
+	 */
+	void setИдентификатор(String value);
 
 } // ЭлементМодели

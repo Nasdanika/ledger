@@ -9,6 +9,10 @@ import java.math.BigDecimal;
  * A representation of the model object '<em><b>Фиксированный Курс</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * 
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -29,6 +33,9 @@ public interface ФиксированныйКурс extends ИсточникКу
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Курс</em>' attribute.
 	 * @see #setКурс(BigDecimal)
 	 * @see org.nasdanika.ledger.LedgerPackage#getФиксированныйКурс_Курс()

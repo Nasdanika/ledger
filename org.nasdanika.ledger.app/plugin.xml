@@ -244,4 +244,10 @@ A -> B : Message
          </description>
       </markdown-pre-processor>      
    </extension>
+   <extension
+         point="org.nasdanika.story.model">
+      <story
+            model="Ledger.nasdanika_story">
+      </story>
+   </extension>
 </plugin>

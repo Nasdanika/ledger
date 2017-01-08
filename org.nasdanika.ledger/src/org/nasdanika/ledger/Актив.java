@@ -9,6 +9,10 @@ import org.eclipse.emf.common.util.EList;
  * A representation of the model object '<em><b>Актив</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * 
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -36,6 +40,9 @@ public interface Актив extends ЭлементМодели {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Источники Курсов</em>' containment reference list.
 	 * @see org.nasdanika.ledger.LedgerPackage#getАктив_ИсточникиКурсов()
 	 * @model containment="true"
@@ -52,6 +59,9 @@ public interface Актив extends ЭлементМодели {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Суб Активы</em>' containment reference list.
 	 * @see org.nasdanika.ledger.LedgerPackage#getАктив_СубАктивы()
 	 * @model containment="true"
@@ -67,6 +77,9 @@ public interface Актив extends ЭлементМодели {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Точность</em>' attribute.
 	 * @see #setТочность(Integer)
 	 * @see org.nasdanika.ledger.LedgerPackage#getАктив_Точность()
@@ -94,6 +107,9 @@ public interface Актив extends ЭлементМодели {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Свойства</em>' containment reference list.
 	 * @see org.nasdanika.ledger.LedgerPackage#getАктив_Свойства()
 	 * @model containment="true"
@@ -109,6 +125,9 @@ public interface Актив extends ЭлементМодели {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Единица Измерения</em>' attribute.
 	 * @see #setЕдиницаИзмерения(String)
 	 * @see org.nasdanika.ledger.LedgerPackage#getАктив_ЕдиницаИзмерения()
@@ -135,6 +154,9 @@ public interface Актив extends ЭлементМодели {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Группа</em>' attribute.
 	 * @see #setГруппа(boolean)
 	 * @see org.nasdanika.ledger.LedgerPackage#getАктив_Группа()
