@@ -62,8 +62,6 @@ public class LedgerFactoryImpl extends EFactoryImpl implements LedgerFactory {
 			case LedgerPackage.ВСТРОЕННОЕ_ИЗОБРАЖЕНИЕ: return (EObject)createВстроенноеИзображение();
 			case LedgerPackage.УЧЁТНЫЙ_ЦЕНТР: return (EObject)createУчётныйЦентр();
 			case LedgerPackage.ПОЛЬЗОВАТЕЛЬ: return (EObject)createПользователь();
-			case LedgerPackage.ГОСТЬ: return (EObject)createГость();
-			case LedgerPackage.ПРАВО: return (EObject)createПраво();
 			case LedgerPackage.ОРГАНИЗАЦИЯ: return (EObject)createОрганизация();
 			case LedgerPackage.ЖУРНАЛ_ОПЕРАЦИЙ: return (EObject)createЖурналОпераций();
 			case LedgerPackage.СЧЁТ: return (EObject)createСчёт();
@@ -138,26 +136,6 @@ public class LedgerFactoryImpl extends EFactoryImpl implements LedgerFactory {
 	public Пользователь createПользователь() {
 		ПользовательImpl пользователь = new ПользовательImpl();
 		return пользователь;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Гость createГость() {
-		ГостьImpl гость = new ГостьImpl();
-		return гость;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Право createПраво() {
-		ПравоImpl право = new ПравоImpl();
-		return право;
 	}
 
 	/**

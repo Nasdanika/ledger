@@ -10,10 +10,10 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
 import org.nasdanika.cdo.security.LoginPasswordHashUser;
-import org.nasdanika.cdo.security.LoginPasswordProtectionDomain;
+import org.nasdanika.cdo.security.LoginPasswordRealm;
 import org.nasdanika.cdo.security.LoginUser;
 import org.nasdanika.cdo.security.Principal;
-import org.nasdanika.cdo.security.ProtectionDomain;
+import org.nasdanika.cdo.security.Realm;
 import org.nasdanika.cdo.security.User;
 import org.nasdanika.ledger.*;
 
@@ -106,14 +106,6 @@ public class LedgerAdapterFactory extends AdapterFactoryImpl {
 				return createПользовательAdapter();
 			}
 			@Override
-			public Adapter caseГость(Гость object) {
-				return createГостьAdapter();
-			}
-			@Override
-			public Adapter caseПраво(Право object) {
-				return createПравоAdapter();
-			}
-			@Override
 			public Adapter caseОрганизация(Организация object) {
 				return createОрганизацияAdapter();
 			}
@@ -162,23 +154,23 @@ public class LedgerAdapterFactory extends AdapterFactoryImpl {
 				return createСубъектAdapter();
 			}
 			@Override
-			public <CR> Adapter caseProtectionDomain(ProtectionDomain<CR> object) {
-				return createProtectionDomainAdapter();
+			public <CR> Adapter caseRealm(Realm<CR> object) {
+				return createRealmAdapter();
 			}
 			@Override
-			public Adapter caseLoginPasswordProtectionDomain(LoginPasswordProtectionDomain object) {
-				return createLoginPasswordProtectionDomainAdapter();
+			public Adapter caseLoginPasswordRealm(LoginPasswordRealm object) {
+				return createLoginPasswordRealmAdapter();
 			}
 			@Override
 			public Adapter casePrincipal(Principal object) {
 				return createPrincipalAdapter();
 			}
 			@Override
-			public Adapter caseUser(User object) {
+			public <CR> Adapter caseUser(User<CR> object) {
 				return createUserAdapter();
 			}
 			@Override
-			public Adapter caseLoginUser(LoginUser object) {
+			public <CR> Adapter caseLoginUser(LoginUser<CR> object) {
 				return createLoginUserAdapter();
 			}
 			@Override
@@ -258,34 +250,6 @@ public class LedgerAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createПользовательAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.ledger.Гость <em>Гость</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.nasdanika.ledger.Гость
-	 * @generated
-	 */
-	public Adapter createГостьAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.ledger.Право <em>Право</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.nasdanika.ledger.Право
-	 * @generated
-	 */
-	public Adapter createПравоAdapter() {
 		return null;
 	}
 
@@ -458,6 +422,34 @@ public class LedgerAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.cdo.security.Realm <em>Realm</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.cdo.security.Realm
+	 * @generated
+	 */
+	public Adapter createRealmAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.cdo.security.LoginPasswordRealm <em>Login Password Realm</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.cdo.security.LoginPasswordRealm
+	 * @generated
+	 */
+	public Adapter createLoginPasswordRealmAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.nasdanika.ledger.Комментарий <em>Комментарий</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -510,34 +502,6 @@ public class LedgerAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createВстроенноеИзображениеAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.cdo.security.ProtectionDomain <em>Protection Domain</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.nasdanika.cdo.security.ProtectionDomain
-	 * @generated
-	 */
-	public Adapter createProtectionDomainAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.nasdanika.cdo.security.LoginPasswordProtectionDomain <em>Login Password Protection Domain</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.nasdanika.cdo.security.LoginPasswordProtectionDomain
-	 * @generated
-	 */
-	public Adapter createLoginPasswordProtectionDomainAdapter() {
 		return null;
 	}
 

@@ -82,6 +82,9 @@
 		<module>org.nasdanika.ledger.feature</module>	
 		<module>org.nasdanika.ledger.repository</module>	
 		<module>org.nasdanika.ledger</module>
+		<module>org.nasdanika.ledger.edit</module>
+		<module>org.nasdanika.ledger.editor</module>
+		<module>org.nasdanika.ledger.editor.feature</module>
 		<module>org.nasdanika.ledger.ui.driver.actors</module>
 		<module>org.nasdanika.ledger.ui.driver.pages</module>
 		<module>org.nasdanika.ledger.ui.driver.actors.impl</module>

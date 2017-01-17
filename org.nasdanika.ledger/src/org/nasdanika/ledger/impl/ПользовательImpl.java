@@ -4,6 +4,7 @@ package org.nasdanika.ledger.impl;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.nasdanika.cdo.security.LoginPasswordCredentials;
 import org.nasdanika.cdo.security.SecurityPackage;
 import org.nasdanika.cdo.security.impl.LoginUserImpl;
 import org.nasdanika.ledger.LedgerPackage;
@@ -11,7 +12,6 @@ import org.nasdanika.ledger.ЖурналОпераций;
 import org.nasdanika.ledger.Изображение;
 import org.nasdanika.ledger.Комментарий;
 import org.nasdanika.ledger.Пользователь;
-import org.nasdanika.ledger.Право;
 import org.nasdanika.ledger.ХранительЖурналовОпераций;
 import org.nasdanika.ledger.ЭлементМодели;
 
@@ -30,12 +30,11 @@ import org.nasdanika.ledger.ЭлементМодели;
  *   <li>{@link org.nasdanika.ledger.impl.ПользовательImpl#getИзображение <em>Изображение</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ПользовательImpl#getИдентификатор <em>Идентификатор</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ПользовательImpl#getЖурналыОпераций <em>Журналы Операций</em>}</li>
- *   <li>{@link org.nasdanika.ledger.impl.ПользовательImpl#getПрава <em>Права</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ПользовательImpl extends LoginUserImpl implements Пользователь {
+public class ПользовательImpl extends LoginUserImpl<LoginPasswordCredentials> implements Пользователь {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -163,16 +162,6 @@ public class ПользовательImpl extends LoginUserImpl implements По�
 	@SuppressWarnings("unchecked")
 	public EList<ЖурналОпераций> getЖурналыОпераций() {
 		return (EList<ЖурналОпераций>)eGet(LedgerPackage.Literals.ХРАНИТЕЛЬ_ЖУРНАЛОВ_ОПЕРАЦИЙ__ЖУРНАЛЫ_ОПЕРАЦИЙ, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	public EList<Право> getПрава() {
-		return (EList<Право>)eGet(LedgerPackage.Literals.ПОЛЬЗОВАТЕЛЬ__ПРАВА, true);
 	}
 
 	/**

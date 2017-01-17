@@ -6,7 +6,9 @@ import org.eclipse.emf.cdo.session.CDOSession;
 import org.eclipse.emf.cdo.transaction.CDOTransaction;
 import org.eclipse.emf.cdo.util.CommitException;
 import org.nasdanika.cdo.CDOSessionInitializer;
+import org.nasdanika.ledger.LedgerFactory;
 import org.nasdanika.ledger.LedgerPackage;
+import org.nasdanika.ledger.УчётныйЦентр;
 
 public class LedgerSessionInitializerComponent implements CDOSessionInitializer {
 	
@@ -21,8 +23,11 @@ public class LedgerSessionInitializerComponent implements CDOSessionInitializer 
 		// Populate with initial data if empty.
 		CDOTransaction transaction = session.openTransaction();				
 		try {
-			CDOResource cRes = transaction.getOrCreateResource("/Ledger");
+			CDOResource cRes = transaction.getOrCreateResource("/ledger");
 			if (cRes.getContents().isEmpty()) {
+				УчётныйЦентр учётныйЦентр = LedgerFactory.eINSTANCE.createУчётныйЦентр();
+				учётныйЦентр.setНаименование("Митрофановна");
+				cRes.getContents().add(учётныйЦентр);
 				// Create initial content
 				// TODO - Ledger rootElement = LedgerFactory.eINSTANCE.createLedger();
 				// TODO - configure root and add sub-elements

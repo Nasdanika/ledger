@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated ledger -->
+	  <category
+            name="Nasdanika"
+            id="org.nasdanika">
+      </category>
+
+      <wizard
+            id="org.nasdanika.ledger.presentation.LedgerModelWizardID"
+            name="%_UI_LedgerModelWizard_label"
+            class="org.nasdanika.ledger.presentation.LedgerModelWizard"
+            category="org.nasdanika"
+            icon="icons/full/obj16/LedgerModelFile.gif">
+         <description>%_UI_LedgerModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated ledger -->
+      <editor
+            id="org.nasdanika.ledger.presentation.LedgerEditorID"
+            name="%_UI_LedgerEditor_label"
+            icon="icons/full/obj16/LedgerModelFile.gif"
+            extensions="nsd_ledger"
+            class="org.nasdanika.ledger.presentation.LedgerEditor"
+            contributorClass="org.nasdanika.ledger.presentation.LedgerActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

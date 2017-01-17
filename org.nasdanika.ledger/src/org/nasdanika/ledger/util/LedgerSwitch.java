@@ -8,10 +8,10 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
 import org.nasdanika.cdo.security.LoginPasswordHashUser;
-import org.nasdanika.cdo.security.LoginPasswordProtectionDomain;
+import org.nasdanika.cdo.security.LoginPasswordRealm;
 import org.nasdanika.cdo.security.LoginUser;
 import org.nasdanika.cdo.security.Principal;
-import org.nasdanika.cdo.security.ProtectionDomain;
+import org.nasdanika.cdo.security.Realm;
 import org.nasdanika.cdo.security.User;
 import org.nasdanika.ledger.*;
 
@@ -107,9 +107,9 @@ public class LedgerSwitch<T> extends Switch<T> {
 			case LedgerPackage.УЧЁТНЫЙ_ЦЕНТР: {
 				УчётныйЦентр учётныйЦентр = (УчётныйЦентр)theEObject;
 				T result = caseУчётныйЦентр(учётныйЦентр);
-				if (result == null) result = caseLoginPasswordProtectionDomain(учётныйЦентр);
+				if (result == null) result = caseLoginPasswordRealm(учётныйЦентр);
 				if (result == null) result = caseЭлементМодели(учётныйЦентр);
-				if (result == null) result = caseProtectionDomain(учётныйЦентр);
+				if (result == null) result = caseRealm(учётныйЦентр);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -129,20 +129,6 @@ public class LedgerSwitch<T> extends Switch<T> {
 				if (result == null) result = caseЭлементМодели(пользователь);
 				if (result == null) result = caseUser(пользователь);
 				if (result == null) result = casePrincipal(пользователь);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case LedgerPackage.ГОСТЬ: {
-				Гость гость = (Гость)theEObject;
-				T result = caseГость(гость);
-				if (result == null) result = caseUser(гость);
-				if (result == null) result = casePrincipal(гость);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case LedgerPackage.ПРАВО: {
-				Право право = (Право)theEObject;
-				T result = caseПраво(право);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -289,36 +275,6 @@ public class LedgerSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseПользователь(Пользователь object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Гость</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Гость</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseГость(Гость object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Право</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Право</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseПраво(Право object) {
 		return null;
 	}
 
@@ -503,6 +459,36 @@ public class LedgerSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Realm</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Realm</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public <CR> T caseRealm(Realm<CR> object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Login Password Realm</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Login Password Realm</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLoginPasswordRealm(LoginPasswordRealm object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Комментарий</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -563,36 +549,6 @@ public class LedgerSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Protection Domain</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Protection Domain</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public <CR> T caseProtectionDomain(ProtectionDomain<CR> object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Login Password Protection Domain</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Login Password Protection Domain</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseLoginPasswordProtectionDomain(LoginPasswordProtectionDomain object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Principal</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -618,7 +574,7 @@ public class LedgerSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUser(User object) {
+	public <CR> T caseUser(User<CR> object) {
 		return null;
 	}
 
@@ -633,7 +589,7 @@ public class LedgerSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseLoginUser(LoginUser object) {
+	public <CR> T caseLoginUser(LoginUser<CR> object) {
 		return null;
 	}
 

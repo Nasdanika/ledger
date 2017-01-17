@@ -49,24 +49,6 @@ public interface LedgerFactory extends EFactory {
 	Пользователь createПользователь();
 
 	/**
-	 * Returns a new object of class '<em>Гость</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Гость</em>'.
-	 * @generated
-	 */
-	Гость createГость();
-
-	/**
-	 * Returns a new object of class '<em>Право</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Право</em>'.
-	 * @generated
-	 */
-	Право createПраво();
-
-	/**
 	 * Returns a new object of class '<em>Организация</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

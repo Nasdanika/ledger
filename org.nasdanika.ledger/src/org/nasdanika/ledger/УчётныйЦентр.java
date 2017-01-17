@@ -3,7 +3,7 @@
 package org.nasdanika.ledger;
 
 import org.eclipse.emf.common.util.EList;
-import org.nasdanika.cdo.security.LoginPasswordProtectionDomain;
+import org.nasdanika.cdo.security.LoginPasswordRealm;
 
 
 /**
@@ -26,7 +26,7 @@ import org.nasdanika.cdo.security.LoginPasswordProtectionDomain;
  * @model
  * @generated
  */
-public interface УчётныйЦентр extends LoginPasswordProtectionDomain, ЭлементМодели {
+public interface УчётныйЦентр extends LoginPasswordRealm, ЭлементМодели {
 
 	/**
 	 * Returns the value of the '<em><b>Хранители Журналов Операций</b></em>' containment reference list.

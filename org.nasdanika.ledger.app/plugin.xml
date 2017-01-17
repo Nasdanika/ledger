@@ -132,11 +132,6 @@
             </stylesheet>                  
       </default_html_factory>
    </extension>
-   <extension point="org.nasdanika.cdo.security.security_policy">
-      <policy_resource
-            resource="ledger.nasdanika_cdo_security">
-      </policy_resource>
-   </extension> 
    <extension
          point="org.eclipse.equinox.http.registry.httpcontexts">
       <httpcontext

@@ -4,12 +4,13 @@
     modelName="ledger" rootExtendsInterface="org.eclipse.emf.cdo.CDOObject" rootExtendsClass="org.eclipse.emf.internal.cdo.CDOObjectImpl"
     reflectiveDelegation="true" importerID="org.eclipse.emf.importer.cdo" featureDelegation="Reflective"
     complianceLevel="8.0" suppressGenModelAnnotations="false" copyrightFields="false"
-    providerRootExtendsClass="org.eclipse.emf.cdo.edit.CDOItemProviderAdapter" usedGenPackages="../../org.nasdanika.cdo.security/model/security.genmodel#//security"
+    providerRootExtendsClass="org.nasdanika.ledger.provider.CDOItemProviderAdapterEx"
+    usedGenPackages="../../org.nasdanika.cdo.security/model/security.genmodel#//security"
     operationReflection="true" importOrganizing="true">
   <foreignModel>ledger.ecore</foreignModel>
   <modelPluginVariables>CDO=org.eclipse.emf.cdo</modelPluginVariables>
   <genPackages prefix="Ledger" basePackage="org.nasdanika" disposableProviderFactory="true"
-      ecorePackage="ledger.ecore#/">
+      fileExtensions="nsd_ledger" ecorePackage="ledger.ecore#/">
     <genDataTypes ecoreDataType="ledger.ecore#//КурсАктива"/>
     <genClasses ecoreClass="ledger.ecore#//ЭлементМодели">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//ЭлементМодели/наименование"/>
@@ -37,14 +38,7 @@
     <genClasses ecoreClass="ledger.ecore#//ХранительЖурналовОпераций">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ledger.ecore#//ХранительЖурналовОпераций/журналыОпераций"/>
     </genClasses>
-    <genClasses ecoreClass="ledger.ecore#//Пользователь">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ledger.ecore#//Пользователь/права"/>
-    </genClasses>
-    <genClasses ecoreClass="ledger.ecore#//Гость"/>
-    <genClasses ecoreClass="ledger.ecore#//Право">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ledger.ecore#//Право/элементМодели"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//Право/действия"/>
-    </genClasses>
+    <genClasses ecoreClass="ledger.ecore#//Пользователь"/>
     <genClasses ecoreClass="ledger.ecore#//Организация"/>
     <genClasses ecoreClass="ledger.ecore#//ЖурналОпераций">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ledger.ecore#//ЖурналОпераций/операции"/>

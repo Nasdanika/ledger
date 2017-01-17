@@ -5,8 +5,9 @@ package org.nasdanika.ledger.impl;
 import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.nasdanika.cdo.security.LoginPasswordCredentials;
 import org.nasdanika.cdo.security.User;
-import org.nasdanika.cdo.security.impl.LoginPasswordProtectionDomainImpl;
+import org.nasdanika.cdo.security.impl.LoginPasswordRealmImpl;
 import org.nasdanika.ledger.LedgerPackage;
 import org.nasdanika.ledger.Изображение;
 import org.nasdanika.ledger.Комментарий;
@@ -33,7 +34,7 @@ import org.nasdanika.ledger.ЭлементМодели;
  *
  * @generated
  */
-public class УчётныйЦентрImpl extends LoginPasswordProtectionDomainImpl implements УчётныйЦентр {
+public class УчётныйЦентрImpl extends LoginPasswordRealmImpl implements УчётныйЦентр {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -184,13 +185,13 @@ public class УчётныйЦентрImpl extends LoginPasswordProtectionDomainI
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
-
+	
 	@Override
-	public EList<User> getAllUsers() {
-		EList<User> ret = ECollections.newBasicEList();
+	public EList<User<LoginPasswordCredentials>> getAllUsers() {
+		EList<User<LoginPasswordCredentials>> ret = ECollections.newBasicEList();
 		for (ХранительЖурналовОпераций ledgerKeeper: getХранителиЖурналовОпераций()) {
 			if (ledgerKeeper instanceof Пользователь) {
-				ret.add((User) ledgerKeeper);
+				ret.add((Пользователь) ledgerKeeper);
 			}
 			
 		}

@@ -148,7 +148,7 @@ import org.nasdanika.cdo.security.SecurityPackage;
  * 
  * #### Покупка валюты
  * 
- * * Текущий курс в таблицу курсон
+ * * Текущий курс в таблицу курсов
  * * Рубли из кошелька
  * * Доллары в кошелёк
  * 
@@ -222,7 +222,7 @@ public interface LedgerPackage extends EPackage {
 	 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getЖурналОпераций()
 	 * @generated
 	 */
-	int ЖУРНАЛ_ОПЕРАЦИЙ = 11;
+	int ЖУРНАЛ_ОПЕРАЦИЙ = 9;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.ledger.impl.ЭлементМоделиImpl <em>Элемент Модели</em>}' class.
@@ -318,26 +318,6 @@ public interface LedgerPackage extends EPackage {
 	int ПОЛЬЗОВАТЕЛЬ = 7;
 
 	/**
-	 * The meta object id for the '{@link org.nasdanika.ledger.impl.ГостьImpl <em>Гость</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.ledger.impl.ГостьImpl
-	 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getГость()
-	 * @generated
-	 */
-	int ГОСТЬ = 8;
-
-	/**
-	 * The meta object id for the '{@link org.nasdanika.ledger.impl.ПравоImpl <em>Право</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.nasdanika.ledger.impl.ПравоImpl
-	 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getПраво()
-	 * @generated
-	 */
-	int ПРАВО = 9;
-
-	/**
 	 * The meta object id for the '{@link org.nasdanika.ledger.impl.ОрганизацияImpl <em>Организация</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -345,7 +325,7 @@ public interface LedgerPackage extends EPackage {
 	 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getОрганизация()
 	 * @generated
 	 */
-	int ОРГАНИЗАЦИЯ = 10;
+	int ОРГАНИЗАЦИЯ = 8;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.ledger.impl.ХранительЖурналовОперацийImpl <em>Хранитель Журналов Операций</em>}' class.
@@ -365,7 +345,7 @@ public interface LedgerPackage extends EPackage {
 	 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getСчёт()
 	 * @generated
 	 */
-	int СЧЁТ = 12;
+	int СЧЁТ = 10;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.ledger.impl.АктивImpl <em>Актив</em>}' class.
@@ -375,7 +355,7 @@ public interface LedgerPackage extends EPackage {
 	 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getАктив()
 	 * @generated
 	 */
-	int АКТИВ = 13;
+	int АКТИВ = 11;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.ledger.impl.СвойствоАктиваImpl <em>Свойство Актива</em>}' class.
@@ -385,7 +365,7 @@ public interface LedgerPackage extends EPackage {
 	 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getСвойствоАктива()
 	 * @generated
 	 */
-	int СВОЙСТВО_АКТИВА = 14;
+	int СВОЙСТВО_АКТИВА = 12;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.ledger.impl.ЗначениеСвойстваАктиваImpl <em>Значение Свойства Актива</em>}' class.
@@ -395,7 +375,7 @@ public interface LedgerPackage extends EPackage {
 	 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getЗначениеСвойстваАктива()
 	 * @generated
 	 */
-	int ЗНАЧЕНИЕ_СВОЙСТВА_АКТИВА = 15;
+	int ЗНАЧЕНИЕ_СВОЙСТВА_АКТИВА = 13;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.ledger.impl.ИсточникКурсаАктиваImpl <em>Источник Курса Актива</em>}' class.
@@ -405,7 +385,7 @@ public interface LedgerPackage extends EPackage {
 	 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getИсточникКурсаАктива()
 	 * @generated
 	 */
-	int ИСТОЧНИК_КУРСА_АКТИВА = 16;
+	int ИСТОЧНИК_КУРСА_АКТИВА = 14;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.ledger.impl.ФиксированныйКурсImpl <em>Фиксированный Курс</em>}' class.
@@ -415,7 +395,7 @@ public interface LedgerPackage extends EPackage {
 	 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getФиксированныйКурс()
 	 * @generated
 	 */
-	int ФИКСИРОВАННЫЙ_КУРС = 17;
+	int ФИКСИРОВАННЫЙ_КУРС = 15;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.ledger.impl.ВычислительКурсаImpl <em>Вычислитель Курса</em>}' class.
@@ -425,7 +405,7 @@ public interface LedgerPackage extends EPackage {
 	 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getВычислительКурса()
 	 * @generated
 	 */
-	int ВЫЧИСЛИТЕЛЬ_КУРСА = 18;
+	int ВЫЧИСЛИТЕЛЬ_КУРСА = 16;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.ledger.impl.ОперацияImpl <em>Операция</em>}' class.
@@ -435,7 +415,7 @@ public interface LedgerPackage extends EPackage {
 	 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getОперация()
 	 * @generated
 	 */
-	int ОПЕРАЦИЯ = 19;
+	int ОПЕРАЦИЯ = 17;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.ledger.impl.ПроводкаImpl <em>Проводка</em>}' class.
@@ -445,7 +425,7 @@ public interface LedgerPackage extends EPackage {
 	 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getПроводка()
 	 * @generated
 	 */
-	int ПРОВОДКА = 20;
+	int ПРОВОДКА = 18;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.ledger.impl.СубъектImpl <em>Субъект</em>}' class.
@@ -455,7 +435,7 @@ public interface LedgerPackage extends EPackage {
 	 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getСубъект()
 	 * @generated
 	 */
-	int СУБЪЕКТ = 21;
+	int СУБЪЕКТ = 19;
 
 	/**
 	 * The meta object id for the '<em>Курс Актива</em>' data type.
@@ -465,7 +445,7 @@ public interface LedgerPackage extends EPackage {
 	 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getКурсАктива()
 	 * @generated
 	 */
-	int КУРС_АКТИВА = 22;
+	int КУРС_АКТИВА = 20;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.ledger.impl.КомментарийImpl <em>Комментарий</em>}' class.
@@ -635,31 +615,40 @@ public interface LedgerPackage extends EPackage {
 	int ВСТРОЕННОЕ_ИЗОБРАЖЕНИЕ_OPERATION_COUNT = ИЗОБРАЖЕНИЕ_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Super Users Group</b></em>' reference.
+	 * The feature id for the '<em><b>Root</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int УЧЁТНЫЙ_ЦЕНТР__SUPER_USERS_GROUP = SecurityPackage.LOGIN_PASSWORD_PROTECTION_DOMAIN__SUPER_USERS_GROUP;
+	int УЧЁТНЫЙ_ЦЕНТР__ROOT = SecurityPackage.LOGIN_PASSWORD_REALM__ROOT;
 
 	/**
-	 * The feature id for the '<em><b>Unauthenticated Principal</b></em>' reference.
+	 * The feature id for the '<em><b>Guest</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int УЧЁТНЫЙ_ЦЕНТР__UNAUTHENTICATED_PRINCIPAL = SecurityPackage.LOGIN_PASSWORD_PROTECTION_DOMAIN__UNAUTHENTICATED_PRINCIPAL;
+	int УЧЁТНЫЙ_ЦЕНТР__GUEST = SecurityPackage.LOGIN_PASSWORD_REALM__GUEST;
 
 	/**
-	 * The feature id for the '<em><b>Everyone Group</b></em>' reference.
+	 * The feature id for the '<em><b>Everyone</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int УЧЁТНЫЙ_ЦЕНТР__EVERYONE_GROUP = SecurityPackage.LOGIN_PASSWORD_PROTECTION_DOMAIN__EVERYONE_GROUP;
+	int УЧЁТНЫЙ_ЦЕНТР__EVERYONE = SecurityPackage.LOGIN_PASSWORD_REALM__EVERYONE;
+
+	/**
+	 * The feature id for the '<em><b>Packages</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int УЧЁТНЫЙ_ЦЕНТР__PACKAGES = SecurityPackage.LOGIN_PASSWORD_REALM__PACKAGES;
 
 	/**
 	 * The feature id for the '<em><b>Наименование</b></em>' attribute.
@@ -668,7 +657,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int УЧЁТНЫЙ_ЦЕНТР__НАИМЕНОВАНИЕ = SecurityPackage.LOGIN_PASSWORD_PROTECTION_DOMAIN_FEATURE_COUNT + 0;
+	int УЧЁТНЫЙ_ЦЕНТР__НАИМЕНОВАНИЕ = SecurityPackage.LOGIN_PASSWORD_REALM_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Описание</b></em>' attribute.
@@ -677,7 +666,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int УЧЁТНЫЙ_ЦЕНТР__ОПИСАНИЕ = SecurityPackage.LOGIN_PASSWORD_PROTECTION_DOMAIN_FEATURE_COUNT + 1;
+	int УЧЁТНЫЙ_ЦЕНТР__ОПИСАНИЕ = SecurityPackage.LOGIN_PASSWORD_REALM_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Комментарии</b></em>' containment reference list.
@@ -686,7 +675,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int УЧЁТНЫЙ_ЦЕНТР__КОММЕНТАРИИ = SecurityPackage.LOGIN_PASSWORD_PROTECTION_DOMAIN_FEATURE_COUNT + 2;
+	int УЧЁТНЫЙ_ЦЕНТР__КОММЕНТАРИИ = SecurityPackage.LOGIN_PASSWORD_REALM_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Изображение</b></em>' containment reference.
@@ -695,7 +684,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int УЧЁТНЫЙ_ЦЕНТР__ИЗОБРАЖЕНИЕ = SecurityPackage.LOGIN_PASSWORD_PROTECTION_DOMAIN_FEATURE_COUNT + 3;
+	int УЧЁТНЫЙ_ЦЕНТР__ИЗОБРАЖЕНИЕ = SecurityPackage.LOGIN_PASSWORD_REALM_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Идентификатор</b></em>' attribute.
@@ -704,7 +693,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int УЧЁТНЫЙ_ЦЕНТР__ИДЕНТИФИКАТОР = SecurityPackage.LOGIN_PASSWORD_PROTECTION_DOMAIN_FEATURE_COUNT + 4;
+	int УЧЁТНЫЙ_ЦЕНТР__ИДЕНТИФИКАТОР = SecurityPackage.LOGIN_PASSWORD_REALM_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Хранители Журналов Операций</b></em>' containment reference list.
@@ -713,7 +702,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int УЧЁТНЫЙ_ЦЕНТР__ХРАНИТЕЛИ_ЖУРНАЛОВ_ОПЕРАЦИЙ = SecurityPackage.LOGIN_PASSWORD_PROTECTION_DOMAIN_FEATURE_COUNT + 5;
+	int УЧЁТНЫЙ_ЦЕНТР__ХРАНИТЕЛИ_ЖУРНАЛОВ_ОПЕРАЦИЙ = SecurityPackage.LOGIN_PASSWORD_REALM_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Учётный Центр</em>' class.
@@ -722,7 +711,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int УЧЁТНЫЙ_ЦЕНТР_FEATURE_COUNT = SecurityPackage.LOGIN_PASSWORD_PROTECTION_DOMAIN_FEATURE_COUNT + 6;
+	int УЧЁТНЫЙ_ЦЕНТР_FEATURE_COUNT = SecurityPackage.LOGIN_PASSWORD_REALM_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Authenticate</em>' operation.
@@ -731,16 +720,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int УЧЁТНЫЙ_ЦЕНТР___AUTHENTICATE__OBJECT = SecurityPackage.LOGIN_PASSWORD_PROTECTION_DOMAIN___AUTHENTICATE__OBJECT;
-
-	/**
-	 * The operation id for the '<em>Clear Permissions</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int УЧЁТНЫЙ_ЦЕНТР___CLEAR_PERMISSIONS__EOBJECT = SecurityPackage.LOGIN_PASSWORD_PROTECTION_DOMAIN___CLEAR_PERMISSIONS__EOBJECT;
+	int УЧЁТНЫЙ_ЦЕНТР___AUTHENTICATE__OBJECT = SecurityPackage.LOGIN_PASSWORD_REALM___AUTHENTICATE__OBJECT;
 
 	/**
 	 * The operation id for the '<em>Get All Users</em>' operation.
@@ -749,7 +729,16 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int УЧЁТНЫЙ_ЦЕНТР___GET_ALL_USERS = SecurityPackage.LOGIN_PASSWORD_PROTECTION_DOMAIN___GET_ALL_USERS;
+	int УЧЁТНЫЙ_ЦЕНТР___GET_ALL_USERS = SecurityPackage.LOGIN_PASSWORD_REALM___GET_ALL_USERS;
+
+	/**
+	 * The operation id for the '<em>Clear Permissions</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int УЧЁТНЫЙ_ЦЕНТР___CLEAR_PERMISSIONS__EOBJECT = SecurityPackage.LOGIN_PASSWORD_REALM___CLEAR_PERMISSIONS__EOBJECT;
 
 	/**
 	 * The operation id for the '<em>Set Password Hash</em>' operation.
@@ -758,7 +747,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int УЧЁТНЫЙ_ЦЕНТР___SET_PASSWORD_HASH__LOGINPASSWORDHASHUSER_STRING = SecurityPackage.LOGIN_PASSWORD_PROTECTION_DOMAIN___SET_PASSWORD_HASH__LOGINPASSWORDHASHUSER_STRING;
+	int УЧЁТНЫЙ_ЦЕНТР___SET_PASSWORD_HASH__LOGINPASSWORDHASHUSER_STRING = SecurityPackage.LOGIN_PASSWORD_REALM___SET_PASSWORD_HASH__LOGINPASSWORDHASHUSER_STRING;
 
 	/**
 	 * The operation id for the '<em>Get User</em>' operation.
@@ -767,7 +756,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int УЧЁТНЫЙ_ЦЕНТР___GET_USER__STRING = SecurityPackage.LOGIN_PASSWORD_PROTECTION_DOMAIN___GET_USER__STRING;
+	int УЧЁТНЫЙ_ЦЕНТР___GET_USER__STRING = SecurityPackage.LOGIN_PASSWORD_REALM___GET_USER__STRING;
 
 	/**
 	 * The number of operations of the '<em>Учётный Центр</em>' class.
@@ -776,7 +765,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int УЧЁТНЫЙ_ЦЕНТР_OPERATION_COUNT = SecurityPackage.LOGIN_PASSWORD_PROTECTION_DOMAIN_OPERATION_COUNT + 0;
+	int УЧЁТНЫЙ_ЦЕНТР_OPERATION_COUNT = SecurityPackage.LOGIN_PASSWORD_REALM_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Наименование</b></em>' attribute.
@@ -869,13 +858,13 @@ public interface LedgerPackage extends EPackage {
 	int ПОЛЬЗОВАТЕЛЬ__PERMISSIONS = SecurityPackage.LOGIN_PASSWORD_HASH_USER__PERMISSIONS;
 
 	/**
-	 * The feature id for the '<em><b>Protection Domain</b></em>' reference.
+	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ПОЛЬЗОВАТЕЛЬ__PROTECTION_DOMAIN = SecurityPackage.LOGIN_PASSWORD_HASH_USER__PROTECTION_DOMAIN;
+	int ПОЛЬЗОВАТЕЛЬ__DISABLED = SecurityPackage.LOGIN_PASSWORD_HASH_USER__DISABLED;
 
 	/**
 	 * The feature id for the '<em><b>Login</b></em>' attribute.
@@ -885,15 +874,6 @@ public interface LedgerPackage extends EPackage {
 	 * @ordered
 	 */
 	int ПОЛЬЗОВАТЕЛЬ__LOGIN = SecurityPackage.LOGIN_PASSWORD_HASH_USER__LOGIN;
-
-	/**
-	 * The feature id for the '<em><b>Disabled</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ПОЛЬЗОВАТЕЛЬ__DISABLED = SecurityPackage.LOGIN_PASSWORD_HASH_USER__DISABLED;
 
 	/**
 	 * The feature id for the '<em><b>Password Hash</b></em>' attribute.
@@ -959,22 +939,13 @@ public interface LedgerPackage extends EPackage {
 	int ПОЛЬЗОВАТЕЛЬ__ЖУРНАЛЫ_ОПЕРАЦИЙ = SecurityPackage.LOGIN_PASSWORD_HASH_USER_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Права</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ПОЛЬЗОВАТЕЛЬ__ПРАВА = SecurityPackage.LOGIN_PASSWORD_HASH_USER_FEATURE_COUNT + 6;
-
-	/**
 	 * The number of structural features of the '<em>Пользователь</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ПОЛЬЗОВАТЕЛЬ_FEATURE_COUNT = SecurityPackage.LOGIN_PASSWORD_HASH_USER_FEATURE_COUNT + 7;
+	int ПОЛЬЗОВАТЕЛЬ_FEATURE_COUNT = SecurityPackage.LOGIN_PASSWORD_HASH_USER_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Authorize</em>' operation.
@@ -983,7 +954,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ПОЛЬЗОВАТЕЛЬ___AUTHORIZE__SECURITYPOLICY_CONTEXT_OBJECT_STRING_STRING_MAP = SecurityPackage.LOGIN_PASSWORD_HASH_USER___AUTHORIZE__SECURITYPOLICY_CONTEXT_OBJECT_STRING_STRING_MAP;
+	int ПОЛЬЗОВАТЕЛЬ___AUTHORIZE__CONTEXT_EOBJECT_STRING_STRING_MAP = SecurityPackage.LOGIN_PASSWORD_HASH_USER___AUTHORIZE__CONTEXT_EOBJECT_STRING_STRING_MAP;
 
 	/**
 	 * The operation id for the '<em>Accept</em>' operation.
@@ -995,6 +966,15 @@ public interface LedgerPackage extends EPackage {
 	int ПОЛЬЗОВАТЕЛЬ___ACCEPT__PRINCIPALVISITOR = SecurityPackage.LOGIN_PASSWORD_HASH_USER___ACCEPT__PRINCIPALVISITOR;
 
 	/**
+	 * The operation id for the '<em>Get Realm</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ПОЛЬЗОВАТЕЛЬ___GET_REALM = SecurityPackage.LOGIN_PASSWORD_HASH_USER___GET_REALM;
+
+	/**
 	 * The number of operations of the '<em>Пользователь</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1002,105 +982,6 @@ public interface LedgerPackage extends EPackage {
 	 * @ordered
 	 */
 	int ПОЛЬЗОВАТЕЛЬ_OPERATION_COUNT = SecurityPackage.LOGIN_PASSWORD_HASH_USER_OPERATION_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Member Of</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ГОСТЬ__MEMBER_OF = SecurityPackage.USER__MEMBER_OF;
-
-	/**
-	 * The feature id for the '<em><b>Permissions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ГОСТЬ__PERMISSIONS = SecurityPackage.USER__PERMISSIONS;
-
-	/**
-	 * The feature id for the '<em><b>Protection Domain</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ГОСТЬ__PROTECTION_DOMAIN = SecurityPackage.USER__PROTECTION_DOMAIN;
-
-	/**
-	 * The number of structural features of the '<em>Гость</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ГОСТЬ_FEATURE_COUNT = SecurityPackage.USER_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Authorize</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ГОСТЬ___AUTHORIZE__SECURITYPOLICY_CONTEXT_OBJECT_STRING_STRING_MAP = SecurityPackage.USER___AUTHORIZE__SECURITYPOLICY_CONTEXT_OBJECT_STRING_STRING_MAP;
-
-	/**
-	 * The operation id for the '<em>Accept</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ГОСТЬ___ACCEPT__PRINCIPALVISITOR = SecurityPackage.USER___ACCEPT__PRINCIPALVISITOR;
-
-	/**
-	 * The number of operations of the '<em>Гость</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ГОСТЬ_OPERATION_COUNT = SecurityPackage.USER_OPERATION_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Элемент Модели</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ПРАВО__ЭЛЕМЕНТ_МОДЕЛИ = 0;
-
-	/**
-	 * The feature id for the '<em><b>Действия</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ПРАВО__ДЕЙСТВИЯ = 1;
-
-	/**
-	 * The number of structural features of the '<em>Право</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ПРАВО_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Право</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ПРАВО_OPERATION_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Наименование</b></em>' attribute.
@@ -2293,59 +2174,6 @@ public interface LedgerPackage extends EPackage {
 	EClass getПользователь();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.nasdanika.ledger.Пользователь#getПрава <em>Права</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Права</em>'.
-	 * @see org.nasdanika.ledger.Пользователь#getПрава()
-	 * @see #getПользователь()
-	 * @generated
-	 */
-	EReference getПользователь_Права();
-
-	/**
-	 * Returns the meta object for class '{@link org.nasdanika.ledger.Гость <em>Гость</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Гость</em>'.
-	 * @see org.nasdanika.ledger.Гость
-	 * @generated
-	 */
-	EClass getГость();
-
-	/**
-	 * Returns the meta object for class '{@link org.nasdanika.ledger.Право <em>Право</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Право</em>'.
-	 * @see org.nasdanika.ledger.Право
-	 * @generated
-	 */
-	EClass getПраво();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.nasdanika.ledger.Право#getЭлементМодели <em>Элемент Модели</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Элемент Модели</em>'.
-	 * @see org.nasdanika.ledger.Право#getЭлементМодели()
-	 * @see #getПраво()
-	 * @generated
-	 */
-	EReference getПраво_ЭлементМодели();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link org.nasdanika.ledger.Право#getДействия <em>Действия</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Действия</em>'.
-	 * @see org.nasdanika.ledger.Право#getДействия()
-	 * @see #getПраво()
-	 * @generated
-	 */
-	EAttribute getПраво_Действия();
-
-	/**
 	 * Returns the meta object for class '{@link org.nasdanika.ledger.Организация <em>Организация</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3157,50 +2985,6 @@ public interface LedgerPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ПОЛЬЗОВАТЕЛЬ = eINSTANCE.getПользователь();
-
-		/**
-		 * The meta object literal for the '<em><b>Права</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ПОЛЬЗОВАТЕЛЬ__ПРАВА = eINSTANCE.getПользователь_Права();
-
-		/**
-		 * The meta object literal for the '{@link org.nasdanika.ledger.impl.ГостьImpl <em>Гость</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.nasdanika.ledger.impl.ГостьImpl
-		 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getГость()
-		 * @generated
-		 */
-		EClass ГОСТЬ = eINSTANCE.getГость();
-
-		/**
-		 * The meta object literal for the '{@link org.nasdanika.ledger.impl.ПравоImpl <em>Право</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.nasdanika.ledger.impl.ПравоImpl
-		 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getПраво()
-		 * @generated
-		 */
-		EClass ПРАВО = eINSTANCE.getПраво();
-
-		/**
-		 * The meta object literal for the '<em><b>Элемент Модели</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ПРАВО__ЭЛЕМЕНТ_МОДЕЛИ = eINSTANCE.getПраво_ЭлементМодели();
-
-		/**
-		 * The meta object literal for the '<em><b>Действия</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ПРАВО__ДЕЙСТВИЯ = eINSTANCE.getПраво_Действия();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.ledger.impl.ОрганизацияImpl <em>Организация</em>}' class.
