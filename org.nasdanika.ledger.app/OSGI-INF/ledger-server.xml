@@ -9,7 +9,9 @@
    		policy="static" 
    		target="(component.name=ledger-repository)" 
    		unbind="removeRepository"/>
-   <property name=".acceptors" type="String" value="jvm:ledger"/>
+   <property name=".acceptors" type="String">jvm:ledger
+tcp:
+   </property>
    <property name=".repositoryName" type="String" value="ledger"/>
    <property name=".connector" type="String" value="jvm:ledger"/>
    <service>
@@ -24,5 +26,7 @@
    		policy="static" 
    		target="(component.name=ledger-session-initializer)" 
    		unbind="removeSessionInitializer"/>
+   <property name="tcp-login" type="String" value="ledger"/>
+   <property name="tcp-password" type="String" value="secret"/>
    		
 </scr:component>
