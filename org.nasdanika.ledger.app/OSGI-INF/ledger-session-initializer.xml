@@ -4,4 +4,5 @@
    <service>
       <provide interface="org.nasdanika.cdo.CDOSessionInitializer"/>
    </service>
+   <property name="initial-content" type="String" value="${org.nasdanika.ledger.initial-model}"/>
 </scr:component>

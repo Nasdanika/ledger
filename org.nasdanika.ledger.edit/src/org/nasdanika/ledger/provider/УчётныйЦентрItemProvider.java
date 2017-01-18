@@ -18,6 +18,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import org.nasdanika.cdo.security.SecurityPackage;
 import org.nasdanika.cdo.security.provider.LoginPasswordRealmItemProvider;
 
 import org.nasdanika.ledger.LedgerFactory;
@@ -222,6 +223,16 @@ public class УчётныйЦентрItemProvider extends LoginPasswordRealmItem
 
 		newChildDescriptors.add
 			(createChildParameter
+				(SecurityPackage.Literals.REALM__GUEST,
+				 LedgerFactory.eINSTANCE.createПользователь()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SecurityPackage.Literals.REALM__EVERYONE,
+				 LedgerFactory.eINSTANCE.createПользователь()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(LedgerPackage.Literals.ЭЛЕМЕНТ_МОДЕЛИ__КОММЕНТАРИИ,
 				 LedgerFactory.eINSTANCE.createКомментарий()));
 
@@ -244,6 +255,30 @@ public class УчётныйЦентрItemProvider extends LoginPasswordRealmItem
 			(createChildParameter
 				(LedgerPackage.Literals.УЧЁТНЫЙ_ЦЕНТР__ХРАНИТЕЛИ_ЖУРНАЛОВ_ОПЕРАЦИЙ,
 				 LedgerFactory.eINSTANCE.createОрганизация()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == SecurityPackage.Literals.REALM__GUEST ||
+			childFeature == SecurityPackage.Literals.REALM__EVERYONE ||
+			childFeature == LedgerPackage.Literals.УЧЁТНЫЙ_ЦЕНТР__ХРАНИТЕЛИ_ЖУРНАЛОВ_ОПЕРАЦИЙ;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**

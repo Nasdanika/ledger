@@ -16,7 +16,8 @@ import org.eclipse.emf.edit.ui.action.CreateSiblingAction;
 import org.eclipse.emf.edit.ui.action.EditingDomainActionBarContributor;
 import org.eclipse.emf.edit.ui.action.LoadResourceAction;
 import org.eclipse.emf.edit.ui.action.ValidateAction;
-
+import org.eclipse.emf.transaction.TransactionalCommandStack;
+import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.ActionContributionItem;
 import org.eclipse.jface.action.IAction;
@@ -133,6 +134,12 @@ public class LedgerActionBarContributor
 	 * @generated
 	 */
 	protected Collection<IAction> createSiblingActions;
+	
+	protected SetPasswordAction setPasswordAction = new SetPasswordAction("Set password") {
+		
+		
+	};
+	
 
 	/**
 	 * This is the menu manager into which menu contribution items should be added for CreateSibling actions.
@@ -405,6 +412,9 @@ public class LedgerActionBarContributor
 
 		refreshViewerAction.setEnabled(refreshViewerAction.isEnabled());		
 		menuManager.insertAfter("ui-actions", refreshViewerAction);
+		
+	    String key = (style & ADDITIONS_LAST_STYLE) == 0 ? "additions-end" : "additions";
+        menuManager.insertBefore(key, setPasswordAction);		
 
 		super.addGlobalActions(menuManager);
 	}
@@ -418,6 +428,16 @@ public class LedgerActionBarContributor
 	@Override
 	protected boolean removeAllReferencesOnDelete() {
 		return true;
+	}
+	
+	@Override
+	public void activate() {
+		super.activate();
+	    ISelectionProvider selectionProvider = activeEditor instanceof ISelectionProvider ? (ISelectionProvider) activeEditor :	activeEditor.getEditorSite().getSelectionProvider();
+   	    if (selectionProvider != null) {
+   	    	selectionProvider.addSelectionChangedListener(setPasswordAction);
+   	    }
+   	    setPasswordAction.setEditingDomain((TransactionalEditingDomain) ((LedgerEditor) activeEditor).getEditingDomain()); 
 	}
 
 }

@@ -138,7 +138,7 @@ public class ЖурналОперацийItemProvider extends ЭлементМо
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ЖурналОпераций.png"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ЖурналОпераций"));
 	}
 
 	/**

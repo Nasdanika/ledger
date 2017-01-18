@@ -76,7 +76,7 @@ public class ПользовательItemProvider extends LoginUserItemProvider 
 				 getString("_UI_LoginPasswordHashUser_passwordHash_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_LoginPasswordHashUser_passwordHash_feature", "_UI_LoginPasswordHashUser_type"),
 				 SecurityPackage.Literals.LOGIN_PASSWORD_HASH_USER__PASSWORD_HASH,
-				 true,
+				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
@@ -197,7 +197,7 @@ public class ПользовательItemProvider extends LoginUserItemProvider 
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
