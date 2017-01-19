@@ -121,7 +121,7 @@ public class ПользовательItemProvider extends LoginUserItemProvider 
 				 getString("_UI_PropertyDescriptor_description", "_UI_ЭлементМодели_описание_feature", "_UI_ЭлементМодели_type"),
 				 LedgerPackage.Literals.ЭЛЕМЕНТ_МОДЕЛИ__ОПИСАНИЕ,
 				 true,
-				 false,
+				 true,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,

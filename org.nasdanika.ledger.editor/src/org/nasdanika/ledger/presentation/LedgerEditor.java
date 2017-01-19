@@ -991,9 +991,8 @@ public class LedgerEditor
 					new ViewerPane(getSite().getPage(), LedgerEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
-							Tree tree = new Tree(composite, SWT.MULTI);
-							TreeViewer newTreeViewer = new TreeViewer(tree);
-							return newTreeViewer;
+							LedgerForm ledgerForm = new LedgerForm(composite, SWT.NONE);
+							return new LedgerViewer(ledgerForm);
 						}
 						@Override
 						public void requestActivation() {
@@ -1003,7 +1002,7 @@ public class LedgerEditor
 					};
 				viewerPane.createControl(getContainer());
 
-				selectionViewer = (TreeViewer)viewerPane.getViewer();
+				selectionViewer = ((LedgerViewer) viewerPane.getViewer()).getTreeViewer();
 				selectionViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
 
 				selectionViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));

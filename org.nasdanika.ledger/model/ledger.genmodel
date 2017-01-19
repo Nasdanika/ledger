@@ -14,7 +14,7 @@
     <genDataTypes ecoreDataType="ledger.ecore#//КурсАктива"/>
     <genClasses ecoreClass="ledger.ecore#//ЭлементМодели">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//ЭлементМодели/наименование"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//ЭлементМодели/описание"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute ledger.ecore#//ЭлементМодели/описание"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ledger.ecore#//ЭлементМодели/комментарии"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ledger.ecore#//ЭлементМодели/изображение"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//ЭлементМодели/идентификатор"/>
