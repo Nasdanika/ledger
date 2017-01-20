@@ -10,11 +10,12 @@ import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
+import org.eclipse.ui.forms.widgets.ScrolledForm;
 
 /**
  * Viewer which uses a form to edit bounded context generator model information.
@@ -43,7 +44,7 @@ public class LedgerViewer extends Viewer {
 		this.treeViewer = new TreeViewer(ledgerForm.getTree());
 		treeViewer.addSelectionChangedListener(new ISelectionChangedListener() {
 			
-			private Composite formComposite;
+			private ScrolledForm formComposite;
 			
 			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
@@ -55,13 +56,12 @@ public class LedgerViewer extends Viewer {
 						&& ((StructuredSelection) event.getSelection()).size() == 1
 						&& ((StructuredSelection) event.getSelection()).getFirstElement() instanceof EObject) {
 					
-					formComposite = new Composite(ledgerForm.getElementFormComposite(), SWT.NONE);
-					formComposite.setLayout(new FillLayout());
-					ledgerForm.getToolkit().adapt(formComposite);				
+					formComposite = ledgerForm.getToolkit().createScrolledForm(ledgerForm.getElementFormComposite()); 
+					formComposite.getBody().setLayout(new GridLayout());
 					try {
-						ECPSWTViewRenderer.INSTANCE.render(formComposite, (EObject) ((StructuredSelection) event.getSelection()).getFirstElement());
+						ECPSWTViewRenderer.INSTANCE.render(formComposite.getBody(), (EObject) ((StructuredSelection) event.getSelection()).getFirstElement());
 					} catch (ECPRendererException e) {
-						Label lblNewLabel = new Label(formComposite, SWT.NONE);
+						Label lblNewLabel = new Label(formComposite.getBody(), SWT.NONE);
 						ledgerForm.getToolkit().adapt(lblNewLabel, true, true);
 						lblNewLabel.setText("Error rendering form: "+e);
 						

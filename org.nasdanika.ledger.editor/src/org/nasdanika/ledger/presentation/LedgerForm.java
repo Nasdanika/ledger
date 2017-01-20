@@ -75,8 +75,7 @@ public class LedgerForm extends Composite {
 		tree = new Tree(sections, SWT.MULTI);
 		
 		elementFormComposite = new Composite(sections, SWT.NONE);
-		elementFormComposite.setLayout(new FillLayout(SWT.HORIZONTAL));
-		
+		elementFormComposite.setLayout(new FillLayout());		
 		
 		sections.setWeights(new int[] {1, 2});
 	}
