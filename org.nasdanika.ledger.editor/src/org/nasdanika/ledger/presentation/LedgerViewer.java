@@ -48,23 +48,25 @@ public class LedgerViewer extends Viewer {
 			
 			@Override
 			public void selectionChanged(SelectionChangedEvent event) {
-				if (formComposite != null) {
-					formComposite.dispose();
-				}
-
-				if (event.getSelection() instanceof StructuredSelection
-						&& ((StructuredSelection) event.getSelection()).size() == 1
-						&& ((StructuredSelection) event.getSelection()).getFirstElement() instanceof EObject) {
-					
+				if (!event.getSelection().isEmpty()) {
+					if (formComposite != null) {
+						formComposite.dispose();
+					}
 					formComposite = ledgerForm.getToolkit().createScrolledForm(ledgerForm.getElementFormComposite()); 
 					formComposite.getBody().setLayout(new GridLayout());
-					try {
-						ECPSWTViewRenderer.INSTANCE.render(formComposite.getBody(), (EObject) ((StructuredSelection) event.getSelection()).getFirstElement());
-					} catch (ECPRendererException e) {
-						Label lblNewLabel = new Label(formComposite.getBody(), SWT.NONE);
-						ledgerForm.getToolkit().adapt(lblNewLabel, true, true);
-						lblNewLabel.setText("Error rendering form: "+e);
-						
+
+					if (event.getSelection() instanceof StructuredSelection
+							&& ((StructuredSelection) event.getSelection()).size() == 1
+							&& ((StructuredSelection) event.getSelection()).getFirstElement() instanceof EObject) {
+					
+						try {
+							ECPSWTViewRenderer.INSTANCE.render(formComposite.getBody(), (EObject) ((StructuredSelection) event.getSelection()).getFirstElement());
+						} catch (ECPRendererException e) {
+							Label errorLabel = new Label(formComposite.getBody(), SWT.NONE);
+							ledgerForm.getToolkit().adapt(errorLabel, true, true);
+							errorLabel.setText("Error rendering form: "+e);
+							
+						}
 					}
 					ledgerForm.getElementFormComposite().layout();
 				}

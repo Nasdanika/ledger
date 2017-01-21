@@ -21,7 +21,6 @@ import org.eclipse.ui.forms.widgets.Form;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
 //import org.eclipse.wb.swt.ResourceManager;
-//import org.eclipse.wb.swt.SWTResourceManager;
 import org.eclipse.wb.swt.SWTResourceManager;
 import org.eclipse.swt.custom.StackLayout;
 
@@ -30,7 +29,6 @@ public class LedgerForm extends Composite {
 	private final FormToolkit toolkit = new FormToolkit(Display.getCurrent());
 	private Tree tree;
 	private Composite elementFormComposite;
-	private Label lblNewLabel;
 	
 	public Composite getElementFormComposite() {
 		return elementFormComposite;
