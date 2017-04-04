@@ -2,13 +2,21 @@
  */
 package org.nasdanika.ledger.impl;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.nasdanika.cdo.security.LoginPasswordCredentials;
 import org.nasdanika.cdo.security.User;
 import org.nasdanika.cdo.security.impl.LoginPasswordRealmImpl;
 import org.nasdanika.ledger.LedgerPackage;
+import org.nasdanika.ledger.util.LedgerValidator;
 import org.nasdanika.ledger.Изображение;
 import org.nasdanika.ledger.Комментарий;
 import org.nasdanika.ledger.Пользователь;
@@ -151,6 +159,48 @@ public class УчётныйЦентрImpl extends LoginPasswordRealmImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validate(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (diagnostics == null) {
+			return true;
+		}
+		boolean ret = true;
+		// For testing purposes
+		if ("error".equals(getНаименование())) {
+			diagnostics.add
+				(new BasicDiagnostic
+					(Diagnostic.ERROR,
+					 LedgerValidator.DIAGNOSTIC_SOURCE,
+					 LedgerValidator.ЭЛЕМЕНТ_МОДЕЛИ__VALIDATE,
+					 "Error message",
+					 new Object [] { this,  LedgerPackage.Literals.ЭЛЕМЕНТ_МОДЕЛИ__НАИМЕНОВАНИЕ }));
+			ret = false;
+		} else if ("warning".equals(getНаименование())) {
+			diagnostics.add
+				(new BasicDiagnostic
+					(Diagnostic.WARNING,
+					 LedgerValidator.DIAGNOSTIC_SOURCE,
+					 LedgerValidator.ЭЛЕМЕНТ_МОДЕЛИ__VALIDATE,
+					 "Warning message",
+					 new Object [] { this,  LedgerPackage.Literals.ЭЛЕМЕНТ_МОДЕЛИ__НАИМЕНОВАНИЕ }));
+			ret = false;
+		} else if ("class-error".equals(getНаименование())) {
+			diagnostics.add
+				(new BasicDiagnostic
+					(Diagnostic.ERROR,
+					 LedgerValidator.DIAGNOSTIC_SOURCE,
+					 LedgerValidator.ЭЛЕМЕНТ_МОДЕЛИ__VALIDATE,
+					 "Class error message",
+					 new Object [] { this }));
+			ret = false;
+		}
+		return ret;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == ЭлементМодели.class) {
@@ -186,6 +236,37 @@ public class УчётныйЦентрImpl extends LoginPasswordRealmImpl impleme
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == ЭлементМодели.class) {
+			switch (baseOperationID) {
+				case LedgerPackage.ЭЛЕМЕНТ_МОДЕЛИ___VALIDATE__DIAGNOSTICCHAIN_MAP: return LedgerPackage.УЧЁТНЫЙ_ЦЕНТР___VALIDATE__DIAGNOSTICCHAIN_MAP;
+				default: return -1;
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case LedgerPackage.УЧЁТНЫЙ_ЦЕНТР___VALIDATE__DIAGNOSTICCHAIN_MAP:
+				return validate((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
 	@Override
 	public EList<User<LoginPasswordCredentials>> getAllUsers() {
 		EList<User<LoginPasswordCredentials>> ret = ECollections.newBasicEList();

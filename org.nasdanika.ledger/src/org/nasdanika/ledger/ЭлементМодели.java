@@ -2,7 +2,9 @@
  */
 package org.nasdanika.ledger;
 
+import java.util.Map;
 import org.eclipse.emf.cdo.CDOObject;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -28,6 +30,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * @see org.nasdanika.ledger.LedgerPackage#getЭлементМодели()
  * @model abstract="true"
+ *        annotation="org.nasdanika.cdo.web.render label='{{\u043d\u0430\u0438\u043c\u0435\u043d\u043e\u0432\u0430\u043d\u0438\u0435}}'"
  * @extends CDOObject
  * @generated
  */
@@ -162,5 +165,18 @@ public interface ЭлементМодели extends CDOObject {
 	 * @generated
 	 */
 	void setИдентификатор(String value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Validates element.
+	 * @param diagnostics Diagnostics to add validation messages to.
+	 * @param context Validation context.
+	 * <!-- end-model-doc -->
+	 * @model
+	 * @generated
+	 */
+	boolean validate(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 } // ЭлементМодели

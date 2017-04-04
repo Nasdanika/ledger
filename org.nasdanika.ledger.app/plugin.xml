@@ -13,8 +13,12 @@
          </init-param>
          <init-param
                name="default-access-decision"
-               value="allow">
+               value="deny">
          </init-param>
+	   <init-param
+	         name="login-url"
+	         value="${context-path}/router/index.html">
+	   </init-param>         
          <init-param
                name="ws-session-path"
                value="/session">
@@ -63,6 +67,11 @@
    
 	
    <extension point="org.nasdanika.web.route">
+		<root-route
+		      class="org.nasdanika.cdo.web.routes.RedirectToPrincipalHomeRoute"
+		      method="GET"
+		      path="index.html">
+		</root-route>
       <root-route
             class="org.nasdanika.ledger.app.LedgerRoute"
             method="GET"
@@ -93,6 +102,42 @@
          </property>
       </object-route>
       -->
+   <eobject-route class="org.nasdanika.ledger.app.routes.ledger.КомментарийRoute" method="*" path="/" target="Комментарий" target-namespace-uri="urn:org.nasdanika.ledger">
+      </eobject-route>
+<eobject-route class="org.nasdanika.ledger.app.routes.ledger.УчётныйЦентрRoute" method="*" path="/" target="УчётныйЦентр" target-namespace-uri="urn:org.nasdanika.ledger">
+      </eobject-route>
+<eobject-route class="org.nasdanika.ledger.app.routes.ledger.ПользовательRoute" method="*" path="/" target="Пользователь" target-namespace-uri="urn:org.nasdanika.ledger">
+      </eobject-route>
+<eobject-route class="org.nasdanika.ledger.app.routes.ledger.ОрганизацияRoute" method="*" path="/" target="Организация" target-namespace-uri="urn:org.nasdanika.ledger">
+      </eobject-route>
+<eobject-route class="org.nasdanika.ledger.app.routes.ledger.ЖурналОперацийRoute" method="*" path="/" target="ЖурналОпераций" target-namespace-uri="urn:org.nasdanika.ledger">
+      </eobject-route>
+<eobject-route class="org.nasdanika.ledger.app.routes.ledger.СчётRoute" method="*" path="/" target="Счёт" target-namespace-uri="urn:org.nasdanika.ledger">
+      </eobject-route>
+<eobject-route class="org.nasdanika.ledger.app.routes.ledger.АктивRoute" method="*" path="/" target="Актив" target-namespace-uri="urn:org.nasdanika.ledger">
+      </eobject-route>
+<eobject-route class="org.nasdanika.ledger.app.routes.ledger.СвойствоАктиваRoute" method="*" path="/" target="СвойствоАктива" target-namespace-uri="urn:org.nasdanika.ledger">
+      </eobject-route>
+<eobject-route class="org.nasdanika.ledger.app.routes.ledger.ЗначениеСвойстваАктиваRoute" method="*" path="/" target="ЗначениеСвойстваАктива" target-namespace-uri="urn:org.nasdanika.ledger">
+      </eobject-route>
+<eobject-route class="org.nasdanika.ledger.app.routes.ledger.ФиксированныйКурсRoute" method="*" path="/" target="ФиксированныйКурс" target-namespace-uri="urn:org.nasdanika.ledger">
+      </eobject-route>
+<eobject-route class="org.nasdanika.ledger.app.routes.ledger.ВычислительКурсаRoute" method="*" path="/" target="ВычислительКурса" target-namespace-uri="urn:org.nasdanika.ledger">
+      </eobject-route>
+<eobject-route class="org.nasdanika.ledger.app.routes.ledger.ОперацияRoute" method="*" path="/" target="Операция" target-namespace-uri="urn:org.nasdanika.ledger">
+      </eobject-route>
+<eobject-route class="org.nasdanika.ledger.app.routes.ledger.ПроводкаRoute" method="*" path="/" target="Проводка" target-namespace-uri="urn:org.nasdanika.ledger">
+      </eobject-route>
+<eobject-route class="org.nasdanika.ledger.app.routes.ledger.СубъектRoute" method="*" path="/" target="Субъект" target-namespace-uri="urn:org.nasdanika.ledger">
+      </eobject-route>
+   <eobject-route
+         class="org.nasdanika.ledger.app.routes.ledger.GuestRoute"
+         method="*"
+         path="/"
+         target="Guest"
+         target-namespace-uri="urn:org.nasdanika.cdo.security">
+   </eobject-route>
+      
    </extension>
    
    <extension
@@ -245,4 +290,55 @@ A -> B : Message
             model="Ledger.nasdanika_story">
       </story>
    </extension>
+<extension point="org.nasdanika.cdo.web.renderer">
+      <renderer eclass-name="Комментарий" namespace-uri="urn:org.nasdanika.ledger" renderer="org.nasdanika.ledger.app.routes.ledger.КомментарийRenderer">
+      </renderer>
+
+      <renderer eclass-name="УчётныйЦентр" namespace-uri="urn:org.nasdanika.ledger" renderer="org.nasdanika.ledger.app.routes.ledger.УчётныйЦентрRenderer">
+      </renderer>
+
+      <renderer eclass-name="Пользователь" namespace-uri="urn:org.nasdanika.ledger" renderer="org.nasdanika.ledger.app.routes.ledger.ПользовательRenderer">
+      </renderer>
+
+      <renderer eclass-name="Организация" namespace-uri="urn:org.nasdanika.ledger" renderer="org.nasdanika.ledger.app.routes.ledger.ОрганизацияRenderer">
+      </renderer>
+
+      <renderer eclass-name="ЖурналОпераций" namespace-uri="urn:org.nasdanika.ledger" renderer="org.nasdanika.ledger.app.routes.ledger.ЖурналОперацийRenderer">
+      </renderer>
+
+      <renderer eclass-name="Счёт" namespace-uri="urn:org.nasdanika.ledger" renderer="org.nasdanika.ledger.app.routes.ledger.СчётRenderer">
+      </renderer>
+
+      <renderer eclass-name="Актив" namespace-uri="urn:org.nasdanika.ledger" renderer="org.nasdanika.ledger.app.routes.ledger.АктивRenderer">
+      </renderer>
+
+      <renderer eclass-name="СвойствоАктива" namespace-uri="urn:org.nasdanika.ledger" renderer="org.nasdanika.ledger.app.routes.ledger.СвойствоАктиваRenderer">
+      </renderer>
+
+      <renderer eclass-name="ЗначениеСвойстваАктива" namespace-uri="urn:org.nasdanika.ledger" renderer="org.nasdanika.ledger.app.routes.ledger.ЗначениеСвойстваАктиваRenderer">
+      </renderer>
+
+      <renderer eclass-name="ФиксированныйКурс" namespace-uri="urn:org.nasdanika.ledger" renderer="org.nasdanika.ledger.app.routes.ledger.ФиксированныйКурсRenderer">
+      </renderer>
+
+      <renderer eclass-name="ВычислительКурса" namespace-uri="urn:org.nasdanika.ledger" renderer="org.nasdanika.ledger.app.routes.ledger.ВычислительКурсаRenderer">
+      </renderer>
+
+      <renderer eclass-name="Операция" namespace-uri="urn:org.nasdanika.ledger" renderer="org.nasdanika.ledger.app.routes.ledger.ОперацияRenderer">
+      </renderer>
+
+      <renderer eclass-name="Проводка" namespace-uri="urn:org.nasdanika.ledger" renderer="org.nasdanika.ledger.app.routes.ledger.ПроводкаRenderer">
+      </renderer>
+
+   <renderer eclass-name="Субъект" namespace-uri="urn:org.nasdanika.ledger" renderer="org.nasdanika.ledger.app.routes.ledger.СубъектRenderer">
+      </renderer>
+      
+   <renderer
+         eclass-name="Guest"
+         namespace-uri="urn:org.nasdanika.cdo.security"
+         renderer="org.nasdanika.ledger.app.routes.ledger.GuestRenderer">
+   </renderer>
+      
+</extension>
+   
 </plugin>

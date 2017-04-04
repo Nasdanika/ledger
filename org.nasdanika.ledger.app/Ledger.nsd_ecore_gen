@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.nasdanika.codegen.ecore:EcoreCodeGenerator xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.nasdanika.codegen.ecore="urn:org.nasdanika.codegen.ecore" xmlns:org.nasdanika.codegen.ecore.web.ui.model="urn:org.nasdanika.codegen.ecore.web.ui.model" name="Legder UI">
+  <configuration id="general" name="General">
+    <configuration xsi:type="org.nasdanika.codegen.ecore:EcoreCodeGeneratorConfiguration" sourceFolder="src" basePackage="org.nasdanika.ledger.app.routes" description="Web UI routes generator model."/>
+  </configuration>
+  <packageSources location="../org.nasdanika.ledger/model/ledger.genmodel"/>
+  <packages name="ledger" nsURI="urn:org.nasdanika.ledger">
+    <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+      <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EPackageConfiguration"/>
+    </configuration>
+    <classes selected="true" name="ВычислительКурса"/>
+    <classes selected="true" name="Право"/>
+    <classes selected="true" name="СвойствоАктива">
+      <members xsi:type="org.nasdanika.codegen.ecore:Attribute" name="наименование"/>
+      <members xsi:type="org.nasdanika.codegen.ecore:Attribute" name="описание"/>
+      <members xsi:type="org.nasdanika.codegen.ecore:Attribute" name="тип"/>
+      <members xsi:type="org.nasdanika.codegen.ecore:Attribute" name="верхняяГраница"/>
+    </classes>
+    <classes name="ВстроенноеИзображение"/>
+    <classes selected="true" name="ЖурналОпераций"/>
+    <classes selected="true" name="Проводка">
+      <members xsi:type="org.nasdanika.codegen.ecore:Attribute" name="сверено"/>
+    </classes>
+    <classes selected="true" name="Комментарий">
+      <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+        <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EClassConfiguration" horizontalForm="false" novalidate="true"/>
+      </configuration>
+      <members xsi:type="org.nasdanika.codegen.ecore:Attribute" name="содержание">
+        <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+          <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EAttributeConfiguration" control="Text area" html="true"/>
+        </configuration>
+      </members>
+    </classes>
+    <classes name="Изображение"/>
+    <classes name="СсылкаНаИзображение"/>
+    <classes selected="true" name="УчётныйЦентр">
+      <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+        <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EClassConfiguration" icon="fa fa-book"/>
+      </configuration>
+    </classes>
+    <classes selected="true" name="ХранительЖурналовОпераций"/>
+    <classes selected="true" name="Пользователь">
+      <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+        <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EClassConfiguration"/>
+      </configuration>
+    </classes>
+    <classes selected="true" name="Организация"/>
+    <classes selected="true" name="Счёт">
+      <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+        <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EClassConfiguration"/>
+      </configuration>
+    </classes>
+    <classes selected="true" name="Актив">
+      <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+        <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EClassConfiguration" icon="my-super-icon"/>
+      </configuration>
+      <members xsi:type="org.nasdanika.codegen.ecore:Attribute" name="единицаИзмерения">
+        <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+          <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EAttributeConfiguration"/>
+        </configuration>
+      </members>
+      <members xsi:type="org.nasdanika.codegen.ecore:Attribute" name="группа">
+        <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+          <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EAttributeConfiguration" constraints="" location="Item container"/>
+        </configuration>
+      </members>
+      <members xsi:type="org.nasdanika.codegen.ecore:Reference" name="источникиКурсов">
+        <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+          <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EReferenceConfiguration"/>
+        </configuration>
+      </members>
+      <members xsi:type="org.nasdanika.codegen.ecore:Reference" name="счета">
+        <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+          <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EReferenceConfiguration"/>
+        </configuration>
+      </members>
+      <members xsi:type="org.nasdanika.codegen.ecore:Reference" name="свойства">
+        <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+          <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EReferenceConfiguration"/>
+        </configuration>
+      </members>
+    </classes>
+    <classes selected="true" name="ЗначениеСвойстваАктива"/>
+    <classes selected="true" name="ИсточникКурсаАктива">
+      <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+        <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EClassConfiguration"/>
+      </configuration>
+    </classes>
+    <classes selected="true" name="ФиксированныйКурс"/>
+    <classes selected="true" name="Операция"/>
+    <classes selected="true" name="Субъект"/>
+    <classes selected="true" name="ЭлементМодели">
+      <members xsi:type="org.nasdanika.codegen.ecore:Attribute" name="наименование"/>
+      <members xsi:type="org.nasdanika.codegen.ecore:Attribute" name="описание"/>
+      <members xsi:type="org.nasdanika.codegen.ecore:Reference" name="комментарии"/>
+      <members xsi:type="org.nasdanika.codegen.ecore:Reference" name="изображение"/>
+      <members xsi:type="org.nasdanika.codegen.ecore:Attribute" name="идентификатор"/>
+    </classes>
+  </packages>
+  <generationTargets>org.nasdanika.codegen.ecore.web.ui/web-ui</generationTargets>
+</org.nasdanika.codegen.ecore:EcoreCodeGenerator>

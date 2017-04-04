@@ -2,12 +2,20 @@
  */
 package org.nasdanika.ledger.impl;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.nasdanika.cdo.security.LoginPasswordCredentials;
 import org.nasdanika.cdo.security.SecurityPackage;
 import org.nasdanika.cdo.security.impl.LoginUserImpl;
 import org.nasdanika.ledger.LedgerPackage;
+import org.nasdanika.ledger.util.LedgerValidator;
 import org.nasdanika.ledger.ЖурналОпераций;
 import org.nasdanika.ledger.Изображение;
 import org.nasdanika.ledger.Комментарий;
@@ -169,6 +177,31 @@ public class ПользовательImpl extends LoginUserImpl<LoginPasswordCre
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validate(DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO: implement this method
+		// -> specify the condition that violates the invariant
+		// -> verify the details of the diagnostic, including severity and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 LedgerValidator.DIAGNOSTIC_SOURCE,
+						 LedgerValidator.ЭЛЕМЕНТ_МОДЕЛИ__VALIDATE,
+						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validate", EObjectValidator.getObjectLabel(this, context) }),
+						 new Object [] { this }));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == ЭлементМодели.class) {
@@ -214,6 +247,42 @@ public class ПользовательImpl extends LoginUserImpl<LoginPasswordCre
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == ЭлементМодели.class) {
+			switch (baseOperationID) {
+				case LedgerPackage.ЭЛЕМЕНТ_МОДЕЛИ___VALIDATE__DIAGNOSTICCHAIN_MAP: return LedgerPackage.ПОЛЬЗОВАТЕЛЬ___VALIDATE__DIAGNOSTICCHAIN_MAP;
+				default: return -1;
+			}
+		}
+		if (baseClass == ХранительЖурналовОпераций.class) {
+			switch (baseOperationID) {
+				default: return -1;
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case LedgerPackage.ПОЛЬЗОВАТЕЛЬ___VALIDATE__DIAGNOSTICCHAIN_MAP:
+				return validate((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //ПользовательImpl

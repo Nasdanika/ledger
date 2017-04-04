@@ -41,7 +41,7 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-         
+
    <plugin
          id="org.pegdown"
          download-size="427"
@@ -187,7 +187,5 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-
-         
 
 </feature>

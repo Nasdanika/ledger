@@ -299,13 +299,22 @@ public interface LedgerPackage extends EPackage {
 	int ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT = 5;
 
 	/**
+	 * The operation id for the '<em>Validate</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЭЛЕМЕНТ_МОДЕЛИ___VALIDATE__DIAGNOSTICCHAIN_MAP = 0;
+
+	/**
 	 * The number of operations of the '<em>Элемент Модели</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ЭЛЕМЕНТ_МОДЕЛИ_OPERATION_COUNT = 0;
+	int ЭЛЕМЕНТ_МОДЕЛИ_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.ledger.impl.ПользовательImpl <em>Пользователь</em>}' class.
@@ -759,13 +768,22 @@ public interface LedgerPackage extends EPackage {
 	int УЧЁТНЫЙ_ЦЕНТР___GET_USER__STRING = SecurityPackage.LOGIN_PASSWORD_REALM___GET_USER__STRING;
 
 	/**
+	 * The operation id for the '<em>Validate</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int УЧЁТНЫЙ_ЦЕНТР___VALIDATE__DIAGNOSTICCHAIN_MAP = SecurityPackage.LOGIN_PASSWORD_REALM_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Учётный Центр</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int УЧЁТНЫЙ_ЦЕНТР_OPERATION_COUNT = SecurityPackage.LOGIN_PASSWORD_REALM_OPERATION_COUNT + 0;
+	int УЧЁТНЫЙ_ЦЕНТР_OPERATION_COUNT = SecurityPackage.LOGIN_PASSWORD_REALM_OPERATION_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Наименование</b></em>' attribute.
@@ -829,6 +847,15 @@ public interface LedgerPackage extends EPackage {
 	 * @ordered
 	 */
 	int ХРАНИТЕЛЬ_ЖУРНАЛОВ_ОПЕРАЦИЙ_FEATURE_COUNT = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Validate</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ХРАНИТЕЛЬ_ЖУРНАЛОВ_ОПЕРАЦИЙ___VALIDATE__DIAGNOSTICCHAIN_MAP = ЭЛЕМЕНТ_МОДЕЛИ___VALIDATE__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The number of operations of the '<em>Хранитель Журналов Операций</em>' class.
@@ -975,13 +1002,22 @@ public interface LedgerPackage extends EPackage {
 	int ПОЛЬЗОВАТЕЛЬ___GET_REALM = SecurityPackage.LOGIN_PASSWORD_HASH_USER___GET_REALM;
 
 	/**
+	 * The operation id for the '<em>Validate</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ПОЛЬЗОВАТЕЛЬ___VALIDATE__DIAGNOSTICCHAIN_MAP = SecurityPackage.LOGIN_PASSWORD_HASH_USER_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Пользователь</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ПОЛЬЗОВАТЕЛЬ_OPERATION_COUNT = SecurityPackage.LOGIN_PASSWORD_HASH_USER_OPERATION_COUNT + 0;
+	int ПОЛЬЗОВАТЕЛЬ_OPERATION_COUNT = SecurityPackage.LOGIN_PASSWORD_HASH_USER_OPERATION_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Наименование</b></em>' attribute.
@@ -1045,6 +1081,15 @@ public interface LedgerPackage extends EPackage {
 	 * @ordered
 	 */
 	int ОРГАНИЗАЦИЯ_FEATURE_COUNT = ХРАНИТЕЛЬ_ЖУРНАЛОВ_ОПЕРАЦИЙ_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Validate</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ОРГАНИЗАЦИЯ___VALIDATE__DIAGNOSTICCHAIN_MAP = ХРАНИТЕЛЬ_ЖУРНАЛОВ_ОПЕРАЦИЙ___VALIDATE__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The number of operations of the '<em>Организация</em>' class.
@@ -1164,6 +1209,15 @@ public interface LedgerPackage extends EPackage {
 	int ЖУРНАЛ_ОПЕРАЦИЙ_FEATURE_COUNT = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 6;
 
 	/**
+	 * The operation id for the '<em>Validate</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЖУРНАЛ_ОПЕРАЦИЙ___VALIDATE__DIAGNOSTICCHAIN_MAP = ЭЛЕМЕНТ_МОДЕЛИ___VALIDATE__DIAGNOSTICCHAIN_MAP;
+
+	/**
 	 * The number of operations of the '<em>Журнал Операций</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1261,6 +1315,15 @@ public interface LedgerPackage extends EPackage {
 	 * @ordered
 	 */
 	int СЧЁТ_FEATURE_COUNT = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Validate</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int СЧЁТ___VALIDATE__DIAGNOSTICCHAIN_MAP = ЭЛЕМЕНТ_МОДЕЛИ___VALIDATE__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The number of operations of the '<em>Счёт</em>' class.
@@ -1396,6 +1459,15 @@ public interface LedgerPackage extends EPackage {
 	 * @ordered
 	 */
 	int АКТИВ_FEATURE_COUNT = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 8;
+
+	/**
+	 * The operation id for the '<em>Validate</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int АКТИВ___VALIDATE__DIAGNOSTICCHAIN_MAP = ЭЛЕМЕНТ_МОДЕЛИ___VALIDATE__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The number of operations of the '<em>Актив</em>' class.
@@ -1803,6 +1875,15 @@ public interface LedgerPackage extends EPackage {
 	int ОПЕРАЦИЯ_FEATURE_COUNT = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Validate</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ОПЕРАЦИЯ___VALIDATE__DIAGNOSTICCHAIN_MAP = ЭЛЕМЕНТ_МОДЕЛИ___VALIDATE__DIAGNOSTICCHAIN_MAP;
+
+	/**
 	 * The number of operations of the '<em>Операция</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1920,6 +2001,15 @@ public interface LedgerPackage extends EPackage {
 	int ПРОВОДКА_FEATURE_COUNT = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 6;
 
 	/**
+	 * The operation id for the '<em>Validate</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ПРОВОДКА___VALIDATE__DIAGNOSTICCHAIN_MAP = ЭЛЕМЕНТ_МОДЕЛИ___VALIDATE__DIAGNOSTICCHAIN_MAP;
+
+	/**
 	 * The number of operations of the '<em>Проводка</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1990,6 +2080,15 @@ public interface LedgerPackage extends EPackage {
 	 * @ordered
 	 */
 	int СУБЪЕКТ_FEATURE_COUNT = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Validate</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int СУБЪЕКТ___VALIDATE__DIAGNOSTICCHAIN_MAP = ЭЛЕМЕНТ_МОДЕЛИ___VALIDATE__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The number of operations of the '<em>Субъект</em>' class.
@@ -2162,6 +2261,16 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getЭлементМодели_Идентификатор();
+
+	/**
+	 * Returns the meta object for the '{@link org.nasdanika.ledger.ЭлементМодели#validate(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Validate</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Validate</em>' operation.
+	 * @see org.nasdanika.ledger.ЭлементМодели#validate(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getЭлементМодели__Validate__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.ledger.Пользователь <em>Пользователь</em>}'.
@@ -2975,6 +3084,14 @@ public interface LedgerPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ЭЛЕМЕНТ_МОДЕЛИ__ИДЕНТИФИКАТОР = eINSTANCE.getЭлементМодели_Идентификатор();
+
+		/**
+		 * The meta object literal for the '<em><b>Validate</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ЭЛЕМЕНТ_МОДЕЛИ___VALIDATE__DIAGNOSTICCHAIN_MAP = eINSTANCE.getЭлементМодели__Validate__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.ledger.impl.ПользовательImpl <em>Пользователь</em>}' class.

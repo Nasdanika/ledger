@@ -11,8 +11,8 @@ public class LedgerCDOTransactionContextProviderComponent extends CDOTransaction
 
 	@SuppressWarnings("unchecked")
 	@Override
-	protected Realm<LoginPasswordCredentials> getProtectionDomain(CDOTransaction view) {
-		String resourcePath = "Ledger";
+	protected Realm<LoginPasswordCredentials> getSecurityRealm(CDOTransaction view) {
+		String resourcePath = "ledger";
 		if (view.hasResource(resourcePath)) {
 			CDOResource res = view.getResource(resourcePath);
 			if (res!=null) {

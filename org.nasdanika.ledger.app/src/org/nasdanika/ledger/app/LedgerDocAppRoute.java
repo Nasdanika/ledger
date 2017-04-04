@@ -4,13 +4,13 @@ package org.nasdanika.ledger.app;
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.nasdanika.cdo.web.doc.DocumentationPanelFactory;
 import org.nasdanika.html.ApplicationPanel;
+import org.nasdanika.html.Bootstrap.Style;
 import org.nasdanika.html.HTMLFactory;
-import org.nasdanika.html.Table;
 import org.nasdanika.html.RowContainer.Row;
+import org.nasdanika.html.Table;
 import org.nasdanika.html.Tag;
 import org.nasdanika.html.Tag.TagName;
 import org.nasdanika.html.Theme;
-import org.nasdanika.html.Bootstrap.Style;
 import org.nasdanika.web.Action;
 import org.nasdanika.web.HttpServletRequestContext;
 import org.nasdanika.web.Route;
@@ -59,6 +59,8 @@ public class LedgerDocAppRoute implements Route {
 				htmlFactory.tag(TagName.script, getClass().getResource("Scroller.js")),
 				htmlFactory.tag(TagName.script, getClass().getResource("SetDimensions.js")));
 		
+		appPanel.footer(htmlFactory.div("Trace: ", htmlFactory.span().attribute("id", "trace")).style().text().align().left().style().float_().left());
+				
 		final AutoCloseable app = htmlFactory.bootstrapRouterApplication(
 				Theme.Default,
 				StringEscapeUtils.escapeHtml4("Documentation"), 

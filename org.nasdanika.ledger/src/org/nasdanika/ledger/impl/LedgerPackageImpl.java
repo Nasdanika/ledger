@@ -5,15 +5,18 @@ package org.nasdanika.ledger.impl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.nasdanika.cdo.security.SecurityPackage;
 import org.nasdanika.ledger.LedgerFactory;
 import org.nasdanika.ledger.LedgerPackage;
+import org.nasdanika.ledger.util.LedgerValidator;
 import org.nasdanika.ledger.Актив;
 import org.nasdanika.ledger.ВстроенноеИзображение;
 import org.nasdanika.ledger.ВычислительКурса;
@@ -245,6 +248,15 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		// Initialize created meta-data
 		theLedgerPackage.initializePackageContents();
 
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theLedgerPackage, 
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return LedgerValidator.INSTANCE;
+				 }
+			 });
+
 		// Mark meta-data to indicate it can't be changed
 		theLedgerPackage.freeze();
 
@@ -387,6 +399,15 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 */
 	public EAttribute getЭлементМодели_Идентификатор() {
 		return (EAttribute)элементМоделиEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getЭлементМодели__Validate__DiagnosticChain_Map() {
+		return элементМоделиEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -981,6 +1002,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		createEReference(элементМоделиEClass, ЭЛЕМЕНТ_МОДЕЛИ__КОММЕНТАРИИ);
 		createEReference(элементМоделиEClass, ЭЛЕМЕНТ_МОДЕЛИ__ИЗОБРАЖЕНИЕ);
 		createEAttribute(элементМоделиEClass, ЭЛЕМЕНТ_МОДЕЛИ__ИДЕНТИФИКАТОР);
+		createEOperation(элементМоделиEClass, ЭЛЕМЕНТ_МОДЕЛИ___VALIDATE__DIAGNOSTICCHAIN_MAP);
 
 		комментарийEClass = createEClass(КОММЕНТАРИЙ);
 		createEReference(комментарийEClass, КОММЕНТАРИЙ__АВТОР);
@@ -1131,6 +1153,15 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		initEReference(getЭлементМодели_Изображение(), this.getИзображение(), null, "изображение", null, 0, 1, ЭлементМодели.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getЭлементМодели_Идентификатор(), ecorePackage.getEString(), "идентификатор", null, 0, 1, ЭлементМодели.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		EOperation op = initEOperation(getЭлементМодели__Validate__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "validate", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
+		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(комментарийEClass, Комментарий.class, "Комментарий", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getКомментарий_Автор(), this.getПользователь(), null, "автор", null, 1, 1, Комментарий.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getКомментарий_Содержание(), ecorePackage.getEString(), "содержание", null, 1, 1, Комментарий.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1196,7 +1227,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		initEReference(getИсточникКурсаАктива_БазовыйАктив(), this.getАктив(), null, "базовыйАктив", null, 0, 1, ИсточникКурсаАктива.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getИсточникКурсаАктива_Комментарий(), ecorePackage.getEString(), "комментарий", null, 0, 1, ИсточникКурсаАктива.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = initEOperation(getИсточникКурсаАктива__ПолучитьКурс__Date_BigDecimal_EList_КурсАктива_EList(), this.getКурсАктива(), "получитьКурс", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getИсточникКурсаАктива__ПолучитьКурс__Date_BigDecimal_EList_КурсАктива_EList(), this.getКурсАктива(), "получитьКурс", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "дата", 1, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBigDecimal(), "количество", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getЗначениеСвойстваАктива(), "значенияСвойств", 0, -1, IS_UNIQUE, IS_ORDERED);
@@ -1235,6 +1266,8 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/GenModel
 		createGenModelAnnotations();
+		// org.nasdanika.cdo.web.render
+		createOrgAnnotations();
 	}
 
 	/**
@@ -1256,6 +1289,24 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		   source, 
 		   new String[] {
 			 "documentation", "\u0410\u0431\u0441\u0442\u0440\u0430\u043a\u0442\u043d\u044b\u0439 \u0431\u0430\u0437\u043e\u0432\u044b\u0439 \u043a\u043b\u0430\u0441\u0441 \u0434\u043b\u044f \u0440\u044f\u0434\u0430 \u044d\u043b\u0435\u043c\u0435\u043d\u0442\u043e\u0432 \u043c\u043e\u0434\u0435\u043b\u0438 \u0441\u043e\u0434\u0435\u0440\u0436\u0430\u0449\u0438\u0439 \u043e\u0431\u0449\u0438\u0435 \u0430\u0442\u0440\u0438\u0431\u0443\u0442\u044b \u0438 \u0441\u0441\u044b\u043b\u043a\u0438. \r\n\u041f\u043e\u0434\u043a\u043b\u0430\u0441\u0441\u044b \u043c\u043e\u0433\u0443\u0442 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u044c \u0442\u043e\u043b\u044c\u043a\u043e \u043d\u0435\u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0441\u0441\u044b\u043b\u043a\u0438 \u0438 \u0430\u0442\u0442\u0440\u0438\u0431\u0443\u0442\u044b \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0451\u043d\u043d\u044b\u0435 \u0432 \u0441\u0443\u043f\u0435\u0440\u043a\u043b\u0430\u0441\u0441\u0435."
+		   });	
+		addAnnotation
+		  (getЭлементМодели__Validate__DiagnosticChain_Map(), 
+		   source, 
+		   new String[] {
+			 "documentation", "Validates element."
+		   });	
+		addAnnotation
+		  ((getЭлементМодели__Validate__DiagnosticChain_Map()).getEParameters().get(0), 
+		   source, 
+		   new String[] {
+			 "documentation", "Diagnostics to add validation messages to."
+		   });	
+		addAnnotation
+		  ((getЭлементМодели__Validate__DiagnosticChain_Map()).getEParameters().get(1), 
+		   source, 
+		   new String[] {
+			 "documentation", "Validation context."
 		   });	
 		addAnnotation
 		  (getЭлементМодели_Наименование(), 
@@ -1742,6 +1793,22 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		   source, 
 		   new String[] {
 			 "documentation", "\u0421 \u0446\u0435\u043b\u044c\u044e \u0431\u0430\u043b\u0430\u043d\u0441\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0439 \u0438 \u0441\u043e\u0441\u0442\u0430\u0432\u043b\u0435\u043d\u0438\u044f \u043e\u0442\u0447\u0451\u0442\u043d\u043e\u0441\u0442\u0438 \u0434\u043e\u043b\u0436\u043d\u043e \u0431\u044b\u0442\u044c \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u044b\u0432\u0430\u0442\u044c \u0432\u0435\u043b\u0438\u0447\u0438\u043d\u0443 \u043e\u0434\u043d\u043e\u0433\u043e \u0430\u043a\u0442\u0438\u0432\u0430 \u0432 \u0432\u0435\u043b\u0438\u0447\u0438\u043d\u0443 \u0434\u0440\u0443\u0433\u043e\u0433\u043e.\r\n\u041a\u043e\u044d\u0444\u0444\u0438\u0446\u0438\u0435\u043d\u0442 \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u043d\u0430\u0437\u044b\u0432\u0430\u0435\u0442\u0441\u044f \u043a\u0443\u0440\u0441\u043e\u043c \u043f\u043e \u0430\u043d\u0430\u043b\u043e\u0433\u0438\u0438 \u0441 \u043a\u0443\u0440\u0441\u043e\u043c \u0432\u0430\u043b\u044e\u0442. \u0414\u043b\u044f \u0442\u043e\u0432\u0430\u0440\u043e\u0432 \u0441\u0442\u043e\u0438\u043c\u043e\u0441\u0442\u044c \u0442\u0430\u0432\u0430\u0440\u0430 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u0435\u0433\u043e \"\u043a\u0443\u0440\u0441\u043e\u043c\"."
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>org.nasdanika.cdo.web.render</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOrgAnnotations() {
+		String source = "org.nasdanika.cdo.web.render";	
+		addAnnotation
+		  (элементМоделиEClass, 
+		   source, 
+		   new String[] {
+			 "label", "{{\u043d\u0430\u0438\u043c\u0435\u043d\u043e\u0432\u0430\u043d\u0438\u0435}}"
 		   });
 	}
 

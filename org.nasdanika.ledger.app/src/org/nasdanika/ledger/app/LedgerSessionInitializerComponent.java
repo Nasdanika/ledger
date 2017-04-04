@@ -2,15 +2,21 @@ package org.nasdanika.ledger.app;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.emf.cdo.CDOObject;
+import org.eclipse.emf.cdo.common.id.CDOIDUtil;
 import org.eclipse.emf.cdo.common.model.CDOPackageRegistry;
 import org.eclipse.emf.cdo.eresource.CDOResource;
 import org.eclipse.emf.cdo.session.CDOSession;
+import org.eclipse.emf.cdo.transaction.CDOCommitContext;
 import org.eclipse.emf.cdo.transaction.CDOTransaction;
+import org.eclipse.emf.cdo.transaction.CDOTransactionHandler2;
 import org.eclipse.emf.cdo.util.CommitException;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -19,9 +25,8 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.nasdanika.cdo.CDOSessionInitializer;
 import org.nasdanika.core.CoreUtil;
 import org.nasdanika.core.CoreUtil.TokenSource;
-import org.nasdanika.ledger.LedgerFactory;
 import org.nasdanika.ledger.LedgerPackage;
-import org.nasdanika.ledger.УчётныйЦентр;
+import org.nasdanika.ledger.ЭлементМодели;
 import org.osgi.service.component.ComponentContext;
 
 public class LedgerSessionInitializerComponent implements CDOSessionInitializer {
@@ -52,6 +57,7 @@ public class LedgerSessionInitializerComponent implements CDOSessionInitializer 
 		CDOTransaction transaction = session.openTransaction();				
 		try {
 			String resourceName = "/ledger";
+			
 			if (!transaction.hasResource(resourceName) ) {
 				CDOResource cRes = transaction.createResource("/ledger");
 				
@@ -59,7 +65,30 @@ public class LedgerSessionInitializerComponent implements CDOSessionInitializer 
 				resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
 
 				resourceSet.getPackageRegistry().put(LedgerPackage.eNS_URI, LedgerPackage.eINSTANCE);
+				
+				List<Runnable> toRunOnCommitted = new ArrayList<>();
 
+				transaction.addTransactionHandler(new CDOTransactionHandler2() {
+
+					@Override
+					public void committedTransaction(CDOTransaction transaction, CDOCommitContext ctx) {
+						for (Runnable r: toRunOnCommitted) {
+							r.run();
+						}						
+					}
+
+					@Override
+					public void committingTransaction(CDOTransaction arg0, CDOCommitContext arg1) {
+						// NOP
+					}
+
+					@Override
+					public void rolledBackTransaction(CDOTransaction arg0) {
+						// NOP
+					}
+					
+				});
+				
 				for (String ic: initialContent) {
 					File file = new File(ic);
 					if (file.isFile()) {												
@@ -71,17 +100,63 @@ public class LedgerSessionInitializerComponent implements CDOSessionInitializer 
 						for (EObject eObject : resource.getContents()) {
 							cRes.getContents().add(EcoreUtil.copy(eObject));
 						}
+						
+						toRunOnCommitted.add(new Runnable() {
+							
+							@Override
+							public void run() {
+								System.out.println("--- "+file.getName()+" ---");
+								for (EObject obj: cRes.getContents()) {
+									dump(obj, 4);
+								}								
+							}
+						});
 					} else {
 						System.err.println("Initial content file does not exist or not a file: "+file.getAbsolutePath());
 					}
 				}
 			}
 			
-			transaction.commit();
+			transaction.commit();			
 			transaction.close();
+						
 		} catch (CommitException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	@SuppressWarnings("unchecked")
+	private void dump(EObject obj, int indent) {
+		if (obj != null) {
+			for (int i=0; i<indent; ++i) {
+				System.out.print(" ");
+			}
+			if (obj instanceof CDOObject) {
+				StringBuilder sb = new StringBuilder();
+				CDOIDUtil.write(sb, ((CDOObject) obj).cdoID());
+				System.out.print("["+sb+"] ");
+			}
+			System.out.print(obj.eClass().getName()+" ");
+			if (obj instanceof ЭлементМодели) {
+				System.out.print(((ЭлементМодели) obj).getНаименование());
+			}
+			System.out.println();
+			for (EReference ref: obj.eClass().getEAllReferences()) {
+				if (ref.isContainment()) {
+					for (int i=0; i<indent+2; ++i) {
+						System.out.print(" ");
+					}
+					System.out.println(ref.getName());
+					if (ref.isMany()) {
+						for (Object rv: ((Collection<Object>) obj.eGet(ref))) {
+							dump((EObject) rv, indent+4);						
+						}
+					} else {
+						dump((EObject) obj.eGet(ref), indent+4);
+					}
+				}
+			}		
+		}		
 	}
 
 }

@@ -13,7 +13,7 @@ public class LedgerRoute implements Route {
 
 	@Override
 	public Action execute(HttpServletRequestContext context, Object... args) throws Exception {
-		return new ValueAction("Ledger Works!!!");
+		return new ValueAction("Ledger Works!!! " + context.getRequest().getLocale());
 	}
 
 	@Override
