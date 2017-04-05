@@ -58,6 +58,7 @@ public class ПользовательItemProvider extends LoginUserItemProvider 
 			addНаименованиеPropertyDescriptor(object);
 			addОписаниеPropertyDescriptor(object);
 			addИдентификаторPropertyDescriptor(object);
+			addThemePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -151,6 +152,28 @@ public class ПользовательItemProvider extends LoginUserItemProvider 
 	}
 
 	/**
+	 * This adds a property descriptor for the Theme feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addThemePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Пользователь_theme_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Пользователь_theme_feature", "_UI_Пользователь_type"),
+				 LedgerPackage.Literals.ПОЛЬЗОВАТЕЛЬ__THEME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -222,6 +245,7 @@ public class ПользовательItemProvider extends LoginUserItemProvider 
 			case LedgerPackage.ПОЛЬЗОВАТЕЛЬ__НАИМЕНОВАНИЕ:
 			case LedgerPackage.ПОЛЬЗОВАТЕЛЬ__ОПИСАНИЕ:
 			case LedgerPackage.ПОЛЬЗОВАТЕЛЬ__ИДЕНТИФИКАТОР:
+			case LedgerPackage.ПОЛЬЗОВАТЕЛЬ__THEME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case LedgerPackage.ПОЛЬЗОВАТЕЛЬ__КОММЕНТАРИИ:

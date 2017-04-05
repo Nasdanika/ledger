@@ -454,7 +454,7 @@ public interface LedgerPackage extends EPackage {
 	 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getКурсАктива()
 	 * @generated
 	 */
-	int КУРС_АКТИВА = 20;
+	int КУРС_АКТИВА = 21;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.ledger.impl.КомментарийImpl <em>Комментарий</em>}' class.
@@ -966,13 +966,22 @@ public interface LedgerPackage extends EPackage {
 	int ПОЛЬЗОВАТЕЛЬ__ЖУРНАЛЫ_ОПЕРАЦИЙ = SecurityPackage.LOGIN_PASSWORD_HASH_USER_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Theme</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ПОЛЬЗОВАТЕЛЬ__THEME = SecurityPackage.LOGIN_PASSWORD_HASH_USER_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Пользователь</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ПОЛЬЗОВАТЕЛЬ_FEATURE_COUNT = SecurityPackage.LOGIN_PASSWORD_HASH_USER_FEATURE_COUNT + 6;
+	int ПОЛЬЗОВАТЕЛЬ_FEATURE_COUNT = SecurityPackage.LOGIN_PASSWORD_HASH_USER_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Authorize</em>' operation.
@@ -2101,6 +2110,17 @@ public interface LedgerPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '<em>Theme</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.html.Theme
+	 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getTheme()
+	 * @generated
+	 */
+	int THEME = 20;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.nasdanika.ledger.ЖурналОпераций <em>Журнал Операций</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2281,6 +2301,17 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getПользователь();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.ledger.Пользователь#getTheme <em>Theme</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Theme</em>'.
+	 * @see org.nasdanika.ledger.Пользователь#getTheme()
+	 * @see #getПользователь()
+	 * @generated
+	 */
+	EAttribute getПользователь_Theme();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.ledger.Организация <em>Организация</em>}'.
@@ -2820,6 +2851,17 @@ public interface LedgerPackage extends EPackage {
 	EReference getСубъект_Операции();
 
 	/**
+	 * Returns the meta object for data type '{@link org.nasdanika.html.Theme <em>Theme</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Theme</em>'.
+	 * @see org.nasdanika.html.Theme
+	 * @model instanceClass="org.nasdanika.html.Theme"
+	 * @generated
+	 */
+	EDataType getTheme();
+
+	/**
 	 * Returns the meta object for data type '{@link org.nasdanika.ledger.КурсАктива <em>Курс Актива</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3102,6 +3144,14 @@ public interface LedgerPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ПОЛЬЗОВАТЕЛЬ = eINSTANCE.getПользователь();
+
+		/**
+		 * The meta object literal for the '<em><b>Theme</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ПОЛЬЗОВАТЕЛЬ__THEME = eINSTANCE.getПользователь_Theme();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.ledger.impl.ОрганизацияImpl <em>Организация</em>}' class.
@@ -3526,6 +3576,16 @@ public interface LedgerPackage extends EPackage {
 		 * @generated
 		 */
 		EReference СУБЪЕКТ__ОПЕРАЦИИ = eINSTANCE.getСубъект_Операции();
+
+		/**
+		 * The meta object literal for the '<em>Theme</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.html.Theme
+		 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getTheme()
+		 * @generated
+		 */
+		EDataType THEME = eINSTANCE.getTheme();
 
 		/**
 		 * The meta object literal for the '<em>Курс Актива</em>' data type.

@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.EObjectValidator;
 
+import org.nasdanika.html.Theme;
 import org.nasdanika.ledger.*;
 
 /**
@@ -134,6 +135,8 @@ public class LedgerValidator extends EObjectValidator {
 				return validateПроводка((Проводка)value, diagnostics, context);
 			case LedgerPackage.СУБЪЕКТ:
 				return validateСубъект((Субъект)value, diagnostics, context);
+			case LedgerPackage.THEME:
+				return validateTheme((Theme)value, diagnostics, context);
 			case LedgerPackage.КУРС_АКТИВА:
 				return validateКурсАктива((КурсАктива)value, diagnostics, context);
 			default:
@@ -439,6 +442,15 @@ public class LedgerValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique((EObject)субъект, diagnostics, context);
 		if (result || diagnostics != null) result &= validateЭлементМодели_validate(субъект, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTheme(Theme theme, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
 	}
 
 	/**

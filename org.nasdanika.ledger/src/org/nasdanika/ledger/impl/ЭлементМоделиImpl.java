@@ -10,6 +10,8 @@ import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
+import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.internal.cdo.CDOObjectImpl;
 import org.nasdanika.ledger.LedgerPackage;
 import org.nasdanika.ledger.Изображение;
@@ -208,19 +210,23 @@ public abstract class ЭлементМоделиImpl extends CDOObjectImpl imple
 	 * @generated
 	 */
 	public boolean validate(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (diagnostics == null) {
-			return true;
+		// TODO: implement this method
+		// -> specify the condition that violates the invariant
+		// -> verify the details of the diagnostic, including severity and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 LedgerValidator.DIAGNOSTIC_SOURCE,
+						 LedgerValidator.ЭЛЕМЕНТ_МОДЕЛИ__VALIDATE,
+						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validate", EObjectValidator.getObjectLabel(this, context) }),
+						 new Object [] { this }));
+			}
+			return false;
 		}
-		ValidationHelper validationHelper = new ValidationHelper(diagnostics, LedgerValidator.DIAGNOSTIC_SOURCE, LedgerValidator.ЭЛЕМЕНТ_МОДЕЛИ__VALIDATE, this);
-		// For testing purposes
-		if ("error".equals(getНаименование())) {
-			validationHelper.error("Error message", LedgerPackage.Literals.ЭЛЕМЕНТ_МОДЕЛИ__НАИМЕНОВАНИЕ);
-		} else if ("warning".equals(getНаименование())) {
-			validationHelper.error("Warning message", LedgerPackage.Literals.ЭЛЕМЕНТ_МОДЕЛИ__НАИМЕНОВАНИЕ);
-		} else if ("class-error".equals(getНаименование())) {
-			validationHelper.error("Class error message");
-		}
-		return validationHelper.isSuccess();
+		return true;
 	}
 
 	/**

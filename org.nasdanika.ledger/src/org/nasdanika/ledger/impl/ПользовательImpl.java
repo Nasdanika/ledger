@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.nasdanika.cdo.security.LoginPasswordCredentials;
 import org.nasdanika.cdo.security.SecurityPackage;
 import org.nasdanika.cdo.security.impl.LoginUserImpl;
+import org.nasdanika.html.Theme;
 import org.nasdanika.ledger.LedgerPackage;
 import org.nasdanika.ledger.util.LedgerValidator;
 import org.nasdanika.ledger.ЖурналОпераций;
@@ -38,6 +39,7 @@ import org.nasdanika.ledger.ЭлементМодели;
  *   <li>{@link org.nasdanika.ledger.impl.ПользовательImpl#getИзображение <em>Изображение</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ПользовательImpl#getИдентификатор <em>Идентификатор</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ПользовательImpl#getЖурналыОпераций <em>Журналы Операций</em>}</li>
+ *   <li>{@link org.nasdanika.ledger.impl.ПользовательImpl#getTheme <em>Theme</em>}</li>
  * </ul>
  *
  * @generated
@@ -170,6 +172,24 @@ public class ПользовательImpl extends LoginUserImpl<LoginPasswordCre
 	@SuppressWarnings("unchecked")
 	public EList<ЖурналОпераций> getЖурналыОпераций() {
 		return (EList<ЖурналОпераций>)eGet(LedgerPackage.Literals.ХРАНИТЕЛЬ_ЖУРНАЛОВ_ОПЕРАЦИЙ__ЖУРНАЛЫ_ОПЕРАЦИЙ, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Theme getTheme() {
+		return (Theme)eGet(LedgerPackage.Literals.ПОЛЬЗОВАТЕЛЬ__THEME, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTheme(Theme newTheme) {
+		eSet(LedgerPackage.Literals.ПОЛЬЗОВАТЕЛЬ__THEME, newTheme);
 	}
 
 	/**

@@ -136,7 +136,9 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Хранитель журнала имеющий учётную запись и пароль для входа в систему."/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="theme" eType="#//Theme"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Theme" instanceClassName="org.nasdanika.html.Theme"/>
   <eClassifiers xsi:type="ecore:EClass" name="Организация" eSuperTypes="#//ХранительЖурналовОпераций">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Хранитель журналов операций над которыми работают несколько пользователей. Пользователи могут иметь разные права. &#xD;&#xA;Например кто-то может только осуществлять первичный ввод операций, кто-то не может вводить операции, но может создавать проводки в операциях, &#xD;&#xA;а кто-то ещё может только просматривать отчёты."/>

@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import org.nasdanika.html.Theme;
 import org.nasdanika.ledger.*;
 
 /**
@@ -86,6 +87,8 @@ public class LedgerFactoryImpl extends EFactoryImpl implements LedgerFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
+			case LedgerPackage.THEME:
+				return createThemeFromString(eDataType, initialValue);
 			case LedgerPackage.КУРС_АКТИВА:
 				return createКурсАктиваFromString(eDataType, initialValue);
 			default:
@@ -101,6 +104,8 @@ public class LedgerFactoryImpl extends EFactoryImpl implements LedgerFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
+			case LedgerPackage.THEME:
+				return convertThemeToString(eDataType, instanceValue);
 			case LedgerPackage.КУРС_АКТИВА:
 				return convertКурсАктиваToString(eDataType, instanceValue);
 			default:
@@ -236,6 +241,24 @@ public class LedgerFactoryImpl extends EFactoryImpl implements LedgerFactory {
 	public Субъект createСубъект() {
 		СубъектImpl субъект = new СубъектImpl();
 		return субъект;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Theme createThemeFromString(EDataType eDataType, String initialValue) {
+		return (Theme)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertThemeToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

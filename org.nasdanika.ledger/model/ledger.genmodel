@@ -11,6 +11,7 @@
   <modelPluginVariables>CDO=org.eclipse.emf.cdo</modelPluginVariables>
   <genPackages prefix="Ledger" basePackage="org.nasdanika" disposableProviderFactory="true"
       fileExtensions="nsd_ledger" ecorePackage="ledger.ecore#/">
+    <genDataTypes ecoreDataType="ledger.ecore#//Theme"/>
     <genDataTypes ecoreDataType="ledger.ecore#//КурсАктива"/>
     <genClasses ecoreClass="ledger.ecore#//ЭлементМодели">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//ЭлементМодели/наименование"/>
@@ -42,7 +43,9 @@
     <genClasses ecoreClass="ledger.ecore#//ХранительЖурналовОпераций">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ledger.ecore#//ХранительЖурналовОпераций/журналыОпераций"/>
     </genClasses>
-    <genClasses ecoreClass="ledger.ecore#//Пользователь"/>
+    <genClasses ecoreClass="ledger.ecore#//Пользователь">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//Пользователь/theme"/>
+    </genClasses>
     <genClasses ecoreClass="ledger.ecore#//Организация"/>
     <genClasses ecoreClass="ledger.ecore#//ЖурналОпераций">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ledger.ecore#//ЖурналОпераций/операции"/>

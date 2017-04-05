@@ -160,40 +160,23 @@ public class УчётныйЦентрImpl extends LoginPasswordRealmImpl impleme
 	 * @generated
 	 */
 	public boolean validate(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (diagnostics == null) {
-			return true;
+		// TODO: implement this method
+		// -> specify the condition that violates the invariant
+		// -> verify the details of the diagnostic, including severity and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(new BasicDiagnostic
+						(Diagnostic.ERROR,
+						 LedgerValidator.DIAGNOSTIC_SOURCE,
+						 LedgerValidator.ЭЛЕМЕНТ_МОДЕЛИ__VALIDATE,
+						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "validate", EObjectValidator.getObjectLabel(this, context) }),
+						 new Object [] { this }));
+			}
+			return false;
 		}
-		boolean ret = true;
-		// For testing purposes
-		if ("error".equals(getНаименование())) {
-			diagnostics.add
-				(new BasicDiagnostic
-					(Diagnostic.ERROR,
-					 LedgerValidator.DIAGNOSTIC_SOURCE,
-					 LedgerValidator.ЭЛЕМЕНТ_МОДЕЛИ__VALIDATE,
-					 "Error message",
-					 new Object [] { this,  LedgerPackage.Literals.ЭЛЕМЕНТ_МОДЕЛИ__НАИМЕНОВАНИЕ }));
-			ret = false;
-		} else if ("warning".equals(getНаименование())) {
-			diagnostics.add
-				(new BasicDiagnostic
-					(Diagnostic.WARNING,
-					 LedgerValidator.DIAGNOSTIC_SOURCE,
-					 LedgerValidator.ЭЛЕМЕНТ_МОДЕЛИ__VALIDATE,
-					 "Warning message",
-					 new Object [] { this,  LedgerPackage.Literals.ЭЛЕМЕНТ_МОДЕЛИ__НАИМЕНОВАНИЕ }));
-			ret = false;
-		} else if ("class-error".equals(getНаименование())) {
-			diagnostics.add
-				(new BasicDiagnostic
-					(Diagnostic.ERROR,
-					 LedgerValidator.DIAGNOSTIC_SOURCE,
-					 LedgerValidator.ЭЛЕМЕНТ_МОДЕЛИ__VALIDATE,
-					 "Class error message",
-					 new Object [] { this }));
-			ret = false;
-		}
-		return ret;
+		return true;
 	}
 
 	/**

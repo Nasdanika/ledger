@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.nasdanika.cdo.security.SecurityPackage;
+import org.nasdanika.html.Theme;
 import org.nasdanika.ledger.LedgerFactory;
 import org.nasdanika.ledger.LedgerPackage;
 import org.nasdanika.ledger.util.LedgerValidator;
@@ -157,6 +158,13 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * @generated
 	 */
 	private EClass субъектEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType themeEDataType = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -417,6 +425,15 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 */
 	public EClass getПользователь() {
 		return пользовательEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getПользователь_Theme() {
+		return (EAttribute)пользовательEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -874,6 +891,15 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getTheme() {
+		return themeEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getКурсАктива() {
 		return курсАктиваEDataType;
 	}
@@ -1025,6 +1051,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		createEReference(хранительЖурналовОперацийEClass, ХРАНИТЕЛЬ_ЖУРНАЛОВ_ОПЕРАЦИЙ__ЖУРНАЛЫ_ОПЕРАЦИЙ);
 
 		пользовательEClass = createEClass(ПОЛЬЗОВАТЕЛЬ);
+		createEAttribute(пользовательEClass, ПОЛЬЗОВАТЕЛЬ__THEME);
 
 		организацияEClass = createEClass(ОРГАНИЗАЦИЯ);
 
@@ -1094,6 +1121,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		createEReference(субъектEClass, СУБЪЕКТ__ОПЕРАЦИИ);
 
 		// Create data types
+		themeEDataType = createEDataType(THEME);
 		курсАктиваEDataType = createEDataType(КУРС_АКТИВА);
 	}
 
@@ -1183,6 +1211,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		initEReference(getХранительЖурналовОпераций_ЖурналыОпераций(), this.getЖурналОпераций(), null, "журналыОпераций", null, 0, -1, ХранительЖурналовОпераций.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(пользовательEClass, Пользователь.class, "Пользователь", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getПользователь_Theme(), this.getTheme(), "theme", null, 0, 1, Пользователь.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(организацияEClass, Организация.class, "Организация", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1258,6 +1287,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		initEReference(getСубъект_Операции(), this.getОперация(), this.getОперация_Субъекты(), "операции", null, 0, -1, Субъект.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize data types
+		initEDataType(themeEDataType, Theme.class, "Theme", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(курсАктиваEDataType, КурсАктива.class, "КурсАктива", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
