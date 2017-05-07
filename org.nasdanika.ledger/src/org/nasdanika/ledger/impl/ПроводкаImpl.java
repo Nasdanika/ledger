@@ -3,6 +3,7 @@
 package org.nasdanika.ledger.impl;
 
 import java.math.BigDecimal;
+
 import org.eclipse.emf.ecore.EClass;
 import org.nasdanika.ledger.LedgerPackage;
 import org.nasdanika.ledger.Актив;
@@ -18,12 +19,12 @@ import org.nasdanika.ledger.Счёт;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.nasdanika.ledger.impl.ПроводкаImpl#isСверено <em>Сверено</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ПроводкаImpl#getСчёт <em>Счёт</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ПроводкаImpl#getАктив <em>Актив</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ПроводкаImpl#getКоличество <em>Количество</em>}</li>
- *   <li>{@link org.nasdanika.ledger.impl.ПроводкаImpl#getЗначенияСвойствАктива <em>Значения Свойств Актива</em>}</li>
+ *   <li>{@link org.nasdanika.ledger.impl.ПроводкаImpl#isСверено <em>Сверено</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ПроводкаImpl#isБалансирующаяПроводка <em>Балансирующая Проводка</em>}</li>
+ *   <li>{@link org.nasdanika.ledger.impl.ПроводкаImpl#getЗначенияСвойствАктива <em>Значения Свойств Актива</em>}</li>
  * </ul>
  *
  * @generated

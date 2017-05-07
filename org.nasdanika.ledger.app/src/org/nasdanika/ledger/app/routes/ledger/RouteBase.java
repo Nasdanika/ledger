@@ -25,35 +25,44 @@ public class RouteBase<T extends EObject>
 	 * @generated
 	 */
 	protected RouteBase() throws Exception {
-		super(FrameworkUtil.getBundle(CDOTransactionHttpServletRequestContext.class).getBundleContext());
+		super(FrameworkUtil.getBundle(RouteBase.class).getBundleContext());
+
 	}
-	
+
 	@Override
-	protected Theme getTheme(CDOTransactionHttpServletRequestContext<LoginPasswordCredentials> context, T obj) throws Exception {
-		for (Principal principal: context.getPrincipals()) {
+	protected Theme getTheme(CDOTransactionHttpServletRequestContext<LoginPasswordCredentials> context, T obj)
+			throws Exception {
+		for (Principal principal : context.getPrincipals()) {
 			if (principal instanceof Пользователь) {
 				return ((Пользователь) principal).getTheme();
 			}
-		}		
+		}
 		return super.getTheme(context, obj);
 	}
-	
+
 	@Override
-	protected Object renderHeader(CDOTransactionHttpServletRequestContext<LoginPasswordCredentials> context, T obj)	throws Exception {
-		for (Principal principal: context.getPrincipals()) {
+	protected Object renderHeader(CDOTransactionHttpServletRequestContext<LoginPasswordCredentials> context, T obj)
+			throws Exception {
+		for (Principal principal : context.getPrincipals()) {
 			if (principal instanceof Пользователь) {
 				Пользователь пользователь = (Пользователь) principal;
 				HTMLFactory htmlFactory = getHTMLFactory(context);
-				Navbar navbar = htmlFactory.navbar(пользователь.getНаименование(), context.getObjectPath(principal)+"/"+INDEX_HTML);
+				Navbar navbar = htmlFactory.navbar(пользователь.getНаименование(),
+						context.getObjectPath(principal) + "/" + INDEX_HTML);
 				String logOutText = getResourceString(context, "logOut");
 				Tag logOutLink = htmlFactory.link("#", logOutText);
-				String logOutConfirmationMessage = StringEscapeUtils.escapeEcmaScript(getResourceString(context, "logOutConfirmation"));			
-				logOutLink.on(Event.click, "if (confirm('"+logOutConfirmationMessage+"')) window.location='"+context.getObjectPath(principal)+"/logout.html"+"';return false;");			
+				String logOutConfirmationMessage = StringEscapeUtils
+						.escapeEcmaScript(getResourceString(context, "logOutConfirmation"));
+				logOutLink.on(Event.click, "if (confirm('" + logOutConfirmationMessage + "')) window.location='"
+						+ context.getObjectPath(principal) + "/logout.html" + "';return false;");
 				navbar.item(logOutLink, false, true);
-				
-				Tag docLink = htmlFactory.link(context.getRequest().getContextPath()+"/router/doc.html", htmlFactory.glyphicon(Glyphicon.question_sign)).attribute("target", "nasdanika_ledger_documentation");
-				navbar.item(docLink, false, true);				
-				
+
+				Tag docLink = htmlFactory
+						.link(context.getRequest().getContextPath() + "/router/doc.html",
+								htmlFactory.glyphicon(Glyphicon.question_sign))
+						.attribute("target", "nasdanika_ledger_documentation");
+				navbar.item(docLink, false, true);
+
 				return navbar;
 			}
 		}

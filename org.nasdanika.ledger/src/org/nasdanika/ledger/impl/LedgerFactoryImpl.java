@@ -6,13 +6,28 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
 import org.nasdanika.html.Theme;
-import org.nasdanika.ledger.*;
+import org.nasdanika.ledger.LedgerFactory;
+import org.nasdanika.ledger.LedgerPackage;
+import org.nasdanika.ledger.Актив;
+import org.nasdanika.ledger.ВстроенноеИзображение;
+import org.nasdanika.ledger.ВычислительКурса;
+import org.nasdanika.ledger.ЖурналОпераций;
+import org.nasdanika.ledger.ЗначениеСвойстваАктива;
+import org.nasdanika.ledger.Комментарий;
+import org.nasdanika.ledger.КурсАктива;
+import org.nasdanika.ledger.Операция;
+import org.nasdanika.ledger.Организация;
+import org.nasdanika.ledger.Пользователь;
+import org.nasdanika.ledger.Проводка;
+import org.nasdanika.ledger.СвойствоАктива;
+import org.nasdanika.ledger.СсылкаНаИзображение;
+import org.nasdanika.ledger.Субъект;
+import org.nasdanika.ledger.Счёт;
+import org.nasdanika.ledger.УчётныйЦентр;
+import org.nasdanika.ledger.ФиксированныйКурс;
 
 /**
  * <!-- begin-user-doc -->

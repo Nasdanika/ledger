@@ -17,12 +17,12 @@ import java.math.BigDecimal;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.nasdanika.ledger.Проводка#isСверено <em>Сверено</em>}</li>
  *   <li>{@link org.nasdanika.ledger.Проводка#getСчёт <em>Счёт</em>}</li>
  *   <li>{@link org.nasdanika.ledger.Проводка#getАктив <em>Актив</em>}</li>
  *   <li>{@link org.nasdanika.ledger.Проводка#getКоличество <em>Количество</em>}</li>
- *   <li>{@link org.nasdanika.ledger.Проводка#getЗначенияСвойствАктива <em>Значения Свойств Актива</em>}</li>
+ *   <li>{@link org.nasdanika.ledger.Проводка#isСверено <em>Сверено</em>}</li>
  *   <li>{@link org.nasdanika.ledger.Проводка#isБалансирующаяПроводка <em>Балансирующая Проводка</em>}</li>
+ *   <li>{@link org.nasdanika.ledger.Проводка#getЗначенияСвойствАктива <em>Значения Свойств Актива</em>}</li>
  * </ul>
  *
  * @see org.nasdanika.ledger.LedgerPackage#getПроводка()

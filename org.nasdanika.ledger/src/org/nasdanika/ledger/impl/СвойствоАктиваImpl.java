@@ -3,9 +3,7 @@
 package org.nasdanika.ledger.impl;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.internal.cdo.CDOObjectImpl;
-
 import org.nasdanika.ledger.LedgerPackage;
 import org.nasdanika.ledger.СвойствоАктива;
 

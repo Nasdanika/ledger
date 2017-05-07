@@ -52,14 +52,17 @@ public interface ПользовательRenderer<T extends Пользовате
 		ret.addAll(ХранительЖурналовОперацийRenderer.super.getResourceBundleClasses(context));
 		return ret;
 	}
-	
+
 	@Override
-	default List<EStructuralFeature> getVisibleFeatures(CDOTransactionHttpServletRequestContext<LoginPasswordCredentials> context, T obj, FeaturePredicate predicate) throws Exception {
-		List<EStructuralFeature> visibleFeatures = ХранительЖурналовОперацийRenderer.super.getVisibleFeatures(context, obj, predicate);
+	default List<EStructuralFeature> getVisibleFeatures(
+			CDOTransactionHttpServletRequestContext<LoginPasswordCredentials> context, T obj,
+			FeaturePredicate predicate) throws Exception {
+		List<EStructuralFeature> visibleFeatures = ХранительЖурналовОперацийRenderer.super.getVisibleFeatures(context,
+				obj, predicate);
 		visibleFeatures.remove(SecurityPackage.Literals.PRINCIPAL__MEMBER_OF);
 		visibleFeatures.remove(SecurityPackage.Literals.PRINCIPAL__PERMISSIONS);
 		visibleFeatures.remove(SecurityPackage.Literals.LOGIN_PASSWORD_HASH_USER__PASSWORD_HASH);
-		visibleFeatures.remove(LedgerPackage.Literals.ЭЛЕМЕНТ_МОДЕЛИ__ИЗОБРАЖЕНИЕ);		
+		visibleFeatures.remove(LedgerPackage.Literals.ЭЛЕМЕНТ_МОДЕЛИ__ИЗОБРАЖЕНИЕ);
 		return visibleFeatures;
 	}
 

@@ -3,17 +3,12 @@
 package org.nasdanika.ledger.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
 import java.math.BigDecimal;
-
 import java.util.Date;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.internal.cdo.CDOObjectImpl;
-
 import org.nasdanika.ledger.LedgerPackage;
 import org.nasdanika.ledger.Актив;
 import org.nasdanika.ledger.ЗначениеСвойстваАктива;

@@ -45,12 +45,12 @@ public class ПроводкаItemProvider extends ЭлементМоделиItem
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addСвереноPropertyDescriptor(object);
 			addСчётPropertyDescriptor(object);
 			addАктивPropertyDescriptor(object);
 			addКоличествоPropertyDescriptor(object);
-			addЗначенияСвойствАктиваPropertyDescriptor(object);
+			addСвереноPropertyDescriptor(object);
 			addБалансирующаяПроводкаPropertyDescriptor(object);
+			addЗначенияСвойствАктиваPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -225,8 +225,8 @@ public class ПроводкаItemProvider extends ЭлементМоделиItem
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Проводка.class)) {
-			case LedgerPackage.ПРОВОДКА__СВЕРЕНО:
 			case LedgerPackage.ПРОВОДКА__КОЛИЧЕСТВО:
+			case LedgerPackage.ПРОВОДКА__СВЕРЕНО:
 			case LedgerPackage.ПРОВОДКА__БАЛАНСИРУЮЩАЯ_ПРОВОДКА:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

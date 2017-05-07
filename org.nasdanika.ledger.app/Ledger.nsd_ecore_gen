@@ -20,6 +20,16 @@
     <classes selected="true" name="ЖурналОпераций"/>
     <classes selected="true" name="Проводка">
       <members xsi:type="org.nasdanika.codegen.ecore:Attribute" name="сверено"/>
+      <members xsi:type="org.nasdanika.codegen.ecore:Reference" name="счёт">
+        <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+          <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EReferenceConfiguration"/>
+        </configuration>
+      </members>
+      <members xsi:type="org.nasdanika.codegen.ecore:Reference" name="актив">
+        <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+          <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EReferenceConfiguration"/>
+        </configuration>
+      </members>
     </classes>
     <classes selected="true" name="Комментарий">
       <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
@@ -87,14 +97,24 @@
       </configuration>
     </classes>
     <classes selected="true" name="ФиксированныйКурс"/>
-    <classes selected="true" name="Операция"/>
+    <classes selected="true" name="Операция">
+      <members xsi:type="org.nasdanika.codegen.ecore:Reference" name="проводки">
+        <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+          <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EReferenceConfiguration" location="Item container"/>
+        </configuration>
+      </members>
+    </classes>
     <classes selected="true" name="Субъект"/>
-    <classes selected="true" name="ЭлементМодели">
-      <members xsi:type="org.nasdanika.codegen.ecore:Attribute" name="наименование"/>
-      <members xsi:type="org.nasdanika.codegen.ecore:Attribute" name="описание"/>
-      <members xsi:type="org.nasdanika.codegen.ecore:Reference" name="комментарии"/>
+    <classes name="ЭлементМодели">
+      <members xsi:type="org.nasdanika.codegen.ecore:Attribute" selected="true" name="наименование"/>
+      <members xsi:type="org.nasdanika.codegen.ecore:Attribute" selected="true" name="описание">
+        <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+          <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EAttributeConfiguration" icon="glyphicon glyphicon-pencil" control="Text area" html="true"/>
+        </configuration>
+      </members>
+      <members xsi:type="org.nasdanika.codegen.ecore:Reference" selected="true" name="комментарии"/>
       <members xsi:type="org.nasdanika.codegen.ecore:Reference" name="изображение"/>
-      <members xsi:type="org.nasdanika.codegen.ecore:Attribute" name="идентификатор"/>
+      <members xsi:type="org.nasdanika.codegen.ecore:Attribute" selected="true" name="идентификатор"/>
     </classes>
   </packages>
   <generationTargets>org.nasdanika.codegen.ecore.web.ui/web-ui</generationTargets>

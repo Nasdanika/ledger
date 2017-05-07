@@ -1947,22 +1947,13 @@ public interface LedgerPackage extends EPackage {
 	int ПРОВОДКА__ИДЕНТИФИКАТОР = ЭЛЕМЕНТ_МОДЕЛИ__ИДЕНТИФИКАТОР;
 
 	/**
-	 * The feature id for the '<em><b>Сверено</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ПРОВОДКА__СВЕРЕНО = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Счёт</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ПРОВОДКА__СЧЁТ = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 1;
+	int ПРОВОДКА__СЧЁТ = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Актив</b></em>' reference.
@@ -1971,7 +1962,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ПРОВОДКА__АКТИВ = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 2;
+	int ПРОВОДКА__АКТИВ = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Количество</b></em>' attribute.
@@ -1980,16 +1971,16 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ПРОВОДКА__КОЛИЧЕСТВО = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 3;
+	int ПРОВОДКА__КОЛИЧЕСТВО = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Значения Свойств Актива</b></em>' reference.
+	 * The feature id for the '<em><b>Сверено</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ПРОВОДКА__ЗНАЧЕНИЯ_СВОЙСТВ_АКТИВА = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 4;
+	int ПРОВОДКА__СВЕРЕНО = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Балансирующая Проводка</b></em>' attribute.
@@ -1998,7 +1989,16 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ПРОВОДКА__БАЛАНСИРУЮЩАЯ_ПРОВОДКА = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 5;
+	int ПРОВОДКА__БАЛАНСИРУЮЩАЯ_ПРОВОДКА = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Значения Свойств Актива</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ПРОВОДКА__ЗНАЧЕНИЯ_СВОЙСТВ_АКТИВА = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Проводка</em>' class.

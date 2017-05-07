@@ -5,7 +5,6 @@ package org.nasdanika.ledger.impl;
 import java.math.BigDecimal;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.nasdanika.ledger.LedgerPackage;
 import org.nasdanika.ledger.ФиксированныйКурс;
 

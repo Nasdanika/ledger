@@ -108,12 +108,12 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ledger.ecore#//Операция/субъекты"/>
     </genClasses>
     <genClasses ecoreClass="ledger.ecore#//Проводка">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//Проводка/сверено"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ledger.ecore#//Проводка/счёт"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ledger.ecore#//Проводка/актив"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//Проводка/количество"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ledger.ecore#//Проводка/значенияСвойствАктива"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//Проводка/сверено"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//Проводка/балансирующаяПроводка"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ledger.ecore#//Проводка/значенияСвойствАктива"/>
     </genClasses>
     <genClasses ecoreClass="ledger.ecore#//Субъект">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ledger.ecore#//Субъект/операции"/>

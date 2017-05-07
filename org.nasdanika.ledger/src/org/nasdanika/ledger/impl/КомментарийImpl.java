@@ -3,10 +3,9 @@
 package org.nasdanika.ledger.impl;
 
 import java.util.Date;
+
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.internal.cdo.CDOObjectImpl;
-
 import org.nasdanika.ledger.LedgerPackage;
 import org.nasdanika.ledger.Комментарий;
 import org.nasdanika.ledger.Пользователь;
