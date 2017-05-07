@@ -3,6 +3,7 @@
 package org.nasdanika.ledger;
 
 import java.math.BigDecimal;
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -152,7 +153,8 @@ public interface Проводка extends ЭлементМодели {
 	void setКоличество(BigDecimal value);
 
 	/**
-	 * Returns the value of the '<em><b>Значения Свойств Актива</b></em>' reference.
+	 * Returns the value of the '<em><b>Значения Свойств Актива</b></em>' reference list.
+	 * The list contents are of type {@link org.nasdanika.ledger.ЗначениеСвойстваАктива}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Значения Свойств Актива</em>' reference isn't clear,
@@ -162,23 +164,12 @@ public interface Проводка extends ЭлементМодели {
 	 * <!-- begin-model-doc -->
 	 * Значения свойств актива. Например дата истечения срока годности товара.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Значения Свойств Актива</em>' reference.
-	 * @see #setЗначенияСвойствАктива(ЗначениеСвойстваАктива)
+	 * @return the value of the '<em>Значения Свойств Актива</em>' reference list.
 	 * @see org.nasdanika.ledger.LedgerPackage#getПроводка_ЗначенияСвойствАктива()
 	 * @model
 	 * @generated
 	 */
-	ЗначениеСвойстваАктива getЗначенияСвойствАктива();
-
-	/**
-	 * Sets the value of the '{@link org.nasdanika.ledger.Проводка#getЗначенияСвойствАктива <em>Значения Свойств Актива</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Значения Свойств Актива</em>' reference.
-	 * @see #getЗначенияСвойствАктива()
-	 * @generated
-	 */
-	void setЗначенияСвойствАктива(ЗначениеСвойстваАктива value);
+	EList<ЗначениеСвойстваАктива> getЗначенияСвойствАктива();
 
 	/**
 	 * Returns the value of the '<em><b>Балансирующая Проводка</b></em>' attribute.

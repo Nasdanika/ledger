@@ -4,6 +4,7 @@ package org.nasdanika.ledger.impl;
 
 import java.math.BigDecimal;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.nasdanika.ledger.LedgerPackage;
 import org.nasdanika.ledger.Актив;
@@ -126,17 +127,9 @@ public class ПроводкаImpl extends ЭлементМоделиImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ЗначениеСвойстваАктива getЗначенияСвойствАктива() {
-		return (ЗначениеСвойстваАктива)eGet(LedgerPackage.Literals.ПРОВОДКА__ЗНАЧЕНИЯ_СВОЙСТВ_АКТИВА, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setЗначенияСвойствАктива(ЗначениеСвойстваАктива newЗначенияСвойствАктива) {
-		eSet(LedgerPackage.Literals.ПРОВОДКА__ЗНАЧЕНИЯ_СВОЙСТВ_АКТИВА, newЗначенияСвойствАктива);
+	@SuppressWarnings("unchecked")
+	public EList<ЗначениеСвойстваАктива> getЗначенияСвойствАктива() {
+		return (EList<ЗначениеСвойстваАктива>)eGet(LedgerPackage.Literals.ПРОВОДКА__ЗНАЧЕНИЯ_СВОЙСТВ_АКТИВА, true);
 	}
 
 	/**

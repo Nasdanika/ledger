@@ -1,27 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?eclipse version="3.4"?>
-<plugin>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.4"?><plugin>
    <extension point="org.eclipse.equinox.http.registry.servlets">
    
    	
-      <servlet
-            alias="/router"
-            class="org.nasdanika.cdo.web.CDOTransactionRoutingServlet" httpcontextId="org.nasdanika.ledger">
-         <init-param
-               name="json-pretty-print"
-               value="true">
+      <servlet alias="/router" class="org.nasdanika.cdo.web.CDOTransactionRoutingServlet" httpcontextId="org.nasdanika.ledger">
+         <init-param name="json-pretty-print" value="true">
          </init-param>
-         <init-param
-               name="default-access-decision"
-               value="deny">
+         <init-param name="default-access-decision" value="deny">
          </init-param>
-	   <init-param
-	         name="login-url"
-	         value="${context-path}/router/index.html">
+	   <init-param name="login-url" value="${context-path}/router/index.html">
 	   </init-param>         
-         <init-param
-               name="ws-session-path"
-               value="/session">
+         <init-param name="ws-session-path" value="/session">
          </init-param>
       </servlet>
       <!-- NTLM Authentication 
@@ -54,12 +43,8 @@
 		   
       -->
    	
-      <servlet
-            alias="/session"
-            class="org.nasdanika.cdo.web.SessionWebSocketServlet" httpcontextId="org.nasdanika.ledger">
-         <init-param
-               name="view-path"
-               value="/router">
+      <servlet alias="/session" class="org.nasdanika.cdo.web.SessionWebSocketServlet" httpcontextId="org.nasdanika.ledger">
+         <init-param name="view-path" value="/router">
          </init-param>
       </servlet>
 	   
@@ -67,27 +52,15 @@
    
 	
    <extension point="org.nasdanika.web.route">
-		<root-route
-		      class="org.nasdanika.cdo.web.routes.RedirectToPrincipalHomeRoute"
-		      method="GET"
-		      path="index.html">
+		<root-route class="org.nasdanika.cdo.web.routes.RedirectToPrincipalHomeRoute" method="GET" path="index.html">
 		</root-route>
-      <root-route
-            class="org.nasdanika.ledger.app.LedgerRoute"
-            method="GET"
-            pattern="ledger\.html">
+      <root-route class="org.nasdanika.ledger.app.LedgerRoute" method="GET" pattern="ledger\.html">
       </root-route>
       
-      <root-route
-            class="org.nasdanika.ledger.app.LedgerDocAppRoute"
-            method="GET"
-            pattern="doc\.html">
+      <root-route class="org.nasdanika.ledger.app.LedgerDocAppRoute" method="GET" pattern="doc\.html">
       </root-route>
       
-      <root-route
-            class="org.nasdanika.web.routes.BundleResourceRoute"
-            method="GET"
-            path="bundle/">
+      <root-route class="org.nasdanika.web.routes.BundleResourceRoute" method="GET" path="bundle/">
       </root-route>      
       
       <!--
@@ -130,27 +103,18 @@
       </eobject-route>
 <eobject-route class="org.nasdanika.ledger.app.routes.ledger.СубъектRoute" method="*" path="/" target="Субъект" target-namespace-uri="urn:org.nasdanika.ledger">
       </eobject-route>
-   <eobject-route
-         class="org.nasdanika.ledger.app.routes.ledger.GuestRoute"
-         method="*"
-         path="/"
-         target="Guest"
-         target-namespace-uri="urn:org.nasdanika.cdo.security">
+   <eobject-route class="org.nasdanika.ledger.app.routes.ledger.GuestRoute" method="*" path="/" target="Guest" target-namespace-uri="urn:org.nasdanika.cdo.security">
    </eobject-route>
       
    </extension>
    
-   <extension
-         point="org.eclipse.equinox.http.registry.resources">
-      <resource
-            alias="/"
-            base-name="WebContent">
+   <extension point="org.eclipse.equinox.http.registry.resources">
+      <resource alias="/" base-name="WebContent">
       </resource>
    </extension>
       
    <extension point="org.nasdanika.web.html_factory">
-      <default_html_factory
-            bootstrapCssContainer="/bootstrap/css">
+      <default_html_factory bootstrapCssContainer="/bootstrap/css">
             <script>
                /js/jquery-1.11.3.min.js
             </script>
@@ -177,17 +141,12 @@
             </stylesheet>                  
       </default_html_factory>
    </extension>
-   <extension
-         point="org.eclipse.equinox.http.registry.httpcontexts">
-      <httpcontext
-            id="org.nasdanika.ledger">
+   <extension point="org.eclipse.equinox.http.registry.httpcontexts">
+      <httpcontext id="org.nasdanika.ledger">
       </httpcontext>
    </extension>   
-   <extension
-         point="org.nasdanika.cdo.web.doc.extensions">
-      <wiki-link-renderer
-            class="org.nasdanika.cdo.web.doc.extensions.LightboxWikiLinkRenderer"
-            name="image">
+   <extension point="org.nasdanika.cdo.web.doc.extensions">
+      <wiki-link-renderer class="org.nasdanika.cdo.web.doc.extensions.LightboxWikiLinkRenderer" name="image">
          <description><![CDATA[
             Renders a [lightbox](http://lokeshdhakar.com/projects/lightbox2/) image link. 
 
@@ -200,22 +159,18 @@ Example:
          <description>
 Includes content of another documentation resource into this resource.
  
-Format ``{{include>resource location}}``. Resource location URL supports custom schemes corresponding to the names of registered wiki
+Format ``{{include&gt;resource location}}``. Resource location URL supports custom schemes corresponding to the names of registered wiki
 link resolvers, e.g. ``bundle`` schema.
          </description>
       </markdown-pre-processor>
       
-      <wiki-link-resolver
-            class="org.nasdanika.cdo.web.doc.extensions.WikipediaResolver"
-            name="wp">
+      <wiki-link-resolver class="org.nasdanika.cdo.web.doc.extensions.WikipediaResolver" name="wp">
             <description><![CDATA[
             Resolves Wikipedia URL from the article name, renders wikipedia icon before the link. Replaces spaces with underscores in the article name. Format: ``[[wp>article name|text]]``. Example: ``[[wp>Domain-driven design]]`` is rendered as [[wp>Domain-driven design]].
             ]]></description>
       </wiki-link-resolver>
          
-       <wiki-link-resolver
-            class="org.nasdanika.cdo.web.doc.extensions.JavadocWikiLinkResolver"
-            name="javadoc">
+       <wiki-link-resolver class="org.nasdanika.cdo.web.doc.extensions.JavadocWikiLinkResolver" name="javadoc">
             
          <property name="packageMap.org.nasdanika.ledger" value="/ledger/router/bundle/org.nasdanika.ledger.doc/apidocs/"/>
             
@@ -273,21 +228,19 @@ link resolvers, e.g. ``bundle`` schema.
 Example:
 ```
 @startuml
-A -> B : Message
+A -&gt; B : Message
 @enduml
 ```
 is rendered as 
 
 @startuml
-A -> B : Message
+A -&gt; B : Message
 @enduml
          </description>
       </markdown-pre-processor>      
    </extension>
-   <extension
-         point="org.nasdanika.story.model">
-      <story
-            model="Ledger.nasdanika_story">
+   <extension point="org.nasdanika.story.model">
+      <story model="Ledger.nasdanika_story">
       </story>
    </extension>
 <extension point="org.nasdanika.cdo.web.renderer">
@@ -333,10 +286,7 @@ A -> B : Message
    <renderer eclass-name="Субъект" namespace-uri="urn:org.nasdanika.ledger" renderer="org.nasdanika.ledger.app.routes.ledger.СубъектRenderer">
       </renderer>
       
-   <renderer
-         eclass-name="Guest"
-         namespace-uri="urn:org.nasdanika.cdo.security"
-         renderer="org.nasdanika.ledger.app.routes.ledger.GuestRenderer">
+   <renderer eclass-name="Guest" namespace-uri="urn:org.nasdanika.cdo.security" renderer="org.nasdanika.ledger.app.routes.ledger.GuestRenderer">
    </renderer>
       
 </extension>

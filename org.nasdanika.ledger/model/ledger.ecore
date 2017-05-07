@@ -207,7 +207,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="проводки" upperBound="-1"
-        eType="#//Проводка" eOpposite="#//Проводка/счёт">
+        eType="#//Проводка" changeable="false" eOpposite="#//Проводка/счёт">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Проводки по счёту. Эта ссылка является обратной к ссылке &quot;Счёт&quot; в проводке и заполняется системой автоматически."/>
       </eAnnotations>
@@ -410,8 +410,8 @@
         <details key="documentation" value="Пользователь создавший операцию."/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="субъекты" eType="#//Субъект"
-        eOpposite="#//Субъект/операции">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="субъекты" upperBound="-1"
+        eType="#//Субъект" eOpposite="#//Субъект/операции">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Субъекты принимающие участие в операции. Например покупатель."/>
       </eAnnotations>
@@ -451,7 +451,7 @@
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="значенияСвойствАктива"
-        eType="#//ЗначениеСвойстваАктива">
+        upperBound="-1" eType="#//ЗначениеСвойстваАктива">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Значения свойств актива. Например дата истечения срока годности товара."/>
       </eAnnotations>

@@ -96,7 +96,7 @@ public interface Счёт extends ЭлементМодели {
 	 * @return the value of the '<em>Проводки</em>' reference list.
 	 * @see org.nasdanika.ledger.LedgerPackage#getСчёт_Проводки()
 	 * @see org.nasdanika.ledger.Проводка#getСчёт
-	 * @model opposite="счёт"
+	 * @model opposite="счёт" changeable="false"
 	 * @generated
 	 */
 	EList<Проводка> getПроводки();

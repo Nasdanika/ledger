@@ -97,17 +97,9 @@ public class ОперацияImpl extends ЭлементМоделиImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Субъект getСубъекты() {
-		return (Субъект)eGet(LedgerPackage.Literals.ОПЕРАЦИЯ__СУБЪЕКТЫ, true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setСубъекты(Субъект newСубъекты) {
-		eSet(LedgerPackage.Literals.ОПЕРАЦИЯ__СУБЪЕКТЫ, newСубъекты);
+	@SuppressWarnings("unchecked")
+	public EList<Субъект> getСубъекты() {
+		return (EList<Субъект>)eGet(LedgerPackage.Literals.ОПЕРАЦИЯ__СУБЪЕКТЫ, true);
 	}
 
 } //ОперацияImpl

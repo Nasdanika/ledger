@@ -118,7 +118,8 @@ public interface Операция extends ЭлементМодели {
 	void setПервичныйВвод(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Субъекты</b></em>' reference.
+	 * Returns the value of the '<em><b>Субъекты</b></em>' reference list.
+	 * The list contents are of type {@link org.nasdanika.ledger.Субъект}.
 	 * It is bidirectional and its opposite is '{@link org.nasdanika.ledger.Субъект#getОперации <em>Операции</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -129,22 +130,11 @@ public interface Операция extends ЭлементМодели {
 	 * <!-- begin-model-doc -->
 	 * Субъекты принимающие участие в операции. Например покупатель.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Субъекты</em>' reference.
-	 * @see #setСубъекты(Субъект)
+	 * @return the value of the '<em>Субъекты</em>' reference list.
 	 * @see org.nasdanika.ledger.LedgerPackage#getОперация_Субъекты()
 	 * @see org.nasdanika.ledger.Субъект#getОперации
 	 * @model opposite="операции"
 	 * @generated
 	 */
-	Субъект getСубъекты();
-
-	/**
-	 * Sets the value of the '{@link org.nasdanika.ledger.Операция#getСубъекты <em>Субъекты</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Субъекты</em>' reference.
-	 * @see #getСубъекты()
-	 * @generated
-	 */
-	void setСубъекты(Субъект value);
+	EList<Субъект> getСубъекты();
 } // Операция

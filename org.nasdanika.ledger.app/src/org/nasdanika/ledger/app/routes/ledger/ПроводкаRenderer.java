@@ -56,40 +56,28 @@ public interface ПроводкаRenderer<T extends Проводка> extends Э
 		ret.addAll(ЭлементМоделиRenderer.super.getResourceBundleClasses(context));
 		return ret;
 	}
-	
+
 	/**
 	 * Счёт и актив привязаны к KnockoutJS модели чтобы список астивов содержал активы поддерживаемые счётом.
 	 */
 	@Override
 	default <TE extends ETypedElement> UIElement<?> renderTypedElementControl(
-			CDOTransactionHttpServletRequestContext<LoginPasswordCredentials> context, 
-			T obj, 
-			TE typedElement,
-			Collection<TE> typedElements, 
-			Object value, 
-			FieldContainer<?> fieldContainer, 
-			Modal docModal,
-			List<ValidationResult> validationResults, 
-			boolean helpTooltip) throws Exception {
-		
-		
-		UIElement<?> control = ЭлементМоделиRenderer.super.renderTypedElementControl(
-						context, 
-						obj, 
-						typedElement, 
-						typedElements, 
-						value,
-						fieldContainer, 
-						docModal, 
-						validationResults, 
-						helpTooltip);
-		
+			CDOTransactionHttpServletRequestContext<LoginPasswordCredentials> context, T obj, TE typedElement,
+			Collection<TE> typedElements, Object value, FieldContainer<?> fieldContainer, Modal docModal,
+			List<ValidationResult> validationResults, boolean helpTooltip) throws Exception {
+
+		UIElement<?> control = ЭлементМоделиRenderer.super.renderTypedElementControl(context, obj, typedElement,
+				typedElements, value, fieldContainer, docModal, validationResults, helpTooltip);
+
 		if (LedgerPackage.Literals.ПРОВОДКА__СЧЁТ == typedElement) {
-			((Select) control).knockout().bind("value", "account", "\'"+value+"\'");					
+			((Select) control).knockout().bind("value", "счёт", "\'" + value + "\'");
 		} else if (LedgerPackage.Literals.ПРОВОДКА__АКТИВ == typedElement) {
-			((Select) control).knockout().bind("options", "accountAssets", null);								
+			((Select) control)
+				.knockout().bind("options", "активыСчёта", null)
+				.knockout().bind("optionsText", "'name'", null)
+				.knockout().bind("optionsValue", "'cdoId'", null);
 		}
-		
+
 		return control;
 	}
 

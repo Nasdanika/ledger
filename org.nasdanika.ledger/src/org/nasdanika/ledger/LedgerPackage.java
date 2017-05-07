@@ -1866,7 +1866,7 @@ public interface LedgerPackage extends EPackage {
 	int ОПЕРАЦИЯ__СОЗДАТЕЛЬ = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Субъекты</b></em>' reference.
+	 * The feature id for the '<em><b>Субъекты</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1992,7 +1992,7 @@ public interface LedgerPackage extends EPackage {
 	int ПРОВОДКА__БАЛАНСИРУЮЩАЯ_ПРОВОДКА = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Значения Свойств Актива</b></em>' reference.
+	 * The feature id for the '<em><b>Значения Свойств Актива</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2743,10 +2743,10 @@ public interface LedgerPackage extends EPackage {
 	EAttribute getОперация_ПервичныйВвод();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.nasdanika.ledger.Операция#getСубъекты <em>Субъекты</em>}'.
+	 * Returns the meta object for the reference list '{@link org.nasdanika.ledger.Операция#getСубъекты <em>Субъекты</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Субъекты</em>'.
+	 * @return the meta object for the reference list '<em>Субъекты</em>'.
 	 * @see org.nasdanika.ledger.Операция#getСубъекты()
 	 * @see #getОперация()
 	 * @generated
@@ -2808,10 +2808,10 @@ public interface LedgerPackage extends EPackage {
 	EAttribute getПроводка_Количество();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.nasdanika.ledger.Проводка#getЗначенияСвойствАктива <em>Значения Свойств Актива</em>}'.
+	 * Returns the meta object for the reference list '{@link org.nasdanika.ledger.Проводка#getЗначенияСвойствАктива <em>Значения Свойств Актива</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Значения Свойств Актива</em>'.
+	 * @return the meta object for the reference list '<em>Значения Свойств Актива</em>'.
 	 * @see org.nasdanika.ledger.Проводка#getЗначенияСвойствАктива()
 	 * @see #getПроводка()
 	 * @generated
@@ -3494,7 +3494,7 @@ public interface LedgerPackage extends EPackage {
 		EAttribute ОПЕРАЦИЯ__ПЕРВИЧНЫЙ_ВВОД = eINSTANCE.getОперация_ПервичныйВвод();
 
 		/**
-		 * The meta object literal for the '<em><b>Субъекты</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Субъекты</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3544,7 +3544,7 @@ public interface LedgerPackage extends EPackage {
 		EAttribute ПРОВОДКА__КОЛИЧЕСТВО = eINSTANCE.getПроводка_Количество();
 
 		/**
-		 * The meta object literal for the '<em><b>Значения Свойств Актива</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Значения Свойств Актива</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

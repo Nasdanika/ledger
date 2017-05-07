@@ -14,7 +14,8 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.equinox.http.registry,
  org.nasdanika.ledger,
  org.nasdanika.story;bundle-version="0.1.0",
- org.nasdanika.web.resources;bundle-version="1.0.0"
+ org.nasdanika.web.resources;bundle-version="1.0.0",
+ org.apache.commons.codec
 Service-Component: OSGI-INF/ledger-session-initializer.xml,
  OSGI-INF/ledger-repository.xml,
  OSGI-INF/ledger-server.xml,

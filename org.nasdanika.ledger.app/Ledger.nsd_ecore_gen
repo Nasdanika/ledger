@@ -17,7 +17,33 @@
       <members xsi:type="org.nasdanika.codegen.ecore:Attribute" name="верхняяГраница"/>
     </classes>
     <classes name="ВстроенноеИзображение"/>
-    <classes selected="true" name="ЖурналОпераций"/>
+    <classes selected="true" name="ЖурналОпераций">
+      <members xsi:type="org.nasdanika.codegen.ecore:Reference" name="активы">
+        <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+          <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EReferenceConfiguration" location="Item container"/>
+        </configuration>
+      </members>
+      <members xsi:type="org.nasdanika.codegen.ecore:Reference" name="операции">
+        <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+          <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EReferenceConfiguration" location="Item container"/>
+        </configuration>
+      </members>
+      <members xsi:type="org.nasdanika.codegen.ecore:Reference" name="отчётныеАктивы">
+        <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+          <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EReferenceConfiguration" location="Item container"/>
+        </configuration>
+      </members>
+      <members xsi:type="org.nasdanika.codegen.ecore:Reference" name="субъекты">
+        <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+          <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EReferenceConfiguration" location="Item container"/>
+        </configuration>
+      </members>
+      <members xsi:type="org.nasdanika.codegen.ecore:Reference" name="счёта">
+        <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+          <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EReferenceConfiguration" location="Item container"/>
+        </configuration>
+      </members>
+    </classes>
     <classes selected="true" name="Проводка">
       <members xsi:type="org.nasdanika.codegen.ecore:Attribute" name="сверено"/>
       <members xsi:type="org.nasdanika.codegen.ecore:Reference" name="счёт">
@@ -40,6 +66,12 @@
           <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EAttributeConfiguration" control="Text area" html="true"/>
         </configuration>
       </members>
+      <members xsi:type="org.nasdanika.codegen.ecore:Reference" name="автор">
+        <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+          <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EReferenceConfiguration" editable="false"/>
+        </configuration>
+      </members>
+      <members xsi:type="org.nasdanika.codegen.ecore:Attribute" name="дата"/>
     </classes>
     <classes name="Изображение"/>
     <classes name="СсылкаНаИзображение"/>
@@ -48,10 +80,19 @@
         <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EClassConfiguration" icon="fa fa-book"/>
       </configuration>
     </classes>
-    <classes selected="true" name="ХранительЖурналовОпераций"/>
-    <classes selected="true" name="Пользователь">
+    <classes selected="true" name="ХранительЖурналовОпераций">
       <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
         <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EClassConfiguration"/>
+      </configuration>
+      <members xsi:type="org.nasdanika.codegen.ecore:Reference" name="журналыОпераций">
+        <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+          <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EReferenceConfiguration" location="Item container"/>
+        </configuration>
+      </members>
+    </classes>
+    <classes selected="true" name="Пользователь">
+      <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+        <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EClassConfiguration" label="{{наименование}} ({{login}})"/>
       </configuration>
     </classes>
     <classes selected="true" name="Организация"/>
@@ -103,6 +144,13 @@
           <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EReferenceConfiguration" location="Item container"/>
         </configuration>
       </members>
+      <members xsi:type="org.nasdanika.codegen.ecore:Attribute" name="первичныйВвод"/>
+      <members xsi:type="org.nasdanika.codegen.ecore:Reference" name="субъекты"/>
+      <members xsi:type="org.nasdanika.codegen.ecore:Reference" name="создатель">
+        <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+          <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EReferenceConfiguration" editable="false"/>
+        </configuration>
+      </members>
     </classes>
     <classes selected="true" name="Субъект"/>
     <classes name="ЭлементМодели">
@@ -112,7 +160,11 @@
           <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EAttributeConfiguration" icon="glyphicon glyphicon-pencil" control="Text area" html="true"/>
         </configuration>
       </members>
-      <members xsi:type="org.nasdanika.codegen.ecore:Reference" selected="true" name="комментарии"/>
+      <members xsi:type="org.nasdanika.codegen.ecore:Reference" selected="true" name="комментарии">
+        <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+          <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EReferenceConfiguration" location="Item container"/>
+        </configuration>
+      </members>
       <members xsi:type="org.nasdanika.codegen.ecore:Reference" name="изображение"/>
       <members xsi:type="org.nasdanika.codegen.ecore:Attribute" selected="true" name="идентификатор"/>
     </classes>
