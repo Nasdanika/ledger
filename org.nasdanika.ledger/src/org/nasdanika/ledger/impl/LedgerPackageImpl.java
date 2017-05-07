@@ -289,7 +289,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * @generated
 	 */
 	public EReference getЖурналОпераций_Операции() {
-		return (EReference)журналОперацийEClass.getEStructuralFeatures().get(0);
+		return (EReference)журналОперацийEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -307,7 +307,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * @generated
 	 */
 	public EReference getЖурналОпераций_Активы() {
-		return (EReference)журналОперацийEClass.getEStructuralFeatures().get(2);
+		return (EReference)журналОперацийEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1056,9 +1056,9 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		организацияEClass = createEClass(ОРГАНИЗАЦИЯ);
 
 		журналОперацийEClass = createEClass(ЖУРНАЛ_ОПЕРАЦИЙ);
-		createEReference(журналОперацийEClass, ЖУРНАЛ_ОПЕРАЦИЙ__ОПЕРАЦИИ);
-		createEReference(журналОперацийEClass, ЖУРНАЛ_ОПЕРАЦИЙ__СЧЁТА);
 		createEReference(журналОперацийEClass, ЖУРНАЛ_ОПЕРАЦИЙ__АКТИВЫ);
+		createEReference(журналОперацийEClass, ЖУРНАЛ_ОПЕРАЦИЙ__СЧЁТА);
+		createEReference(журналОперацийEClass, ЖУРНАЛ_ОПЕРАЦИЙ__ОПЕРАЦИИ);
 		createEReference(журналОперацийEClass, ЖУРНАЛ_ОПЕРАЦИЙ__СУБЪЕКТЫ);
 		createEReference(журналОперацийEClass, ЖУРНАЛ_ОПЕРАЦИЙ__ОТЧЁТНЫЕ_АКТИВЫ);
 		createEReference(журналОперацийEClass, ЖУРНАЛ_ОПЕРАЦИЙ__СЧЁТ_ПО_УМОЛЧАНИЮ_ДЛЯ_БАЛАНСИРОВКИ_ОПЕРАЦИЙ);
@@ -1216,9 +1216,9 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		initEClass(организацияEClass, Организация.class, "Организация", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(журналОперацийEClass, ЖурналОпераций.class, "ЖурналОпераций", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getЖурналОпераций_Операции(), this.getОперация(), null, "операции", null, 0, -1, ЖурналОпераций.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getЖурналОпераций_Счёта(), this.getСчёт(), null, "счёта", null, 0, -1, ЖурналОпераций.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getЖурналОпераций_Активы(), this.getАктив(), null, "активы", null, 0, -1, ЖурналОпераций.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getЖурналОпераций_Счёта(), this.getСчёт(), null, "счёта", null, 0, -1, ЖурналОпераций.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getЖурналОпераций_Операции(), this.getОперация(), null, "операции", null, 0, -1, ЖурналОпераций.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getЖурналОпераций_Субъекты(), this.getСубъект(), null, "субъекты", null, 0, -1, ЖурналОпераций.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getЖурналОпераций_ОтчётныеАктивы(), this.getАктив(), null, "отчётныеАктивы", null, 0, -1, ЖурналОпераций.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getЖурналОпераций_СчётПоУмолчаниюДляБалансировкиОпераций(), this.getСчёт(), null, "счётПоУмолчаниюДляБалансировкиОпераций", null, 0, 1, ЖурналОпераций.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1471,10 +1471,10 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 "documentation", "\u0416\u0443\u0440\u043d\u0430\u043b \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0439 \u0441\u043e\u0434\u0435\u0440\u0436\u0438\u0442 \u0441\u043f\u0438\u0441\u043e\u043a \u0445\u043e\u0437\u044f\u0439\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0445 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0439 \u0438 \u0441\u043f\u0440\u0430\u0432\u043e\u0447\u043d\u044b\u0435 \u0434\u0430\u043d\u043d\u044b\u0435 - \u0441\u0447\u0435\u0442\u0430, \u0430\u043a\u0442\u0438\u0432\u044b \u0438 \u0441\u0443\u0431\u044a\u0435\u043a\u0442\u044b."
 		   });	
 		addAnnotation
-		  (getЖурналОпераций_Операции(), 
+		  (getЖурналОпераций_Активы(), 
 		   source, 
 		   new String[] {
-			 "documentation", "\u0425\u043e\u0437\u044f\u0439\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0435 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0438."
+			 "documentation", "\u041a\u043e\u0440\u043d\u0435\u0432\u044b\u0435 \u0430\u043a\u0442\u0438\u0432\u044b."
 		   });	
 		addAnnotation
 		  (getЖурналОпераций_Счёта(), 
@@ -1483,10 +1483,10 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 "documentation", "\u041a\u043e\u0440\u043d\u0435\u0432\u044b\u0435 \u0441\u0447\u0435\u0442\u0430."
 		   });	
 		addAnnotation
-		  (getЖурналОпераций_Активы(), 
+		  (getЖурналОпераций_Операции(), 
 		   source, 
 		   new String[] {
-			 "documentation", "\u041a\u043e\u0440\u043d\u0435\u0432\u044b\u0435 \u0430\u043a\u0442\u0438\u0432\u044b."
+			 "documentation", "\u0425\u043e\u0437\u044f\u0439\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0435 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0438."
 		   });	
 		addAnnotation
 		  (getЖурналОпераций_Субъекты(), 

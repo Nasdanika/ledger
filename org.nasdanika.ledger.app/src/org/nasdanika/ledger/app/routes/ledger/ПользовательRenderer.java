@@ -1,10 +1,15 @@
 package org.nasdanika.ledger.app.routes.ledger;
 
 import java.util.LinkedList;
+import java.util.List;
+
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.nasdanika.cdo.security.LoginPasswordCredentials;
+import org.nasdanika.cdo.security.SecurityPackage;
 import org.nasdanika.cdo.web.CDOTransactionHttpServletRequestContext;
 import org.nasdanika.cdo.web.routes.app.Renderer;
 import org.nasdanika.cdo.web.routes.app.ResourceProvider;
+import org.nasdanika.ledger.LedgerPackage;
 import org.nasdanika.ledger.Пользователь;
 
 /**
@@ -46,6 +51,16 @@ public interface ПользовательRenderer<T extends Пользовате
 		ret.add(ПользовательRenderer.class);
 		ret.addAll(ХранительЖурналовОперацийRenderer.super.getResourceBundleClasses(context));
 		return ret;
+	}
+	
+	@Override
+	default List<EStructuralFeature> getVisibleFeatures(CDOTransactionHttpServletRequestContext<LoginPasswordCredentials> context, T obj, FeaturePredicate predicate) throws Exception {
+		List<EStructuralFeature> visibleFeatures = ХранительЖурналовОперацийRenderer.super.getVisibleFeatures(context, obj, predicate);
+		visibleFeatures.remove(SecurityPackage.Literals.PRINCIPAL__MEMBER_OF);
+		visibleFeatures.remove(SecurityPackage.Literals.PRINCIPAL__PERMISSIONS);
+		visibleFeatures.remove(SecurityPackage.Literals.LOGIN_PASSWORD_HASH_USER__PASSWORD_HASH);
+		visibleFeatures.remove(LedgerPackage.Literals.ЭЛЕМЕНТ_МОДЕЛИ__ИЗОБРАЖЕНИЕ);		
+		return visibleFeatures;
 	}
 
 }

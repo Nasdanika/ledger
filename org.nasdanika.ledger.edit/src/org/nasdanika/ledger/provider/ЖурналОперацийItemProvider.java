@@ -109,9 +109,9 @@ public class ЖурналОперацийItemProvider extends ЭлементМо
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__ОПЕРАЦИИ);
-			childrenFeatures.add(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__СЧЁТА);
 			childrenFeatures.add(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__АКТИВЫ);
+			childrenFeatures.add(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__СЧЁТА);
+			childrenFeatures.add(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__ОПЕРАЦИИ);
 			childrenFeatures.add(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__СУБЪЕКТЫ);
 		}
 		return childrenFeatures;
@@ -168,9 +168,9 @@ public class ЖурналОперацийItemProvider extends ЭлементМо
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ЖурналОпераций.class)) {
-			case LedgerPackage.ЖУРНАЛ_ОПЕРАЦИЙ__ОПЕРАЦИИ:
-			case LedgerPackage.ЖУРНАЛ_ОПЕРАЦИЙ__СЧЁТА:
 			case LedgerPackage.ЖУРНАЛ_ОПЕРАЦИЙ__АКТИВЫ:
+			case LedgerPackage.ЖУРНАЛ_ОПЕРАЦИЙ__СЧЁТА:
+			case LedgerPackage.ЖУРНАЛ_ОПЕРАЦИЙ__ОПЕРАЦИИ:
 			case LedgerPackage.ЖУРНАЛ_ОПЕРАЦИЙ__СУБЪЕКТЫ:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -191,8 +191,8 @@ public class ЖурналОперацийItemProvider extends ЭлементМо
 
 		newChildDescriptors.add
 			(createChildParameter
-				(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__ОПЕРАЦИИ,
-				 LedgerFactory.eINSTANCE.createОперация()));
+				(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__АКТИВЫ,
+				 LedgerFactory.eINSTANCE.createАктив()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -201,8 +201,8 @@ public class ЖурналОперацийItemProvider extends ЭлементМо
 
 		newChildDescriptors.add
 			(createChildParameter
-				(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__АКТИВЫ,
-				 LedgerFactory.eINSTANCE.createАктив()));
+				(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__ОПЕРАЦИИ,
+				 LedgerFactory.eINSTANCE.createОперация()));
 
 		newChildDescriptors.add
 			(createChildParameter

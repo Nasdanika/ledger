@@ -19,9 +19,9 @@ import org.nasdanika.ledger.Счёт;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.nasdanika.ledger.impl.ЖурналОперацийImpl#getОперации <em>Операции</em>}</li>
- *   <li>{@link org.nasdanika.ledger.impl.ЖурналОперацийImpl#getСчёта <em>Счёта</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ЖурналОперацийImpl#getАктивы <em>Активы</em>}</li>
+ *   <li>{@link org.nasdanika.ledger.impl.ЖурналОперацийImpl#getСчёта <em>Счёта</em>}</li>
+ *   <li>{@link org.nasdanika.ledger.impl.ЖурналОперацийImpl#getОперации <em>Операции</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ЖурналОперацийImpl#getСубъекты <em>Субъекты</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ЖурналОперацийImpl#getОтчётныеАктивы <em>Отчётные Активы</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ЖурналОперацийImpl#getСчётПоУмолчаниюДляБалансировкиОпераций <em>Счёт По Умолчанию Для Балансировки Операций</em>}</li>

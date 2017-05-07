@@ -52,7 +52,7 @@
     </classes>
     <classes selected="true" name="Актив">
       <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
-        <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EClassConfiguration" icon="my-super-icon"/>
+        <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EClassConfiguration" icon="fa fa-cog"/>
       </configuration>
       <members xsi:type="org.nasdanika.codegen.ecore:Attribute" name="единицаИзмерения">
         <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">

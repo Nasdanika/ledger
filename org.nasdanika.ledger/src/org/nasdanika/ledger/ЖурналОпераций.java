@@ -17,9 +17,9 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.nasdanika.ledger.ЖурналОпераций#getОперации <em>Операции</em>}</li>
- *   <li>{@link org.nasdanika.ledger.ЖурналОпераций#getСчёта <em>Счёта</em>}</li>
  *   <li>{@link org.nasdanika.ledger.ЖурналОпераций#getАктивы <em>Активы</em>}</li>
+ *   <li>{@link org.nasdanika.ledger.ЖурналОпераций#getСчёта <em>Счёта</em>}</li>
+ *   <li>{@link org.nasdanika.ledger.ЖурналОпераций#getОперации <em>Операции</em>}</li>
  *   <li>{@link org.nasdanika.ledger.ЖурналОпераций#getСубъекты <em>Субъекты</em>}</li>
  *   <li>{@link org.nasdanika.ledger.ЖурналОпераций#getОтчётныеАктивы <em>Отчётные Активы</em>}</li>
  *   <li>{@link org.nasdanika.ledger.ЖурналОпераций#getСчётПоУмолчаниюДляБалансировкиОпераций <em>Счёт По Умолчанию Для Балансировки Операций</em>}</li>

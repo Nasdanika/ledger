@@ -1155,13 +1155,13 @@ public interface LedgerPackage extends EPackage {
 	int ЖУРНАЛ_ОПЕРАЦИЙ__ИДЕНТИФИКАТОР = ЭЛЕМЕНТ_МОДЕЛИ__ИДЕНТИФИКАТОР;
 
 	/**
-	 * The feature id for the '<em><b>Операции</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Активы</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ЖУРНАЛ_ОПЕРАЦИЙ__ОПЕРАЦИИ = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 0;
+	int ЖУРНАЛ_ОПЕРАЦИЙ__АКТИВЫ = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Счёта</b></em>' containment reference list.
@@ -1173,13 +1173,13 @@ public interface LedgerPackage extends EPackage {
 	int ЖУРНАЛ_ОПЕРАЦИЙ__СЧЁТА = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Активы</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Операции</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ЖУРНАЛ_ОПЕРАЦИЙ__АКТИВЫ = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 2;
+	int ЖУРНАЛ_ОПЕРАЦИЙ__ОПЕРАЦИИ = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Субъекты</b></em>' containment reference list.
