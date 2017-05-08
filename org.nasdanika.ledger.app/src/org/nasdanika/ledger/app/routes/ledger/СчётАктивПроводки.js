@@ -1,15 +1,10 @@
 function СчётАктивПроводки() {
-	
-	
+
+	var активыСчетов  = {{активыСчетов}};
 	this.счёт = ko.observable({{счёт}});
 	
-	var Актив = function(name, cdoId) {
-		this.name = name;
-		this.cdoId = cdoId;		
-	};
-	
 	this.активыСчёта = ko.pureComputed(function() {
-		return [new Актив(this.счёт, 'L13')];
+		return активыСчетов[this.счёт()];
 	}.bind(this));
 	
 }
