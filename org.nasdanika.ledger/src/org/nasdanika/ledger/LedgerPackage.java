@@ -1164,13 +1164,13 @@ public interface LedgerPackage extends EPackage {
 	int ЖУРНАЛ_ОПЕРАЦИЙ__АКТИВЫ = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Счёта</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Счета</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ЖУРНАЛ_ОПЕРАЦИЙ__СЧЁТА = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 1;
+	int ЖУРНАЛ_ОПЕРАЦИЙ__СЧЕТА = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Операции</b></em>' containment reference list.
@@ -2142,17 +2142,6 @@ public interface LedgerPackage extends EPackage {
 	EReference getЖурналОпераций_Операции();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.nasdanika.ledger.ЖурналОпераций#getСчёта <em>Счёта</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Счёта</em>'.
-	 * @see org.nasdanika.ledger.ЖурналОпераций#getСчёта()
-	 * @see #getЖурналОпераций()
-	 * @generated
-	 */
-	EReference getЖурналОпераций_Счёта();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link org.nasdanika.ledger.ЖурналОпераций#getАктивы <em>Активы</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2162,6 +2151,17 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getЖурналОпераций_Активы();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.nasdanika.ledger.ЖурналОпераций#getСчета <em>Счета</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Счета</em>'.
+	 * @see org.nasdanika.ledger.ЖурналОпераций#getСчета()
+	 * @see #getЖурналОпераций()
+	 * @generated
+	 */
+	EReference getЖурналОпераций_Счета();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.nasdanika.ledger.ЖурналОпераций#getСубъекты <em>Субъекты</em>}'.
@@ -3020,20 +3020,20 @@ public interface LedgerPackage extends EPackage {
 		EReference ЖУРНАЛ_ОПЕРАЦИЙ__ОПЕРАЦИИ = eINSTANCE.getЖурналОпераций_Операции();
 
 		/**
-		 * The meta object literal for the '<em><b>Счёта</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ЖУРНАЛ_ОПЕРАЦИЙ__СЧЁТА = eINSTANCE.getЖурналОпераций_Счёта();
-
-		/**
 		 * The meta object literal for the '<em><b>Активы</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference ЖУРНАЛ_ОПЕРАЦИЙ__АКТИВЫ = eINSTANCE.getЖурналОпераций_Активы();
+
+		/**
+		 * The meta object literal for the '<em><b>Счета</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ЖУРНАЛ_ОПЕРАЦИЙ__СЧЕТА = eINSTANCE.getЖурналОпераций_Счета();
 
 		/**
 		 * The meta object literal for the '<em><b>Субъекты</b></em>' containment reference list feature.

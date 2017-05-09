@@ -18,7 +18,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link org.nasdanika.ledger.ЖурналОпераций#getАктивы <em>Активы</em>}</li>
- *   <li>{@link org.nasdanika.ledger.ЖурналОпераций#getСчёта <em>Счёта</em>}</li>
+ *   <li>{@link org.nasdanika.ledger.ЖурналОпераций#getСчета <em>Счета</em>}</li>
  *   <li>{@link org.nasdanika.ledger.ЖурналОпераций#getОперации <em>Операции</em>}</li>
  *   <li>{@link org.nasdanika.ledger.ЖурналОпераций#getСубъекты <em>Субъекты</em>}</li>
  *   <li>{@link org.nasdanika.ledger.ЖурналОпераций#getОтчётныеАктивы <em>Отчётные Активы</em>}</li>
@@ -51,25 +51,6 @@ public interface ЖурналОпераций extends ЭлементМодели
 	EList<Операция> getОперации();
 
 	/**
-	 * Returns the value of the '<em><b>Счёта</b></em>' containment reference list.
-	 * The list contents are of type {@link org.nasdanika.ledger.Счёт}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Счёта</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * Корневые счета.
-	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Счёта</em>' containment reference list.
-	 * @see org.nasdanika.ledger.LedgerPackage#getЖурналОпераций_Счёта()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Счёт> getСчёта();
-
-	/**
 	 * Returns the value of the '<em><b>Активы</b></em>' containment reference list.
 	 * The list contents are of type {@link org.nasdanika.ledger.Актив}.
 	 * <!-- begin-user-doc -->
@@ -87,6 +68,21 @@ public interface ЖурналОпераций extends ЭлементМодели
 	 * @generated
 	 */
 	EList<Актив> getАктивы();
+
+	/**
+	 * Returns the value of the '<em><b>Счета</b></em>' containment reference list.
+	 * The list contents are of type {@link org.nasdanika.ledger.Счёт}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Корневые счета.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Счета</em>' containment reference list.
+	 * @see org.nasdanika.ledger.LedgerPackage#getЖурналОпераций_Счета()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Счёт> getСчета();
 
 	/**
 	 * Returns the value of the '<em><b>Субъекты</b></em>' containment reference list.

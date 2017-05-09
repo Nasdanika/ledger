@@ -295,8 +295,8 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getЖурналОпераций_Счёта() {
-		return (EReference)журналОперацийEClass.getEStructuralFeatures().get(1);
+	public EReference getЖурналОпераций_Активы() {
+		return (EReference)журналОперацийEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -304,8 +304,8 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getЖурналОпераций_Активы() {
-		return (EReference)журналОперацийEClass.getEStructuralFeatures().get(0);
+	public EReference getЖурналОпераций_Счета() {
+		return (EReference)журналОперацийEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1055,7 +1055,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 
 		журналОперацийEClass = createEClass(ЖУРНАЛ_ОПЕРАЦИЙ);
 		createEReference(журналОперацийEClass, ЖУРНАЛ_ОПЕРАЦИЙ__АКТИВЫ);
-		createEReference(журналОперацийEClass, ЖУРНАЛ_ОПЕРАЦИЙ__СЧЁТА);
+		createEReference(журналОперацийEClass, ЖУРНАЛ_ОПЕРАЦИЙ__СЧЕТА);
 		createEReference(журналОперацийEClass, ЖУРНАЛ_ОПЕРАЦИЙ__ОПЕРАЦИИ);
 		createEReference(журналОперацийEClass, ЖУРНАЛ_ОПЕРАЦИЙ__СУБЪЕКТЫ);
 		createEReference(журналОперацийEClass, ЖУРНАЛ_ОПЕРАЦИЙ__ОТЧЁТНЫЕ_АКТИВЫ);
@@ -1215,7 +1215,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 
 		initEClass(журналОперацийEClass, ЖурналОпераций.class, "ЖурналОпераций", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getЖурналОпераций_Активы(), this.getАктив(), null, "активы", null, 0, -1, ЖурналОпераций.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getЖурналОпераций_Счёта(), this.getСчёт(), null, "счёта", null, 0, -1, ЖурналОпераций.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getЖурналОпераций_Счета(), this.getСчёт(), null, "счета", null, 0, -1, ЖурналОпераций.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getЖурналОпераций_Операции(), this.getОперация(), null, "операции", null, 0, -1, ЖурналОпераций.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getЖурналОпераций_Субъекты(), this.getСубъект(), null, "субъекты", null, 0, -1, ЖурналОпераций.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getЖурналОпераций_ОтчётныеАктивы(), this.getАктив(), null, "отчётныеАктивы", null, 0, -1, ЖурналОпераций.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1475,7 +1475,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 			 "documentation", "\u041a\u043e\u0440\u043d\u0435\u0432\u044b\u0435 \u0430\u043a\u0442\u0438\u0432\u044b."
 		   });	
 		addAnnotation
-		  (getЖурналОпераций_Счёта(), 
+		  (getЖурналОпераций_Счета(), 
 		   source, 
 		   new String[] {
 			 "documentation", "\u041a\u043e\u0440\u043d\u0435\u0432\u044b\u0435 \u0441\u0447\u0435\u0442\u0430."

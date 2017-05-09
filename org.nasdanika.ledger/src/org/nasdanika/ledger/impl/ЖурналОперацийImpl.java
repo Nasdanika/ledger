@@ -20,7 +20,7 @@ import org.nasdanika.ledger.Счёт;
  * </p>
  * <ul>
  *   <li>{@link org.nasdanika.ledger.impl.ЖурналОперацийImpl#getАктивы <em>Активы</em>}</li>
- *   <li>{@link org.nasdanika.ledger.impl.ЖурналОперацийImpl#getСчёта <em>Счёта</em>}</li>
+ *   <li>{@link org.nasdanika.ledger.impl.ЖурналОперацийImpl#getСчета <em>Счета</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ЖурналОперацийImpl#getОперации <em>Операции</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ЖурналОперацийImpl#getСубъекты <em>Субъекты</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ЖурналОперацийImpl#getОтчётныеАктивы <em>Отчётные Активы</em>}</li>
@@ -65,8 +65,8 @@ public class ЖурналОперацийImpl extends ЭлементМодели
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EList<Счёт> getСчёта() {
-		return (EList<Счёт>)eGet(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__СЧЁТА, true);
+	public EList<Актив> getАктивы() {
+		return (EList<Актив>)eGet(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__АКТИВЫ, true);
 	}
 
 	/**
@@ -75,8 +75,8 @@ public class ЖурналОперацийImpl extends ЭлементМодели
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EList<Актив> getАктивы() {
-		return (EList<Актив>)eGet(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__АКТИВЫ, true);
+	public EList<Счёт> getСчета() {
+		return (EList<Счёт>)eGet(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__СЧЕТА, true);
 	}
 
 	/**

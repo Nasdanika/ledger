@@ -110,7 +110,7 @@ public class ЖурналОперацийItemProvider extends ЭлементМо
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__АКТИВЫ);
-			childrenFeatures.add(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__СЧЁТА);
+			childrenFeatures.add(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__СЧЕТА);
 			childrenFeatures.add(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__ОПЕРАЦИИ);
 			childrenFeatures.add(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__СУБЪЕКТЫ);
 		}
@@ -169,7 +169,7 @@ public class ЖурналОперацийItemProvider extends ЭлементМо
 
 		switch (notification.getFeatureID(ЖурналОпераций.class)) {
 			case LedgerPackage.ЖУРНАЛ_ОПЕРАЦИЙ__АКТИВЫ:
-			case LedgerPackage.ЖУРНАЛ_ОПЕРАЦИЙ__СЧЁТА:
+			case LedgerPackage.ЖУРНАЛ_ОПЕРАЦИЙ__СЧЕТА:
 			case LedgerPackage.ЖУРНАЛ_ОПЕРАЦИЙ__ОПЕРАЦИИ:
 			case LedgerPackage.ЖУРНАЛ_ОПЕРАЦИЙ__СУБЪЕКТЫ:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -196,7 +196,7 @@ public class ЖурналОперацийItemProvider extends ЭлементМо
 
 		newChildDescriptors.add
 			(createChildParameter
-				(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__СЧЁТА,
+				(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__СЧЕТА,
 				 LedgerFactory.eINSTANCE.createСчёт()));
 
 		newChildDescriptors.add
