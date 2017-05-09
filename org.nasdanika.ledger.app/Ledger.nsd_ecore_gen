@@ -8,7 +8,13 @@
     <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
       <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EPackageConfiguration"/>
     </configuration>
-    <classes selected="true" name="ВычислительКурса"/>
+    <classes selected="true" name="ВычислительКурса">
+      <members xsi:type="org.nasdanika.codegen.ecore:Attribute" name="код">
+        <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+          <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EAttributeConfiguration" control="Text area"/>
+        </configuration>
+      </members>
+    </classes>
     <classes selected="true" name="Право"/>
     <classes selected="true" name="СвойствоАктива">
       <members xsi:type="org.nasdanika.codegen.ecore:Attribute" name="наименование"/>
@@ -39,6 +45,11 @@
         </configuration>
       </members>
       <members xsi:type="org.nasdanika.codegen.ecore:Reference" name="счёта">
+        <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+          <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EReferenceConfiguration" location="Item container"/>
+        </configuration>
+      </members>
+      <members xsi:type="org.nasdanika.codegen.ecore:Reference" name="счета">
         <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
           <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EReferenceConfiguration" location="Item container"/>
         </configuration>
@@ -100,6 +111,11 @@
       <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
         <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EClassConfiguration"/>
       </configuration>
+      <members xsi:type="org.nasdanika.codegen.ecore:Attribute" name="группа">
+        <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+          <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EAttributeConfiguration"/>
+        </configuration>
+      </members>
     </classes>
     <classes selected="true" name="Актив">
       <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
@@ -112,7 +128,7 @@
       </members>
       <members xsi:type="org.nasdanika.codegen.ecore:Attribute" name="группа">
         <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
-          <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EAttributeConfiguration" constraints="" location="Item container"/>
+          <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EAttributeConfiguration" constraints=""/>
         </configuration>
       </members>
       <members xsi:type="org.nasdanika.codegen.ecore:Reference" name="источникиКурсов">

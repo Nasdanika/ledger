@@ -1,10 +1,14 @@
 package org.nasdanika.ledger.app.routes.ledger;
 
 import java.util.LinkedList;
+import java.util.List;
+
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.nasdanika.cdo.security.LoginPasswordCredentials;
 import org.nasdanika.cdo.web.CDOTransactionHttpServletRequestContext;
 import org.nasdanika.cdo.web.routes.app.Renderer;
 import org.nasdanika.cdo.web.routes.app.ResourceProvider;
+import org.nasdanika.ledger.LedgerPackage;
 import org.nasdanika.ledger.Счёт;
 
 /**
@@ -46,6 +50,21 @@ public interface СчётRenderer<T extends Счёт> extends ЭлементМо
 		ret.add(СчётRenderer.class);
 		ret.addAll(ЭлементМоделиRenderer.super.getResourceBundleClasses(context));
 		return ret;
+	}
+
+	/**
+	 * Убирает либо суб-счета либо проводки в зависимости от того счёт группа или нет.
+	 */
+	@Override
+	default List<EStructuralFeature> getVisibleFeatures(
+			CDOTransactionHttpServletRequestContext<LoginPasswordCredentials> context, T obj,
+			FeaturePredicate predicate) throws Exception {
+
+		List<EStructuralFeature> visibleFeatures = ЭлементМоделиRenderer.super.getVisibleFeatures(context, obj,
+				predicate);
+		visibleFeatures.remove(
+				obj.isГруппа() ? LedgerPackage.Literals.СЧЁТ__ПРОВОДКИ : LedgerPackage.Literals.СЧЁТ__СУБ_СЧЕТА);
+		return visibleFeatures;
 	}
 
 }

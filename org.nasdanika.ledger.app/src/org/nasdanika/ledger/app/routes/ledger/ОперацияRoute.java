@@ -69,12 +69,12 @@ public class ОперацияRoute extends RouteBase<Операция> implement
 					}
 					активы.sort((a, b) -> a.getНаименование().compareTo(b.getНаименование()));
 					JSONArray jAssets = new JSONArray();
-					for (Актив актив: активы) {
+					for (Актив актив : активы) {
 						JSONObject jAsset = new JSONObject();
 						jAsset.put("наименование", актив.getНаименование());
-						jAsset.put("cdoID", CDOIDCodec.INSTANCE.encode(context, актив.cdoID()));	
+						jAsset.put("cdoID", CDOIDCodec.INSTANCE.encode(context, актив.cdoID()));
 						jAssets.put(jAsset);
-					}					
+					}
 					активыСчетов.put(CDOIDCodec.INSTANCE.encode(context, ((Счёт) next).cdoID()), jAssets);
 				}
 			}

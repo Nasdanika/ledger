@@ -1,10 +1,14 @@
 package org.nasdanika.ledger.app.routes.ledger;
 
 import java.util.LinkedList;
+import java.util.List;
+
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.nasdanika.cdo.security.LoginPasswordCredentials;
 import org.nasdanika.cdo.web.CDOTransactionHttpServletRequestContext;
 import org.nasdanika.cdo.web.routes.app.Renderer;
 import org.nasdanika.cdo.web.routes.app.ResourceProvider;
+import org.nasdanika.ledger.LedgerPackage;
 import org.nasdanika.ledger.Актив;
 
 /**
@@ -46,6 +50,17 @@ public interface АктивRenderer<T extends Актив> extends Элемент
 		ret.add(АктивRenderer.class);
 		ret.addAll(ЭлементМоделиRenderer.super.getResourceBundleClasses(context));
 		return ret;
+	}
+
+	@Override
+	default List<EStructuralFeature> getVisibleFeatures(
+			CDOTransactionHttpServletRequestContext<LoginPasswordCredentials> context, T obj,
+			org.nasdanika.cdo.web.routes.app.Renderer.FeaturePredicate predicate) throws Exception {
+		List<EStructuralFeature> visibleFeatures = ЭлементМоделиRenderer.super.getVisibleFeatures(context, obj,
+				predicate);
+		visibleFeatures.remove(
+				obj.isГруппа() ? LedgerPackage.Literals.АКТИВ__ПРОВОДКИ : LedgerPackage.Literals.АКТИВ__СУБ_АКТИВЫ);
+		return visibleFeatures;
 	}
 
 }

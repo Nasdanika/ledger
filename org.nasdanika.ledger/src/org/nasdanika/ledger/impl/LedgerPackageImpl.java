@@ -1234,8 +1234,8 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		initEAttribute(getАктив_ЕдиницаИзмерения(), ecorePackage.getEString(), "единицаИзмерения", null, 0, 1, Актив.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getАктив_Точность(), ecorePackage.getEIntegerObject(), "точность", null, 0, 1, Актив.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getАктив_Свойства(), this.getСвойствоАктива(), null, "свойства", null, 0, -1, Актив.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getАктив_Счета(), this.getСчёт(), this.getСчёт_Активы(), "счета", null, 0, -1, Актив.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getАктив_Проводки(), this.getПроводка(), this.getПроводка_Актив(), "проводки", null, 0, -1, Актив.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getАктив_Счета(), this.getСчёт(), this.getСчёт_Активы(), "счета", null, 0, -1, Актив.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getАктив_Проводки(), this.getПроводка(), this.getПроводка_Актив(), "проводки", null, 0, -1, Актив.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(свойствоАктиваEClass, СвойствоАктива.class, "СвойствоАктива", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getСвойствоАктива_Наименование(), ecorePackage.getEString(), "наименование", null, 1, 1, СвойствоАктива.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

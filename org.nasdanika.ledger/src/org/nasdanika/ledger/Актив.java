@@ -159,7 +159,7 @@ public interface Актив extends ЭлементМодели {
 	 * @return the value of the '<em>Счета</em>' reference list.
 	 * @see org.nasdanika.ledger.LedgerPackage#getАктив_Счета()
 	 * @see org.nasdanika.ledger.Счёт#getАктивы
-	 * @model opposite="активы"
+	 * @model opposite="активы" changeable="false"
 	 * @generated
 	 */
 	EList<Счёт> getСчета();
@@ -176,7 +176,7 @@ public interface Актив extends ЭлементМодели {
 	 * @return the value of the '<em>Проводки</em>' reference list.
 	 * @see org.nasdanika.ledger.LedgerPackage#getАктив_Проводки()
 	 * @see org.nasdanika.ledger.Проводка#getАктив
-	 * @model opposite="актив"
+	 * @model opposite="актив" changeable="false"
 	 * @generated
 	 */
 	EList<Проводка> getПроводки();

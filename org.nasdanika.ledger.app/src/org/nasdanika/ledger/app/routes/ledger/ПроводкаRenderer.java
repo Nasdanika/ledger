@@ -72,10 +72,8 @@ public interface ПроводкаRenderer<T extends Проводка> extends Э
 		if (LedgerPackage.Literals.ПРОВОДКА__СЧЁТ == typedElement) {
 			((Select) control).knockout().bind("value", "счёт", "\'" + value + "\'");
 		} else if (LedgerPackage.Literals.ПРОВОДКА__АКТИВ == typedElement) {
-			((Select) control)
-				.knockout().bind("options", "активыСчёта", null).knockout()
-				.bind("optionsText", "'наименование'", null)
-				.knockout().bind("optionsValue", "'cdoID'", null);
+			((Select) control).knockout().bind("options", "активыСчёта", null).knockout()
+					.bind("optionsText", "'наименование'", null).knockout().bind("optionsValue", "'cdoID'", null);
 		}
 
 		return control;
