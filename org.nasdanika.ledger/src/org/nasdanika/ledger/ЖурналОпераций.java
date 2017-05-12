@@ -23,6 +23,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.nasdanika.ledger.ЖурналОпераций#getСубъекты <em>Субъекты</em>}</li>
  *   <li>{@link org.nasdanika.ledger.ЖурналОпераций#getОтчётныеАктивы <em>Отчётные Активы</em>}</li>
  *   <li>{@link org.nasdanika.ledger.ЖурналОпераций#getСчётПоУмолчаниюДляБалансировкиОпераций <em>Счёт По Умолчанию Для Балансировки Операций</em>}</li>
+ *   <li>{@link org.nasdanika.ledger.ЖурналОпераций#getОтчётныеПериоды <em>Отчётные Периоды</em>}</li>
  * </ul>
  *
  * @see org.nasdanika.ledger.LedgerPackage#getЖурналОпераций()
@@ -158,4 +159,19 @@ public interface ЖурналОпераций extends ЭлементМодели
 	 * @generated
 	 */
 	void setСчётПоУмолчаниюДляБалансировкиОпераций(Счёт value);
+
+	/**
+	 * Returns the value of the '<em><b>Отчётные Периоды</b></em>' containment reference list.
+	 * The list contents are of type {@link org.nasdanika.ledger.ОтчётныйПериод}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Журнал операций может иметь несколько отчётных периодов.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Отчётные Периоды</em>' containment reference list.
+	 * @see org.nasdanika.ledger.LedgerPackage#getЖурналОпераций_ОтчётныеПериоды()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ОтчётныйПериод> getОтчётныеПериоды();
 } // ЖурналОпераций

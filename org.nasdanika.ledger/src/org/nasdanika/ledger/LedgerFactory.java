@@ -139,6 +139,51 @@ public interface LedgerFactory extends EFactory {
 	Субъект createСубъект();
 
 	/**
+	 * Returns a new object of class '<em>Предыдущий Месяц</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Предыдущий Месяц</em>'.
+	 * @generated
+	 */
+	ПредыдущийМесяц createПредыдущийМесяц();
+
+	/**
+	 * Returns a new object of class '<em>Предыдущий Год</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Предыдущий Год</em>'.
+	 * @generated
+	 */
+	ПредыдущийГод createПредыдущийГод();
+
+	/**
+	 * Returns a new object of class '<em>Текущий Месяц</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Текущий Месяц</em>'.
+	 * @generated
+	 */
+	ТекущийМесяц createТекущийМесяц();
+
+	/**
+	 * Returns a new object of class '<em>Текущий Год</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Текущий Год</em>'.
+	 * @generated
+	 */
+	ТекущийГод createТекущийГод();
+
+	/**
+	 * Returns a new object of class '<em>Фиксированный Отчётный Период</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Фиксированный Отчётный Период</em>'.
+	 * @generated
+	 */
+	ФиксированныйОтчётныйПериод createФиксированныйОтчётныйПериод();
+
+	/**
 	 * Returns a new object of class '<em>Комментарий</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

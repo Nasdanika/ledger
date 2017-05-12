@@ -214,6 +214,47 @@ public class LedgerSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case LedgerPackage.ОТЧЁТНЫЙ_ПЕРИОД: {
+				ОтчётныйПериод отчётныйПериод = (ОтчётныйПериод)theEObject;
+				T result = caseОтчётныйПериод(отчётныйПериод);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case LedgerPackage.ПРЕДЫДУЩИЙ_МЕСЯЦ: {
+				ПредыдущийМесяц предыдущийМесяц = (ПредыдущийМесяц)theEObject;
+				T result = caseПредыдущийМесяц(предыдущийМесяц);
+				if (result == null) result = caseОтчётныйПериод(предыдущийМесяц);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case LedgerPackage.ПРЕДЫДУЩИЙ_ГОД: {
+				ПредыдущийГод предыдущийГод = (ПредыдущийГод)theEObject;
+				T result = caseПредыдущийГод(предыдущийГод);
+				if (result == null) result = caseОтчётныйПериод(предыдущийГод);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case LedgerPackage.ТЕКУЩИЙ_МЕСЯЦ: {
+				ТекущийМесяц текущийМесяц = (ТекущийМесяц)theEObject;
+				T result = caseТекущийМесяц(текущийМесяц);
+				if (result == null) result = caseОтчётныйПериод(текущийМесяц);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case LedgerPackage.ТЕКУЩИЙ_ГОД: {
+				ТекущийГод текущийГод = (ТекущийГод)theEObject;
+				T result = caseТекущийГод(текущийГод);
+				if (result == null) result = caseОтчётныйПериод(текущийГод);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case LedgerPackage.ФИКСИРОВАННЫЙ_ОТЧЁТНЫЙ_ПЕРИОД: {
+				ФиксированныйОтчётныйПериод фиксированныйОтчётныйПериод = (ФиксированныйОтчётныйПериод)theEObject;
+				T result = caseФиксированныйОтчётныйПериод(фиксированныйОтчётныйПериод);
+				if (result == null) result = caseОтчётныйПериод(фиксированныйОтчётныйПериод);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -455,6 +496,96 @@ public class LedgerSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseСубъект(Субъект object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Отчётный Период</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Отчётный Период</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseОтчётныйПериод(ОтчётныйПериод object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Предыдущий Месяц</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Предыдущий Месяц</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseПредыдущийМесяц(ПредыдущийМесяц object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Предыдущий Год</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Предыдущий Год</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseПредыдущийГод(ПредыдущийГод object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Текущий Месяц</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Текущий Месяц</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseТекущийМесяц(ТекущийМесяц object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Текущий Год</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Текущий Год</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseТекущийГод(ТекущийГод object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Фиксированный Отчётный Период</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Фиксированный Отчётный Период</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseФиксированныйОтчётныйПериод(ФиксированныйОтчётныйПериод object) {
 		return null;
 	}
 

@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.nasdanika.html.Theme;
+import org.nasdanika.ledger.*;
 import org.nasdanika.ledger.LedgerFactory;
 import org.nasdanika.ledger.LedgerPackage;
 import org.nasdanika.ledger.Актив;
@@ -89,6 +90,11 @@ public class LedgerFactoryImpl extends EFactoryImpl implements LedgerFactory {
 			case LedgerPackage.ОПЕРАЦИЯ: return (EObject)createОперация();
 			case LedgerPackage.ПРОВОДКА: return (EObject)createПроводка();
 			case LedgerPackage.СУБЪЕКТ: return (EObject)createСубъект();
+			case LedgerPackage.ПРЕДЫДУЩИЙ_МЕСЯЦ: return (EObject)createПредыдущийМесяц();
+			case LedgerPackage.ПРЕДЫДУЩИЙ_ГОД: return (EObject)createПредыдущийГод();
+			case LedgerPackage.ТЕКУЩИЙ_МЕСЯЦ: return (EObject)createТекущийМесяц();
+			case LedgerPackage.ТЕКУЩИЙ_ГОД: return (EObject)createТекущийГод();
+			case LedgerPackage.ФИКСИРОВАННЫЙ_ОТЧЁТНЫЙ_ПЕРИОД: return (EObject)createФиксированныйОтчётныйПериод();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -256,6 +262,56 @@ public class LedgerFactoryImpl extends EFactoryImpl implements LedgerFactory {
 	public Субъект createСубъект() {
 		СубъектImpl субъект = new СубъектImpl();
 		return субъект;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ПредыдущийМесяц createПредыдущийМесяц() {
+		ПредыдущийМесяцImpl предыдущийМесяц = new ПредыдущийМесяцImpl();
+		return предыдущийМесяц;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ПредыдущийГод createПредыдущийГод() {
+		ПредыдущийГодImpl предыдущийГод = new ПредыдущийГодImpl();
+		return предыдущийГод;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ТекущийМесяц createТекущийМесяц() {
+		ТекущийМесяцImpl текущийМесяц = new ТекущийМесяцImpl();
+		return текущийМесяц;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ТекущийГод createТекущийГод() {
+		ТекущийГодImpl текущийГод = new ТекущийГодImpl();
+		return текущийГод;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ФиксированныйОтчётныйПериод createФиксированныйОтчётныйПериод() {
+		ФиксированныйОтчётныйПериодImpl фиксированныйОтчётныйПериод = new ФиксированныйОтчётныйПериодImpl();
+		return фиксированныйОтчётныйПериод;
 	}
 
 	/**

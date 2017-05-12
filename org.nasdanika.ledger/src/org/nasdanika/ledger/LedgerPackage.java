@@ -454,7 +454,7 @@ public interface LedgerPackage extends EPackage {
 	 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getКурсАктива()
 	 * @generated
 	 */
-	int КУРС_АКТИВА = 21;
+	int КУРС_АКТИВА = 27;
 
 	/**
 	 * The meta object id for the '{@link org.nasdanika.ledger.impl.КомментарийImpl <em>Комментарий</em>}' class.
@@ -729,7 +729,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int УЧЁТНЫЙ_ЦЕНТР___AUTHENTICATE__OBJECT_1 = SecurityPackage.LOGIN_PASSWORD_REALM___AUTHENTICATE__OBJECT;
+	int УЧЁТНЫЙ_ЦЕНТР___AUTHENTICATE__OBJECT = SecurityPackage.LOGIN_PASSWORD_REALM___AUTHENTICATE__OBJECT;
 
 	/**
 	 * The operation id for the '<em>Get All Users</em>' operation.
@@ -747,7 +747,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int УЧЁТНЫЙ_ЦЕНТР___CLEAR_PERMISSIONS__EOBJECT_1 = SecurityPackage.LOGIN_PASSWORD_REALM___CLEAR_PERMISSIONS__EOBJECT;
+	int УЧЁТНЫЙ_ЦЕНТР___CLEAR_PERMISSIONS__EOBJECT = SecurityPackage.LOGIN_PASSWORD_REALM___CLEAR_PERMISSIONS__EOBJECT;
 
 	/**
 	 * The operation id for the '<em>Is Administrator</em>' operation.
@@ -765,7 +765,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int УЧЁТНЫЙ_ЦЕНТР___SET_PASSWORD_HASH__LOGINPASSWORDHASHUSER_STRING_1 = SecurityPackage.LOGIN_PASSWORD_REALM___SET_PASSWORD_HASH__LOGINPASSWORDHASHUSER_STRING;
+	int УЧЁТНЫЙ_ЦЕНТР___SET_PASSWORD_HASH__LOGINPASSWORDHASHUSER_STRING = SecurityPackage.LOGIN_PASSWORD_REALM___SET_PASSWORD_HASH__LOGINPASSWORDHASHUSER_STRING;
 
 	/**
 	 * The operation id for the '<em>Get User</em>' operation.
@@ -774,7 +774,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int УЧЁТНЫЙ_ЦЕНТР___GET_USER__STRING_1 = SecurityPackage.LOGIN_PASSWORD_REALM___GET_USER__STRING;
+	int УЧЁТНЫЙ_ЦЕНТР___GET_USER__STRING = SecurityPackage.LOGIN_PASSWORD_REALM___GET_USER__STRING;
 
 	/**
 	 * The operation id for the '<em>Validate</em>' operation.
@@ -999,7 +999,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ПОЛЬЗОВАТЕЛЬ___AUTHORIZE__CONTEXT_EOBJECT_STRING_STRING_MAP_1 = SecurityPackage.LOGIN_PASSWORD_HASH_USER___AUTHORIZE__CONTEXT_EOBJECT_STRING_STRING_MAP;
+	int ПОЛЬЗОВАТЕЛЬ___AUTHORIZE__CONTEXT_EOBJECT_STRING_STRING_MAP = SecurityPackage.LOGIN_PASSWORD_HASH_USER___AUTHORIZE__CONTEXT_EOBJECT_STRING_STRING_MAP;
 
 	/**
 	 * The operation id for the '<em>Accept</em>' operation.
@@ -1008,7 +1008,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ПОЛЬЗОВАТЕЛЬ___ACCEPT__PRINCIPALVISITOR_1 = SecurityPackage.LOGIN_PASSWORD_HASH_USER___ACCEPT__PRINCIPALVISITOR;
+	int ПОЛЬЗОВАТЕЛЬ___ACCEPT__PRINCIPALVISITOR = SecurityPackage.LOGIN_PASSWORD_HASH_USER___ACCEPT__PRINCIPALVISITOR;
 
 	/**
 	 * The operation id for the '<em>Get Realm</em>' operation.
@@ -1218,13 +1218,22 @@ public interface LedgerPackage extends EPackage {
 	int ЖУРНАЛ_ОПЕРАЦИЙ__СЧЁТ_ПО_УМОЛЧАНИЮ_ДЛЯ_БАЛАНСИРОВКИ_ОПЕРАЦИЙ = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Отчётные Периоды</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ЖУРНАЛ_ОПЕРАЦИЙ__ОТЧЁТНЫЕ_ПЕРИОДЫ = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Журнал Операций</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ЖУРНАЛ_ОПЕРАЦИЙ_FEATURE_COUNT = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 6;
+	int ЖУРНАЛ_ОПЕРАЦИЙ_FEATURE_COUNT = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Validate</em>' operation.
@@ -2119,6 +2128,300 @@ public interface LedgerPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.nasdanika.ledger.impl.ОтчётныйПериодImpl <em>Отчётный Период</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.ledger.impl.ОтчётныйПериодImpl
+	 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getОтчётныйПериод()
+	 * @generated
+	 */
+	int ОТЧЁТНЫЙ_ПЕРИОД = 20;
+
+	/**
+	 * The number of structural features of the '<em>Отчётный Период</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ОТЧЁТНЫЙ_ПЕРИОД_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Get Начало Периода</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ОТЧЁТНЫЙ_ПЕРИОД___GET_НАЧАЛО_ПЕРИОДА = 0;
+
+	/**
+	 * The operation id for the '<em>Get Конец Периода</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ОТЧЁТНЫЙ_ПЕРИОД___GET_КОНЕЦ_ПЕРИОДА = 1;
+
+	/**
+	 * The number of operations of the '<em>Отчётный Период</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ОТЧЁТНЫЙ_ПЕРИОД_OPERATION_COUNT = 2;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.ledger.impl.ПредыдущийМесяцImpl <em>Предыдущий Месяц</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.ledger.impl.ПредыдущийМесяцImpl
+	 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getПредыдущийМесяц()
+	 * @generated
+	 */
+	int ПРЕДЫДУЩИЙ_МЕСЯЦ = 21;
+
+	/**
+	 * The number of structural features of the '<em>Предыдущий Месяц</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ПРЕДЫДУЩИЙ_МЕСЯЦ_FEATURE_COUNT = ОТЧЁТНЫЙ_ПЕРИОД_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Начало Периода</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ПРЕДЫДУЩИЙ_МЕСЯЦ___GET_НАЧАЛО_ПЕРИОДА = ОТЧЁТНЫЙ_ПЕРИОД___GET_НАЧАЛО_ПЕРИОДА;
+
+	/**
+	 * The operation id for the '<em>Get Конец Периода</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ПРЕДЫДУЩИЙ_МЕСЯЦ___GET_КОНЕЦ_ПЕРИОДА = ОТЧЁТНЫЙ_ПЕРИОД___GET_КОНЕЦ_ПЕРИОДА;
+
+	/**
+	 * The number of operations of the '<em>Предыдущий Месяц</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ПРЕДЫДУЩИЙ_МЕСЯЦ_OPERATION_COUNT = ОТЧЁТНЫЙ_ПЕРИОД_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.ledger.impl.ПредыдущийГодImpl <em>Предыдущий Год</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.ledger.impl.ПредыдущийГодImpl
+	 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getПредыдущийГод()
+	 * @generated
+	 */
+	int ПРЕДЫДУЩИЙ_ГОД = 22;
+
+	/**
+	 * The number of structural features of the '<em>Предыдущий Год</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ПРЕДЫДУЩИЙ_ГОД_FEATURE_COUNT = ОТЧЁТНЫЙ_ПЕРИОД_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Начало Периода</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ПРЕДЫДУЩИЙ_ГОД___GET_НАЧАЛО_ПЕРИОДА = ОТЧЁТНЫЙ_ПЕРИОД___GET_НАЧАЛО_ПЕРИОДА;
+
+	/**
+	 * The operation id for the '<em>Get Конец Периода</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ПРЕДЫДУЩИЙ_ГОД___GET_КОНЕЦ_ПЕРИОДА = ОТЧЁТНЫЙ_ПЕРИОД___GET_КОНЕЦ_ПЕРИОДА;
+
+	/**
+	 * The number of operations of the '<em>Предыдущий Год</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ПРЕДЫДУЩИЙ_ГОД_OPERATION_COUNT = ОТЧЁТНЫЙ_ПЕРИОД_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.ledger.impl.ТекущийМесяцImpl <em>Текущий Месяц</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.ledger.impl.ТекущийМесяцImpl
+	 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getТекущийМесяц()
+	 * @generated
+	 */
+	int ТЕКУЩИЙ_МЕСЯЦ = 23;
+
+	/**
+	 * The number of structural features of the '<em>Текущий Месяц</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ТЕКУЩИЙ_МЕСЯЦ_FEATURE_COUNT = ОТЧЁТНЫЙ_ПЕРИОД_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Начало Периода</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ТЕКУЩИЙ_МЕСЯЦ___GET_НАЧАЛО_ПЕРИОДА = ОТЧЁТНЫЙ_ПЕРИОД___GET_НАЧАЛО_ПЕРИОДА;
+
+	/**
+	 * The operation id for the '<em>Get Конец Периода</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ТЕКУЩИЙ_МЕСЯЦ___GET_КОНЕЦ_ПЕРИОДА = ОТЧЁТНЫЙ_ПЕРИОД___GET_КОНЕЦ_ПЕРИОДА;
+
+	/**
+	 * The number of operations of the '<em>Текущий Месяц</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ТЕКУЩИЙ_МЕСЯЦ_OPERATION_COUNT = ОТЧЁТНЫЙ_ПЕРИОД_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.ledger.impl.ТекущийГодImpl <em>Текущий Год</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.ledger.impl.ТекущийГодImpl
+	 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getТекущийГод()
+	 * @generated
+	 */
+	int ТЕКУЩИЙ_ГОД = 24;
+
+	/**
+	 * The number of structural features of the '<em>Текущий Год</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ТЕКУЩИЙ_ГОД_FEATURE_COUNT = ОТЧЁТНЫЙ_ПЕРИОД_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Начало Периода</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ТЕКУЩИЙ_ГОД___GET_НАЧАЛО_ПЕРИОДА = ОТЧЁТНЫЙ_ПЕРИОД___GET_НАЧАЛО_ПЕРИОДА;
+
+	/**
+	 * The operation id for the '<em>Get Конец Периода</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ТЕКУЩИЙ_ГОД___GET_КОНЕЦ_ПЕРИОДА = ОТЧЁТНЫЙ_ПЕРИОД___GET_КОНЕЦ_ПЕРИОДА;
+
+	/**
+	 * The number of operations of the '<em>Текущий Год</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ТЕКУЩИЙ_ГОД_OPERATION_COUNT = ОТЧЁТНЫЙ_ПЕРИОД_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.nasdanika.ledger.impl.ФиксированныйОтчётныйПериодImpl <em>Фиксированный Отчётный Период</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.nasdanika.ledger.impl.ФиксированныйОтчётныйПериодImpl
+	 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getФиксированныйОтчётныйПериод()
+	 * @generated
+	 */
+	int ФИКСИРОВАННЫЙ_ОТЧЁТНЫЙ_ПЕРИОД = 25;
+
+	/**
+	 * The feature id for the '<em><b>Начало Периода</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ФИКСИРОВАННЫЙ_ОТЧЁТНЫЙ_ПЕРИОД__НАЧАЛО_ПЕРИОДА = ОТЧЁТНЫЙ_ПЕРИОД_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Конец Периода</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ФИКСИРОВАННЫЙ_ОТЧЁТНЫЙ_ПЕРИОД__КОНЕЦ_ПЕРИОДА = ОТЧЁТНЫЙ_ПЕРИОД_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Фиксированный Отчётный Период</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ФИКСИРОВАННЫЙ_ОТЧЁТНЫЙ_ПЕРИОД_FEATURE_COUNT = ОТЧЁТНЫЙ_ПЕРИОД_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get Начало Периода</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ФИКСИРОВАННЫЙ_ОТЧЁТНЫЙ_ПЕРИОД___GET_НАЧАЛО_ПЕРИОДА = ОТЧЁТНЫЙ_ПЕРИОД___GET_НАЧАЛО_ПЕРИОДА;
+
+	/**
+	 * The operation id for the '<em>Get Конец Периода</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ФИКСИРОВАННЫЙ_ОТЧЁТНЫЙ_ПЕРИОД___GET_КОНЕЦ_ПЕРИОДА = ОТЧЁТНЫЙ_ПЕРИОД___GET_КОНЕЦ_ПЕРИОДА;
+
+	/**
+	 * The number of operations of the '<em>Фиксированный Отчётный Период</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ФИКСИРОВАННЫЙ_ОТЧЁТНЫЙ_ПЕРИОД_OPERATION_COUNT = ОТЧЁТНЫЙ_ПЕРИОД_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '<em>Theme</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2126,7 +2429,7 @@ public interface LedgerPackage extends EPackage {
 	 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getTheme()
 	 * @generated
 	 */
-	int THEME = 20;
+	int THEME = 26;
 
 
 	/**
@@ -2204,6 +2507,17 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getЖурналОпераций_СчётПоУмолчаниюДляБалансировкиОпераций();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.nasdanika.ledger.ЖурналОпераций#getОтчётныеПериоды <em>Отчётные Периоды</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Отчётные Периоды</em>'.
+	 * @see org.nasdanika.ledger.ЖурналОпераций#getОтчётныеПериоды()
+	 * @see #getЖурналОпераций()
+	 * @generated
+	 */
+	EReference getЖурналОпераций_ОтчётныеПериоды();
 
 	/**
 	 * Returns the meta object for class '{@link org.nasdanika.ledger.УчётныйЦентр <em>Учётный Центр</em>}'.
@@ -2860,6 +3174,108 @@ public interface LedgerPackage extends EPackage {
 	EReference getСубъект_Операции();
 
 	/**
+	 * Returns the meta object for class '{@link org.nasdanika.ledger.ОтчётныйПериод <em>Отчётный Период</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Отчётный Период</em>'.
+	 * @see org.nasdanika.ledger.ОтчётныйПериод
+	 * @generated
+	 */
+	EClass getОтчётныйПериод();
+
+	/**
+	 * Returns the meta object for the '{@link org.nasdanika.ledger.ОтчётныйПериод#getНачалоПериода() <em>Get Начало Периода</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Начало Периода</em>' operation.
+	 * @see org.nasdanika.ledger.ОтчётныйПериод#getНачалоПериода()
+	 * @generated
+	 */
+	EOperation getОтчётныйПериод__GetНачалоПериода();
+
+	/**
+	 * Returns the meta object for the '{@link org.nasdanika.ledger.ОтчётныйПериод#getКонецПериода() <em>Get Конец Периода</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Конец Периода</em>' operation.
+	 * @see org.nasdanika.ledger.ОтчётныйПериод#getКонецПериода()
+	 * @generated
+	 */
+	EOperation getОтчётныйПериод__GetКонецПериода();
+
+	/**
+	 * Returns the meta object for class '{@link org.nasdanika.ledger.ПредыдущийМесяц <em>Предыдущий Месяц</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Предыдущий Месяц</em>'.
+	 * @see org.nasdanika.ledger.ПредыдущийМесяц
+	 * @generated
+	 */
+	EClass getПредыдущийМесяц();
+
+	/**
+	 * Returns the meta object for class '{@link org.nasdanika.ledger.ПредыдущийГод <em>Предыдущий Год</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Предыдущий Год</em>'.
+	 * @see org.nasdanika.ledger.ПредыдущийГод
+	 * @generated
+	 */
+	EClass getПредыдущийГод();
+
+	/**
+	 * Returns the meta object for class '{@link org.nasdanika.ledger.ТекущийМесяц <em>Текущий Месяц</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Текущий Месяц</em>'.
+	 * @see org.nasdanika.ledger.ТекущийМесяц
+	 * @generated
+	 */
+	EClass getТекущийМесяц();
+
+	/**
+	 * Returns the meta object for class '{@link org.nasdanika.ledger.ТекущийГод <em>Текущий Год</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Текущий Год</em>'.
+	 * @see org.nasdanika.ledger.ТекущийГод
+	 * @generated
+	 */
+	EClass getТекущийГод();
+
+	/**
+	 * Returns the meta object for class '{@link org.nasdanika.ledger.ФиксированныйОтчётныйПериод <em>Фиксированный Отчётный Период</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Фиксированный Отчётный Период</em>'.
+	 * @see org.nasdanika.ledger.ФиксированныйОтчётныйПериод
+	 * @generated
+	 */
+	EClass getФиксированныйОтчётныйПериод();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.ledger.ФиксированныйОтчётныйПериод#getНачалоПериода <em>Начало Периода</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Начало Периода</em>'.
+	 * @see org.nasdanika.ledger.ФиксированныйОтчётныйПериод#getНачалоПериода()
+	 * @see #getФиксированныйОтчётныйПериод()
+	 * @generated
+	 */
+	EAttribute getФиксированныйОтчётныйПериод_НачалоПериода();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.ledger.ФиксированныйОтчётныйПериод#getКонецПериода <em>Конец Периода</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Конец Периода</em>'.
+	 * @see org.nasdanika.ledger.ФиксированныйОтчётныйПериод#getКонецПериода()
+	 * @see #getФиксированныйОтчётныйПериод()
+	 * @generated
+	 */
+	EAttribute getФиксированныйОтчётныйПериод_КонецПериода();
+
+	/**
 	 * Returns the meta object for data type '{@link org.nasdanika.html.Theme <em>Theme</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3067,6 +3483,14 @@ public interface LedgerPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ЖУРНАЛ_ОПЕРАЦИЙ__СЧЁТ_ПО_УМОЛЧАНИЮ_ДЛЯ_БАЛАНСИРОВКИ_ОПЕРАЦИЙ = eINSTANCE.getЖурналОпераций_СчётПоУмолчаниюДляБалансировкиОпераций();
+
+		/**
+		 * The meta object literal for the '<em><b>Отчётные Периоды</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ЖУРНАЛ_ОПЕРАЦИЙ__ОТЧЁТНЫЕ_ПЕРИОДЫ = eINSTANCE.getЖурналОпераций_ОтчётныеПериоды();
 
 		/**
 		 * The meta object literal for the '{@link org.nasdanika.ledger.impl.УчётныйЦентрImpl <em>Учётный Центр</em>}' class.
@@ -3585,6 +4009,98 @@ public interface LedgerPackage extends EPackage {
 		 * @generated
 		 */
 		EReference СУБЪЕКТ__ОПЕРАЦИИ = eINSTANCE.getСубъект_Операции();
+
+		/**
+		 * The meta object literal for the '{@link org.nasdanika.ledger.impl.ОтчётныйПериодImpl <em>Отчётный Период</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.ledger.impl.ОтчётныйПериодImpl
+		 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getОтчётныйПериод()
+		 * @generated
+		 */
+		EClass ОТЧЁТНЫЙ_ПЕРИОД = eINSTANCE.getОтчётныйПериод();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Начало Периода</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ОТЧЁТНЫЙ_ПЕРИОД___GET_НАЧАЛО_ПЕРИОДА = eINSTANCE.getОтчётныйПериод__GetНачалоПериода();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Конец Периода</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ОТЧЁТНЫЙ_ПЕРИОД___GET_КОНЕЦ_ПЕРИОДА = eINSTANCE.getОтчётныйПериод__GetКонецПериода();
+
+		/**
+		 * The meta object literal for the '{@link org.nasdanika.ledger.impl.ПредыдущийМесяцImpl <em>Предыдущий Месяц</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.ledger.impl.ПредыдущийМесяцImpl
+		 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getПредыдущийМесяц()
+		 * @generated
+		 */
+		EClass ПРЕДЫДУЩИЙ_МЕСЯЦ = eINSTANCE.getПредыдущийМесяц();
+
+		/**
+		 * The meta object literal for the '{@link org.nasdanika.ledger.impl.ПредыдущийГодImpl <em>Предыдущий Год</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.ledger.impl.ПредыдущийГодImpl
+		 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getПредыдущийГод()
+		 * @generated
+		 */
+		EClass ПРЕДЫДУЩИЙ_ГОД = eINSTANCE.getПредыдущийГод();
+
+		/**
+		 * The meta object literal for the '{@link org.nasdanika.ledger.impl.ТекущийМесяцImpl <em>Текущий Месяц</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.ledger.impl.ТекущийМесяцImpl
+		 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getТекущийМесяц()
+		 * @generated
+		 */
+		EClass ТЕКУЩИЙ_МЕСЯЦ = eINSTANCE.getТекущийМесяц();
+
+		/**
+		 * The meta object literal for the '{@link org.nasdanika.ledger.impl.ТекущийГодImpl <em>Текущий Год</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.ledger.impl.ТекущийГодImpl
+		 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getТекущийГод()
+		 * @generated
+		 */
+		EClass ТЕКУЩИЙ_ГОД = eINSTANCE.getТекущийГод();
+
+		/**
+		 * The meta object literal for the '{@link org.nasdanika.ledger.impl.ФиксированныйОтчётныйПериодImpl <em>Фиксированный Отчётный Период</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.nasdanika.ledger.impl.ФиксированныйОтчётныйПериодImpl
+		 * @see org.nasdanika.ledger.impl.LedgerPackageImpl#getФиксированныйОтчётныйПериод()
+		 * @generated
+		 */
+		EClass ФИКСИРОВАННЫЙ_ОТЧЁТНЫЙ_ПЕРИОД = eINSTANCE.getФиксированныйОтчётныйПериод();
+
+		/**
+		 * The meta object literal for the '<em><b>Начало Периода</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ФИКСИРОВАННЫЙ_ОТЧЁТНЫЙ_ПЕРИОД__НАЧАЛО_ПЕРИОДА = eINSTANCE.getФиксированныйОтчётныйПериод_НачалоПериода();
+
+		/**
+		 * The meta object literal for the '<em><b>Конец Периода</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ФИКСИРОВАННЫЙ_ОТЧЁТНЫЙ_ПЕРИОД__КОНЕЦ_ПЕРИОДА = eINSTANCE.getФиксированныйОтчётныйПериод_КонецПериода();
 
 		/**
 		 * The meta object literal for the '<em>Theme</em>' data type.

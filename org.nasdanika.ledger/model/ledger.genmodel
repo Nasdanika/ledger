@@ -54,6 +54,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ledger.ecore#//ЖурналОпераций/субъекты"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ledger.ecore#//ЖурналОпераций/отчётныеАктивы"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ledger.ecore#//ЖурналОпераций/счётПоУмолчаниюДляБалансировкиОпераций"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ledger.ecore#//ЖурналОпераций/отчётныеПериоды"/>
     </genClasses>
     <genClasses ecoreClass="ledger.ecore#//Счёт">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//Счёт/группа"/>
@@ -117,6 +118,18 @@
     </genClasses>
     <genClasses ecoreClass="ledger.ecore#//Субъект">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ledger.ecore#//Субъект/операции"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ledger.ecore#//ОтчётныйПериод">
+      <genOperations ecoreOperation="ledger.ecore#//ОтчётныйПериод/getНачалоПериода"/>
+      <genOperations ecoreOperation="ledger.ecore#//ОтчётныйПериод/getКонецПериода"/>
+    </genClasses>
+    <genClasses ecoreClass="ledger.ecore#//ПредыдущийМесяц"/>
+    <genClasses ecoreClass="ledger.ecore#//ПредыдущийГод"/>
+    <genClasses ecoreClass="ledger.ecore#//ТекущийМесяц"/>
+    <genClasses ecoreClass="ledger.ecore#//ТекущийГод"/>
+    <genClasses ecoreClass="ledger.ecore#//ФиксированныйОтчётныйПериод">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//ФиксированныйОтчётныйПериод/началоПериода"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ledger.ecore#//ФиксированныйОтчётныйПериод/конецПериода"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

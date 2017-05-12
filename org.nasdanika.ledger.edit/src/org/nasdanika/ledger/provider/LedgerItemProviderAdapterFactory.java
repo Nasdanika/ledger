@@ -440,6 +440,121 @@ public class LedgerItemProviderAdapterFactory extends LedgerAdapterFactory imple
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.nasdanika.ledger.ПредыдущийМесяц} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ПредыдущийМесяцItemProvider предыдущийМесяцItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.nasdanika.ledger.ПредыдущийМесяц}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createПредыдущийМесяцAdapter() {
+		if (предыдущийМесяцItemProvider == null) {
+			предыдущийМесяцItemProvider = new ПредыдущийМесяцItemProvider(this);
+		}
+
+		return предыдущийМесяцItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.nasdanika.ledger.ПредыдущийГод} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ПредыдущийГодItemProvider предыдущийГодItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.nasdanika.ledger.ПредыдущийГод}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createПредыдущийГодAdapter() {
+		if (предыдущийГодItemProvider == null) {
+			предыдущийГодItemProvider = new ПредыдущийГодItemProvider(this);
+		}
+
+		return предыдущийГодItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.nasdanika.ledger.ТекущийМесяц} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ТекущийМесяцItemProvider текущийМесяцItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.nasdanika.ledger.ТекущийМесяц}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createТекущийМесяцAdapter() {
+		if (текущийМесяцItemProvider == null) {
+			текущийМесяцItemProvider = new ТекущийМесяцItemProvider(this);
+		}
+
+		return текущийМесяцItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.nasdanika.ledger.ТекущийГод} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ТекущийГодItemProvider текущийГодItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.nasdanika.ledger.ТекущийГод}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createТекущийГодAdapter() {
+		if (текущийГодItemProvider == null) {
+			текущийГодItemProvider = new ТекущийГодItemProvider(this);
+		}
+
+		return текущийГодItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.nasdanika.ledger.ФиксированныйОтчётныйПериод} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ФиксированныйОтчётныйПериодItemProvider фиксированныйОтчётныйПериодItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.nasdanika.ledger.ФиксированныйОтчётныйПериод}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createФиксированныйОтчётныйПериодAdapter() {
+		if (фиксированныйОтчётныйПериодItemProvider == null) {
+			фиксированныйОтчётныйПериодItemProvider = new ФиксированныйОтчётныйПериодItemProvider(this);
+		}
+
+		return фиксированныйОтчётныйПериодItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -554,6 +669,11 @@ public class LedgerItemProviderAdapterFactory extends LedgerAdapterFactory imple
 		if (операцияItemProvider != null) операцияItemProvider.dispose();
 		if (проводкаItemProvider != null) проводкаItemProvider.dispose();
 		if (субъектItemProvider != null) субъектItemProvider.dispose();
+		if (предыдущийМесяцItemProvider != null) предыдущийМесяцItemProvider.dispose();
+		if (предыдущийГодItemProvider != null) предыдущийГодItemProvider.dispose();
+		if (текущийМесяцItemProvider != null) текущийМесяцItemProvider.dispose();
+		if (текущийГодItemProvider != null) текущийГодItemProvider.dispose();
+		if (фиксированныйОтчётныйПериодItemProvider != null) фиксированныйОтчётныйПериодItemProvider.dispose();
 	}
 
 }

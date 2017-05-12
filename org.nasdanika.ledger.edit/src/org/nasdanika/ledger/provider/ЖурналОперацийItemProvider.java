@@ -113,6 +113,7 @@ public class ЖурналОперацийItemProvider extends ЭлементМо
 			childrenFeatures.add(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__СЧЕТА);
 			childrenFeatures.add(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__ОПЕРАЦИИ);
 			childrenFeatures.add(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__СУБЪЕКТЫ);
+			childrenFeatures.add(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__ОТЧЁТНЫЕ_ПЕРИОДЫ);
 		}
 		return childrenFeatures;
 	}
@@ -172,6 +173,7 @@ public class ЖурналОперацийItemProvider extends ЭлементМо
 			case LedgerPackage.ЖУРНАЛ_ОПЕРАЦИЙ__СЧЕТА:
 			case LedgerPackage.ЖУРНАЛ_ОПЕРАЦИЙ__ОПЕРАЦИИ:
 			case LedgerPackage.ЖУРНАЛ_ОПЕРАЦИЙ__СУБЪЕКТЫ:
+			case LedgerPackage.ЖУРНАЛ_ОПЕРАЦИЙ__ОТЧЁТНЫЕ_ПЕРИОДЫ:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -208,6 +210,31 @@ public class ЖурналОперацийItemProvider extends ЭлементМо
 			(createChildParameter
 				(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__СУБЪЕКТЫ,
 				 LedgerFactory.eINSTANCE.createСубъект()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__ОТЧЁТНЫЕ_ПЕРИОДЫ,
+				 LedgerFactory.eINSTANCE.createПредыдущийМесяц()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__ОТЧЁТНЫЕ_ПЕРИОДЫ,
+				 LedgerFactory.eINSTANCE.createПредыдущийГод()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__ОТЧЁТНЫЕ_ПЕРИОДЫ,
+				 LedgerFactory.eINSTANCE.createТекущийМесяц()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__ОТЧЁТНЫЕ_ПЕРИОДЫ,
+				 LedgerFactory.eINSTANCE.createТекущийГод()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__ОТЧЁТНЫЕ_ПЕРИОДЫ,
+				 LedgerFactory.eINSTANCE.createФиксированныйОтчётныйПериод()));
 	}
 
 }

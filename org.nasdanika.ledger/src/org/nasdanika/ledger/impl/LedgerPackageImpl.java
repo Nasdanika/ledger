@@ -26,14 +26,20 @@ import org.nasdanika.ledger.Комментарий;
 import org.nasdanika.ledger.КурсАктива;
 import org.nasdanika.ledger.Операция;
 import org.nasdanika.ledger.Организация;
+import org.nasdanika.ledger.ОтчётныйПериод;
 import org.nasdanika.ledger.Пользователь;
+import org.nasdanika.ledger.ПредыдущийГод;
+import org.nasdanika.ledger.ПредыдущийМесяц;
 import org.nasdanika.ledger.Проводка;
 import org.nasdanika.ledger.СвойствоАктива;
 import org.nasdanika.ledger.СсылкаНаИзображение;
 import org.nasdanika.ledger.Субъект;
 import org.nasdanika.ledger.Счёт;
+import org.nasdanika.ledger.ТекущийГод;
+import org.nasdanika.ledger.ТекущийМесяц;
 import org.nasdanika.ledger.УчётныйЦентр;
 import org.nasdanika.ledger.ФиксированныйКурс;
+import org.nasdanika.ledger.ФиксированныйОтчётныйПериод;
 import org.nasdanika.ledger.ХранительЖурналовОпераций;
 import org.nasdanika.ledger.ЭлементМодели;
 import org.nasdanika.ledger.util.LedgerValidator;
@@ -156,6 +162,48 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * @generated
 	 */
 	private EClass субъектEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass отчётныйПериодEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass предыдущийМесяцEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass предыдущийГодEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass текущийМесяцEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass текущийГодEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass фиксированныйОтчётныйПериодEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -333,6 +381,15 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 */
 	public EReference getЖурналОпераций_СчётПоУмолчаниюДляБалансировкиОпераций() {
 		return (EReference)журналОперацийEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getЖурналОпераций_ОтчётныеПериоды() {
+		return (EReference)журналОперацийEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -889,6 +946,96 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getОтчётныйПериод() {
+		return отчётныйПериодEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getОтчётныйПериод__GetНачалоПериода() {
+		return отчётныйПериодEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getОтчётныйПериод__GetКонецПериода() {
+		return отчётныйПериодEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getПредыдущийМесяц() {
+		return предыдущийМесяцEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getПредыдущийГод() {
+		return предыдущийГодEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getТекущийМесяц() {
+		return текущийМесяцEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getТекущийГод() {
+		return текущийГодEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getФиксированныйОтчётныйПериод() {
+		return фиксированныйОтчётныйПериодEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getФиксированныйОтчётныйПериод_НачалоПериода() {
+		return (EAttribute)фиксированныйОтчётныйПериодEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getФиксированныйОтчётныйПериод_КонецПериода() {
+		return (EAttribute)фиксированныйОтчётныйПериодEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getTheme() {
 		return themeEDataType;
 	}
@@ -1060,6 +1207,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		createEReference(журналОперацийEClass, ЖУРНАЛ_ОПЕРАЦИЙ__СУБЪЕКТЫ);
 		createEReference(журналОперацийEClass, ЖУРНАЛ_ОПЕРАЦИЙ__ОТЧЁТНЫЕ_АКТИВЫ);
 		createEReference(журналОперацийEClass, ЖУРНАЛ_ОПЕРАЦИЙ__СЧЁТ_ПО_УМОЛЧАНИЮ_ДЛЯ_БАЛАНСИРОВКИ_ОПЕРАЦИЙ);
+		createEReference(журналОперацийEClass, ЖУРНАЛ_ОПЕРАЦИЙ__ОТЧЁТНЫЕ_ПЕРИОДЫ);
 
 		счётEClass = createEClass(СЧЁТ);
 		createEAttribute(счётEClass, СЧЁТ__ГРУППА);
@@ -1118,6 +1266,22 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		субъектEClass = createEClass(СУБЪЕКТ);
 		createEReference(субъектEClass, СУБЪЕКТ__ОПЕРАЦИИ);
 
+		отчётныйПериодEClass = createEClass(ОТЧЁТНЫЙ_ПЕРИОД);
+		createEOperation(отчётныйПериодEClass, ОТЧЁТНЫЙ_ПЕРИОД___GET_НАЧАЛО_ПЕРИОДА);
+		createEOperation(отчётныйПериодEClass, ОТЧЁТНЫЙ_ПЕРИОД___GET_КОНЕЦ_ПЕРИОДА);
+
+		предыдущийМесяцEClass = createEClass(ПРЕДЫДУЩИЙ_МЕСЯЦ);
+
+		предыдущийГодEClass = createEClass(ПРЕДЫДУЩИЙ_ГОД);
+
+		текущийМесяцEClass = createEClass(ТЕКУЩИЙ_МЕСЯЦ);
+
+		текущийГодEClass = createEClass(ТЕКУЩИЙ_ГОД);
+
+		фиксированныйОтчётныйПериодEClass = createEClass(ФИКСИРОВАННЫЙ_ОТЧЁТНЫЙ_ПЕРИОД);
+		createEAttribute(фиксированныйОтчётныйПериодEClass, ФИКСИРОВАННЫЙ_ОТЧЁТНЫЙ_ПЕРИОД__НАЧАЛО_ПЕРИОДА);
+		createEAttribute(фиксированныйОтчётныйПериодEClass, ФИКСИРОВАННЫЙ_ОТЧЁТНЫЙ_ПЕРИОД__КОНЕЦ_ПЕРИОДА);
+
 		// Create data types
 		themeEDataType = createEDataType(THEME);
 		курсАктиваEDataType = createEDataType(КУРС_АКТИВА);
@@ -1170,6 +1334,11 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		операцияEClass.getESuperTypes().add(this.getЭлементМодели());
 		проводкаEClass.getESuperTypes().add(this.getЭлементМодели());
 		субъектEClass.getESuperTypes().add(this.getЭлементМодели());
+		предыдущийМесяцEClass.getESuperTypes().add(this.getОтчётныйПериод());
+		предыдущийГодEClass.getESuperTypes().add(this.getОтчётныйПериод());
+		текущийМесяцEClass.getESuperTypes().add(this.getОтчётныйПериод());
+		текущийГодEClass.getESuperTypes().add(this.getОтчётныйПериод());
+		фиксированныйОтчётныйПериодEClass.getESuperTypes().add(this.getОтчётныйПериод());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(элементМоделиEClass, ЭлементМодели.class, "ЭлементМодели", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1220,6 +1389,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		initEReference(getЖурналОпераций_Субъекты(), this.getСубъект(), null, "субъекты", null, 0, -1, ЖурналОпераций.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getЖурналОпераций_ОтчётныеАктивы(), this.getАктив(), null, "отчётныеАктивы", null, 0, -1, ЖурналОпераций.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getЖурналОпераций_СчётПоУмолчаниюДляБалансировкиОпераций(), this.getСчёт(), null, "счётПоУмолчаниюДляБалансировкиОпераций", null, 0, 1, ЖурналОпераций.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getЖурналОпераций_ОтчётныеПериоды(), this.getОтчётныйПериод(), null, "отчётныеПериоды", null, 0, -1, ЖурналОпераций.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(счётEClass, Счёт.class, "Счёт", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getСчёт_Группа(), ecorePackage.getEBoolean(), "группа", null, 0, 1, Счёт.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1251,7 +1421,7 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		initEClass(источникКурсаАктиваEClass, ИсточникКурсаАктива.class, "ИсточникКурсаАктива", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getИсточникКурсаАктива_НачалоПериодаДействия(), ecorePackage.getEDate(), "началоПериодаДействия", null, 0, 1, ИсточникКурсаАктива.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getИсточникКурсаАктива_КонецПериодаДействия(), ecorePackage.getEDate(), "конецПериодаДействия", null, 0, 1, ИсточникКурсаАктива.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getИсточникКурсаАктива_БазовыйАктив(), this.getАктив(), null, "базовыйАктив", null, 0, 1, ИсточникКурсаАктива.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getИсточникКурсаАктива_БазовыйАктив(), this.getАктив(), null, "базовыйАктив", null, 1, 1, ИсточникКурсаАктива.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getИсточникКурсаАктива_Комментарий(), ecorePackage.getEString(), "комментарий", null, 0, 1, ИсточникКурсаАктива.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = initEOperation(getИсточникКурсаАктива__ПолучитьКурс__Date_BigDecimal_EList_КурсАктива_EList(), this.getКурсАктива(), "получитьКурс", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1283,6 +1453,24 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 
 		initEClass(субъектEClass, Субъект.class, "Субъект", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getСубъект_Операции(), this.getОперация(), this.getОперация_Субъекты(), "операции", null, 0, -1, Субъект.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(отчётныйПериодEClass, ОтчётныйПериод.class, "ОтчётныйПериод", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEOperation(getОтчётныйПериод__GetНачалоПериода(), ecorePackage.getEDate(), "getНачалоПериода", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getОтчётныйПериод__GetКонецПериода(), ecorePackage.getEDate(), "getКонецПериода", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(предыдущийМесяцEClass, ПредыдущийМесяц.class, "ПредыдущийМесяц", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(предыдущийГодEClass, ПредыдущийГод.class, "ПредыдущийГод", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(текущийМесяцEClass, ТекущийМесяц.class, "ТекущийМесяц", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(текущийГодEClass, ТекущийГод.class, "ТекущийГод", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(фиксированныйОтчётныйПериодEClass, ФиксированныйОтчётныйПериод.class, "ФиксированныйОтчётныйПериод", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getФиксированныйОтчётныйПериод_НачалоПериода(), ecorePackage.getEDate(), "началоПериода", null, 0, 1, ФиксированныйОтчётныйПериод.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getФиксированныйОтчётныйПериод_КонецПериода(), ecorePackage.getEDate(), "конецПериода", null, 0, 1, ФиксированныйОтчётныйПериод.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize data types
 		initEDataType(themeEDataType, Theme.class, "Theme", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
@@ -1503,6 +1691,12 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		   source, 
 		   new String[] {
 			 "documentation", "\u0421\u0447\u0451\u0442 \u043a\u043e\u0442\u043e\u0440\u044b\u0439 \u043f\u043e \u0443\u043c\u043e\u043b\u0447\u0430\u043d\u0438\u044e \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u0442\u0441\u044f \u0434\u043b\u044f \u0431\u0430\u043b\u0430\u043d\u0441\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0439.\r\n\u041d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \"\u041f\u0440\u0438\u0431\u044b\u043b\u0438 \u0438 \u0443\u0431\u044b\u0442\u043a\u0438\". \u0415\u0441\u043b\u0438 \u0441\u0447\u0451\u0442 \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0435\u0442 \u043e\u0434\u0438\u043d \u0438\u0437 \u043e\u0442\u0447\u0451\u0442\u043d\u044b\u0445 \u0430\u043a\u0442\u0438\u0432\u043e\u0432, \r\n\u0442\u043e \u0431\u0430\u043b\u0430\u043d\u0441\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u043f\u0440\u043e\u0432\u043e\u0434\u0438\u0442\u0441\u044f \u0432 \u0442\u0435\u0440\u043c\u0438\u043d\u0430\u0445 \u044d\u0442\u043e\u0433\u043e \u0430\u043a\u0442\u0438\u0432\u0430. \u0418\u043d\u0430\u0447\u0435 \u0431\u0430\u043b\u0430\u043d\u0441\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u043f\u0440\u043e\u0432\u043e\u0434\u0438\u0442\u0441\u044f \u0432 \u0442\u0435\u0440\u043c\u0438\u043d\u0430\u0445 \u043f\u0435\u0440\u0432\u043e\u0433\u043e \u0430\u043a\u0442\u0438\u0432\u0430\r\n\u043f\u043e\u0434\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0435\u043c\u043e\u0433\u043e \u0441\u0447\u0451\u0442\u043e\u043c.\r\n\r\n\u041f\u0440\u0438\u043c\u0435\u0440\u044b:\r\n\r\n* \u0421\u0447\u0451\u0442 \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0435\u0442 \u0440\u0443\u0431\u043b\u0438 \u0438 \u043f\u0435\u0440\u0432\u044b\u0439 \u043e\u0442\u0447\u0451\u0442\u043d\u044b\u0439 \u0430\u043a\u0442\u0438\u0432 \u044d\u0442\u043e \u0440\u0443\u0431\u043b\u0438. \u0417\u043d\u0430\u0447\u0438\u0442 \u0431\u0430\u043b\u0430\u043d\u0441\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u043f\u0440\u043e\u0432\u043e\u0434\u0438\u0442\u0441\u044f \u0432 \u0440\u0443\u0431\u043b\u044f\u0445.\r\n* \u0421\u0447\u0451\u0442 \u043d\u0435 \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0435\u0442 \u0440\u0443\u0431\u043b\u0438, \u043d\u043e \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0435\u0442 \u0434\u043e\u043b\u043b\u0430\u0440\u044b. \u0414\u043e\u043b\u043b\u0430\u0440\u044b \u044d\u0442\u043e \u0432\u0442\u043e\u0440\u043e\u0439 \u043e\u0442\u0447\u0451\u0442\u043d\u044b\u0439 \u0430\u043a\u0442\u0438\u0432. \u0411\u0430\u043b\u0430\u043d\u0441\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u0432 \u0434\u043e\u043b\u043b\u0430\u0440\u0430\u0445.\r\n* \u0421\u0447\u0451\u0442 \u043d\u0435 \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0435\u0442 \u043d\u0438 \u0440\u0443\u0431\u043b\u0438 \u043d\u0438 \u0434\u043e\u043b\u043b\u0430\u0440\u044b, \u043d\u043e \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0435\u0442 \u0435\u0432\u0440\u043e. \u0411\u0430\u043b\u0430\u043d\u0441\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u0432 \u0435\u0432\u0440\u043e.\r\n\r\n"
+		   });	
+		addAnnotation
+		  (getЖурналОпераций_ОтчётныеПериоды(), 
+		   source, 
+		   new String[] {
+			 "documentation", "\u0416\u0443\u0440\u043d\u0430\u043b \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0439 \u043c\u043e\u0436\u0435\u0442 \u0438\u043c\u0435\u0442\u044c \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u043e \u043e\u0442\u0447\u0451\u0442\u043d\u044b\u0445 \u043f\u0435\u0440\u0438\u043e\u0434\u043e\u0432."
 		   });	
 		addAnnotation
 		  (счётEClass, 
@@ -1821,6 +2015,12 @@ public class LedgerPackageImpl extends EPackageImpl implements LedgerPackage {
 		   source, 
 		   new String[] {
 			 "documentation", "\u0421 \u0446\u0435\u043b\u044c\u044e \u0431\u0430\u043b\u0430\u043d\u0441\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0439 \u0438 \u0441\u043e\u0441\u0442\u0430\u0432\u043b\u0435\u043d\u0438\u044f \u043e\u0442\u0447\u0451\u0442\u043d\u043e\u0441\u0442\u0438 \u0434\u043e\u043b\u0436\u043d\u043e \u0431\u044b\u0442\u044c \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u044b\u0432\u0430\u0442\u044c \u0432\u0435\u043b\u0438\u0447\u0438\u043d\u0443 \u043e\u0434\u043d\u043e\u0433\u043e \u0430\u043a\u0442\u0438\u0432\u0430 \u0432 \u0432\u0435\u043b\u0438\u0447\u0438\u043d\u0443 \u0434\u0440\u0443\u0433\u043e\u0433\u043e.\r\n\u041a\u043e\u044d\u0444\u0444\u0438\u0446\u0438\u0435\u043d\u0442 \u043f\u0440\u0435\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u043d\u0430\u0437\u044b\u0432\u0430\u0435\u0442\u0441\u044f \u043a\u0443\u0440\u0441\u043e\u043c \u043f\u043e \u0430\u043d\u0430\u043b\u043e\u0433\u0438\u0438 \u0441 \u043a\u0443\u0440\u0441\u043e\u043c \u0432\u0430\u043b\u044e\u0442. \u0414\u043b\u044f \u0442\u043e\u0432\u0430\u0440\u043e\u0432 \u0441\u0442\u043e\u0438\u043c\u043e\u0441\u0442\u044c \u0442\u0430\u0432\u0430\u0440\u0430 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u0435\u0433\u043e \"\u043a\u0443\u0440\u0441\u043e\u043c\"."
+		   });	
+		addAnnotation
+		  (отчётныйПериодEClass, 
+		   source, 
+		   new String[] {
+			 "documentation", "\u041f\u0435\u0440\u0438\u043e\u0434 \u0437\u0430 \u043a\u043e\u0442\u043e\u0440\u044b\u0439 \u0433\u0435\u043d\u0435\u0440\u0438\u0440\u0443\u0435\u0442\u0441\u044f \u043e\u0442\u0447\u0451\u0442."
 		   });
 	}
 

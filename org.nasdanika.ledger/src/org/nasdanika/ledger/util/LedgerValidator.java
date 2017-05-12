@@ -135,6 +135,18 @@ public class LedgerValidator extends EObjectValidator {
 				return validateПроводка((Проводка)value, diagnostics, context);
 			case LedgerPackage.СУБЪЕКТ:
 				return validateСубъект((Субъект)value, diagnostics, context);
+			case LedgerPackage.ОТЧЁТНЫЙ_ПЕРИОД:
+				return validateОтчётныйПериод((ОтчётныйПериод)value, diagnostics, context);
+			case LedgerPackage.ПРЕДЫДУЩИЙ_МЕСЯЦ:
+				return validateПредыдущийМесяц((ПредыдущийМесяц)value, diagnostics, context);
+			case LedgerPackage.ПРЕДЫДУЩИЙ_ГОД:
+				return validateПредыдущийГод((ПредыдущийГод)value, diagnostics, context);
+			case LedgerPackage.ТЕКУЩИЙ_МЕСЯЦ:
+				return validateТекущийМесяц((ТекущийМесяц)value, diagnostics, context);
+			case LedgerPackage.ТЕКУЩИЙ_ГОД:
+				return validateТекущийГод((ТекущийГод)value, diagnostics, context);
+			case LedgerPackage.ФИКСИРОВАННЫЙ_ОТЧЁТНЫЙ_ПЕРИОД:
+				return validateФиксированныйОтчётныйПериод((ФиксированныйОтчётныйПериод)value, diagnostics, context);
 			case LedgerPackage.THEME:
 				return validateTheme((Theme)value, diagnostics, context);
 			case LedgerPackage.КУРС_АКТИВА:
@@ -442,6 +454,60 @@ public class LedgerValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique((EObject)субъект, diagnostics, context);
 		if (result || diagnostics != null) result &= validateЭлементМодели_validate(субъект, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateОтчётныйПериод(ОтчётныйПериод отчётныйПериод, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint((EObject)отчётныйПериод, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateПредыдущийМесяц(ПредыдущийМесяц предыдущийМесяц, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint((EObject)предыдущийМесяц, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateПредыдущийГод(ПредыдущийГод предыдущийГод, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint((EObject)предыдущийГод, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateТекущийМесяц(ТекущийМесяц текущийМесяц, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint((EObject)текущийМесяц, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateТекущийГод(ТекущийГод текущийГод, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint((EObject)текущийГод, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateФиксированныйОтчётныйПериод(ФиксированныйОтчётныйПериод фиксированныйОтчётныйПериод, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint((EObject)фиксированныйОтчётныйПериод, diagnostics, context);
 	}
 
 	/**

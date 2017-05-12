@@ -106,7 +106,17 @@
    <eobject-route class="org.nasdanika.ledger.app.routes.ledger.GuestRoute" method="*" path="/" target="Guest" target-namespace-uri="urn:org.nasdanika.cdo.security">
    </eobject-route>
       
-   </extension>
+   <eobject-route class="org.nasdanika.ledger.app.routes.ledger.ПредыдущийМесяцRoute" method="*" path="/" target="ПредыдущийМесяц" target-namespace-uri="urn:org.nasdanika.ledger">
+      </eobject-route>
+<eobject-route class="org.nasdanika.ledger.app.routes.ledger.ПредыдущийГодRoute" method="*" path="/" target="ПредыдущийГод" target-namespace-uri="urn:org.nasdanika.ledger">
+      </eobject-route>
+<eobject-route class="org.nasdanika.ledger.app.routes.ledger.ТекущийМесяцRoute" method="*" path="/" target="ТекущийМесяц" target-namespace-uri="urn:org.nasdanika.ledger">
+      </eobject-route>
+<eobject-route class="org.nasdanika.ledger.app.routes.ledger.ТекущийГодRoute" method="*" path="/" target="ТекущийГод" target-namespace-uri="urn:org.nasdanika.ledger">
+      </eobject-route>
+<eobject-route class="org.nasdanika.ledger.app.routes.ledger.ФиксированныйОтчётныйПериодRoute" method="*" path="/" target="ФиксированныйОтчётныйПериод" target-namespace-uri="urn:org.nasdanika.ledger">
+      </eobject-route>
+</extension>
    
    <extension point="org.eclipse.equinox.http.registry.resources">
       <resource alias="/" base-name="WebContent">
@@ -289,6 +299,16 @@ A -&gt; B : Message
    <renderer eclass-name="Guest" namespace-uri="urn:org.nasdanika.cdo.security" renderer="org.nasdanika.ledger.app.routes.ledger.GuestRenderer">
    </renderer>
       
+<renderer eclass-name="ПредыдущийМесяц" namespace-uri="urn:org.nasdanika.ledger" renderer="org.nasdanika.ledger.app.routes.ledger.ПредыдущийМесяцRenderer">
+      </renderer>
+<renderer eclass-name="ПредыдущийГод" namespace-uri="urn:org.nasdanika.ledger" renderer="org.nasdanika.ledger.app.routes.ledger.ПредыдущийГодRenderer">
+      </renderer>
+<renderer eclass-name="ТекущийМесяц" namespace-uri="urn:org.nasdanika.ledger" renderer="org.nasdanika.ledger.app.routes.ledger.ТекущийМесяцRenderer">
+      </renderer>
+<renderer eclass-name="ТекущийГод" namespace-uri="urn:org.nasdanika.ledger" renderer="org.nasdanika.ledger.app.routes.ledger.ТекущийГодRenderer">
+      </renderer>
+<renderer eclass-name="ФиксированныйОтчётныйПериод" namespace-uri="urn:org.nasdanika.ledger" renderer="org.nasdanika.ledger.app.routes.ledger.ФиксированныйОтчётныйПериодRenderer">
+      </renderer>
 </extension>
    
 </plugin>

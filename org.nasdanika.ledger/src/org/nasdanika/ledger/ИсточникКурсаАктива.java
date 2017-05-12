@@ -110,7 +110,7 @@ public interface ИсточникКурсаАктива extends CDOObject {
 	 * @return the value of the '<em>Базовый Актив</em>' reference.
 	 * @see #setБазовыйАктив(Актив)
 	 * @see org.nasdanika.ledger.LedgerPackage#getИсточникКурсаАктива_БазовыйАктив()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	Актив getБазовыйАктив();

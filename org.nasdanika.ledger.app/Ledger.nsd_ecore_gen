@@ -54,6 +54,11 @@
           <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EReferenceConfiguration" location="Item container"/>
         </configuration>
       </members>
+      <members xsi:type="org.nasdanika.codegen.ecore:Reference" name="отчётныеПериоды">
+        <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+          <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EReferenceConfiguration" view="List"/>
+        </configuration>
+      </members>
     </classes>
     <classes selected="true" name="Проводка">
       <members xsi:type="org.nasdanika.codegen.ecore:Attribute" name="сверено"/>
@@ -183,6 +188,36 @@
       </members>
       <members xsi:type="org.nasdanika.codegen.ecore:Reference" name="изображение"/>
       <members xsi:type="org.nasdanika.codegen.ecore:Attribute" selected="true" name="идентификатор"/>
+    </classes>
+    <classes selected="true" name="ПредыдущийГод">
+      <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+        <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EClassConfiguration"/>
+      </configuration>
+    </classes>
+    <classes selected="true" name="ПредыдущийМесяц">
+      <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+        <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EClassConfiguration"/>
+      </configuration>
+    </classes>
+    <classes selected="true" name="ОтчётныйПериод">
+      <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+        <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EClassConfiguration"/>
+      </configuration>
+    </classes>
+    <classes selected="true" name="ТекущийГод">
+      <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+        <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EClassConfiguration"/>
+      </configuration>
+    </classes>
+    <classes selected="true" name="ТекущийМесяц">
+      <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+        <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EClassConfiguration"/>
+      </configuration>
+    </classes>
+    <classes selected="true" name="ФиксированныйОтчётныйПериод">
+      <configuration id="org.nasdanika.codegen.ecore.web.ui" name="Web UI">
+        <configuration xsi:type="org.nasdanika.codegen.ecore.web.ui.model:EClassConfiguration"/>
+      </configuration>
     </classes>
   </packages>
   <generationTargets>org.nasdanika.codegen.ecore.web.ui/web-ui</generationTargets>

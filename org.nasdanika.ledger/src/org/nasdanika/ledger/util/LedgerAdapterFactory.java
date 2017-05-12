@@ -154,6 +154,30 @@ public class LedgerAdapterFactory extends AdapterFactoryImpl {
 				return createСубъектAdapter();
 			}
 			@Override
+			public Adapter caseОтчётныйПериод(ОтчётныйПериод object) {
+				return createОтчётныйПериодAdapter();
+			}
+			@Override
+			public Adapter caseПредыдущийМесяц(ПредыдущийМесяц object) {
+				return createПредыдущийМесяцAdapter();
+			}
+			@Override
+			public Adapter caseПредыдущийГод(ПредыдущийГод object) {
+				return createПредыдущийГодAdapter();
+			}
+			@Override
+			public Adapter caseТекущийМесяц(ТекущийМесяц object) {
+				return createТекущийМесяцAdapter();
+			}
+			@Override
+			public Adapter caseТекущийГод(ТекущийГод object) {
+				return createТекущийГодAdapter();
+			}
+			@Override
+			public Adapter caseФиксированныйОтчётныйПериод(ФиксированныйОтчётныйПериод object) {
+				return createФиксированныйОтчётныйПериодAdapter();
+			}
+			@Override
 			public <CR> Adapter caseRealm(Realm<CR> object) {
 				return createRealmAdapter();
 			}
@@ -418,6 +442,90 @@ public class LedgerAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createСубъектAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.ledger.ОтчётныйПериод <em>Отчётный Период</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.ledger.ОтчётныйПериод
+	 * @generated
+	 */
+	public Adapter createОтчётныйПериодAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.ledger.ПредыдущийМесяц <em>Предыдущий Месяц</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.ledger.ПредыдущийМесяц
+	 * @generated
+	 */
+	public Adapter createПредыдущийМесяцAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.ledger.ПредыдущийГод <em>Предыдущий Год</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.ledger.ПредыдущийГод
+	 * @generated
+	 */
+	public Adapter createПредыдущийГодAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.ledger.ТекущийМесяц <em>Текущий Месяц</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.ledger.ТекущийМесяц
+	 * @generated
+	 */
+	public Adapter createТекущийМесяцAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.ledger.ТекущийГод <em>Текущий Год</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.ledger.ТекущийГод
+	 * @generated
+	 */
+	public Adapter createТекущийГодAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.nasdanika.ledger.ФиксированныйОтчётныйПериод <em>Фиксированный Отчётный Период</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.nasdanika.ledger.ФиксированныйОтчётныйПериод
+	 * @generated
+	 */
+	public Adapter createФиксированныйОтчётныйПериодAdapter() {
 		return null;
 	}
 

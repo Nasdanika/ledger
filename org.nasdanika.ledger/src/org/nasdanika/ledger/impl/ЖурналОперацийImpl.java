@@ -8,6 +8,7 @@ import org.nasdanika.ledger.LedgerPackage;
 import org.nasdanika.ledger.Актив;
 import org.nasdanika.ledger.ЖурналОпераций;
 import org.nasdanika.ledger.Операция;
+import org.nasdanika.ledger.ОтчётныйПериод;
 import org.nasdanika.ledger.Субъект;
 import org.nasdanika.ledger.Счёт;
 
@@ -25,6 +26,7 @@ import org.nasdanika.ledger.Счёт;
  *   <li>{@link org.nasdanika.ledger.impl.ЖурналОперацийImpl#getСубъекты <em>Субъекты</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ЖурналОперацийImpl#getОтчётныеАктивы <em>Отчётные Активы</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ЖурналОперацийImpl#getСчётПоУмолчаниюДляБалансировкиОпераций <em>Счёт По Умолчанию Для Балансировки Операций</em>}</li>
+ *   <li>{@link org.nasdanika.ledger.impl.ЖурналОперацийImpl#getОтчётныеПериоды <em>Отчётные Периоды</em>}</li>
  * </ul>
  *
  * @generated
@@ -115,6 +117,16 @@ public class ЖурналОперацийImpl extends ЭлементМодели
 	 */
 	public void setСчётПоУмолчаниюДляБалансировкиОпераций(Счёт newСчётПоУмолчаниюДляБалансировкиОпераций) {
 		eSet(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__СЧЁТ_ПО_УМОЛЧАНИЮ_ДЛЯ_БАЛАНСИРОВКИ_ОПЕРАЦИЙ, newСчётПоУмолчаниюДляБалансировкиОпераций);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public EList<ОтчётныйПериод> getОтчётныеПериоды() {
+		return (EList<ОтчётныйПериод>)eGet(LedgerPackage.Literals.ЖУРНАЛ_ОПЕРАЦИЙ__ОТЧЁТНЫЕ_ПЕРИОДЫ, true);
 	}
 
 } //ЖурналОперацийImpl

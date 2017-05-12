@@ -184,6 +184,12 @@
         <details key="documentation" value="Счёт который по умолчанию используется для балансирования операций.&#xD;&#xA;Например, &quot;Прибыли и убытки&quot;. Если счёт поддерживает один из отчётных активов, &#xD;&#xA;то балансирование проводится в терминах этого актива. Иначе балансирование проводится в терминах первого актива&#xD;&#xA;поддерживаемого счётом.&#xD;&#xA;&#xD;&#xA;Примеры:&#xD;&#xA;&#xD;&#xA;* Счёт поддерживает рубли и первый отчётный актив это рубли. Значит балансирование проводится в рублях.&#xD;&#xA;* Счёт не поддерживает рубли, но поддерживает доллары. Доллары это второй отчётный актив. Балансирование в долларах.&#xD;&#xA;* Счёт не поддерживает ни рубли ни доллары, но поддерживает евро. Балансирование в евро.&#xD;&#xA;&#xD;&#xA;"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="отчётныеПериоды" upperBound="-1"
+        eType="#//ОтчётныйПериод" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Журнал операций может иметь несколько отчётных периодов."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Счёт" eSuperTypes="#//ЭлементМодели">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -474,5 +480,19 @@
       <details key="documentation" value="С целью балансирования операций и составления отчётности должно быть возможно преобразовывать величину одного актива в величину другого.&#xD;&#xA;Коэффициент преобразования называется курсом по аналогии с курсом валют. Для товаров стоимость тавара является его &quot;курсом&quot;."/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ОтчётныйПериод" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ОтчётныйПериод" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Период за который генерируется отчёт."/>
+    </eAnnotations>
+    <eOperations name="getНачалоПериода" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eOperations name="getКонецПериода" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ПредыдущийМесяц" eSuperTypes="#//ОтчётныйПериод"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ПредыдущийГод" eSuperTypes="#//ОтчётныйПериод"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ТекущийМесяц" eSuperTypes="#//ОтчётныйПериод"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ТекущийГод" eSuperTypes="#//ОтчётныйПериод"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ФиксированныйОтчётныйПериод" eSuperTypes="#//ОтчётныйПериод">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="началоПериода" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="конецПериода" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+  </eClassifiers>
 </ecore:EPackage>
