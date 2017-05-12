@@ -624,13 +624,13 @@ public interface LedgerPackage extends EPackage {
 	int ВСТРОЕННОЕ_ИЗОБРАЖЕНИЕ_OPERATION_COUNT = ИЗОБРАЖЕНИЕ_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Root</b></em>' reference.
+	 * The feature id for the '<em><b>Administrators</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int УЧЁТНЫЙ_ЦЕНТР__ROOT = SecurityPackage.LOGIN_PASSWORD_REALM__ROOT;
+	int УЧЁТНЫЙ_ЦЕНТР__ADMINISTRATORS = SecurityPackage.LOGIN_PASSWORD_REALM__ADMINISTRATORS;
 
 	/**
 	 * The feature id for the '<em><b>Guest</b></em>' containment reference.
@@ -729,7 +729,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int УЧЁТНЫЙ_ЦЕНТР___AUTHENTICATE__OBJECT = SecurityPackage.LOGIN_PASSWORD_REALM___AUTHENTICATE__OBJECT;
+	int УЧЁТНЫЙ_ЦЕНТР___AUTHENTICATE__OBJECT_1 = SecurityPackage.LOGIN_PASSWORD_REALM___AUTHENTICATE__OBJECT;
 
 	/**
 	 * The operation id for the '<em>Get All Users</em>' operation.
@@ -747,7 +747,16 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int УЧЁТНЫЙ_ЦЕНТР___CLEAR_PERMISSIONS__EOBJECT = SecurityPackage.LOGIN_PASSWORD_REALM___CLEAR_PERMISSIONS__EOBJECT;
+	int УЧЁТНЫЙ_ЦЕНТР___CLEAR_PERMISSIONS__EOBJECT_1 = SecurityPackage.LOGIN_PASSWORD_REALM___CLEAR_PERMISSIONS__EOBJECT;
+
+	/**
+	 * The operation id for the '<em>Is Administrator</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int УЧЁТНЫЙ_ЦЕНТР___IS_ADMINISTRATOR__PRINCIPAL = SecurityPackage.LOGIN_PASSWORD_REALM___IS_ADMINISTRATOR__PRINCIPAL;
 
 	/**
 	 * The operation id for the '<em>Set Password Hash</em>' operation.
@@ -756,7 +765,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int УЧЁТНЫЙ_ЦЕНТР___SET_PASSWORD_HASH__LOGINPASSWORDHASHUSER_STRING = SecurityPackage.LOGIN_PASSWORD_REALM___SET_PASSWORD_HASH__LOGINPASSWORDHASHUSER_STRING;
+	int УЧЁТНЫЙ_ЦЕНТР___SET_PASSWORD_HASH__LOGINPASSWORDHASHUSER_STRING_1 = SecurityPackage.LOGIN_PASSWORD_REALM___SET_PASSWORD_HASH__LOGINPASSWORDHASHUSER_STRING;
 
 	/**
 	 * The operation id for the '<em>Get User</em>' operation.
@@ -765,7 +774,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int УЧЁТНЫЙ_ЦЕНТР___GET_USER__STRING = SecurityPackage.LOGIN_PASSWORD_REALM___GET_USER__STRING;
+	int УЧЁТНЫЙ_ЦЕНТР___GET_USER__STRING_1 = SecurityPackage.LOGIN_PASSWORD_REALM___GET_USER__STRING;
 
 	/**
 	 * The operation id for the '<em>Validate</em>' operation.
@@ -990,7 +999,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ПОЛЬЗОВАТЕЛЬ___AUTHORIZE__CONTEXT_EOBJECT_STRING_STRING_MAP = SecurityPackage.LOGIN_PASSWORD_HASH_USER___AUTHORIZE__CONTEXT_EOBJECT_STRING_STRING_MAP;
+	int ПОЛЬЗОВАТЕЛЬ___AUTHORIZE__CONTEXT_EOBJECT_STRING_STRING_MAP_1 = SecurityPackage.LOGIN_PASSWORD_HASH_USER___AUTHORIZE__CONTEXT_EOBJECT_STRING_STRING_MAP;
 
 	/**
 	 * The operation id for the '<em>Accept</em>' operation.
@@ -999,7 +1008,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ПОЛЬЗОВАТЕЛЬ___ACCEPT__PRINCIPALVISITOR = SecurityPackage.LOGIN_PASSWORD_HASH_USER___ACCEPT__PRINCIPALVISITOR;
+	int ПОЛЬЗОВАТЕЛЬ___ACCEPT__PRINCIPALVISITOR_1 = SecurityPackage.LOGIN_PASSWORD_HASH_USER___ACCEPT__PRINCIPALVISITOR;
 
 	/**
 	 * The operation id for the '<em>Get Realm</em>' operation.
