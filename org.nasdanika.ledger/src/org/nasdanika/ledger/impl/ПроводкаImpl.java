@@ -4,6 +4,7 @@ package org.nasdanika.ledger.impl;
 
 import java.math.BigDecimal;
 
+import java.util.Date;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.nasdanika.ledger.LedgerPackage;
@@ -20,6 +21,7 @@ import org.nasdanika.ledger.Счёт;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.nasdanika.ledger.impl.ПроводкаImpl#getДатаПроводки <em>Дата Проводки</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ПроводкаImpl#getСчёт <em>Счёт</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ПроводкаImpl#getАктив <em>Актив</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ПроводкаImpl#getКоличество <em>Количество</em>}</li>
@@ -48,6 +50,24 @@ public class ПроводкаImpl extends ЭлементМоделиImpl impleme
 	@Override
 	protected EClass eStaticClass() {
 		return LedgerPackage.Literals.ПРОВОДКА;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Date getДатаПроводки() {
+		return (Date)eGet(LedgerPackage.Literals.ПРОВОДКА__ДАТА_ПРОВОДКИ, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setДатаПроводки(Date newДатаПроводки) {
+		eSet(LedgerPackage.Literals.ПРОВОДКА__ДАТА_ПРОВОДКИ, newДатаПроводки);
 	}
 
 	/**

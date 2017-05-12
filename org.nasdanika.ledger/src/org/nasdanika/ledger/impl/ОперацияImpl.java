@@ -2,6 +2,7 @@
  */
 package org.nasdanika.ledger.impl;
 
+import java.util.Date;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.nasdanika.ledger.LedgerPackage;
@@ -18,6 +19,7 @@ import org.nasdanika.ledger.Субъект;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.nasdanika.ledger.impl.ОперацияImpl#getДатаОперации <em>Дата Операции</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ОперацияImpl#isПервичныйВвод <em>Первичный Ввод</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ОперацияImpl#getПроводки <em>Проводки</em>}</li>
  *   <li>{@link org.nasdanika.ledger.impl.ОперацияImpl#getСоздатель <em>Создатель</em>}</li>
@@ -44,6 +46,24 @@ public class ОперацияImpl extends ЭлементМоделиImpl impleme
 	@Override
 	protected EClass eStaticClass() {
 		return LedgerPackage.Literals.ОПЕРАЦИЯ;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Date getДатаОперации() {
+		return (Date)eGet(LedgerPackage.Literals.ОПЕРАЦИЯ__ДАТА_ОПЕРАЦИИ, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setДатаОперации(Date newДатаОперации) {
+		eSet(LedgerPackage.Literals.ОПЕРАЦИЯ__ДАТА_ОПЕРАЦИИ, newДатаОперации);
 	}
 
 	/**

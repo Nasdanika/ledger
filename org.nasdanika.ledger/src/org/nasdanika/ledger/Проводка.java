@@ -3,6 +3,7 @@
 package org.nasdanika.ledger;
 
 import java.math.BigDecimal;
+import java.util.Date;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -18,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.nasdanika.ledger.Проводка#getДатаПроводки <em>Дата Проводки</em>}</li>
  *   <li>{@link org.nasdanika.ledger.Проводка#getСчёт <em>Счёт</em>}</li>
  *   <li>{@link org.nasdanika.ledger.Проводка#getАктив <em>Актив</em>}</li>
  *   <li>{@link org.nasdanika.ledger.Проводка#getКоличество <em>Количество</em>}</li>
@@ -31,6 +33,31 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface Проводка extends ЭлементМодели {
+
+	/**
+	 * Returns the value of the '<em><b>Дата Проводки</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Дата проводки, может отличаться от даты операции.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Дата Проводки</em>' attribute.
+	 * @see #setДатаПроводки(Date)
+	 * @see org.nasdanika.ledger.LedgerPackage#getПроводка_ДатаПроводки()
+	 * @model required="true"
+	 * @generated
+	 */
+	Date getДатаПроводки();
+
+	/**
+	 * Sets the value of the '{@link org.nasdanika.ledger.Проводка#getДатаПроводки <em>Дата Проводки</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Дата Проводки</em>' attribute.
+	 * @see #getДатаПроводки()
+	 * @generated
+	 */
+	void setДатаПроводки(Date value);
 
 	/**
 	 * Returns the value of the '<em><b>Сверено</b></em>' attribute.

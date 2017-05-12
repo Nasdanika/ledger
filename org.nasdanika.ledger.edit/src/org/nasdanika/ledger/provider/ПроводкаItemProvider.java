@@ -45,6 +45,7 @@ public class ПроводкаItemProvider extends ЭлементМоделиItem
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addДатаПроводкиPropertyDescriptor(object);
 			addСчётPropertyDescriptor(object);
 			addАктивPropertyDescriptor(object);
 			addКоличествоPropertyDescriptor(object);
@@ -53,6 +54,28 @@ public class ПроводкаItemProvider extends ЭлементМоделиItem
 			addЗначенияСвойствАктиваPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Дата Проводки feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addДатаПроводкиPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Проводка_датаПроводки_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Проводка_датаПроводки_feature", "_UI_Проводка_type"),
+				 LedgerPackage.Literals.ПРОВОДКА__ДАТА_ПРОВОДКИ,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -225,6 +248,7 @@ public class ПроводкаItemProvider extends ЭлементМоделиItem
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Проводка.class)) {
+			case LedgerPackage.ПРОВОДКА__ДАТА_ПРОВОДКИ:
 			case LedgerPackage.ПРОВОДКА__КОЛИЧЕСТВО:
 			case LedgerPackage.ПРОВОДКА__СВЕРЕНО:
 			case LedgerPackage.ПРОВОДКА__БАЛАНСИРУЮЩАЯ_ПРОВОДКА:

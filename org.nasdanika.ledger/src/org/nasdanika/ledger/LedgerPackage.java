@@ -1857,13 +1857,22 @@ public interface LedgerPackage extends EPackage {
 	int ОПЕРАЦИЯ__ИДЕНТИФИКАТОР = ЭЛЕМЕНТ_МОДЕЛИ__ИДЕНТИФИКАТОР;
 
 	/**
+	 * The feature id for the '<em><b>Дата Операции</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ОПЕРАЦИЯ__ДАТА_ОПЕРАЦИИ = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Первичный Ввод</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ОПЕРАЦИЯ__ПЕРВИЧНЫЙ_ВВОД = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 0;
+	int ОПЕРАЦИЯ__ПЕРВИЧНЫЙ_ВВОД = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Проводки</b></em>' containment reference list.
@@ -1872,7 +1881,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ОПЕРАЦИЯ__ПРОВОДКИ = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 1;
+	int ОПЕРАЦИЯ__ПРОВОДКИ = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Создатель</b></em>' reference.
@@ -1881,7 +1890,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ОПЕРАЦИЯ__СОЗДАТЕЛЬ = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 2;
+	int ОПЕРАЦИЯ__СОЗДАТЕЛЬ = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Субъекты</b></em>' reference list.
@@ -1890,7 +1899,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ОПЕРАЦИЯ__СУБЪЕКТЫ = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 3;
+	int ОПЕРАЦИЯ__СУБЪЕКТЫ = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Операция</em>' class.
@@ -1899,7 +1908,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ОПЕРАЦИЯ_FEATURE_COUNT = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 4;
+	int ОПЕРАЦИЯ_FEATURE_COUNT = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Validate</em>' operation.
@@ -1965,13 +1974,22 @@ public interface LedgerPackage extends EPackage {
 	int ПРОВОДКА__ИДЕНТИФИКАТОР = ЭЛЕМЕНТ_МОДЕЛИ__ИДЕНТИФИКАТОР;
 
 	/**
+	 * The feature id for the '<em><b>Дата Проводки</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ПРОВОДКА__ДАТА_ПРОВОДКИ = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Счёт</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ПРОВОДКА__СЧЁТ = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 0;
+	int ПРОВОДКА__СЧЁТ = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Актив</b></em>' reference.
@@ -1980,7 +1998,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ПРОВОДКА__АКТИВ = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 1;
+	int ПРОВОДКА__АКТИВ = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Количество</b></em>' attribute.
@@ -1989,7 +2007,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ПРОВОДКА__КОЛИЧЕСТВО = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 2;
+	int ПРОВОДКА__КОЛИЧЕСТВО = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Сверено</b></em>' attribute.
@@ -1998,7 +2016,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ПРОВОДКА__СВЕРЕНО = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 3;
+	int ПРОВОДКА__СВЕРЕНО = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Балансирующая Проводка</b></em>' attribute.
@@ -2007,7 +2025,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ПРОВОДКА__БАЛАНСИРУЮЩАЯ_ПРОВОДКА = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 4;
+	int ПРОВОДКА__БАЛАНСИРУЮЩАЯ_ПРОВОДКА = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Значения Свойств Актива</b></em>' reference list.
@@ -2016,7 +2034,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ПРОВОДКА__ЗНАЧЕНИЯ_СВОЙСТВ_АКТИВА = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 5;
+	int ПРОВОДКА__ЗНАЧЕНИЯ_СВОЙСТВ_АКТИВА = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>Проводка</em>' class.
@@ -2025,7 +2043,7 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ПРОВОДКА_FEATURE_COUNT = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 6;
+	int ПРОВОДКА_FEATURE_COUNT = ЭЛЕМЕНТ_МОДЕЛИ_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Validate</em>' operation.
@@ -3033,6 +3051,17 @@ public interface LedgerPackage extends EPackage {
 	EClass getОперация();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.ledger.Операция#getДатаОперации <em>Дата Операции</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Дата Операции</em>'.
+	 * @see org.nasdanika.ledger.Операция#getДатаОперации()
+	 * @see #getОперация()
+	 * @generated
+	 */
+	EAttribute getОперация_ДатаОперации();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link org.nasdanika.ledger.Операция#getПроводки <em>Проводки</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3085,6 +3114,17 @@ public interface LedgerPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getПроводка();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.nasdanika.ledger.Проводка#getДатаПроводки <em>Дата Проводки</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Дата Проводки</em>'.
+	 * @see org.nasdanika.ledger.Проводка#getДатаПроводки()
+	 * @see #getПроводка()
+	 * @generated
+	 */
+	EAttribute getПроводка_ДатаПроводки();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.nasdanika.ledger.Проводка#isСверено <em>Сверено</em>}'.
@@ -3903,6 +3943,14 @@ public interface LedgerPackage extends EPackage {
 		EClass ОПЕРАЦИЯ = eINSTANCE.getОперация();
 
 		/**
+		 * The meta object literal for the '<em><b>Дата Операции</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ОПЕРАЦИЯ__ДАТА_ОПЕРАЦИИ = eINSTANCE.getОперация_ДатаОперации();
+
+		/**
 		 * The meta object literal for the '<em><b>Проводки</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3943,6 +3991,14 @@ public interface LedgerPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ПРОВОДКА = eINSTANCE.getПроводка();
+
+		/**
+		 * The meta object literal for the '<em><b>Дата Проводки</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ПРОВОДКА__ДАТА_ПРОВОДКИ = eINSTANCE.getПроводка_ДатаПроводки();
 
 		/**
 		 * The meta object literal for the '<em><b>Сверено</b></em>' attribute feature.

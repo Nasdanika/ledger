@@ -400,6 +400,12 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Запись хозяйственной операции."/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="датаОперации" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Дата совершения или записи операции."/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="первичныйВвод" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Первичный ввод означает что описание операции введено, но проводки&#xD;&#xA;по счетам либо не сделаны, либо сделаны не полностью."/>
@@ -428,6 +434,12 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="Проводка это часть операции описывающая движение актива по счёту."/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="датаПроводки" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Дата проводки, может отличаться от даты операции."/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="счёт" lowerBound="1" eType="#//Счёт"
         eOpposite="#//Счёт/проводки">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">

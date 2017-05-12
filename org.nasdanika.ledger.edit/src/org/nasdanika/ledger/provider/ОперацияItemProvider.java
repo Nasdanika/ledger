@@ -48,11 +48,34 @@ public class ОперацияItemProvider extends ЭлементМоделиItem
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addДатаОперацииPropertyDescriptor(object);
 			addПервичныйВводPropertyDescriptor(object);
 			addСоздательPropertyDescriptor(object);
 			addСубъектыPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Дата Операции feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addДатаОперацииPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Операция_датаОперации_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Операция_датаОперации_feature", "_UI_Операция_type"),
+				 LedgerPackage.Literals.ОПЕРАЦИЯ__ДАТА_ОПЕРАЦИИ,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -189,6 +212,7 @@ public class ОперацияItemProvider extends ЭлементМоделиItem
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Операция.class)) {
+			case LedgerPackage.ОПЕРАЦИЯ__ДАТА_ОПЕРАЦИИ:
 			case LedgerPackage.ОПЕРАЦИЯ__ПЕРВИЧНЫЙ_ВВОД:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

@@ -2,6 +2,7 @@
  */
 package org.nasdanika.ledger;
 
+import java.util.Date;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -17,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.nasdanika.ledger.Операция#getДатаОперации <em>Дата Операции</em>}</li>
  *   <li>{@link org.nasdanika.ledger.Операция#isПервичныйВвод <em>Первичный Ввод</em>}</li>
  *   <li>{@link org.nasdanika.ledger.Операция#getПроводки <em>Проводки</em>}</li>
  *   <li>{@link org.nasdanika.ledger.Операция#getСоздатель <em>Создатель</em>}</li>
@@ -28,6 +30,31 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface Операция extends ЭлементМодели {
+
+	/**
+	 * Returns the value of the '<em><b>Дата Операции</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * Дата совершения или записи операции.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Дата Операции</em>' attribute.
+	 * @see #setДатаОперации(Date)
+	 * @see org.nasdanika.ledger.LedgerPackage#getОперация_ДатаОперации()
+	 * @model required="true"
+	 * @generated
+	 */
+	Date getДатаОперации();
+
+	/**
+	 * Sets the value of the '{@link org.nasdanika.ledger.Операция#getДатаОперации <em>Дата Операции</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Дата Операции</em>' attribute.
+	 * @see #getДатаОперации()
+	 * @generated
+	 */
+	void setДатаОперации(Date value);
 
 	/**
 	 * Returns the value of the '<em><b>Проводки</b></em>' containment reference list.
